@@ -45,7 +45,8 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(849, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1232, 158);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // ribbonPage1
             // 
@@ -59,13 +60,13 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
-            // FormMain
+            // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 470);
+            this.ClientSize = new System.Drawing.Size(1232, 536);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "FormMain";
+            this.Name = "fMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
