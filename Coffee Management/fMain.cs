@@ -20,5 +20,11 @@ namespace Coffee_Management
         {
 
         }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.AutoScaleMode = AutoScaleMode.None;
+        }
     }
 }

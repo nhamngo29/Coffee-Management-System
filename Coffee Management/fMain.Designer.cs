@@ -114,7 +114,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager});
-            this.ribbon.Size = new System.Drawing.Size(1232, 158);
+            this.ribbon.Size = new System.Drawing.Size(1228, 158);
             // 
             // btnShowForm
             // 
@@ -415,12 +415,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 536);
+            this.ClientSize = new System.Drawing.Size(1228, 536);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Image = global::Coffee_Management.Properties.Resources.logoo;
             this.Name = "fMain";
             this.Ribbon = this.ribbon;
             this.Text = "Coffee Z";
+            this.Load += new System.EventHandler(this.fMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
