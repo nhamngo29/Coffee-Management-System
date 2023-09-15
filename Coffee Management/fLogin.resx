@@ -288,9 +288,6 @@
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="btnRemoveAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -342,6 +339,9 @@
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
   <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -375,6 +375,9 @@
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 264</value>
   </data>
+  <data name="&gt;&gt;txtCaptcha.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
@@ -384,8 +387,8 @@
   <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 424</value>
   </data>
-  <data name="txtCaptcha.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -398,6 +401,9 @@
   </data>
   <data name="btnEyePassword.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
   </data>
   <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -622,9 +628,6 @@
   <data name="txtUserName.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
   <data name="&gt;&gt;txtPassword.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -829,8 +832,8 @@
   <data name="&gt;&gt;pictureBox5.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 177</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>fLogin</value>
   </data>
   <data name="btnEyePassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>223, 235</value>
@@ -844,26 +847,20 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="btnLogin.Text" xml:space="preserve">
-    <value>ĐĂNG NHẬP</value>
-  </data>
   <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>fLogin</value>
-  </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Thoát</value>
+  </data>
+  <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>55, 238</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 329</value>
-  </data>
-  <data name="&gt;&gt;btnLogin.ZOrder" xml:space="preserve">
-    <value>17</value>
   </data>
   <data name="btnRemoveAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 29</value>
@@ -899,14 +896,14 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.XtraForm, DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtCaptcha.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="btnResertCaptch.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -959,6 +956,9 @@
   <data name="btnResertCaptch.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 29</value>
   </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 177</value>
+  </data>
   <data name="&gt;&gt;panel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -977,14 +977,14 @@
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>204, 402</value>
   </data>
-  <data name="btnResertCaptch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnResertCaptch.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 351</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;panel4.Name" xml:space="preserve">
     <value>panel4</value>
@@ -1081,6 +1081,9 @@
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 27</value>
   </data>
+  <data name="btnResertCaptch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
   <data name="&gt;&gt;btnResertCaptch.Name" xml:space="preserve">
     <value>btnResertCaptch</value>
   </data>
@@ -1092,9 +1095,6 @@
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>98, 463</value>
-  </data>
-  <data name="&gt;&gt;txtUserName.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
@@ -1108,8 +1108,8 @@
   <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;btnLogin.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 1</value>
@@ -1120,26 +1120,26 @@
   <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
     <value>48</value>
   </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;txtUserName.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
   </data>
-  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>ĐĂNG NHẬP</value>
   </data>
   <data name="&gt;&gt;panel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>52</value>
-  </data>
-  <data name="&gt;&gt;txtCaptcha.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="btnRemoveAll.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -1147,8 +1147,8 @@
   <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 238</value>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnLogin.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>

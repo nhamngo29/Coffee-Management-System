@@ -65,7 +65,7 @@
             // txtUserName
             // 
             resources.ApplyResources(this.txtUserName, "txtUserName");
-            this.txtUserName.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtUserName.BackColor = System.Drawing.Color.White;
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.txtUserName.Name = "txtUserName";
@@ -88,7 +88,7 @@
             // txtCaptcha
             // 
             resources.ApplyResources(this.txtCaptcha, "txtCaptcha");
-            this.txtCaptcha.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtCaptcha.BackColor = System.Drawing.Color.White;
             this.txtCaptcha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCaptcha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.txtCaptcha.Name = "txtCaptcha";
@@ -103,7 +103,7 @@
             // panel
             // 
             resources.ApplyResources(this.panel, "panel");
-            this.panel.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel.BackColor = System.Drawing.Color.White;
             this.panel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.panel.Name = "panel";
             // 
@@ -157,7 +157,7 @@
             resources.ApplyResources(this.txtPassword, "txtPassword");
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.txtPassword.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPassword.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txtPassword.Properties.Appearance.Options.UseBackColor = true;
             this.txtPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtPassword.Properties.UseSystemPasswordChar = true;
@@ -190,6 +190,8 @@
             // fLogin
             // 
             resources.ApplyResources(this, "$this");
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnEyePassword);
             this.Controls.Add(this.txtPassword);
