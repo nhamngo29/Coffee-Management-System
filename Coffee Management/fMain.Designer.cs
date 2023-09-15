@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnShowForm = new DevExpress.XtraBars.BarButtonItem();
@@ -59,24 +60,25 @@
             this.btnViewDiscount = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageManager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupCateogry = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupStatictis = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
-            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
             // 
+            this.ribbon.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(45, 44, 45, 44);
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbon.SearchEditItem,
             this.ribbon.ExpandCollapseItem,
+            this.ribbon.SearchEditItem,
             this.btnShowForm,
             this.barSubItem1,
             this.btnViewFood,
@@ -109,12 +111,14 @@
             this.skinDropDownButtonItem1,
             this.skinPaletteDropDownButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbon.MaxItemId = 36;
             this.ribbon.Name = "ribbon";
+            this.ribbon.OptionsMenuMinWidth = 495;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager});
-            this.ribbon.Size = new System.Drawing.Size(1228, 158);
+            this.ribbon.Size = new System.Drawing.Size(1842, 231);
             // 
             // btnShowForm
             // 
@@ -345,6 +349,17 @@
             this.barButtonItem16.LargeWidth = 75;
             this.barButtonItem16.Name = "barButtonItem16";
             // 
+            // skinDropDownButtonItem1
+            // 
+            this.skinDropDownButtonItem1.Id = 34;
+            this.skinDropDownButtonItem1.LargeWidth = 75;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Id = 35;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -366,6 +381,13 @@
             this.ribbonPageGroupSystem.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroupSystem.Name = "ribbonPageGroupSystem";
             this.ribbonPageGroupSystem.Text = "Hệ thống";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.skinDropDownButtonItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.skinPaletteDropDownButtonItem1);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Giao diện";
             // 
             // ribbonPageManager
             // 
@@ -393,31 +415,14 @@
             this.ribbonPageGroupStatictis.Name = "ribbonPageGroupStatictis";
             this.ribbonPageGroupStatictis.Text = "Thống kê";
             // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.skinDropDownButtonItem1);
-            this.ribbonPageGroup2.ItemLinks.Add(this.skinPaletteDropDownButtonItem1);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Giao diện";
-            // 
-            // skinDropDownButtonItem1
-            // 
-            this.skinDropDownButtonItem1.Id = 34;
-            this.skinDropDownButtonItem1.LargeWidth = 75;
-            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
-            // 
-            // skinPaletteDropDownButtonItem1
-            // 
-            this.skinPaletteDropDownButtonItem1.Id = 35;
-            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
-            // 
             // fMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 536);
+            this.ClientSize = new System.Drawing.Size(1842, 783);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Image = global::Coffee_Management.Properties.Resources.logoo;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fMain";
             this.Ribbon = this.ribbon;
             this.Text = "Coffee Z";
