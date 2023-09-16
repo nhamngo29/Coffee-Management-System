@@ -22,5 +22,10 @@ namespace Coffee_Management
         {
 
         }
+
+        private void fSales_Load_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

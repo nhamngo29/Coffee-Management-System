@@ -20,11 +20,39 @@ namespace Coffee_Management
         {
 
         }
-
+        private Form CheckFormExist(Type fType)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f.GetType() == fType)
+                    return f;
+            }
+            return null;
+        }
         private void fMain_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.AutoScaleMode = AutoScaleMode.None;
+            IsMdiContainer = true;
+            Form frm = this.CheckFormExist(typeof(fSales));
+
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fSales f = new fSales();
+                f.MaximizeBox = true;
+                f.MdiParent = this;
+                f.Show();
+            }
+
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
         }
     }
 }
