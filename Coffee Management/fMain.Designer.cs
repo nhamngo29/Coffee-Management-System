@@ -422,7 +422,8 @@
             this.ClientSize = new System.Drawing.Size(1842, 783);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Image = global::Coffee_Management.Properties.Resources.logoo;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fMain";
             this.Ribbon = this.ribbon;
             this.Text = "Coffee Z";
