@@ -34,15 +34,15 @@ namespace Coffee_Management
             this.WindowState = FormWindowState.Maximized;
             this.AutoScaleMode = AutoScaleMode.None;
             IsMdiContainer = true;
-            Form frm = this.CheckFormExist(typeof(fSales));
-
+            //Form frm = this.CheckFormExist(typeof(fSales));
+            Form frm=this.CheckFormExist(typeof(fAccountInformation));
             if (frm != null)
             {
                 frm.Activate();
             }
             else
             {
-                fSales f = new fSales();
+                fAccountInformation f = new fAccountInformation();
                 f.MaximizeBox = true;
                 f.MdiParent = this;
                 f.Show();
