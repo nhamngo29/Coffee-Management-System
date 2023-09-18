@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnShowForm = new DevExpress.XtraBars.BarButtonItem();
@@ -434,7 +433,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NgayGio});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 377);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 512);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1063, 22);
             this.statusStrip1.TabIndex = 1;
@@ -455,7 +454,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 399);
+            this.ClientSize = new System.Drawing.Size(1063, 534);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

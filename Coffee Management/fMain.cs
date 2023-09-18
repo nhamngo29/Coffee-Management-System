@@ -16,10 +16,6 @@ namespace Coffee_Management
             InitializeComponent();
         }
 
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-        }
         private Form CheckFormExist(Type fType)
         {
             foreach (Form f in MdiChildren)
@@ -49,11 +45,6 @@ namespace Coffee_Management
             timer1.Start();
         }
 
-        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            
-        }
-
         private void btnDatBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckFormExist(typeof(fReservation));
@@ -74,9 +65,5 @@ namespace Coffee_Management
             this.NgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
 
-        private void ribbon_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
