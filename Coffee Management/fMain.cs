@@ -65,5 +65,19 @@ namespace Coffee_Management
             this.NgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
 
+        private void btnRevenue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fReservation));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fRevenue f = new fRevenue();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

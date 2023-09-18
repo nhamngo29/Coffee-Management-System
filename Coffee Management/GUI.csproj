@@ -153,6 +153,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\icons8-export-excel-30.png" />
+    <Content Include="Resources\icons8-export-excel-48.png" />
+    <Content Include="Resources\icons8-eye-30.png" />
+    <Content Include="Resources\icons8-eye-50.png" />
     <Content Include="Resources\logoo.png" />
   </ItemGroup>
   <ItemGroup>

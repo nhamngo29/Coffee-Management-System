@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="DevExpress.Data.v21.2" name="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="btnShowBill.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="simpleButton1.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIxLjIsIFZlcnNpb249MjEuMi42
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -136,4 +136,38 @@
         Pg0KPC9zdmc+Cw==
 </value>
   </data>
+  <metadata name="billBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>217, 17</value>
+  </metadata>
+  <metadata name="coffeeManagementDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnShowBill.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAALZSURBVEhLzZdrSFNhGMf9FoEhqUm3LxlFRUGQwTY259o5
+        aQkJfjB3upDrZBcU1HSuG6Zd1G5SUWiylAgNQ2ZftIIoCy1ICIP6YoOiD0pQUuRtuj3tfX3fdcYee3UD
+        6Q8/ODznef5/Ht6XAyfmv1JcUUryXFlYrFvBxiNXbIkO5kpcqcEfW6Q7wiwiE2Ys4kb3LUhymqMLx4xF
+        vPR0Qnv/g+jCMWMRJPjT9zfRhWPGInhwVOGYsQhtcMThmLGI64HLdb/vXgil7rMQW6zzMVuxMONoYLZi
+        YcNLys1Q2FZDWVeVFfIuv6WS1tefC61zmK1Y2DDh0fvnQNTa1xWs5bjKaG3g2xdIcJhC+jnMVixsmEA2
+        GpkYA5/fB7rLe8nXCj4Oemhw5u0CdIbAbMXChjk1T100yN3/DAraqulzS18n2sthtmJhw5wkZxp8HR4C
+        v98PP0Z+wvDoL0iu2In2cpitWNiwlvKOOrop0YXHjWiPFmYrFjbMiS8zwYfAuXqnJmF80ksvVaIjFe3l
+        MFuxsGFOVVcD3bT+1UO42d1Kn6ufuNBeDrMVCxsmbK7OgbHJCfg9PgqrKzJh5SmZnvHElBdSam3Bvvhy
+        AxjvyEGYrVjaMM6i43p4MfA2bMPKznpa6/G8oz2kFu80gLU5HaQTu0EqtYFkU5tlm3qF2c8sbqplS20u
+        3H3tBlevG5adtAbrSU4LNPa003ekh9R4sGzPA1lRp7Gpn5n9zOKmkTKvwQlOPaypMVM2XEqbv+DlZ4zT
+        51q3C6xXsyjyAfvfYEUdsiqHJIKs2FNZVKgwYxGLHXowNcogXczWhqFsV9R8FhUqzHg2LD1tBEtTYGtH
+        LhpIkBS1nsWECzOdLavOm8DalAHSsX1YcG9GRuECFhMuzHAubLpmAWvDDpDzNJdLUQe37T/8778N7a9J
+        JCQ6t67dWGs0G0qyj0qK3SvbDnrT96gmZj8/Ihcp/DLFxPwBZf1AmSBOwHsAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="billTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>364, 17</value>
+  </metadata>
+  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>505, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>60</value>
+  </metadata>
 </root>

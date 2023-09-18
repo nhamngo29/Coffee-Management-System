@@ -58,7 +58,7 @@
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.btnViewDiscount = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRevenue = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
@@ -73,8 +73,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.NgayGio = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -110,7 +112,7 @@
             this.barButtonItem12,
             this.barButtonItem13,
             this.btnViewDiscount,
-            this.barButtonItem15,
+            this.btnRevenue,
             this.barButtonItem16,
             this.skinDropDownButtonItem1,
             this.skinPaletteDropDownButtonItem1,
@@ -337,13 +339,14 @@
             this.btnViewDiscount.LargeWidth = 75;
             this.btnViewDiscount.Name = "btnViewDiscount";
             // 
-            // barButtonItem15
+            // btnRevenue
             // 
-            this.barButtonItem15.Caption = "Doanh thu";
-            this.barButtonItem15.Id = 32;
-            this.barButtonItem15.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem15.ImageOptions.SvgImage")));
-            this.barButtonItem15.LargeWidth = 75;
-            this.barButtonItem15.Name = "barButtonItem15";
+            this.btnRevenue.Caption = "Doanh thu";
+            this.btnRevenue.Id = 32;
+            this.btnRevenue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRevenue.ImageOptions.SvgImage")));
+            this.btnRevenue.LargeWidth = 75;
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevenue_ItemClick);
             // 
             // barButtonItem16
             // 
@@ -424,7 +427,7 @@
             // 
             // ribbonPageGroupStatictis
             // 
-            this.ribbonPageGroupStatictis.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroupStatictis.ItemLinks.Add(this.btnRevenue);
             this.ribbonPageGroupStatictis.ItemLinks.Add(this.barButtonItem16);
             this.ribbonPageGroupStatictis.Name = "ribbonPageGroupStatictis";
             this.ribbonPageGroupStatictis.Text = "Thống kê";
@@ -450,6 +453,10 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,9 +466,9 @@
             this.Controls.Add(this.ribbon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.Image = global::Coffee_Management.Properties.Resources.logoo;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "fMain";
             this.Ribbon = this.ribbon;
@@ -473,6 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,7 +516,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem btnViewDiscount;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem btnRevenue;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
@@ -523,6 +531,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel NgayGio;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
 
