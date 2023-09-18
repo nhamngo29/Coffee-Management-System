@@ -11,21 +11,17 @@ using System.Windows.Forms;
 
 namespace Coffee_Management
 {
-    public partial class fSales : DevExpress.XtraEditors.XtraForm
+    public partial class fAccountInformation : DevExpress.XtraEditors.XtraForm
     {
-        public fSales()
+        public fAccountInformation()
         {
             InitializeComponent();
+           
         }
 
-        private void fSales_Load(object sender, EventArgs e)
+        private void btnAccept_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void fSales_Load_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
