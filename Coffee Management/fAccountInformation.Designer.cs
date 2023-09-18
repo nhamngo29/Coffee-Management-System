@@ -302,8 +302,8 @@
             // btnAccept
             // 
             this.btnAccept.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAccept.BackColor = System.Drawing.Color.Silver;
-            this.btnAccept.BackgroundColor = System.Drawing.Color.Silver;
+            this.btnAccept.BackColor = System.Drawing.Color.White;
+            this.btnAccept.BackgroundColor = System.Drawing.Color.White;
             this.btnAccept.BorderColor = System.Drawing.Color.Black;
             this.btnAccept.BorderRadius = 20;
             this.btnAccept.BorderSize = 1;
@@ -322,8 +322,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Silver;
-            this.btnCancel.BackgroundColor = System.Drawing.Color.Silver;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackgroundColor = System.Drawing.Color.White;
             this.btnCancel.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.BorderRadius = 20;
             this.btnCancel.BorderSize = 1;

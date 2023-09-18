@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnShowForm = new DevExpress.XtraBars.BarButtonItem();
@@ -62,6 +63,7 @@
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.btnDatBan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -69,7 +71,11 @@
             this.ribbonPageManager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupCateogry = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupStatictis = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.NgayGio = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbon
@@ -108,14 +114,16 @@
             this.barButtonItem15,
             this.barButtonItem16,
             this.skinDropDownButtonItem1,
-            this.skinPaletteDropDownButtonItem1});
+            this.skinPaletteDropDownButtonItem1,
+            this.btnDatBan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 36;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager});
-            this.ribbon.Size = new System.Drawing.Size(1228, 158);
+            this.ribbon.Size = new System.Drawing.Size(1063, 158);
+            this.ribbon.UseWaitCursor = true;
             // 
             // btnShowForm
             // 
@@ -261,7 +269,6 @@
             this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
             this.barButtonItem6.LargeWidth = 75;
             this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem7
             // 
@@ -358,6 +365,15 @@
             this.skinPaletteDropDownButtonItem1.Id = 35;
             this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
             // 
+            // btnDatBan
+            // 
+            this.btnDatBan.Caption = "Đặt bàn";
+            this.btnDatBan.Id = 36;
+            this.btnDatBan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDatBan.ImageOptions.Image")));
+            this.btnDatBan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDatBan.ImageOptions.LargeImage")));
+            this.btnDatBan.Name = "btnDatBan";
+            this.btnDatBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDatBan_ItemClick);
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -370,6 +386,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnDatBan);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Chức năng";
             // 
@@ -413,21 +430,49 @@
             this.ribbonPageGroupStatictis.Name = "ribbonPageGroupStatictis";
             this.ribbonPageGroupStatictis.Text = "Thống kê";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NgayGio});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 377);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1063, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // NgayGio
+            // 
+            this.NgayGio.Name = "NgayGio";
+            this.NgayGio.Size = new System.Drawing.Size(39, 17);
+            this.NgayGio.Text = "Time: ";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 536);
+            this.ClientSize = new System.Drawing.Size(1063, 399);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbon);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.Image = global::Coffee_Management.Properties.Resources.logoo;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fMain";
             this.Ribbon = this.ribbon;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coffee Z";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,6 +519,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageManager;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupCateogry;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupStatictis;
+        private DevExpress.XtraBars.BarButtonItem btnDatBan;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel NgayGio;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

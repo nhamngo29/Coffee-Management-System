@@ -40,6 +40,9 @@
     <Reference Include="DevExpress.XtraBars.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoffeeManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="fAccountInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +77,12 @@
     </Compile>
     <Compile Include="fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fReservation.Designer.cs">
+      <DependentUpon>fReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="fSales.cs">
       <SubType>Form</SubType>
@@ -90,6 +104,9 @@
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fReservation.resx">
+      <DependentUpon>fReservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSales.resx">
       <DependentUpon>fSales.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +122,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="CoffeeManagementDataSet.xsc">
+      <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CoffeeManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CoffeeManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CoffeeManagementDataSet.xss">
+      <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

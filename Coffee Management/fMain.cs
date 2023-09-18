@@ -31,28 +31,52 @@ namespace Coffee_Management
         }
         private void fMain_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            this.AutoScaleMode = AutoScaleMode.None;
+
             IsMdiContainer = true;
-            //Form frm = this.CheckFormExist(typeof(fSales));
-            Form frm=this.CheckFormExist(typeof(fAccountInformation));
+            Form frm = this.CheckFormExist(typeof(fSales));
+            //Form frm=this.CheckFormExist(typeof(fAccountInformation));
             if (frm != null)
             {
                 frm.Activate();
             }
             else
             {
-                fAccountInformation f = new fAccountInformation();
+                fSales f = new fSales();
                 f.MaximizeBox = true;
                 f.MdiParent = this;
                 f.Show();
             }
-
+            timer1.Start();
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             
+        }
+
+        private void btnDatBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fReservation));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fReservation f = new fReservation();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.NgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
