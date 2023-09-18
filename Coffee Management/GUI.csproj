@@ -84,6 +84,12 @@
     <Compile Include="fReservation.Designer.cs">
       <DependentUpon>fReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="fRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fRevenue.Designer.cs">
+      <DependentUpon>fRevenue.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fReservation.resx">
       <DependentUpon>fReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fRevenue.resx">
+      <DependentUpon>fRevenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSales.resx">
       <DependentUpon>fSales.cs</DependentUpon>
