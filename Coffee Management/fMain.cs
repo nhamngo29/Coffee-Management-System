@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars.Ribbon;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,8 @@ namespace Coffee_Management
         }
         private void fMain_Load(object sender, EventArgs e)
         {
-
+            this.SetStyle((ControlStyles)RibbonControlStyle.Office2019, true);
+            this.LookAndFeel.SetSkinStyle("Office 2019 Colorful");
             IsMdiContainer = true;
             Form frm = this.CheckFormExist(typeof(fSales));
             //Form frm=this.CheckFormExist(typeof(fAccountInformation));

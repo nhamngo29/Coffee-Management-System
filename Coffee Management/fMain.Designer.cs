@@ -127,6 +127,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager});
+            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbon.Size = new System.Drawing.Size(1063, 158);
             this.ribbon.UseWaitCursor = true;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -469,20 +470,22 @@
             // 
             // fMain
             // 
+            this.Appearance.FontStyleDelta = System.Drawing.FontStyle.Strikeout;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 534);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbon);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Strikeout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.Image = global::Coffee_Management.Properties.Resources.logoo;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fMain";
             this.Ribbon = this.ribbon;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coffee Z";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
