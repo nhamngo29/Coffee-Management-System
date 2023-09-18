@@ -461,6 +461,7 @@
             this.IconOptions.Image = global::Coffee_Management.Properties.Resources.logoo;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "fMain";
             this.Ribbon = this.ribbon;
