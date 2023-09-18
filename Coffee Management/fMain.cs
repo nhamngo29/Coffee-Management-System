@@ -14,6 +14,7 @@ namespace Coffee_Management
         public fMain()
         {
             InitializeComponent();
+            
         }
 
         private Form CheckFormExist(Type fType)
@@ -78,6 +79,11 @@ namespace Coffee_Management
                 f.MdiParent = this;
                 f.Show();
             }
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
