@@ -28,9 +28,9 @@ namespace Coffee_Management.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PQ4U60\\SERVER01;Initial Catalog=CoffeeManagement;User ID=sa;" +
             "Password=02092002Aa")]
-        public string CoffeeManagementConnectionString {
+        public string ConnectionString {
             get {
-                return ((string)(this["CoffeeManagementConnectionString"]));
+                return ((string)(this["ConnectionString"]));
             }
         }
     }

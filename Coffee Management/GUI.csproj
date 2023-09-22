@@ -35,16 +35,48 @@
     <Reference Include="DevExpress.BonusSkins.v21.2" />
     <Reference Include="DevExpress.Data.Desktop.v21.2" />
     <Reference Include="DevExpress.Data.v21.2" />
+    <Reference Include="DevExpress.ExpressApp.Reports.Win.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Win.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v21.2.Core" />
     <Reference Include="DevExpress.Utils.v21.2" />
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v21.2" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="LibrarySQL">
+      <HintPath>..\LibrarySQL\bin\Debug\LibrarySQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Private.DataContractSerialization, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Private.DataContractSerialization.4.3.0\lib\netstandard1.3\System.Private.DataContractSerialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.TypeExtensions.4.3.0\lib\net462\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,12 +85,23 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoffeeManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="f.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f.Designer.cs">
+      <DependentUpon>f.cs</DependentUpon>
     </Compile>
     <Compile Include="fAccountInformation.cs">
       <SubType>Form</SubType>
@@ -96,8 +139,31 @@
     <Compile Include="fSales.Designer.cs">
       <DependentUpon>fSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSplah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSplah.Designer.cs">
+      <DependentUpon>fSplah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestConnection.cs" />
+    <EmbeddedResource Include="f.resx">
+      <DependentUpon>f.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fAccountInformation.resx">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +185,9 @@
     <EmbeddedResource Include="fSales.resx">
       <DependentUpon>fSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSplah.resx">
+      <DependentUpon>fSplah.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +199,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="CoffeeManagementDataSet.xsc">
       <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
@@ -142,6 +217,7 @@
     <None Include="CoffeeManagementDataSet.xss">
       <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,6 +229,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\capheden.png" />
+    <Content Include="Resources\Hinh10.jpg" />
+    <Content Include="Resources\Hinh11.jpg" />
+    <Content Include="Resources\Hinh12.jpg" />
+    <Content Include="Resources\Hinh13.jpg" />
+    <Content Include="Resources\Hinh14.jpg" />
+    <Content Include="Resources\Hinh15.jpg" />
+    <Content Include="Resources\Hinh16.jpg" />
+    <Content Include="Resources\Hinh17.jpg" />
+    <Content Include="Resources\Hinh2.jpg" />
+    <Content Include="Resources\Hinh3.jpg" />
+    <Content Include="Resources\Hinh4.jpg" />
+    <Content Include="Resources\Hinh5.jpg" />
+    <Content Include="Resources\Hinh6.jpg" />
+    <Content Include="Resources\Hinh7.jpg" />
+    <Content Include="Resources\Hinh8.jpg" />
+    <Content Include="Resources\Hinh9.jpg" />
+    <Content Include="Resources\Hình-App_3006021-Cà-Phê-Đen.jpg" />
+    <Content Include="Resources\icons8-merge-horizontal-30.png" />
+    <Content Include="Resources\icons8-pay-30.png" />
+    <Content Include="Resources\icons8-restaurant-30.png" />
+    <Content Include="Resources\icons8-swap-30.png" />
+    <Content Include="Resources\zcoffee.png" />
     <Content Include="Resources\icons8-export-excel-30.png" />
     <Content Include="Resources\icons8-export-excel-48.png" />
     <Content Include="Resources\icons8-eye-30.png" />
@@ -160,9 +259,17 @@
     <Content Include="Resources\logoo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{3BFE0E9C-FD69-453E-9020-AA64EA8E846E}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomComponent\CustomComponent.csproj">
       <Project>{C85243ED-2A42-4297-9FB4-804BBB32B194}</Project>
       <Name>CustomComponent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{29F90C89-3203-4E10-A333-0C40C9B033E1}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

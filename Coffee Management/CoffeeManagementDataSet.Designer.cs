@@ -5805,7 +5805,7 @@ SELECT UserName, DisplayName, Password, TypeID, IdSataff FROM Account WHERE (Use
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6200,7 +6200,7 @@ SELECT UserName, DisplayName, Password, TypeID, IdSataff FROM Account WHERE (Use
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6552,7 +6552,7 @@ SELECT ID, CheckIn, CheckOut, TableID, Discount, TotalPrice, Status, IdSataff FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6973,7 +6973,7 @@ SELECT ID, BillID, FoodID, Amount FROM BillInfo WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7278,7 +7278,7 @@ SELECT ID, BillID, FoodID, Amount FROM BillInfo WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7608,7 +7608,7 @@ SELECT ID, NumPercent, Quantity FROM discount WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7990,7 +7990,7 @@ SELECT ID, NumPercent, Quantity FROM discount WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8358,7 +8358,7 @@ SELECT ID, Name, Phone, Quantity, Time, Status, IdTable, IdSataff FROM Reservati
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8874,7 +8874,7 @@ SELECT ID, Name, DOB FROM staff WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9229,7 +9229,7 @@ SELECT ID, Name, DOB FROM staff WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9578,7 +9578,7 @@ SELECT Id, Name, IdCategory FROM TypeFood WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.CoffeeManagementConnectionString;
+            this._connection.ConnectionString = global::Coffee_Management.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

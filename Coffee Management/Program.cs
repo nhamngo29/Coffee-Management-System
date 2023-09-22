@@ -1,5 +1,6 @@
 ﻿using DevExpress.Skins;
 using DevExpress.UserSkins;
+using DevExpress.XtraWaitForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,16 @@ namespace Coffee_Management
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static fSales _fSales = null;
+        public static fLogin _fLogin = null;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fMain());
+            _fLogin=new fLogin();
+            Application.Run(_fLogin);
         }
     }
 }

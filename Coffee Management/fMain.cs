@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars.Ribbon;
+using LibrarySQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,12 +28,26 @@ namespace Coffee_Management
             }
             return null;
         }
+        void testConnection()
+        {
+            SQL_Connection a = new SQL_Connection("DESKTOP-0PQ4U60\\SERVER01", "CoffeeManagement", "sa", "02092002Aa");
+            a.CreateConnection();
+            if(a.TestConnection())
+            {
+                MessageBox.Show("123", "thanh cong");
+            }    
+            else
+            {
+                MessageBox.Show("123", "Loi");
+            }    
+        }
         private void fMain_Load(object sender, EventArgs e)
         {
             this.SetStyle((ControlStyles)RibbonControlStyle.Office2019, true);
+            testConnection();
             this.LookAndFeel.SetSkinStyle("Office 2019 Colorful");
             IsMdiContainer = true;
-            Form frm = this.CheckFormExist(typeof(fSales));
+            Form frm = this.CheckFormExist(typeof(f));
             //Form frm=this.CheckFormExist(typeof(fAccountInformation));
             if (frm != null)
             {
@@ -40,7 +55,7 @@ namespace Coffee_Management
             }
             else
             {
-                fSales f = new fSales();
+                f f = new f();
                 f.MaximizeBox = true;
                 f.MdiParent = this;
                 f.Show();

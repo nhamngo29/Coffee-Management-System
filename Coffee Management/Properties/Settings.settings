@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Coffee_Management.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="CoffeeManagementConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;ConnectionString&gt;Data Source=DESKTOP-0PQ4U60\SERVER01;Initial Catalog=CoffeeManagement;User ID=sa;Password=02092002Aa&lt;/ConnectionString&gt;
