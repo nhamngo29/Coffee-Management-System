@@ -12,10 +12,10 @@ using System.Drawing;
 
 namespace Coffee_Management
 {
-    public partial class f : DevExpress.XtraEditors.XtraForm
+    public partial class fSales : DevExpress.XtraEditors.XtraForm
     {
         private SimpleButton currentClickButton = new SimpleButton();
-        public f()
+        public fSales()
         {
             InitializeComponent();
             currentClickButton = null;

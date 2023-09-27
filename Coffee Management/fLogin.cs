@@ -1,4 +1,9 @@
-﻿using DevExpress.XtraEditors;
+﻿using BUS;
+using DAO;
+using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using DevExpress.XtraWaitForm;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +22,16 @@ namespace Coffee_Management
         public fLogin()
         {
             InitializeComponent();
+            this.Load += FLogin_Load;
         }
+
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            txtUserName.Focus();
+            Reset();
+        }
+
         private Bitmap drawImage(string txt, int w, int h)
         {
             w = w + 20;
@@ -83,6 +97,87 @@ namespace Coffee_Management
         {
             Reset();
             this.StartPosition= FormStartPosition.CenterScreen;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(fSplah));
+            Account account = new Account(txtUserName.Text, txtPassword.Text);
+            SplashScreenManager.CloseForm();
+            try
+            {
+                if (AccountDAO.Instance.CheckLogin(account))//kiểm tra đang nhập
+                {
+                    if (txtCaptcha.Text == captchaText)//kiểm tra mã captcha
+                    {
+
+                        Account acc = AccountBUS.Instance.GetAccountByUserName(account.UserName);//lấy account theo username
+                        if (txtPassword.Text == "1")//mật khẩu nhập vào là một thì sẽ chuyển đến trang profile để đổi mật khẩu
+                        {
+                            fAccountInformation form = new fAccountInformation(acc);
+                            this.Hide();
+                            form.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                        {
+                            txtPassword.Text = string.Empty;
+                            txtUserName.Text = string.Empty;
+                            txtCaptcha.Text = string.Empty;
+                            Program._fMain = new fMain(acc);//chuyển đến trang manager
+                            this.Hide();
+                            Program._fMain.ShowDialog();
+                            this.Show();
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Bạn đã nhập sai mã captch");
+                        txtCaptcha.Clear();
+                        txtCaptcha.Focus();
+                        Reset();
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi: " + ex);
+            }
+        }
+
+        private void btnEyePassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Properties.UseSystemPasswordChar = !txtPassword.Properties.UseSystemPasswordChar;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có thật sự muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                this.Close();
+        }
+
+        private void fLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+
+        private void btnRemoveAll_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = string.Empty;
+            txtUserName.Clear();
+            txtUserName.Focus();
+        }
+
+        private void btnResertCaptch_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }

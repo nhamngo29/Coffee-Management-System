@@ -1,6 +1,6 @@
 ﻿namespace Coffee_Management
 {
-    partial class f
+    partial class fSales
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSales));
             this.grBanAn = new System.Windows.Forms.GroupBox();
+            this.flpListTable = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCheck = new CustomComponent.ButtonBoTron();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.lkedPickCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.lkedPickFood = new DevExpress.XtraEditors.LookUpEdit();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.flpListTable = new System.Windows.Forms.FlowLayoutPanel();
             this.grBanAn.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,6 +88,15 @@
             this.grBanAn.TabStop = false;
             this.grBanAn.Text = "Bán ăn";
             this.grBanAn.Enter += new System.EventHandler(this.grBanAn_Enter);
+            // 
+            // flpListTable
+            // 
+            this.flpListTable.AutoScroll = true;
+            this.flpListTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpListTable.Location = new System.Drawing.Point(3, 29);
+            this.flpListTable.Name = "flpListTable";
+            this.flpListTable.Size = new System.Drawing.Size(530, 775);
+            this.flpListTable.TabIndex = 31;
             // 
             // groupBox2
             // 
@@ -489,23 +498,14 @@
             this.imageList.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // flpListTable
-            // 
-            this.flpListTable.AutoScroll = true;
-            this.flpListTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpListTable.Location = new System.Drawing.Point(3, 29);
-            this.flpListTable.Name = "flpListTable";
-            this.flpListTable.Size = new System.Drawing.Size(530, 775);
-            this.flpListTable.TabIndex = 31;
-            // 
-            // f
+            // fSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 820);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grBanAn);
-            this.Name = "f";
+            this.Name = "fSales";
             this.Text = "Gọi món";
             this.grBanAn.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

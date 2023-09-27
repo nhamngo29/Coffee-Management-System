@@ -14,7 +14,7 @@ namespace Coffee_Management
         /// The main entry point for the application.
         /// </summary>
         /// 
-        public static fSales _fSales = null;
+        public static fMain _fMain = null;
         public static fLogin _fLogin = null;
         [STAThread]
         static void Main()

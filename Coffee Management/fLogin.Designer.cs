@@ -61,6 +61,7 @@
             this.btnEyePassword.Appearance.Options.UseBorderColor = true;
             this.btnEyePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEyePassword.ImageOptions.SvgImage")));
             this.btnEyePassword.Name = "btnEyePassword";
+            this.btnEyePassword.Click += new System.EventHandler(this.btnEyePassword_Click);
             // 
             // txtUserName
             // 
@@ -77,6 +78,7 @@
             this.btnResertCaptch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.btnResertCaptch.Name = "btnResertCaptch";
             this.btnResertCaptch.UseVisualStyleBackColor = true;
+            this.btnResertCaptch.Click += new System.EventHandler(this.btnResertCaptch_Click);
             // 
             // panel5
             // 
@@ -114,6 +116,7 @@
             this.btnRemoveAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.btnRemoveAll.Name = "btnRemoveAll";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
             // 
             // label2
             // 
@@ -128,6 +131,7 @@
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // panel2
             // 
@@ -151,6 +155,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -214,6 +219,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("fLogin.IconOptions.LargeImage")));
             this.Name = "fLogin";
             this.Load += new System.EventHandler(this.fLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

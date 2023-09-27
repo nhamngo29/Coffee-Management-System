@@ -32,6 +32,14 @@
             this.lbBack = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtRetypePass = new DevExpress.XtraEditors.TextEdit();
+            this.txtNewPassword = new DevExpress.XtraEditors.TextEdit();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.txtDisplayName = new DevExpress.XtraEditors.TextEdit();
+            this.txtUserName = new DevExpress.XtraEditors.TextEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,24 +50,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.txtRetypePass = new DevExpress.XtraEditors.TextEdit();
-            this.txtNewPassword = new DevExpress.XtraEditors.TextEdit();
-            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.txtDisplayName = new DevExpress.XtraEditors.TextEdit();
-            this.txtUserName = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.btnAccept = new CustomComponent.ButtonBoTron();
             this.btnCancel = new CustomComponent.ButtonBoTron();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRetypePass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNewPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDisplayName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -121,6 +121,88 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(353, 288);
             this.panel2.TabIndex = 10;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(144, 63);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.textEdit1.Size = new System.Drawing.Size(192, 18);
+            this.textEdit1.TabIndex = 48;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(13, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 18);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Chức vụ:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel8.Location = new System.Drawing.Point(131, 83);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(205, 1);
+            this.panel8.TabIndex = 49;
+            // 
+            // txtRetypePass
+            // 
+            this.txtRetypePass.Location = new System.Drawing.Point(144, 236);
+            this.txtRetypePass.Name = "txtRetypePass";
+            this.txtRetypePass.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtRetypePass.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRetypePass.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtRetypePass.Properties.UseSystemPasswordChar = true;
+            this.txtRetypePass.Size = new System.Drawing.Size(192, 18);
+            this.txtRetypePass.TabIndex = 5;
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.Location = new System.Drawing.Point(144, 189);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtNewPassword.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNewPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtNewPassword.Properties.UseSystemPasswordChar = true;
+            this.txtNewPassword.Size = new System.Drawing.Size(192, 18);
+            this.txtNewPassword.TabIndex = 4;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(144, 142);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtPassword.Properties.Appearance.Options.UseBackColor = true;
+            this.txtPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(192, 18);
+            this.txtPassword.TabIndex = 3;
+            // 
+            // txtDisplayName
+            // 
+            this.txtDisplayName.Location = new System.Drawing.Point(144, 95);
+            this.txtDisplayName.Name = "txtDisplayName";
+            this.txtDisplayName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtDisplayName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDisplayName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtDisplayName.Size = new System.Drawing.Size(192, 18);
+            this.txtDisplayName.TabIndex = 2;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(144, 16);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtUserName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtUserName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtUserName.Size = new System.Drawing.Size(192, 18);
+            this.txtUserName.TabIndex = 1;
             // 
             // label7
             // 
@@ -217,88 +299,6 @@
             this.panel7.Size = new System.Drawing.Size(205, 1);
             this.panel7.TabIndex = 30;
             // 
-            // txtRetypePass
-            // 
-            this.txtRetypePass.Location = new System.Drawing.Point(144, 236);
-            this.txtRetypePass.Name = "txtRetypePass";
-            this.txtRetypePass.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtRetypePass.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRetypePass.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtRetypePass.Properties.UseSystemPasswordChar = true;
-            this.txtRetypePass.Size = new System.Drawing.Size(192, 18);
-            this.txtRetypePass.TabIndex = 5;
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.Location = new System.Drawing.Point(144, 189);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtNewPassword.Properties.Appearance.Options.UseBackColor = true;
-            this.txtNewPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtNewPassword.Properties.UseSystemPasswordChar = true;
-            this.txtNewPassword.Size = new System.Drawing.Size(192, 18);
-            this.txtNewPassword.TabIndex = 4;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(144, 142);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtPassword.Properties.Appearance.Options.UseBackColor = true;
-            this.txtPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtPassword.Properties.UseSystemPasswordChar = true;
-            this.txtPassword.Size = new System.Drawing.Size(192, 18);
-            this.txtPassword.TabIndex = 3;
-            // 
-            // txtDisplayName
-            // 
-            this.txtDisplayName.Location = new System.Drawing.Point(144, 95);
-            this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtDisplayName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDisplayName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtDisplayName.Size = new System.Drawing.Size(192, 18);
-            this.txtDisplayName.TabIndex = 2;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(144, 16);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtUserName.Properties.Appearance.Options.UseBackColor = true;
-            this.txtUserName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtUserName.Size = new System.Drawing.Size(192, 18);
-            this.txtUserName.TabIndex = 1;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(144, 63);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit1.Size = new System.Drawing.Size(192, 18);
-            this.textEdit1.TabIndex = 48;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(13, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 18);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Chức vụ:";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel8.Location = new System.Drawing.Point(131, 83);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(205, 1);
-            this.panel8.TabIndex = 49;
-            // 
             // btnAccept
             // 
             this.btnAccept.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -353,16 +353,17 @@
             this.MinimizeBox = false;
             this.Name = "fAccountInformation";
             this.Text = "fAccountInformation";
+            this.Load += new System.EventHandler(this.fAccountInformation_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRetypePass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNewPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDisplayName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

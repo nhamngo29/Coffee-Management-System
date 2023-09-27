@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +14,20 @@ namespace Coffee_Management
 {
     public partial class fAccountInformation : DevExpress.XtraEditors.XtraForm
     {
-        public fAccountInformation()
+        Account acc { get; set; }
+        public fAccountInformation(Account acc)
         {
             InitializeComponent();
+            this.acc = acc;
            
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fAccountInformation_Load(object sender, EventArgs e)
         {
 
         }
