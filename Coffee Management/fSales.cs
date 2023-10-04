@@ -9,6 +9,9 @@ using BUS;
 using DTO;
 using DevExpress.XtraPrinting;
 using System.Drawing;
+using System.IO;
+using System.Reflection;
+using static DevExpress.Skins.SolidColorHelper;
 
 namespace Coffee_Management
 {
@@ -125,8 +128,26 @@ namespace Coffee_Management
         }
         private void lkedPickFood_EditValueChanged(object sender, EventArgs e)
         {
-            Food a= FoodBUS.Instance.GetFoodByID((int)lkedPickFood.EditValue);
-            pbxBox.Image = Image.FromFile($@"D:\Learn\PhanTrienPhanMemUngDungThongMinh\Desktop\Coffee Management\Coffee Management\Resources\{a.Image}.jpg");
+            Food a = FoodBUS.Instance.GetFoodByID((int)lkedPickFood.EditValue);
+            string resourcesDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", a.Image+".jpg");
+            if (File.Exists(resourcesDirectory))
+            {
+                try
+                {
+                    // Đọc tệp hình ảnh
+                    using (var imageStream = File.OpenRead(resourcesDirectory))
+                    {
+                        Image image = Image.FromStream(imageStream);
+                        pbxBox.Image = image;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý ngoại lệ nếu có lỗi khi đọc tệp hình ảnh.
+                    Console.WriteLine("Lỗi khi đọc tệp hình ảnh: " + ex.Message);
+                }
+               
+            }
         }
     }
 }
