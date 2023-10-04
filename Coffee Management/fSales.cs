@@ -12,6 +12,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using static DevExpress.Skins.SolidColorHelper;
+using DevExpress.XtraWaitForm;
 
 namespace Coffee_Management
 {
@@ -22,6 +23,10 @@ namespace Coffee_Management
         {
             InitializeComponent();
             currentClickButton = null;
+            btnChangeTable.Enabled = false;
+            btnBillardTable.Enabled = false;
+            SplashScreenManager.ShowForm(typeof(fSplah));
+            SplashScreenManager.CloseForm();
             this.Load += F_Load;
         }
 
@@ -40,7 +45,7 @@ namespace Coffee_Management
             {
                 SimpleButton button = new SimpleButton() { Width = 80, Height = 80 };
                 button.Text = item.Name;
-                button.Click += btn_Click;
+                button.Click += Button_Click; ;
                 button.Tag = item;
                 button.ImageList = imageList;
 
@@ -55,6 +60,30 @@ namespace Coffee_Management
                 flpListTable.Controls.Add(button);
             }
         }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+
+            if ((sender as SimpleButton) != currentClickButton)
+            {
+                if (currentClickButton != null)
+                {
+                    if ((currentClickButton.Tag as Table).Status == "Có người")
+                        currentClickButton.ImageIndex = 0;
+                    else
+                        currentClickButton.ImageIndex = -1;
+                }
+            }
+
+            (sender as SimpleButton).ImageIndex = 1;
+            int tableID = ((sender as SimpleButton).Tag as Table).ID;
+            lsvBill.Tag = (sender as SimpleButton).Tag;
+            ShowBill(tableID);
+            currentClickButton = sender as SimpleButton;
+            btnChangeTable.Enabled = true;
+            btnBillardTable.Enabled = true;
+        }
+
         private void LoadCategory()
         {
             lkedPickCategory.Properties.DataSource = CategoryBUS.Instance.GetAllCategory();
@@ -70,24 +99,6 @@ namespace Coffee_Management
 
         private void btn_Click(object sender, EventArgs e)
         {
-            if ((sender as SimpleButton) != currentClickButton)
-            {
-                if (currentClickButton != null)
-                {
-                    if ((currentClickButton.Tag as Table).Status == "Có người")
-                        currentClickButton.ImageIndex = 0;
-                    else
-                        currentClickButton.ImageIndex = -1;
-                }
-            }
-
-            (sender as SimpleButton).ImageIndex = 1;
-            int tableID = ((sender as SimpleButton).Tag as Table).ID;
-            lsvBill.Tag = (sender as SimpleButton).Tag;
-            //ShowBill(tableID);
-            currentClickButton = sender as SimpleButton;
-            btnChangeTable.Enabled = true;
-            btnBillardTable.Enabled = true;
         }
         void GetListTypeByCategory(int categoryID)
         {
@@ -148,6 +159,78 @@ namespace Coffee_Management
                 }
                
             }
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;//lấy bàn 
+            if (table == null)//kiểm tra chọn
+            {
+                XtraMessageBox.Show("Hãy chọn bàn");
+                return;
+            }
+            if (spAmount.Value == 0)//kiểm số luowjgn thêm nếu như 0 thì không đươhjc thêm
+                return;
+            int amount = (int)spAmount.Value;//số lượng thêm
+            int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);//lấy id bill và kiểm tra đã có bill hay chưa
+            if (lkedPickFood.EditValue == null)//kiểm tra món chọn
+            {
+                XtraMessageBox.Show("Hãy chọn món");
+                return;
+            }
+            int foodID = (int)lkedPickFood.EditValue;//id của món chọn
+            if (billID == -1)//bill mới
+            {
+                try
+                {
+                    BillBUS.Instance.InsertBill(table.ID);//thêm bill mới
+                    BillInfoBUS.Instance.InsertBillInfo(BillBUS.Instance.GetMaxBillID(), foodID, amount);//thêm chi tiết hoa đơn
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Error: " + ex);
+                }
+            }
+            else//bill cũ
+            {
+                try
+                {
+                    BillInfoBUS.Instance.InsertBillInfo(billID, foodID, amount);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Eror: " + ex);
+                }
+            }
+            ShowBill(table.ID);//show ra bill
+            LoadTable();
+            LoadLookUpEditTable();
+        }
+        private void ShowBill(int tableID)
+        {
+            lsvBill.Items.Clear();
+            List<TempBill> listTempBill = new List<TempBill>();
+            try
+            {
+                listTempBill = TempBillBUS.Instance.GetListTempBillByTableID(tableID);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error: " + ex);
+            }
+
+            int totalPrice = 0;
+            foreach (TempBill item in listTempBill)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.Food.ToString());
+                lsvItem.SubItems.Add(item.AmountFood.ToString());
+                lsvItem.SubItems.Add(string.Format("{0:0,0 VND}", item.Price));
+                lsvItem.SubItems.Add(string.Format("{0:0,0 VND}", item.Total));
+                totalPrice += item.Total;
+                lsvBill.Items.Add(lsvItem);
+            }
+            // Thread.CurrentThread.CurrentCulture = culture;
+            txtTotalPrice.Text = string.Format("{0:0,0 VND}", totalPrice);
         }
     }
 }

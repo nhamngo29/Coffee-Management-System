@@ -34,7 +34,7 @@
             this.flpListTable = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCheck = new CustomComponent.ButtonBoTron();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lsvBill = new System.Windows.Forms.ListView();
@@ -52,7 +52,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.spAmount = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickFood.Properties)).BeginInit();
@@ -103,7 +103,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnCheck);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtTotalPrice);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.lkedPickTable);
@@ -116,7 +116,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.spAmount);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -155,16 +155,16 @@
             this.btnCheck.TextColor = System.Drawing.Color.White;
             this.btnCheck.UseVisualStyleBackColor = false;
             // 
-            // label10
+            // txtTotalPrice
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(113, 693);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 21);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "0 VNĐ";
+            this.txtTotalPrice.AutoSize = true;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPrice.ForeColor = System.Drawing.Color.Red;
+            this.txtTotalPrice.Location = new System.Drawing.Point(113, 693);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(59, 21);
+            this.txtTotalPrice.TabIndex = 27;
+            this.txtTotalPrice.Text = "0 VNĐ";
             // 
             // label9
             // 
@@ -332,6 +332,7 @@
             this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddFood.TextColor = System.Drawing.Color.White;
             this.btnAddFood.UseVisualStyleBackColor = false;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // pbxBox
             // 
@@ -385,14 +386,14 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Số bàn:";
             // 
-            // numericUpDown1
+            // spAmount
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.Silver;
-            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
-            this.numericUpDown1.Location = new System.Drawing.Point(135, 173);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 33);
-            this.numericUpDown1.TabIndex = 13;
+            this.spAmount.BackColor = System.Drawing.Color.Silver;
+            this.spAmount.ForeColor = System.Drawing.Color.White;
+            this.spAmount.Location = new System.Drawing.Point(135, 173);
+            this.spAmount.Name = "spAmount";
+            this.spAmount.Size = new System.Drawing.Size(120, 33);
+            this.spAmount.TabIndex = 13;
             // 
             // label4
             // 
@@ -513,7 +514,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickFood.Properties)).EndInit();
@@ -532,7 +533,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown spAmount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
@@ -545,7 +546,7 @@
         private DevExpress.XtraEditors.LookUpEdit lkedPickTable;
         private System.Windows.Forms.GroupBox groupBox1;
         private CustomComponent.ButtonBoTron btnCheck;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label txtTotalPrice;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListView lsvBill;
         private System.Windows.Forms.ColumnHeader columnHeader1;

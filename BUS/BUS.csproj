@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityBUS.cs" />
     <Compile Include="TableBUS.cs" />
+    <Compile Include="TempBillBUS.cs" />
     <Compile Include="TypeFoodBUS.cs" />
   </ItemGroup>
   <ItemGroup>
