@@ -241,6 +241,9 @@
     <Content Include="Resources\icons8-pay-30.png" />
     <Content Include="Resources\icons8-restaurant-30.png" />
     <Content Include="Resources\icons8-swap-30.png" />
+    <Content Include="Resources\untick.png" />
+    <Content Include="Resources\z4753863456427_1e4f11841ca45a73da94e140db46077d.jpg" />
+    <Content Include="Resources\tick.png" />
     <Content Include="Resources\zcoffee.png" />
     <Content Include="Resources\icons8-export-excel-30.png" />
     <Content Include="Resources\icons8-export-excel-48.png" />

@@ -47,7 +47,7 @@ namespace Coffee_Management
                 button.Text = item.Name;
                 button.Click += Button_Click; ;
                 button.Tag = item;
-                button.ImageList = imageList;
+                button.ImageList = imageListt;
 
                 switch (item.Status)
                 {
@@ -69,15 +69,25 @@ namespace Coffee_Management
                 if (currentClickButton != null)
                 {
                     if ((currentClickButton.Tag as Table).Status == "Có người")
+                    {
                         currentClickButton.ImageIndex = 0;
-                    else
+                        lbStatus.Text = "Đã có người";
+
+                    }
+
+                    else {
                         currentClickButton.ImageIndex = -1;
+                        lbStatus.Text = "Sẵn sàn";
+
+                    }
+
                 }
             }
 
             (sender as SimpleButton).ImageIndex = 1;
             int tableID = ((sender as SimpleButton).Tag as Table).ID;
             lsvBill.Tag = (sender as SimpleButton).Tag;
+            lbNumberTb.Text = tableID.ToString();
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
             btnChangeTable.Enabled = true;

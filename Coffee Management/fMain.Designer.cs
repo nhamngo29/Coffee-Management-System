@@ -76,6 +76,7 @@
             this.NhanVien = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -475,6 +476,14 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "tick.png");
+            this.imageList.Images.SetKeyName(1, "untick.png");
+            this.imageList.Images.SetKeyName(2, "z4753863456427_1e4f11841ca45a73da94e140db46077d.jpg");
+            // 
             // fMain
             // 
             this.Appearance.FontStyleDelta = System.Drawing.FontStyle.Strikeout;
@@ -554,6 +563,7 @@
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
         private System.Windows.Forms.ToolStripStatusLabel NhanVien;
+        private System.Windows.Forms.ImageList imageList;
     }
 }
 

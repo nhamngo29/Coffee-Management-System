@@ -48,9 +48,9 @@
             this.btnEdit = new CustomComponent.ButtonBoTron();
             this.btnAddFood = new CustomComponent.ButtonBoTron();
             this.pbxBox = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbNumberTb = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.spAmount = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.lkedPickType = new DevExpress.XtraEditors.LookUpEdit();
             this.lkedPickCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.lkedPickFood = new DevExpress.XtraEditors.LookUpEdit();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.imageListt = new System.Windows.Forms.ImageList(this.components);
             this.grBanAn.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -112,9 +112,9 @@
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.btnAddFood);
             this.groupBox2.Controls.Add(this.pbxBox);
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lbStatus);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.lbNumberTb);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.spAmount);
             this.groupBox2.Controls.Add(this.label4);
@@ -344,16 +344,16 @@
             this.pbxBox.TabIndex = 19;
             this.pbxBox.TabStop = false;
             // 
-            // label7
+            // lbStatus
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(259, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 21);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Sẵn sàng";
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.ForeColor = System.Drawing.Color.Black;
+            this.lbStatus.Location = new System.Drawing.Point(259, 230);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(73, 21);
+            this.lbStatus.TabIndex = 17;
+            this.lbStatus.Text = "Sẵn sàng";
             // 
             // label8
             // 
@@ -365,16 +365,16 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Trang thái:";
             // 
-            // label6
+            // lbNumberTb
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(113, 230);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 21);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "0";
+            this.lbNumberTb.AutoSize = true;
+            this.lbNumberTb.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberTb.ForeColor = System.Drawing.Color.Red;
+            this.lbNumberTb.Location = new System.Drawing.Point(113, 230);
+            this.lbNumberTb.Name = "lbNumberTb";
+            this.lbNumberTb.Size = new System.Drawing.Size(19, 21);
+            this.lbNumberTb.TabIndex = 15;
+            this.lbNumberTb.Text = "0";
             // 
             // label5
             // 
@@ -493,11 +493,11 @@
             this.lkedPickFood.TabIndex = 6;
             this.lkedPickFood.EditValueChanged += new System.EventHandler(this.lkedPickFood_EditValueChanged);
             // 
-            // imageList
+            // imageListt
             // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListt.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageListt.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageListt.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // fSales
             // 
@@ -534,9 +534,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown spAmount;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbNumberTb;
         private System.Windows.Forms.Label label5;
         private CustomComponent.ButtonBoTron btnEdit;
         private CustomComponent.ButtonBoTron btnAddFood;
@@ -553,7 +553,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.ImageList imageListt;
         private System.Windows.Forms.FlowLayoutPanel flpListTable;
     }
 }
