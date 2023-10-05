@@ -60,7 +60,7 @@
             this.lkedPickType = new DevExpress.XtraEditors.LookUpEdit();
             this.lkedPickCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.lkedPickFood = new DevExpress.XtraEditors.LookUpEdit();
-            this.imageListt = new System.Windows.Forms.ImageList(this.components);
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.grBanAn.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -135,6 +135,7 @@
             // 
             // btnCheck
             // 
+            this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCheck.BackColor = System.Drawing.Color.Silver;
             this.btnCheck.BackgroundColor = System.Drawing.Color.Silver;
             this.btnCheck.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -146,7 +147,7 @@
             this.btnCheck.ForeColor = System.Drawing.Color.White;
             this.btnCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnCheck.Image")));
             this.btnCheck.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheck.Location = new System.Drawing.Point(468, 682);
+            this.btnCheck.Location = new System.Drawing.Point(468, 747);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(148, 40);
             this.btnCheck.TabIndex = 28;
@@ -157,10 +158,11 @@
             // 
             // txtTotalPrice
             // 
+            this.txtTotalPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotalPrice.AutoSize = true;
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrice.ForeColor = System.Drawing.Color.Red;
-            this.txtTotalPrice.Location = new System.Drawing.Point(113, 693);
+            this.txtTotalPrice.Location = new System.Drawing.Point(113, 758);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(59, 21);
             this.txtTotalPrice.TabIndex = 27;
@@ -168,9 +170,10 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(31, 693);
+            this.label9.Location = new System.Drawing.Point(31, 758);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 21);
             this.label9.TabIndex = 26;
@@ -178,30 +181,34 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lsvBill);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(28, 352);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(591, 324);
+            this.groupBox1.Size = new System.Drawing.Size(591, 389);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Các món đã gọi";
             // 
             // lsvBill
             // 
+            this.lsvBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lsvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.lsvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvBill.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvBill.FullRowSelect = true;
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(3, 21);
+            this.lsvBill.Location = new System.Drawing.Point(3, 24);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(585, 300);
+            this.lsvBill.Size = new System.Drawing.Size(582, 355);
             this.lsvBill.TabIndex = 43;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -269,6 +276,7 @@
             this.btnBillardTable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBillardTable.TextColor = System.Drawing.Color.White;
             this.btnBillardTable.UseVisualStyleBackColor = false;
+            this.btnBillardTable.Click += new System.EventHandler(this.btnBillardTable_Click);
             // 
             // btnChangeTable
             // 
@@ -291,6 +299,7 @@
             this.btnChangeTable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChangeTable.TextColor = System.Drawing.Color.White;
             this.btnChangeTable.UseVisualStyleBackColor = false;
+            this.btnChangeTable.Click += new System.EventHandler(this.btnChangeTable_Click);
             // 
             // btnEdit
             // 
@@ -493,11 +502,13 @@
             this.lkedPickFood.TabIndex = 6;
             this.lkedPickFood.EditValueChanged += new System.EventHandler(this.lkedPickFood_EditValueChanged);
             // 
-            // imageListt
+            // imageList
             // 
-            this.imageListt.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageListt.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageListt.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "check-1-icon.png");
+            this.imageList.Images.SetKeyName(1, "Check-2-icon.png");
+            this.imageList.Images.SetKeyName(2, "add-icon.png");
             // 
             // fSales
             // 
@@ -553,7 +564,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ImageList imageListt;
         private System.Windows.Forms.FlowLayoutPanel flpListTable;
+        private System.Windows.Forms.ImageList imageList;
     }
 }

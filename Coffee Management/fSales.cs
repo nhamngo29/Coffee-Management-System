@@ -34,6 +34,7 @@ namespace Coffee_Management
         {
             LoadTable();
             LoadCategory();
+            LoadLookUpEditTable();
         }
 
         private void LoadTable()
@@ -47,7 +48,7 @@ namespace Coffee_Management
                 button.Text = item.Name;
                 button.Click += Button_Click; ;
                 button.Tag = item;
-                button.ImageList = imageListt;
+                button.ImageList = imageList;
 
                 switch (item.Status)
                 {
@@ -69,18 +70,9 @@ namespace Coffee_Management
                 if (currentClickButton != null)
                 {
                     if ((currentClickButton.Tag as Table).Status == "Có người")
-                    {
                         currentClickButton.ImageIndex = 0;
-                        lbStatus.Text = "Đã có người";
-
-                    }
-
-                    else {
+                    else
                         currentClickButton.ImageIndex = -1;
-                        lbStatus.Text = "Sẵn sàn";
-
-                    }
-
                 }
             }
 
@@ -88,6 +80,7 @@ namespace Coffee_Management
             int tableID = ((sender as SimpleButton).Tag as Table).ID;
             lsvBill.Tag = (sender as SimpleButton).Tag;
             lbNumberTb.Text = tableID.ToString();
+            lbStatus.Text = ((sender as SimpleButton).Tag as Table).Status;
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
             btnChangeTable.Enabled = true;
@@ -241,6 +234,70 @@ namespace Coffee_Management
             }
             // Thread.CurrentThread.CurrentCulture = culture;
             txtTotalPrice.Text = string.Format("{0:0,0 VND}", totalPrice);
+        }
+
+        private void btnChangeTable_Click(object sender, EventArgs e)
+        {
+            int id1 = (lsvBill.Tag as Table).ID;
+            int id2;
+            if (lkedPickTable.EditValue == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn muốn chuyển");
+                return;
+            }
+            else
+                id2 = (int)lkedPickTable.EditValue;
+
+            if(id2==id1)
+            {
+                XtraMessageBox.Show("Hãy 2 bàn phải khác nhau");
+                return;
+            }
+            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn chuyển {0} sang {1} ?",
+                (lsvBill.Tag as Table).Name, lkedPickTable.Text),
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                TableBUS.Instance.SwitchTable(id1, id2);
+                LoadTable();
+                LoadLookUpEditTable();
+                btnChangeTable.Enabled = false;
+                btnBillardTable.Enabled = false;
+                foreach (SimpleButton item in flpListTable.Controls)
+                    if ((item.Tag as Table).ID == id2)
+                    {
+                        lsvBill.Tag = item.Tag;
+                        break;
+                    }
+            }
+        }
+
+        private void btnBillardTable_Click(object sender, EventArgs e)
+        {
+            int id1 = (lsvBill.Tag as Table).ID;
+            int id2;
+            if (lkedPickTable.EditValue == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn muốn gộp");
+                return;
+            }
+            else
+                id2 = (int)lkedPickTable.EditValue;
+
+            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp bàn {0} sang {1}?",
+                (lsvBill.Tag as Table).Name, lkedPickTable.Text),
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                TableBUS.Instance.MergeTable(id1, id2);
+                LoadTable();
+                LoadLookUpEditTable();
+                btnBillardTable.Enabled = false;
+                foreach (SimpleButton item in flpListTable.Controls)
+                    if ((item.Tag as Table).ID == id2)
+                    {
+                        lsvBill.Tag = item.Tag;
+                        break;
+                    }
+            }
         }
     }
 }

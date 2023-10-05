@@ -15,8 +15,9 @@ namespace Coffee_Management
     public partial class fMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         Account acc { get; set; }
-        public fMain(Account acc)
+        public fMain()
         {
+            acc = new Account("admin", "admin");
             InitializeComponent();
             this.acc = acc;
             this.NhanVien.Text += acc.DisplayName;

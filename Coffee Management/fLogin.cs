@@ -124,7 +124,7 @@ namespace Coffee_Management
                             txtPassword.Text = string.Empty;
                             txtUserName.Text = string.Empty;
                             txtCaptcha.Text = string.Empty;
-                            Program._fMain = new fMain(acc);//chuyển đến trang manager
+                            Program._fMain = new fMain();//chuyển đến trang manager
                             this.Hide();
                             Program._fMain.ShowDialog();
                             this.Show();
