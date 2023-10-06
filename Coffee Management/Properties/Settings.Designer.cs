@@ -33,5 +33,16 @@ namespace Coffee_Management.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PQ4U60\\SERVER01;Initial Catalog=CoffeeManagement;Persist Sec" +
+            "urity Info=True;User ID=sa;Password=02092002Aa")]
+        public string CoffeeManagementConnectionString {
+            get {
+                return ((string)(this["CoffeeManagementConnectionString"]));
+            }
+        }
     }
 }

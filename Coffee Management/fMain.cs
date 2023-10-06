@@ -55,17 +55,17 @@ namespace Coffee_Management
 
         private void btnDatBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckFormExist(typeof(fReservation));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                fReservation f = new fReservation();
-                f.MdiParent = this;
-                f.Show();
-            }
+            //Form frm = this.CheckFormExist(typeof(fReservation));
+            //if (frm != null)
+            //{
+            //    frm.Activate();
+            //}
+            //else
+            //{
+            //    //fReservation f = new fReservation();
+            //    f.MdiParent = this;
+            //    f.Show();
+            //}
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -76,17 +76,17 @@ namespace Coffee_Management
 
         private void btnRevenue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckFormExist(typeof(fReservation));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                fRevenue f = new fRevenue();
-                f.MdiParent = this;
-                f.Show();
-            }
+            //Form frm = this.CheckFormExist(typeof(fReservation));
+            //if (frm != null)
+            //{
+            //    frm.Activate();
+            //}
+            //else
+            //{
+            //    //fRevenue f = new fRevenue();
+            //    f.MdiParent = this;
+            //    f.Show();
+            //}
         }
 
         private void ribbon_Click(object sender, EventArgs e)

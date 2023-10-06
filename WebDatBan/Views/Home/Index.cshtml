@@ -4,6 +4,7 @@
         <div class="booking-form">
             <div class="booking-form-heading">ĐẶT BÀN NHANH CHÓNG TẠI VMMS</div>
             <form method="post" asp-controller="Home" asp-action="Create">
+                <input asp-for=Id type="text" class="input" placeholder="Aa"  hidden/>
                 <div class="booking-form-item required">
                     <label asp-for=FullName>Họ và tên</label>
                     <input asp-for=FullName type="text" class="input" placeholder="Aa" />

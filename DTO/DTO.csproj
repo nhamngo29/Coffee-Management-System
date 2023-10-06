@@ -45,6 +45,7 @@
     <Compile Include="AccountType.cs" />
     <Compile Include="Bill.cs" />
     <Compile Include="BillInfo.cs" />
+    <Compile Include="Booking.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Discount.cs" />
     <Compile Include="Food.cs" />

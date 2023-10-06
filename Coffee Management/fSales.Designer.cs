@@ -519,6 +519,7 @@
             this.Controls.Add(this.grBanAn);
             this.Name = "fSales";
             this.Text = "Gọi món";
+            this.Load += new System.EventHandler(this.fSales_Load);
             this.grBanAn.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

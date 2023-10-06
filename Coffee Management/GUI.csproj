@@ -54,7 +54,20 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.3.0\lib\net46\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -90,14 +103,26 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="TableDependency.SqlClient, Version=8.5.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlTableDependency.8.5.8\lib\net451\TableDependency.SqlClient.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoffeeManagementDataSet.Designer.cs">
+    <Compile Include="CoffeeData.cs">
+      <DependentUpon>CoffeeData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CoffeeData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
+      <DependentUpon>CoffeeData.xsd</DependentUpon>
     </Compile>
     <Compile Include="Custom\Dialog.cs" />
+    <Compile Include="fFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fFood.Designer.cs">
+      <DependentUpon>fFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,18 +147,6 @@
     <Compile Include="fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="fReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fReservation.Designer.cs">
-      <DependentUpon>fReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fRevenue.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fRevenue.Designer.cs">
-      <DependentUpon>fRevenue.cs</DependentUpon>
-    </Compile>
     <Compile Include="fSplah.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +161,9 @@
     <Compile Include="Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="fFood.resx">
+      <DependentUpon>fFood.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSales.resx">
       <DependentUpon>fSales.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,12 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fMain.resx">
       <DependentUpon>fMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fReservation.resx">
-      <DependentUpon>fReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fRevenue.resx">
-      <DependentUpon>fRevenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSplah.resx">
       <DependentUpon>fSplah.cs</DependentUpon>
@@ -192,20 +196,17 @@
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="CoffeeManagementDataSet.xsc">
-      <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
+    <None Include="CoffeeData.xsc">
+      <DependentUpon>CoffeeData.xsd</DependentUpon>
     </None>
-    <None Include="CoffeeManagementDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CoffeeManagementDataSet.Designer.cs</LastGenOutput>
+    <None Include="CoffeeData.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CoffeeData.Designer.cs</LastGenOutput>
     </None>
-    <None Include="CoffeeManagementDataSet.xss">
-      <DependentUpon>CoffeeManagementDataSet.xsd</DependentUpon>
+    <None Include="CoffeeData.xss">
+      <DependentUpon>CoffeeData.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -237,10 +238,66 @@
     <Content Include="Resources\Hinh8.jpg" />
     <Content Include="Resources\Hinh9.jpg" />
     <Content Include="Resources\Hình-App_3006021-Cà-Phê-Đen.jpg" />
+    <Content Include="Resources\icons8-available-updates-20.png" />
+    <Content Include="Resources\icons8-back-64.png" />
+    <Content Include="Resources\icons8-booking-20.png" />
+    <Content Include="Resources\icons8-booking-30.png" />
+    <Content Include="Resources\icons8-bubble-tea-30.png" />
+    <Content Include="Resources\icons8-calendar-26-30.png" />
+    <Content Include="Resources\icons8-cancel-20.png" />
+    <Content Include="Resources\icons8-cancel-30.png" />
+    <Content Include="Resources\icons8-code-30.png" />
+    <Content Include="Resources\icons8-customer-30.png" />
+    <Content Include="Resources\icons8-decline-30.png" />
+    <Content Include="Resources\icons8-edit-20.png" />
+    <Content Include="Resources\icons8-export-30.png" />
+    <Content Include="Resources\icons8-export-csv-20.png" />
+    <Content Include="Resources\icons8-eye-30 %281%29.png" />
+    <Content Include="Resources\icons8-gender-30.png" />
+    <Content Include="Resources\icons8-import-csv-20.png" />
+    <Content Include="Resources\icons8-invisible-30.png" />
+    <Content Include="Resources\icons8-iphone-14-30.png" />
+    <Content Include="Resources\icons8-login-30.png" />
+    <Content Include="Resources\icons8-logout-20.png" />
+    <Content Include="Resources\icons8-magnifying-glass-tilted-left-20.png" />
+    <Content Include="Resources\icons8-manager-20.png" />
+    <Content Include="Resources\icons8-manager-30.png" />
+    <Content Include="Resources\icons8-menu-20.png" />
     <Content Include="Resources\icons8-merge-horizontal-30.png" />
+    <Content Include="Resources\icons8-money-bag-30.png" />
+    <Content Include="Resources\icons8-name-tag-30.png" />
+    <Content Include="Resources\icons8-network-20.png" />
+    <Content Include="Resources\icons8-paid-bill-20.png" />
+    <Content Include="Resources\icons8-password-50.png" />
+    <Content Include="Resources\icons8-password-reset-20.png" />
     <Content Include="Resources\icons8-pay-30.png" />
+    <Content Include="Resources\icons8-phone-30.png" />
+    <Content Include="Resources\icons8-pictures-folder-20.png" />
+    <Content Include="Resources\icons8-plus-10.png" />
+    <Content Include="Resources\icons8-plus-20.png" />
+    <Content Include="Resources\icons8-port-20.png" />
+    <Content Include="Resources\icons8-print-from-cloud-30.png" />
+    <Content Include="Resources\icons8-remove-20.png" />
+    <Content Include="Resources\icons8-request-money-30.png" />
     <Content Include="Resources\icons8-restaurant-30.png" />
+    <Content Include="Resources\icons8-restaurant-menu-30.png" />
+    <Content Include="Resources\icons8-save-20.png" />
+    <Content Include="Resources\icons8-search-bar-30.png" />
+    <Content Include="Resources\icons8-show-permit-card-30.png" />
+    <Content Include="Resources\icons8-staff-20.png" />
+    <Content Include="Resources\icons8-statistics-20.png" />
     <Content Include="Resources\icons8-swap-30.png" />
+    <Content Include="Resources\icons8-table-20.png" />
+    <Content Include="Resources\icons8-time-30.png" />
+    <Content Include="Resources\icons8-unit-30.png" />
+    <Content Include="Resources\icons8-user-20.png" />
+    <Content Include="Resources\icons8-user-50.png" />
+    <Content Include="Resources\icons8-user-location-30.png" />
+    <Content Include="Resources\icons8-users-30.png" />
+    <Content Include="Resources\ico_hu.png" />
+    <Content Include="Resources\ico_trong.png" />
+    <Content Include="Resources\ico_user.png" />
+    <Content Include="Resources\menu.png" />
     <Content Include="Resources\untick.png" />
     <Content Include="Resources\z4753863456427_1e4f11841ca45a73da94e140db46077d.jpg" />
     <Content Include="Resources\tick.png" />
@@ -268,6 +325,9 @@
       <Project>{29F90C89-3203-4E10-A333-0C40C9B033E1}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

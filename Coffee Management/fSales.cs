@@ -299,5 +299,10 @@ namespace Coffee_Management
                     }
             }
         }
+
+        private void fSales_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

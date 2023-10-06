@@ -22,7 +22,7 @@ namespace Coffee_Management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             _fLogin=new fLogin();
-            Application.Run(new fMain());
+            Application.Run(new fFood());
         }
     }
 }
