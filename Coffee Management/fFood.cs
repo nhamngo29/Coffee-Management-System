@@ -1,132 +1,249 @@
-﻿using BUS;
+﻿using System;
+using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Grid;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using DevExpress.XtraSplashScreen;
 
-namespace Coffee_Management
+using BUS;
+using DTO;
+
+namespace GUI
 {
     public partial class fFood : DevExpress.XtraEditors.XtraForm
     {
+        Food curFood;
+
         public fFood()
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
+            btnRemove.Enabled = false;
+            btnSearch.Enabled = false;
+            LoadFoodToGridControl();
+            SplashScreenManager.CloseForm();
         }
 
-        private void foodDKBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void LoadFoodToGridControl()
         {
-            this.Validate();
-            
-
-        }
-
-        private void fillDKToolStripButton_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    this.foodDKTableAdapter.FillDK(this.coffeeDataset.FoodDK, ((int)(System.Convert.ChangeType(typeToolStripTextBox.Text, typeof(int)))));
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    System.Windows.Forms.MessageBox.Show(ex.Message);
-            //}
-
-        }
-
-        private void foodBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.foodBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.coffeeData);
-
-        }
-
-        private void fFood_Load(object sender, EventArgs e)
-        {
-            
-            this.foodTableAdapter.Fill(this.coffeeData.Food);
-            RepositoryItemLookUpEdit myLookup = new RepositoryItemLookUpEdit();
             try
             {
-                myLookup.DataSource = TypeFoodBUS.Instance.GetAllTypeFood();
-                ludType.Properties.DataSource = TypeFoodBUS.Instance.GetAllTypeFood();
-                ludType.Properties.DisplayMember = "Name";
-                ludType.Properties.ValueMember = "Id";
-                ludType.Properties.NullText = "-- Chọn loại sản phẩm --";
-                myLookup.DisplayMember = "Name";
-                myLookup.ValueMember = "Id";
-                myLookup.NullText = "-- Chọn loại sản phẩm --";
-                gridView1.Columns[2].ColumnEdit = myLookup;
+                gcFood.DataSource = FoodBUS.Instance.GetAllFood();
+                gvFood.Columns[0].Caption = "Mã số";
+                gvFood.Columns[0].OptionsColumn.AllowEdit = false;
+                gvFood.Columns[1].Caption = "Tên";
+                gvFood.Columns[2].Caption = "Loại";
+                gvFood.Columns[3].Caption = "Đơn giá";
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show("Error: " + ex);
             }
-            
-        }
 
-        private void button4_Click(object sender, EventArgs e)
+            RepositoryItemLookUpEdit myLookup = new RepositoryItemLookUpEdit();
+            try
+            {
+                myLookup.DataSource = TypeFoodBUS.Instance.GetAllTypeFood();
+                myLookup.DisplayMember = "Name";
+                myLookup.ValueMember = "Id";
+                myLookup.NullText = "-- Chọn loại sản phẩm --";
+                gvFood.Columns[2].ColumnEdit = myLookup;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error: " + ex);
+            }
+        }
+        private void RepositoryItemLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-
+            LookUpEdit edit = sender as LookUpEdit;
+            if (Convert.ToInt32(edit.EditValue) == 2)
+                return;
+            else
+                XtraMessageBox.Show("Value changed");
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            
-        }
-
-        private void gridView1_SelectionChanged_1(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        private void gvFood_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             GridView view = sender as GridView;
-            if (view != null)
-            {
-                int[] selectedRows = view.GetSelectedRows();
-                if (selectedRows.Length > 0)
-                {
-                    object Name = view.GetRowCellValue(selectedRows[0], "Name");
-                    object value=view.GetRowCellValue(selectedRows[0], "Type");
-                    object price= view.GetRowCellValue(selectedRows[0], "Price");
-                    object image = view.GetRowCellValue(selectedRows[0], "Image");
-                    object Describe = view.GetRowCellValue(selectedRows[0], "Describe");
-                    
-                    txtNameFood.Text = Name.ToString();
-                    nbrPrice.Value = (int)price;
-                    txtDescribe.Text = Describe.ToString();
-                    string resourcesDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", image.ToString() + ".jpg");
-                    if (File.Exists(resourcesDirectory))
-                    {
-                        try
-                        {
-                            // Đọc tệp hình ảnh
-                            using (var imageStream = File.OpenRead(resourcesDirectory))
-                            {
-                                Image imagep = Image.FromStream(imageStream);
-                                pictureBox1.Image = imagep;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            // Xử lý ngoại lệ nếu có lỗi khi đọc tệp hình ảnh.
-                            Console.WriteLine("Lỗi khi đọc tệp hình ảnh: " + ex.Message);
-                        }
+            if (view.IsNewItemRow(e.RowHandle))//
+                AddFood(view, e.RowHandle);
+            else
+                UpdateFood(view, e.RowHandle);
+        }
 
-                    }
-                }
+        private void AddFood(GridView view, int rowHandle)
+        {
+            string name = view.GetRowCellValue(rowHandle, view.Columns[1]).ToString();
+            if (name == "")
+            {
+                XtraMessageBox.Show("Tên món không hợp lệ");
+                return;
             }
+
+            string typeID = view.GetRowCellValue(rowHandle, view.Columns[2]).ToString();
+            if (typeID == "")
+            {
+                XtraMessageBox.Show("Hãy chọn danh mục");
+                return;
+            }
+
+            string priceTemp = view.GetRowCellValue(rowHandle, view.Columns[3]).ToString();
+            if (priceTemp == "")
+            {
+                XtraMessageBox.Show("Đơn giá không được bỏ trống");
+                return;
+            }
+            int price = int.Parse(priceTemp);
+            if (price <= 0 || price > 10000000)
+            {
+                XtraMessageBox.Show("Đơn giá không hợp lệ");
+                return;
+            }
+
+            Food newFood = new Food(name, int.Parse(typeID), price,"","");
+            if (FoodBUS.Instance.InsertFood(newFood))
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                LoadFoodToGridControl();
+                SplashScreenManager.CloseForm();
+            }
+            else
+            {
+                SplashScreenManager.CloseForm();
+                XtraMessageBox.Show("Thêm món mới thất bại", "Lỗi");
+            }
+        }
+
+        private void UpdateFood(GridView view, int rowHandle)
+        {
+            string id = view.GetRowCellValue(rowHandle, view.Columns[0]).ToString();
+            if (id == "")
+            {
+                AddFood(view, rowHandle);
+                return;
+            }
+
+            string name = view.GetRowCellValue(rowHandle, view.Columns[1]).ToString();
+            if (name == "")
+            {
+                XtraMessageBox.Show("Tên món không hợp lệ");
+                return;
+            }
+
+            string typeID = view.GetRowCellValue(rowHandle, view.Columns[2]).ToString();
+            if (typeID == "")
+            {
+                XtraMessageBox.Show("Hãy chọn danh mục");
+                return;
+            }
+
+            string priceTemp = view.GetRowCellValue(rowHandle, view.Columns[3]).ToString();
+            if (priceTemp == "")
+            {
+                XtraMessageBox.Show("Đơn giá không được bỏ trống");
+                return;
+            }
+            int price = int.Parse(priceTemp);
+            if (price <= 0 || price > 1000000)
+            {
+                XtraMessageBox.Show("Đơn giá không hợp lệ");
+                return;
+            }
+
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Food food = new Food(int.Parse(id), name, int.Parse(typeID), price,"","");
+            if (FoodBUS.Instance.UpdateFood(food))
+            {
+                LoadFoodToGridControl();
+                SplashScreenManager.CloseForm();
+            }
+            else
+            {
+                SplashScreenManager.CloseForm();
+                XtraMessageBox.Show("Sửa thông tin món thất bại\n Không thể thay đổi thông tin món hiện hành", "Lỗi");
+            }
+        }
+
+        private void gcFood_DoubleClick(object sender, EventArgs e)
+        {
+            if (gvFood.FocusedRowHandle >= 0)
+                btnRemove.Enabled = true;
+        }
+
+        private void btnRemove_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int id = (int)gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[0]);
+            string name = gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[1]).ToString();
+
+            if (XtraMessageBox.Show("Xóa " + name + "?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (FoodBUS.Instance.DeleteFood(id))
+                {
+                    SplashScreenManager.ShowForm(typeof(WaitForm1));
+                    LoadFoodToGridControl();
+                    SplashScreenManager.CloseForm();
+                    XtraMessageBox.Show("Đã xóa " + name, "Thông báo");
+                }
+                else
+                    XtraMessageBox.Show("Không thể xóa món hiện hành", "Lỗi");
+            }
+            btnRemove.Enabled = false;
+        }
+
+        private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            LoadFoodToGridControl();
+            SplashScreenManager.CloseForm();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                gcFood.DataSource = FoodBUS.Instance.SearchFoodByName(txtSearchFood.Text);
+                SplashScreenManager.CloseForm();
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm();
+                XtraMessageBox.Show("Error: " + ex);
+            }
+        }
+
+        private void txtSearchFood_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearchFood.Text != "")
+                btnSearch.Enabled = true;
+            else
+                btnSearch.Enabled = false;
+        }
+
+        private void gvFood_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            object id = gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[0]);
+            if (id == null || id == DBNull.Value)
+                return;
+
+            object name = gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[1]);
+            if (name == null || name == DBNull.Value)
+                return;
+
+            object categoryID = gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[2]);
+            if (categoryID == null || categoryID == DBNull.Value)
+                return;
+
+            object price = gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[3]);
+            if (price == null || price == DBNull.Value)
+                return;
+                
+            curFood = new Food(name.ToString(), (int)categoryID, (int)price,"","");
+        }
+
+        private void gcFood_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

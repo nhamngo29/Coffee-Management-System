@@ -7,7 +7,7 @@ namespace WebDatBan.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        CoffeeManagementContext db= new CoffeeManagementContext();
+        CoffeeManagementContext db = new CoffeeManagementContext();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -32,15 +32,10 @@ namespace WebDatBan.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Booking ct)
         {
-           
-            if (ModelState.IsValid)
-            {
-                db.Bookings.Add(ct);
-                db.SaveChanges();
-                TempData["Sucess"] = "Tạo thành công.!";
-                return RedirectToAction("index");
-            }
-            return View(ct);
+            db.Bookings.Add(ct);
+            db.SaveChanges();
+            TempData["Sucess"] = "Đặt bàn thành công.!";
+            return RedirectToAction("index");
         }
     }
 }

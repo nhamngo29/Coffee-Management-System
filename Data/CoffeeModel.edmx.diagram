@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81765333ee4b45c8a280d86423ff4e24" Name="Diagram1">
+        <EntityTypeShape EntityType="CoffeeModel.Account" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.AccountType" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.Bill" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.BillInfo" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.Booking" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.CategoryFood" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.discount" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.Food" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.Reservation" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.staff" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.sysdiagram" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.TableCoffee" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoffeeModel.TypeFood" Width="1.5" PointX="3.75" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="CoffeeModel.FK__Account__IdSataf__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__Account__TypeID__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__Bill__IdSataff__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__Bill__Status__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__BillInfo__Amount__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__BillInfo__FoodID__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__TypeFood__IdCate__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK_Food_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__Reservati__IdSat__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="CoffeeModel.FK__Reservati__IdTab__5629CD9C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

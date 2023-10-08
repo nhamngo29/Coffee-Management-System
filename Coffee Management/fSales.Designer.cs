@@ -155,6 +155,7 @@
             this.btnCheck.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCheck.TextColor = System.Drawing.Color.White;
             this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // txtTotalPrice
             // 

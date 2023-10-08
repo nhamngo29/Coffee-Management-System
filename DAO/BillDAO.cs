@@ -40,7 +40,7 @@ namespace DAO
 
             if (table.Rows.Count > 0)
             {
-                Bill bill = new Bill(table.Rows[0]);
+                DTO.Bill bill = new DTO.Bill(table.Rows[0]);
                 return bill.ID;
             }
             return -1;

@@ -13,14 +13,18 @@ using System.IO;
 using System.Reflection;
 using static DevExpress.Skins.SolidColorHelper;
 using DevExpress.XtraWaitForm;
+using Data.Repository.IRepository;
+using Data.Repository;
 
 namespace Coffee_Management
 {
     public partial class fSales : DevExpress.XtraEditors.XtraForm
     {
         private SimpleButton currentClickButton = new SimpleButton();
+        private readonly IUnitOfWork _IUnitOfWork;
         public fSales()
         {
+            _IUnitOfWork = new UnitOfWork();
             InitializeComponent();
             currentClickButton = null;
             btnChangeTable.Enabled = false;
@@ -89,7 +93,8 @@ namespace Coffee_Management
 
         private void LoadCategory()
         {
-            lkedPickCategory.Properties.DataSource = CategoryBUS.Instance.GetAllCategory();
+            //lkedPickCategory.Properties.DataSource = CategoryBUS.Instance.GetAllCategory();
+            lkedPickCategory.Properties.DataSource = _IUnitOfWork.Category.GetAll();
             lkedPickCategory.Properties.DisplayMember = "Name";
             lkedPickCategory.Properties.ValueMember = "ID";
         }
@@ -127,7 +132,7 @@ namespace Coffee_Management
         }
         private void GetListFoodByType(int Type)
         {
-            lkedPickFood.Properties.DataSource = FoodBUS.Instance.GetListFoodByCategoryID(Type);
+            lkedPickFood.Properties.DataSource = _IUnitOfWork.Food.GetListFoodByTypeID(Type);
             lkedPickFood.Properties.DisplayMember = "Name";
             lkedPickFood.Properties.ValueMember = "ID";
         }
@@ -303,6 +308,22 @@ namespace Coffee_Management
         private void fSales_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;//lấy ra id table
+            if (table == null)
+                return;
+            int billID = -1;
+            try
+            {
+                billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);//kiểm tra bàn đã có bill hay chưa
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error: " + ex);
+            }
         }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="AccountTypeBUS.cs" />
     <Compile Include="BillBUS.cs" />
     <Compile Include="BillInfoBUS.cs" />
+    <Compile Include="BusBooking.cs" />
     <Compile Include="CategoryBUS.cs" />
     <Compile Include="DiscountBUS.cs" />
     <Compile Include="FoodBUS.cs" />
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{F461B185-834D-429B-BCB9-6475C75D43BD}</Project>
       <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{02D9F1EB-D3B9-4F85-BB6D-1FA20EBCCD2E}</Project>
+      <Name>Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{29F90C89-3203-4E10-A333-0C40C9B033E1}</Project>

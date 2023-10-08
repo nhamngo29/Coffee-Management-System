@@ -47,14 +47,14 @@ namespace DAO
                 throw ex;
             }
         }
-        public Food GetFoodByID(int ID)
+        public DTO.Food GetFoodByID(int ID)
         {
-            List<Food> list = new List<Food>();
+            List<DTO.Food> list = new List<DTO.Food>();
             string query = "SP_GetFoodByID "+ID;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
-                Food type = new Food(row);
+                DTO.Food type = new DTO.Food(row);
                 list.Add(type);
             }
             return list[0];
@@ -73,7 +73,7 @@ namespace DAO
             }
         }
 
-        public bool InsertFood(Food newFood)
+        public bool InsertFood(DTO.Food newFood)
         {
             string query = string.Format("SP_InsertFood @Name , @TypeID , @Price");
             int result;
@@ -89,7 +89,7 @@ namespace DAO
             return result > 0;
         }
 
-        public bool UpdateFood(Food food)
+        public bool UpdateFood(DTO.Food food)
         {
             string query = string.Format("SP_UpdateFood @ID , @Name , @TypeID , @Price");
             int result;

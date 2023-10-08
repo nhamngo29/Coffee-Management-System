@@ -35,5 +35,28 @@ namespace DAO.Properties {
                 this["ConnectionString"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PQ4U60\\SERVER01;Initial Catalog=CoffeeManagement;User ID=sa;" +
+            "Connect Timeout=30;TrustServerCertificate=False")]
+        public string CoffeeManagementConnectionString {
+            get {
+                return ((string)(this["CoffeeManagementConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PQ4U60\\SERVER01;Initial Catalog=CoffeeManagement;User ID=sa;" +
+            "Password=02092002Aa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=Fals" +
+            "e")]
+        public string CoffeeManagementConnectionString1 {
+            get {
+                return ((string)(this["CoffeeManagementConnectionString1"]));
+            }
+        }
     }
 }

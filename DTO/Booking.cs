@@ -16,8 +16,9 @@ namespace DAO
         public int? Quantity { get; set; }
         public DateTime? BookingTime { get; set; }
         public string Note { get; set; }
+        public bool status { get; set; }
 
-        public Booking(int id, string fullName, string email, string numberPhone, int? quantity, DateTime? bookingTime, string note)
+        public Booking(int id, string fullName, string email, string numberPhone, int? quantity, DateTime? bookingTime, string note, bool status)
         {
             Id = id;
             FullName = fullName;
@@ -26,6 +27,17 @@ namespace DAO
             Quantity = quantity;
             BookingTime = bookingTime;
             Note = note;
+            this.status = status;
+        }
+        public Booking( string fullName, string email, string numberPhone, int? quantity, DateTime? bookingTime, string note,bool status)
+        {
+            FullName = fullName;
+            Email = email;
+            NumberPhone = numberPhone;
+            Quantity = quantity;
+            BookingTime = bookingTime;
+            Note = note;
+            this.status = status;
         }
         public Booking(DataRow row)
         {
@@ -36,6 +48,11 @@ namespace DAO
             Quantity= (int)row["Quantity"];
             BookingTime = (DateTime)row["BookingTime"];
             Note= row["Note"].ToString();
+            status = (bool)row["status"];
+        }
+
+        public Booking()
+        {
         }
     }
 }

@@ -1,16 +1,32 @@
-﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7C8D2DF9-2F1C-4114-A56E-B9DB888700ED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Coffee_Management</RootNamespace>
-    <AssemblyName>Coffee Management</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,64 +48,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v21.2" />
-    <Reference Include="DevExpress.Data.Desktop.v21.2" />
-    <Reference Include="DevExpress.Data.v21.2" />
-    <Reference Include="DevExpress.ExpressApp.Reports.Win.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.ExpressApp.ReportsV2.Win.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v21.2.Core" />
-    <Reference Include="DevExpress.Utils.v21.2" />
-    <Reference Include="DevExpress.Xpf.ReportDesigner.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v21.2" />
-    <Reference Include="DevExpress.Sparkline.v21.2.Core" />
-    <Reference Include="DevExpress.XtraEditors.v21.2" />
-    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="LibrarySQL">
-      <HintPath>..\LibrarySQL\bin\Debug\LibrarySQL.dll</HintPath>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Data.SqlClient, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SqlClient.4.3.0\lib\net46\System.Data.SqlClient.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Private.DataContractSerialization, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Private.DataContractSerialization.4.3.0\lib\netstandard1.3\System.Private.DataContractSerialization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Reflection.TypeExtensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reflection.TypeExtensions.4.3.0\lib\net462\System.Reflection.TypeExtensions.dll</HintPath>
-    </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,36 +88,35 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="TableDependency.SqlClient, Version=8.5.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SqlTableDependency.8.5.8\lib\net451\TableDependency.SqlClient.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoffeeData.cs">
-      <DependentUpon>CoffeeData.xsd</DependentUpon>
+    <Compile Include="fAddDisscount.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoffeeData.Designer.cs">
+    <Compile Include="fAddDisscount.Designer.cs">
+      <DependentUpon>fAddDisscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillAndBillInfo.cs">
+      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BillAndBillInfo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CoffeeData.xsd</DependentUpon>
+      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Custom\Dialog.cs" />
-    <Compile Include="fFood.cs">
+    <Compile Include="BillInfo.cs">
+      <DependentUpon>HoaDon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fFood.Designer.cs">
-      <DependentUpon>fFood.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fSales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fSales.Designer.cs">
-      <DependentUpon>fSales.cs</DependentUpon>
+    <Compile Include="fAccount.Designer.cs">
+      <DependentUpon>fAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="fAccountInformation.cs">
       <SubType>Form</SubType>
@@ -135,11 +124,82 @@
     <Compile Include="fAccountInformation.Designer.cs">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddTable.Designer.cs">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBill.Designer.cs">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCategory.Designer.cs">
+      <DependentUpon>fCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDiscount.Designer.cs">
+      <DependentUpon>fDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fFood.Designer.cs">
+      <DependentUpon>fFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fStatistics.Designer.cs">
+      <DependentUpon>fStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTable.Designer.cs">
+      <DependentUpon>fTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGroupFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGroupFood.Designer.cs">
+      <DependentUpon>fGroupFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="fManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fManager.Designer.cs">
+      <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
     <Compile Include="fMain.cs">
       <SubType>Form</SubType>
@@ -147,66 +207,124 @@
     <Compile Include="fMain.Designer.cs">
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="fSplah.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fSplah.Designer.cs">
-      <DependentUpon>fSplah.cs</DependentUpon>
+    <Compile Include="SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report.cs">
+    <Compile Include="ThongKe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongKe.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WaitForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
+    <Compile Include="WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fFood.resx">
-      <DependentUpon>fFood.cs</DependentUpon>
+    <Compile Include="XtraReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport.Designer.cs">
+      <DependentUpon>XtraReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fAddDisscount.resx">
+      <DependentUpon>fAddDisscount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fSales.resx">
-      <DependentUpon>fSales.cs</DependentUpon>
+    <EmbeddedResource Include="fAccount.resx">
+      <DependentUpon>fAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAccountInformation.resx">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fAddTable.resx">
+      <DependentUpon>fAddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBill.resx">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCategory.resx">
+      <DependentUpon>fCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDiscount.resx">
+      <DependentUpon>fDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fFood.resx">
+      <DependentUpon>fFood.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fLogin.vi-VN.resx">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <EmbeddedResource Include="fStatistics.resx">
+      <DependentUpon>fStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMain.resx">
-      <DependentUpon>fMain.cs</DependentUpon>
+    <EmbeddedResource Include="fTable.resx">
+      <DependentUpon>fTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fSplah.resx">
-      <DependentUpon>fSplah.cs</DependentUpon>
+    <EmbeddedResource Include="fGroupFood.resx">
+      <DependentUpon>fGroupFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
+    <EmbeddedResource Include="fManager.resx">
+      <DependentUpon>fManager.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
-    <None Include="CoffeeData.xsc">
-      <DependentUpon>CoffeeData.xsd</DependentUpon>
+    <EmbeddedResource Include="fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThongKe.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport.resx">
+      <DependentUpon>XtraReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="HoaDon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HoaDon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BillAndBillInfo.xsc">
+      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
     </None>
-    <None Include="CoffeeData.xsd">
+    <None Include="BillAndBillInfo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CoffeeData.Designer.cs</LastGenOutput>
+      <LastGenOutput>BillAndBillInfo.Designer.cs</LastGenOutput>
     </None>
-    <None Include="CoffeeData.xss">
-      <DependentUpon>CoffeeData.xsd</DependentUpon>
+    <None Include="BillAndBillInfo.xss">
+      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDon.edmx.diagram">
+      <DependentUpon>HoaDon.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -220,117 +338,105 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\capheden.png" />
-    <Content Include="Resources\Hinh10.jpg" />
-    <Content Include="Resources\Hinh11.jpg" />
-    <Content Include="Resources\Hinh12.jpg" />
-    <Content Include="Resources\Hinh13.jpg" />
-    <Content Include="Resources\Hinh14.jpg" />
-    <Content Include="Resources\Hinh15.jpg" />
-    <Content Include="Resources\Hinh16.jpg" />
-    <Content Include="Resources\Hinh17.jpg" />
-    <Content Include="Resources\Hinh2.jpg" />
-    <Content Include="Resources\Hinh3.jpg" />
-    <Content Include="Resources\Hinh4.jpg" />
-    <Content Include="Resources\Hinh5.jpg" />
-    <Content Include="Resources\Hinh6.jpg" />
-    <Content Include="Resources\Hinh7.jpg" />
-    <Content Include="Resources\Hinh8.jpg" />
-    <Content Include="Resources\Hinh9.jpg" />
-    <Content Include="Resources\Hình-App_3006021-Cà-Phê-Đen.jpg" />
-    <Content Include="Resources\icons8-available-updates-20.png" />
-    <Content Include="Resources\icons8-back-64.png" />
-    <Content Include="Resources\icons8-booking-20.png" />
-    <Content Include="Resources\icons8-booking-30.png" />
-    <Content Include="Resources\icons8-bubble-tea-30.png" />
-    <Content Include="Resources\icons8-calendar-26-30.png" />
-    <Content Include="Resources\icons8-cancel-20.png" />
-    <Content Include="Resources\icons8-cancel-30.png" />
-    <Content Include="Resources\icons8-code-30.png" />
-    <Content Include="Resources\icons8-customer-30.png" />
-    <Content Include="Resources\icons8-decline-30.png" />
-    <Content Include="Resources\icons8-edit-20.png" />
-    <Content Include="Resources\icons8-export-30.png" />
-    <Content Include="Resources\icons8-export-csv-20.png" />
-    <Content Include="Resources\icons8-eye-30 %281%29.png" />
-    <Content Include="Resources\icons8-gender-30.png" />
-    <Content Include="Resources\icons8-import-csv-20.png" />
-    <Content Include="Resources\icons8-invisible-30.png" />
-    <Content Include="Resources\icons8-iphone-14-30.png" />
-    <Content Include="Resources\icons8-login-30.png" />
-    <Content Include="Resources\icons8-logout-20.png" />
-    <Content Include="Resources\icons8-magnifying-glass-tilted-left-20.png" />
-    <Content Include="Resources\icons8-manager-20.png" />
-    <Content Include="Resources\icons8-manager-30.png" />
-    <Content Include="Resources\icons8-menu-20.png" />
-    <Content Include="Resources\icons8-merge-horizontal-30.png" />
-    <Content Include="Resources\icons8-money-bag-30.png" />
-    <Content Include="Resources\icons8-name-tag-30.png" />
-    <Content Include="Resources\icons8-network-20.png" />
-    <Content Include="Resources\icons8-paid-bill-20.png" />
-    <Content Include="Resources\icons8-password-50.png" />
-    <Content Include="Resources\icons8-password-reset-20.png" />
-    <Content Include="Resources\icons8-pay-30.png" />
-    <Content Include="Resources\icons8-phone-30.png" />
-    <Content Include="Resources\icons8-pictures-folder-20.png" />
-    <Content Include="Resources\icons8-plus-10.png" />
-    <Content Include="Resources\icons8-plus-20.png" />
-    <Content Include="Resources\icons8-port-20.png" />
-    <Content Include="Resources\icons8-print-from-cloud-30.png" />
-    <Content Include="Resources\icons8-remove-20.png" />
-    <Content Include="Resources\icons8-request-money-30.png" />
-    <Content Include="Resources\icons8-restaurant-30.png" />
-    <Content Include="Resources\icons8-restaurant-menu-30.png" />
-    <Content Include="Resources\icons8-save-20.png" />
-    <Content Include="Resources\icons8-search-bar-30.png" />
-    <Content Include="Resources\icons8-show-permit-card-30.png" />
-    <Content Include="Resources\icons8-staff-20.png" />
-    <Content Include="Resources\icons8-statistics-20.png" />
-    <Content Include="Resources\icons8-swap-30.png" />
-    <Content Include="Resources\icons8-table-20.png" />
-    <Content Include="Resources\icons8-time-30.png" />
-    <Content Include="Resources\icons8-unit-30.png" />
-    <Content Include="Resources\icons8-user-20.png" />
-    <Content Include="Resources\icons8-user-50.png" />
-    <Content Include="Resources\icons8-user-location-30.png" />
-    <Content Include="Resources\icons8-users-30.png" />
-    <Content Include="Resources\ico_hu.png" />
-    <Content Include="Resources\ico_trong.png" />
-    <Content Include="Resources\ico_user.png" />
-    <Content Include="Resources\menu.png" />
-    <Content Include="Resources\untick.png" />
-    <Content Include="Resources\z4753863456427_1e4f11841ca45a73da94e140db46077d.jpg" />
-    <Content Include="Resources\tick.png" />
-    <Content Include="Resources\zcoffee.png" />
-    <Content Include="Resources\icons8-export-excel-30.png" />
-    <Content Include="Resources\icons8-export-excel-48.png" />
-    <Content Include="Resources\icons8-eye-30.png" />
-    <Content Include="Resources\icons8-eye-50.png" />
-    <Content Include="Resources\logoo.png" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{3BFE0E9C-FD69-453E-9020-AA64EA8E846E}</Project>
+      <Project>{07d27bd1-03d4-4e9f-abac-45cd451bccbe}</Project>
       <Name>BUS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CustomComponent\CustomComponent.csproj">
-      <Project>{C85243ED-2A42-4297-9FB4-804BBB32B194}</Project>
-      <Name>CustomComponent</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{F461B185-834D-429B-BCB9-6475C75D43BD}</Project>
+      <Project>{C27880C4-F359-48D8-B8E6-9A810769ADB4}</Project>
       <Name>DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{29F90C89-3203-4E10-A333-0C40C9B033E1}</Project>
+      <Project>{78dd72ae-8ca4-4660-87f1-1bbf08b4115c}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\FileSricpt.sql" />
+    <Content Include="Data\SQLQuery.sql" />
+    <Content Include="HoaDon.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HoaDon.edmx</DependentUpon>
+      <LastGenOutput>HoaDon.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HoaDon.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HoaDon.edmx</DependentUpon>
+      <LastGenOutput>HoaDon.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\1489514002___Upload.png" />
+    <Content Include="Resources\1489514013___Download.png" />
+    <Content Include="Resources\add-icon.png" />
+    <Content Include="Resources\Apps-preferences-system-time-icon.png" />
+    <Content Include="Resources\Backup-restore-icon.png" />
+    <Content Include="Resources\Button-First-icon.png" />
+    <Content Include="Resources\Button-Last-icon.png" />
+    <Content Include="Resources\Button-Next-icon.png" />
+    <Content Include="Resources\Button-Previous-icon.png" />
+    <Content Include="Resources\Button-Refresh-icon.png" />
+    <Content Include="Resources\Cash-icon.png" />
+    <Content Include="Resources\check-1-icon.png" />
+    <Content Include="Resources\Check-2-icon.png" />
+    <Content Include="Resources\Close-2-icon - Copy.png" />
+    <Content Include="Resources\Close-2-icon.png" />
+    <Content Include="Resources\Documents-icon - Copy.png" />
+    <Content Include="Resources\Documents-icon.png" />
+    <Content Include="Resources\Ecommerce-Bill-icon - Copy.png" />
+    <Content Include="Resources\Ecommerce-Bill-icon.png" />
+    <Content Include="Resources\email-send-icon - Copy.png" />
+    <Content Include="Resources\email-send-icon.png" />
+    <Content Include="Resources\Folder-URL-History-icon - Copy.png" />
+    <Content Include="Resources\Folder-URL-History-icon.png" />
+    <Content Include="Resources\Food-Coffee-icon - Copy.png" />
+    <Content Include="Resources\Food-Coffee-icon.png" />
+    <Content Include="Resources\Household-Table-icon - Copy.png" />
+    <Content Include="Resources\Household-Table-icon.png" />
+    <Content Include="Resources\icon-developer-icon - Copy.png" />
+    <Content Include="Resources\icon-developer-icon.png" />
+    <Content Include="Resources\logout-icon - Copy.png" />
+    <Content Include="Resources\logout-icon.png" />
+    <Content Include="Resources\Presentation-icon - Copy.png" />
+    <Content Include="Resources\Presentation-icon.png" />
+    <Content Include="Resources\Reset-icon - Copy.png" />
+    <Content Include="Resources\Reset-icon.png" />
+    <Content Include="Resources\search-icon %281%29 - Copy.png" />
+    <Content Include="Resources\search-icon %281%29.png" />
+    <Content Include="Resources\Search-icon - Copy.png" />
+    <Content Include="Resources\Search-icon.png" />
+    <Content Include="Resources\Show-Property-icon - Copy.png" />
+    <Content Include="Resources\Show-Property-icon.png" />
+    <Content Include="Resources\User-Group-icon.png" />
+    <Content Include="Resources\user-info-icon.png" />
+    <None Include="Resources\logoo.png" />
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

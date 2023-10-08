@@ -24,38 +24,38 @@ namespace DAO
             }
             private set => instance = value;
         }
-        public List<TypeFood> GetCategoryByID(int id)
+        public List<DTO.TypeFood> GetCategoryByID(int id)
         {
-            List<TypeFood> list = new List<TypeFood>();
+            List<DTO.TypeFood> list = new List<DTO.TypeFood>();
             string query = "SP_GetTypeFoodByIdCategory " + id;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
-                TypeFood type = new TypeFood(row);
+                DTO.TypeFood type = new DTO.TypeFood(row);
                 list.Add(type);
             }
             return list;
         }
-        public List<TypeFood> GetTypeFood()
+        public List<DTO.TypeFood> GetTypeFood()
         {
-            List<TypeFood> list = new List<TypeFood>();
+            List<DTO.TypeFood> list = new List<DTO.TypeFood>();
             string query = "SP_GetTypeListIdNameNameCategory";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
-                TypeFood type = new TypeFood((int)row["Mã loại"], row["Tên loại"].ToString(), row["Tên thể loại"].ToString(), (int)row["IdCategory"]);
+                DTO.TypeFood type = new DTO.TypeFood((int)row["Mã loại"], row["Tên loại"].ToString(), row["Tên thể loại"].ToString(), (int)row["IdCategory"]);
                 list.Add(type);
             }
             return list;
         }
-        public List<TypeFood> GetTypeFoodAll()
+        public List<DTO.TypeFood> GetTypeFoodAll()
         {
-            List<TypeFood> list = new List<TypeFood>();
+            List<DTO.TypeFood> list = new List<DTO.TypeFood>();
             string query = "Select * from typeFood";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                TypeFood type = new TypeFood(item);
+                DTO.TypeFood type = new DTO.TypeFood(item);
                 list.Add(type);
             }
             return list;
