@@ -9,6 +9,12 @@ using DevExpress.XtraSplashScreen;
 
 using BUS;
 using DTO;
+using System.IO;
+using System.Drawing;
+using MimeKit;
+using System.Net.Mail;
+using System.Threading.Tasks;
+using MailKit.Security;
 
 namespace GUI
 {
@@ -21,8 +27,8 @@ namespace GUI
             InitializeComponent();
             loginAccount=acc;
             currentClickButton = null;
-           btnChangeTable.Enabled = false;
-            btnBillardTable.Enabled=false;
+           btnGopBan.Enabled = false;
+            btnChuyenBan.Enabled=false;
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             LoadTable();
             LoadCategory();
@@ -117,8 +123,8 @@ namespace GUI
             lsvBill.Tag = (sender as SimpleButton).Tag;
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
-            btnChangeTable.Enabled = true;
-            btnBillardTable.Enabled=true;
+            btnChuyenBan.Enabled = true;
+            btnGopBan.Enabled=true;
         }
 
         private void lkedPickCategory_EditValueChanged(object sender, EventArgs e)
@@ -195,36 +201,31 @@ namespace GUI
 
         private void btnChangeTable_Click(object sender, EventArgs e)
         {
-            int id1 = (lsvBill.Tag as Table).ID;
-            int id2;
-            if (lkedPickTable.EditValue == null)
-            {
-                XtraMessageBox.Show("Hãy chọn bàn muốn chuyển");
-                return;
-            }
-            else
-                id2 = (int)lkedPickTable.EditValue;
-
-            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn chuyển {0} sang {1}?",
-                (lsvBill.Tag as Table).Name, lkedPickTable.Text),
-                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                TableBUS.Instance.SwitchTable(id1, id2);
-                LoadTable();
-                LoadLookUpEditTable();
-                btnChangeTable.Enabled = false;
-                btnBillardTable.Enabled=false;
-                foreach (SimpleButton item in flpListTable.Controls)
-                    if ((item.Tag as Table).ID == id2)
-                    {
-                        lsvBill.Tag = item.Tag;
-                        break;
-                    }
-            }
+            
         }
 
-        
 
+        private static MimeMessage CreateMimeMessageExportToPdf(MemoryStream stream)
+        {
+            // Instantiate a report. 
+            // Email export options are already specified at design time.                
+            XtraReport report = new XtraReport();
+
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Someone", "nhamngoinfo@gmail.com"));
+            message.To.Add(new MailboxAddress(report.ExportOptions.Email.RecipientName,
+                report.ExportOptions.Email.RecipientAddress));
+            message.Subject = report.ExportOptions.Email.Subject;
+            var builder = new BodyBuilder();
+            builder.TextBody = "This is a test e-mail message sent by an application.";
+            // Create a new attachment and add the PDF document.
+            report.ExportToPdf(stream);
+            stream.Seek(0, System.IO.SeekOrigin.Begin);
+            builder.Attachments.Add("TestReport.pdf", stream.ToArray(), new ContentType("application", "pdf"));
+            message.Body = builder.ToMessageBody();
+            return message;
+        }
+        
         private void btnCheck_Click(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;//lấy ra id table
@@ -273,12 +274,23 @@ namespace GUI
                     tool.ShowPreview();//show lên
                     SplashScreenManager.CloseForm();
                     // Save bill to database
-                    BillBUS.Instance.CheckOut(billID, discount, (int)finalPrice);//chuyển giảm giá và tổng tiền để lưu vào csdl nhằm mục sự dung cho sau này
-                    ShowBill(table.ID);
-                    LoadTable();
-                    LoadLookUpEditTable();
+                    report.PrintingSystem.AfterBuildPages += PrintingSystem_AfterBuildPages;
+                   
                 }
             } 
+        }
+
+        private void PrintingSystem_AfterBuildPages(object sender, EventArgs e)
+        {
+            int discount = NumDiscount; //mã giảm giá
+            Table table = lsvBill.Tag as Table;//lấy ra id table
+            int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);//kiểm tra bàn đã có bill hay chưa
+            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]) * 1000;//lấy sos tiền hóa đơn
+            double finalPrice = totalPrice - (totalPrice / 100) * discount;//tính sosos tiền được giảm
+            BillBUS.Instance.CheckOut(billID, discount, (int)finalPrice);//chuyển giảm giá và tổng tiền để lưu vào csdl nhằm mục sự dung cho sau này
+            ShowBill(table.ID);
+            LoadTable();
+            LoadLookUpEditTable();
         }
 
         private void fMain_KeyDown(object sender, KeyEventArgs e)
@@ -296,31 +308,7 @@ namespace GUI
 
         private void btnBillardTable_Click(object sender, EventArgs e)
         {
-            int id1 = (lsvBill.Tag as Table).ID;
-            int id2;
-            if (lkedPickTable.EditValue == null)
-            {
-                XtraMessageBox.Show("Hãy chọn bàn muốn gộp");
-                return;
-            }
-            else
-                id2 = (int)lkedPickTable.EditValue;
-
-            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp bàn {0} sang {1}?",
-                (lsvBill.Tag as Table).Name, lkedPickTable.Text),
-                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                TableBUS.Instance.MergeTable(id1, id2);
-                LoadTable();
-                LoadLookUpEditTable();
-                btnBillardTable.Enabled=false; 
-                foreach (SimpleButton item in flpListTable.Controls)
-                    if ((item.Tag as Table).ID == id2)
-                    {
-                        lsvBill.Tag = item.Tag;
-                        break;
-                    }
-            }
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -377,7 +365,187 @@ namespace GUI
                 XtraMessageBox.Show(String.Format("Mã giảm giá không tồn tại hoặc đã hết hạn"), "Thông báo");
             }
         }
-        
-        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(lsvBill.FocusedItem.Text);
+            Table table = lsvBill.Tag as Table;
+            if (table == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn");
+                return;
+            }
+
+            if (spAmount.Value == 0)
+                return;
+            int amount = (int)spAmount.Value;
+
+            int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);
+            string FoodName = lsvBill.FocusedItem.Text.ToString();
+            if (string.IsNullOrEmpty(FoodName))
+            {
+                XtraMessageBox.Show("Hãy chọn món");
+                return;
+            }
+            else
+            {
+                if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn xóa món {0} số lượng {1} ra khỏi bill {2}?",
+               FoodName, amount, billID), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    try
+                    {
+                        BillInfoBUS.Instance.DeleteFoodBillInfo(billID, FoodName, amount);
+                    }
+                    catch (Exception ex)
+                    {
+                        XtraMessageBox.Show("Eror: " + ex);
+                    }
+                }
+            }
+            ShowBill(table.ID);
+            LoadTable();
+            LoadLookUpEditTable();
+        }
+
+        private void btnGoiMon_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;//lấy bàn 
+            if (table == null)//kiểm tra chọn
+            {
+                XtraMessageBox.Show("Hãy chọn bàn");
+                return;
+            }
+
+            if (spAmount.Value == 0)//kiểm số luowjgn thêm nếu như 0 thì không đươhjc thêm
+                return;
+            int amount = (int)spAmount.Value;//số lượng thêm
+
+            int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);//lấy id bill và kiểm tra đã có bill hay chưa
+
+            if (lkedPickFood.EditValue == null)//kiểm tra món chọn
+            {
+                XtraMessageBox.Show("Hãy chọn món");
+                return;
+            }
+            int foodID = (int)lkedPickFood.EditValue;//id của món chọn
+
+            if (billID == -1)//bill mới
+            {
+                try
+                {
+                    BillBUS.Instance.InsertBill(table.ID);//thêm bill mới
+                    BillInfoBUS.Instance.InsertBillInfo(BillBUS.Instance.GetMaxBillID(), foodID, amount);//thêm chi tiết hoa đơn
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Error: " + ex);
+                }
+            }
+            else//bill cũ
+            {
+                try
+                {
+                    BillInfoBUS.Instance.InsertBillInfo(billID, foodID, amount);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Eror: " + ex);
+                }
+            }
+            ShowBill(table.ID);//show ra bill
+            LoadTable();
+            LoadLookUpEditTable();
+        }
+
+        private void btnChuyenBan_Click(object sender, EventArgs e)
+        {
+            int id1 = (lsvBill.Tag as Table).ID;
+            int id2;
+            if (lkedPickTable.EditValue == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn muốn chuyển");
+                return;
+            }
+            else
+                id2 = (int)lkedPickTable.EditValue;
+
+            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn chuyển {0} sang {1}?",
+                (lsvBill.Tag as Table).Name, lkedPickTable.Text),
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                TableBUS.Instance.SwitchTable(id1, id2);
+                LoadTable();
+                LoadLookUpEditTable();
+                btnChuyenBan.Enabled = false;
+                btnGopBan.Enabled = false;
+                foreach (SimpleButton item in flpListTable.Controls)
+                    if ((item.Tag as Table).ID == id2)
+                    {
+                        lsvBill.Tag = item.Tag;
+                        break;
+                    }
+            }
+        }
+
+        private void btnGopBan_Click(object sender, EventArgs e)
+        {
+            int id1 = (lsvBill.Tag as Table).ID;
+            int id2;
+            if (lkedPickTable.EditValue == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn muốn gộp");
+                return;
+            }
+            else
+                id2 = (int)lkedPickTable.EditValue;
+
+            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp bàn {0} sang {1}?",
+                (lsvBill.Tag as Table).Name, lkedPickTable.Text),
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                TableBUS.Instance.MergeTable(id1, id2);
+                LoadTable();
+                LoadLookUpEditTable();
+                btnGopBan.Enabled = false;
+                foreach (SimpleButton item in flpListTable.Controls)
+                    if ((item.Tag as Table).ID == id2)
+                    {
+                        lsvBill.Tag = item.Tag;
+                        break;
+                    }
+            }
+        }
+
+        private void lkedPickFood_EditValueChanged(object sender, EventArgs e)
+        {
+            Food a = FoodBUS.Instance.GetFoodByID((int)lkedPickFood.EditValue);
+            string resourcesDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", a.Image + ".jpg");
+            if (File.Exists(resourcesDirectory))
+            {
+                try
+                {
+                    // Đọc tệp hình ảnh
+                    using (var imageStream = File.OpenRead(resourcesDirectory))
+                    {
+                        Image image = Image.FromStream(imageStream);
+                        pbxBox.Image = image;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý ngoại lệ nếu có lỗi khi đọc tệp hình ảnh.
+                    Console.WriteLine("Lỗi khi đọc tệp hình ảnh: " + ex.Message);
+                }
+            }
+        }
+        private void spAmount_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

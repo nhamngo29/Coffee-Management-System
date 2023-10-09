@@ -43,10 +43,10 @@
             this.txtNumPageBill = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deFromDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFromDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFromDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumPageBill.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,6 +198,7 @@
             this.Controls.Add(this.deToDate);
             this.Controls.Add(this.deFromDate);
             this.Controls.Add(this.gcBill);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "fBill";
             this.Text = "Danh sách hóa đơn";
             this.Load += new System.EventHandler(this.fBill_Load);

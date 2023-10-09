@@ -16,6 +16,7 @@ namespace GUI
 {
     public partial class fManager : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        static int countBooking = 0;
         private Account loginAccount;
         public Account LoginAccount
         {
@@ -34,7 +35,22 @@ namespace GUI
         private void fManager_Load(object sender, EventArgs e)
         {
             ribbonPageGroupSystem.Text = loginAccount.DisplayName;
-            bsTextDate.Caption = "Chào " + loginAccount.DisplayName;
+            this.NhanVien.Text += loginAccount.DisplayName;
+            Timer timer = new Timer();
+            countBooking=BookingBUS.Instance.GetMaxID();
+            timer.Tick += Timer_Tick;
+            timer.Start();
+            barButtonItem6.PerformClick();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if(countBooking!=BookingBUS.Instance.GetMaxID())
+            {
+                countBooking = BookingBUS.Instance.GetMaxID();
+                XtraMessageBox.Show("Có đơn đặt hàng mới vui lòng kiểm tra", "Thông báo");
+            }
+            this.NgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
 
         private void DisplayAccount(int type)//type này là loại account người qunar lý sẽ là 1 còn nhân viên khác 1
@@ -67,7 +83,7 @@ namespace GUI
             }
         }
 
-     
+
 
         private void btnAccountInfo_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -197,7 +213,7 @@ namespace GUI
         }
         private void btnLog_ItemClick(object sender, ItemClickEventArgs e)
         {
-           
+
         }
 
         private void fManager_KeyDown(object sender, KeyEventArgs e)
@@ -228,6 +244,22 @@ namespace GUI
             else
             {
                 fDiscount f = new fDiscount();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            Form frm = this.CheckFormExist(typeof(fReservation));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fReservation f = new fReservation();
                 f.MdiParent = this;
                 f.Show();
             }
