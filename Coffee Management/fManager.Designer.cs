@@ -529,7 +529,6 @@
             this.ClientSize = new System.Drawing.Size(1156, 644);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbon);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("fManager.IconOptions.Icon")));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fManager.IconOptions.Image")));
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("fManager.IconOptions.LargeImage")));

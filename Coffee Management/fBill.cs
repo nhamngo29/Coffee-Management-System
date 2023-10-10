@@ -2,8 +2,13 @@
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
-
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 using BUS;
+using DevExpress.ClipboardSource.SpreadsheetML;
+using System.IO;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace GUI
 {
@@ -121,6 +126,53 @@ namespace GUI
                 btnLastPage.Enabled = btnNext.Enabled = false;
             }    
             txtNumPageBill.Text = page.ToString();
+        }
+        private void ExportGridToExcel(GridControl gridControl, string filePath)
+        {
+            try
+            {
+                // Tạo một workbook và một worksheet
+                IWorkbook workbook = new XSSFWorkbook();
+                ISheet sheet = workbook.CreateSheet("Sheet1");
+
+                GridView gridView = gridControl.MainView as GridView;
+
+                // Tạo tiêu đề cho các cột
+                for (int i = 0; i < gridView.Columns.Count; i++)
+                {
+                    sheet.CreateRow(0).CreateCell(i).SetCellValue(gridView.Columns[i].Caption);
+                }
+
+                // Sao chép dữ liệu từ GridView vào tệp Excel
+                for (int i = 0; i < gridView.RowCount; i++)
+                {
+                    for (int j = 0; j < gridView.Columns.Count; j++)
+                    {
+                        sheet.CreateRow(i + 1).CreateCell(j).SetCellValue(gridView.GetRowCellValue(i, gridView.Columns[j]).ToString());
+                    }
+                }
+
+                // Lưu workbook vào tệp Excel
+                using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    workbook.Write(fs);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+        }
+
+        private void btnExportEx_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExportGridToExcel(gvBill.GridControl, saveFileDialog.FileName);
+                MessageBox.Show("Dữ liệu đã được xuất thành công!");
+            }
         }
     }
 }
