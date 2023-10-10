@@ -205,7 +205,7 @@ namespace GUI
         }
 
 
-        private static MimeMessage CreateMimeMessageExportToPdf(MemoryStream stream)
+        private static MimeMessage CreateMimeMessageExportToPdfe(MemoryStream stream)
         {
             // Instantiate a report. 
             // Email export options are already specified at design time.                
