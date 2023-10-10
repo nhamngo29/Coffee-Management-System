@@ -15,6 +15,8 @@ using MimeKit;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using MailKit.Security;
+using System.Net.Http;
+using System.Text;
 
 namespace GUI
 {
@@ -25,10 +27,10 @@ namespace GUI
         public fMain(Account acc)
         {
             InitializeComponent();
-            loginAccount=acc;
+            loginAccount = acc;
             currentClickButton = null;
-           btnGopBan.Enabled = false;
-            btnChuyenBan.Enabled=false;
+            btnGopBan.Enabled = false;
+            btnChuyenBan.Enabled = false;
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             LoadTable();
             LoadCategory();
@@ -70,7 +72,7 @@ namespace GUI
         void LoadTypeFood()
         {
             //lkedPickType.Properties.AllowUpdatePopupWidth=
-        }    
+        }
         private void LoadLookUpEditTable()
         {
             lkedPickTable.Properties.DataSource = TableBUS.Instance.GetTableList();
@@ -112,19 +114,26 @@ namespace GUI
                 if (currentClickButton != null)
                 {
                     if ((currentClickButton.Tag as Table).Status == "Có người")
+                    {
                         currentClickButton.ImageIndex = 0;
+                        lbStatus.Text = "Có người";
+                    }
                     else
+                    {
                         currentClickButton.ImageIndex = -1;
+                        lbStatus.Text = "Sẵn sàng";
+                    }
                 }
             }
 
             (sender as SimpleButton).ImageIndex = 1;
             int tableID = ((sender as SimpleButton).Tag as Table).ID;
+            lbNumberTb.Text = tableID.ToString();
             lsvBill.Tag = (sender as SimpleButton).Tag;
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
             btnChuyenBan.Enabled = true;
-            btnGopBan.Enabled=true;
+            btnGopBan.Enabled = true;
         }
 
         private void lkedPickCategory_EditValueChanged(object sender, EventArgs e)
@@ -146,8 +155,8 @@ namespace GUI
         void GetListTypeByCategory(int categoryID)
         {
             lkedPickType.Properties.DataSource = TypeFoodBUS.Instance.GetAllTypeFoodByIdCategoryID(categoryID);
-            lkedPickType.Properties.DisplayMember= "Name";
-            lkedPickType.Properties.ValueMember= "Id";
+            lkedPickType.Properties.DisplayMember = "Name";
+            lkedPickType.Properties.ValueMember = "Id";
         }
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -201,7 +210,7 @@ namespace GUI
 
         private void btnChangeTable_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -225,7 +234,7 @@ namespace GUI
             message.Body = builder.ToMessageBody();
             return message;
         }
-        
+
         private void btnCheck_Click(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;//lấy ra id table
@@ -275,12 +284,12 @@ namespace GUI
                     SplashScreenManager.CloseForm();
                     // Save bill to database
                     report.PrintingSystem.AfterBuildPages += PrintingSystem_AfterBuildPages;
-                   
+
                 }
-            } 
+            }
         }
 
-        private void PrintingSystem_AfterBuildPages(object sender, EventArgs e)
+        private async void PrintingSystem_AfterBuildPages(object sender, EventArgs e)
         {
             int discount = NumDiscount; //mã giảm giá
             Table table = lsvBill.Tag as Table;//lấy ra id table
@@ -288,6 +297,23 @@ namespace GUI
             double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]) * 1000;//lấy sos tiền hóa đơn
             double finalPrice = totalPrice - (totalPrice / 100) * discount;//tính sosos tiền được giảm
             BillBUS.Instance.CheckOut(billID, discount, (int)finalPrice);//chuyển giảm giá và tổng tiền để lưu vào csdl nhằm mục sự dung cho sau này
+            string botToken = "6491672688:AAFsnvJcdDuQH-MikAw91VrnFGlRBkp07xU";
+            long chatId = -4054499094;
+            string messageText = $"Có hóa đơn mới: {billID} \nSố tiền: {totalPrice}\nGiảm giá: {discount}\nSố tiền trả: {finalPrice}\nNhân viên: {loginAccount.DisplayName}\nNgày giờ: {DateTime.Now.ToString("dd/mm/yyyyy hh:mm:ss")}";
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string apiUrl = $"https://api.telegram.org/bot{botToken}/sendMessage";
+                    var content = new StringContent($"{{\"chat_id\": \"{chatId}\", \"text\": \"{messageText}\"}}", Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
             ShowBill(table.ID);
             LoadTable();
             LoadLookUpEditTable();
@@ -308,7 +334,7 @@ namespace GUI
 
         private void btnBillardTable_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -335,7 +361,7 @@ namespace GUI
             else
             {
                 if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn xóa món {0} số lượng {1} ra khỏi bill {2}?",
-               FoodName,amount, billID), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+               FoodName, amount, billID), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     try
                     {
@@ -542,10 +568,6 @@ namespace GUI
                     Console.WriteLine("Lỗi khi đọc tệp hình ảnh: " + ex.Message);
                 }
             }
-        }
-        private void spAmount_EditValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

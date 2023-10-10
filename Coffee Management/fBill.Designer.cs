@@ -41,6 +41,7 @@
             this.btnLastPage = new DevExpress.XtraEditors.SimpleButton();
             this.btnNext = new DevExpress.XtraEditors.SimpleButton();
             this.txtNumPageBill = new DevExpress.XtraEditors.TextEdit();
+            this.btnExportEx = new CustomComponent.ButtonBoTron();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFromDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -74,7 +75,7 @@
             this.deFromDate.EditValue = null;
             this.deFromDate.Location = new System.Drawing.Point(74, 34);
             this.deFromDate.Name = "deFromDate";
-            this.deFromDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deFromDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.deFromDate.Properties.Appearance.Options.UseFont = true;
             this.deFromDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -89,7 +90,7 @@
             this.deToDate.EditValue = null;
             this.deToDate.Location = new System.Drawing.Point(531, 34);
             this.deToDate.Name = "deToDate";
-            this.deToDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deToDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.deToDate.Properties.Appearance.Options.UseFont = true;
             this.deToDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -100,7 +101,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(12, 37);
             this.labelControl1.Name = "labelControl1";
@@ -111,7 +112,7 @@
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(462, 37);
             this.labelControl2.Name = "labelControl2";
@@ -122,7 +123,7 @@
             // btnShowBill
             // 
             this.btnShowBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnShowBill.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowBill.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnShowBill.Appearance.Options.UseFont = true;
             this.btnShowBill.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnShowBill.ImageOptions.SvgImage")));
             this.btnShowBill.Location = new System.Drawing.Point(264, 29);
@@ -182,11 +183,36 @@
             this.txtNumPageBill.TabIndex = 10;
             this.txtNumPageBill.TextChanged += new System.EventHandler(this.txtNumPageBill_TextChanged);
             // 
+            // btnExportEx
+            // 
+            this.btnExportEx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportEx.BackColor = System.Drawing.Color.Gray;
+            this.btnExportEx.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnExportEx.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnExportEx.BorderRadius = 10;
+            this.btnExportEx.BorderSize = 0;
+            this.btnExportEx.FlatAppearance.BorderSize = 0;
+            this.btnExportEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportEx.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportEx.ForeColor = System.Drawing.Color.White;
+            this.btnExportEx.Image = ((System.Drawing.Image)(resources.GetObject("btnExportEx.Image")));
+            this.btnExportEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportEx.Location = new System.Drawing.Point(13, 387);
+            this.btnExportEx.Name = "btnExportEx";
+            this.btnExportEx.Size = new System.Drawing.Size(84, 32);
+            this.btnExportEx.TabIndex = 11;
+            this.btnExportEx.Text = "Xuất";
+            this.btnExportEx.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportEx.TextColor = System.Drawing.Color.White;
+            this.btnExportEx.UseVisualStyleBackColor = false;
+            this.btnExportEx.Click += new System.EventHandler(this.btnExportEx_Click);
+            // 
             // fBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 422);
+            this.Controls.Add(this.btnExportEx);
             this.Controls.Add(this.txtNumPageBill);
             this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.btnNext);
@@ -198,7 +224,6 @@
             this.Controls.Add(this.deToDate);
             this.Controls.Add(this.deFromDate);
             this.Controls.Add(this.gcBill);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "fBill";
             this.Text = "Danh sách hóa đơn";
             this.Load += new System.EventHandler(this.fBill_Load);
@@ -228,5 +253,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLastPage;
         private DevExpress.XtraEditors.SimpleButton btnNext;
         private DevExpress.XtraEditors.TextEdit txtNumPageBill;
+        private CustomComponent.ButtonBoTron btnExportEx;
     }
 }
