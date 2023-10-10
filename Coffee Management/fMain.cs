@@ -31,11 +31,9 @@ namespace GUI
             currentClickButton = null;
             btnGopBan.Enabled = false;
             btnChuyenBan.Enabled = false;
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             LoadTable();
             LoadCategory();
             LoadLookUpEditTable();
-            SplashScreenManager.CloseForm();
         }
 
         private void LoadTable()
@@ -568,6 +566,11 @@ namespace GUI
                     Console.WriteLine("Lỗi khi đọc tệp hình ảnh: " + ex.Message);
                 }
             }
+        }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

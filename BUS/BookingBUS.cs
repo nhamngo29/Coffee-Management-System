@@ -42,7 +42,9 @@ namespace BUS
             }
             catch (Exception ex)
             {
+                return 0;
                 throw ex;
+
             }
         }
         public int GetCountUnCheck()

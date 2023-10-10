@@ -29,59 +29,171 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataSet11 = new GUI.DataSet1();
-            this.billTableAdapter = new GUI.DataSet1TableAdapters.BillTableAdapter();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            this.coffeeDataset = new GUI.Data.CoffeeDataset();
+            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.billTableAdapter = new GUI.Data.CoffeeDatasetTableAdapters.BillTableAdapter();
+            this.dataTableSumBillByMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTableSumBillByMonthTableAdapter = new GUI.Data.CoffeeDatasetTableAdapters.DataTableSumBillByMonthTableAdapter();
+            this.coffeeDataset1 = new GUI.Data.CoffeeDataset();
+            this.dataTableSumBillByMonthBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableSumBillByMonthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataset1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableSumBillByMonthBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataSet11
+            // coffeeDataset
             // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.coffeeDataset.DataSetName = "CoffeeDataset";
+            this.coffeeDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // billBindingSource
+            // 
+            this.billBindingSource.DataMember = "Bill";
+            this.billBindingSource.DataSource = this.coffeeDataset;
             // 
             // billTableAdapter
             // 
             this.billTableAdapter.ClearBeforeFill = true;
             // 
-            // bindingSource1
+            // dataTableSumBillByMonthBindingSource
             // 
-            this.bindingSource1.AllowNew = true;
-            this.bindingSource1.DataMember = "Bill";
-            this.bindingSource1.DataSource = this.dataSet11;
+            this.dataTableSumBillByMonthBindingSource.DataMember = "DataTableSumBillByMonth";
+            this.dataTableSumBillByMonthBindingSource.DataSource = this.coffeeDataset;
             // 
-            // crystalReportViewer1
+            // dataTableSumBillByMonthTableAdapter
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(980, 528);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.dataTableSumBillByMonthTableAdapter.ClearBeforeFill = true;
+            // 
+            // coffeeDataset1
+            // 
+            this.coffeeDataset1.DataSetName = "CoffeeDataset";
+            this.coffeeDataset1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTableSumBillByMonthBindingSource1
+            // 
+            this.dataTableSumBillByMonthBindingSource1.DataMember = "DataTableSumBillByMonth";
+            this.dataTableSumBillByMonthBindingSource1.DataSource = this.coffeeDataset1;
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram1;
+            this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartControl1.Location = new System.Drawing.Point(-3, 53);
+            this.chartControl1.Name = "chartControl1";
+            series1.Name = "Series 1";
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.Size = new System.Drawing.Size(848, 543);
+            this.chartControl1.TabIndex = 0;
+            chartTitle1.Text = "Tổng tiền theo tháng năm";
+            this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle1});
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.spinEdit1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(848, 53);
+            this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(274, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Năm:";
+            // 
+            // spinEdit1
+            // 
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            2023,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(339, 13);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
+            this.spinEdit1.Properties.AutoHeight = false;
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Properties.IsFloatValue = false;
+            this.spinEdit1.Properties.MaskSettings.Set("mask", "D4");
+            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
+            this.spinEdit1.Properties.MinValue = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
+            this.spinEdit1.Size = new System.Drawing.Size(100, 24);
+            this.spinEdit1.TabIndex = 10;
+            this.spinEdit1.EditValueChanged += new System.EventHandler(this.spinEdit1_EditValueChanged);
             // 
             // fStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 528);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.ClientSize = new System.Drawing.Size(848, 597);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.chartControl1);
             this.Name = "fStatistics";
             this.Text = "fStatistics";
             this.Load += new System.EventHandler(this.fStatistics_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableSumBillByMonthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataset1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableSumBillByMonthBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DataSet1 dataSet11;
-        private DataSet1TableAdapters.BillTableAdapter billTableAdapter;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private Data.CoffeeDataset coffeeDataset;
+        private System.Windows.Forms.BindingSource billBindingSource;
+        private Data.CoffeeDatasetTableAdapters.BillTableAdapter billTableAdapter;
+        private System.Windows.Forms.BindingSource dataTableSumBillByMonthBindingSource;
+        private Data.CoffeeDatasetTableAdapters.DataTableSumBillByMonthTableAdapter dataTableSumBillByMonthTableAdapter;
+        private Data.CoffeeDataset coffeeDataset1;
+        private System.Windows.Forms.BindingSource dataTableSumBillByMonthBindingSource1;
+        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
     }
 }

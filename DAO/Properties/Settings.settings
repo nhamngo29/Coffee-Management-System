@@ -3,23 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User ID=sa;Password=02092002Aa</Value>
-    </Setting>
-    <Setting Name="CoffeeManagementConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User ID=sa;Connect Timeout=30;TrustServerCertificate=False&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User ID=sa;Connect Timeout=30;TrustServerCertificate=False</Value>
-    </Setting>
-    <Setting Name="CoffeeManagementConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User ID=sa;Password=02092002Aa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User ID=sa;Password=02092002Aa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-0PQ4U60\SERVER01;Initial Catalog=CoffeeManagement;User ID=sa;Password=02092002A</Value>
     </Setting>
   </Settings>
 </SettingsFile>

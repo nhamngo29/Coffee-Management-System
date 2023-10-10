@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -46,7 +47,22 @@ namespace DAO
             }
             return table;
         }
+        public bool TestConnection()
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    return true;
+                }
+                catch (Exception)
+                {
 
+                    return false;
+                }
+            }
+        }    
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int row = 0;
@@ -100,5 +116,23 @@ namespace DAO
             }
             return data;
         }
-	}
+        public DataTable GetServerName()
+        {
+            DataTable dt = new DataTable();
+            dt = SqlDataSourceEnumerator.Instance.GetDataSources();
+            return dt;
+        }
+        public DataTable GetDBName(string pServer, string pUser, string pPass)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("select name from sys.Databases", "Data Source=" + pServer + ";Initial Catalog=master;User ID=" + pUser + ";pwd = " + pPass + "");
+            da.Fill(dt);
+            return dt;
+        }
+        public void SaveConfig(string pServer, string pUser, string pPass, string pDBname)
+        {
+            DAO.Properties.Settings.Default.ConnectionString = $"Data Source={pServer};Initial Catalog={pDBname};User ID={pUser};Password= {pPass}";
+            DAO.Properties.Settings.Default.Save();
+        }
+    }
 }

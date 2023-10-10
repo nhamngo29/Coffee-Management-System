@@ -122,5 +122,16 @@ namespace DAO
             }
             return result > 0;
         }
+        public double TotalAmountByMothAndYear(int Year,int Month)
+        {
+            try
+            {
+                return double.Parse(DataProvider.Instance.ExecuteScalar("SP_TotalAmountByMothAndYear @Year , @Month", new object[] { Year, Month }).ToString());
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

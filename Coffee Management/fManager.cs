@@ -26,6 +26,7 @@ namespace GUI
 
         public fManager(Account loginAccount)
         {
+            SplashScreenManager.ShowForm(typeof(SplashScreen1));
             InitializeComponent();
             this.LoginAccount = loginAccount;
         }
@@ -41,6 +42,7 @@ namespace GUI
             timer.Tick += Timer_Tick;
             timer.Start();
             barButtonItem6.PerformClick();
+            SplashScreenManager.CloseForm();
         }
 
         private void Timer_Tick(object sender, EventArgs e)

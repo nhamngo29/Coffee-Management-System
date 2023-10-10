@@ -26,44 +26,11 @@ namespace GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ESON-PC;Initial Catalog=CoffeeManagement;User ID=giangnamnam;Password" +
-            "=12345")]
-        public string CoffeeManagementConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PQ4U60\\SERVER01;Initial Catalog=CoffeeManagement;User ID=sa;" +
+            "Password=02092002Aa")]
+        public string ConnectionString {
             get {
-                return ((string)(this["CoffeeManagementConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ASUS\\SQLEXPRESS;Initial Catalog=CoffeeManagement;Integrated Security=" +
-            "True")]
-        public string CoffeeManagementConnectionString1 {
-            get {
-                return ((string)(this["CoffeeManagementConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ANIV5QKN\\MSSQLSERVER01;Initial Catalog=CoffeeManagement;Persis" +
-            "t Security Info=True;User ID=admin;Password=admin")]
-        public string CoffeeManagementConnectionString2 {
-            get {
-                return ((string)(this["CoffeeManagementConnectionString2"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PQ4U60\\SERVER01;Initial Catalog=CoffeeManagement;Persist Sec" +
-            "urity Info=True;User ID=sa;Password=02092002Aa")]
-        public string CoffeeManagementConnectionString3 {
-            get {
-                return ((string)(this["CoffeeManagementConnectionString3"]));
+                return ((string)(this["ConnectionString"]));
             }
         }
     }

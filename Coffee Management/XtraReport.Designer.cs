@@ -75,6 +75,7 @@
             this.imageCollection3 = new DevExpress.Utils.ImageCollection(this.components);
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             this.NameStaff = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -92,6 +93,7 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox1,
             this.xrLabel10,
             this.xrLabel13,
             this.xrLabel12,
@@ -99,14 +101,14 @@
             this.xrLabel8,
             this.xrLabel7,
             this.xrLabel2});
-            this.BottomMargin.HeightF = 382F;
+            this.BottomMargin.HeightF = 460.4167F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // xrLabel10
             // 
             this.xrLabel10.BackColor = System.Drawing.Color.Empty;
             this.xrLabel10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(0F, 315.5588F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(3.178914E-05F, 311.5417F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -537,6 +539,14 @@
             this.NameStaff.Name = "NameStaff";
             this.NameStaff.ValueInfo = "Nguyễn Nhâm Ngọ";
             // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 89.22297F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(178.4926F, 173.9583F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
             // XtraReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -554,7 +564,7 @@
             this.ExportOptions.Email.RecipientAddress = "nhamngoinfo@gmail.com";
             this.ExportOptions.Email.RecipientName = "John Doe";
             this.ExportOptions.Email.Subject = "Please review";
-            this.Margins = new System.Drawing.Printing.Margins(99, 99, 0, 382);
+            this.Margins = new System.Drawing.Printing.Margins(99, 99, 0, 460);
             this.PageHeight = 637;
             this.PageWidth = 697;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
@@ -630,6 +640,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel16;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRLabel xrLabel14;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         //private System.Diagnostics.PerformanceCounter performanceCounter1;
     }
 }

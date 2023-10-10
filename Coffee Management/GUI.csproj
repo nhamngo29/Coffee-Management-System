@@ -61,15 +61,24 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -156,6 +165,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -166,7 +176,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoffeeDataSet.Designer.cs">
+    <Compile Include="Class1.cs" />
+    <Compile Include="Data\CoffeeDataSet.cs">
+      <DependentUpon>CoffeeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CoffeeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CoffeeDataSet.xsd</DependentUpon>
@@ -176,22 +190,6 @@
     </Compile>
     <Compile Include="fAddDisscount.Designer.cs">
       <DependentUpon>fAddDisscount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BillAndBillInfo.cs">
-      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BillAndBillInfo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BillInfo.cs">
-      <DependentUpon>HoaDon.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>
@@ -222,6 +220,12 @@
     </Compile>
     <Compile Include="fCategory.Designer.cs">
       <DependentUpon>fCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fConfigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fConfigure.Designer.cs">
+      <DependentUpon>fConfigure.cs</DependentUpon>
     </Compile>
     <Compile Include="fDiscount.cs">
       <SubType>Form</SubType>
@@ -264,21 +268,6 @@
     </Compile>
     <Compile Include="fGroupFood.Designer.cs">
       <DependentUpon>fGroupFood.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDon.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HoaDon.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDon.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HoaDon.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDon.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HoaDon.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,6 +330,9 @@
     <EmbeddedResource Include="fCategory.resx">
       <DependentUpon>fCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fConfigure.resx">
+      <DependentUpon>fConfigure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDiscount.resx">
       <DependentUpon>fDiscount.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,45 +379,16 @@
     <EmbeddedResource Include="XtraReport.resx">
       <DependentUpon>XtraReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="HoaDon.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HoaDon.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="BillAndBillInfo.xsc">
-      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
-    </None>
-    <None Include="BillAndBillInfo.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BillAndBillInfo.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="BillAndBillInfo.xss">
-      <DependentUpon>BillAndBillInfo.xsd</DependentUpon>
-    </None>
-    <None Include="CoffeeDataSet.xsc">
+    <None Include="Data\CoffeeDataSet.xsc">
       <DependentUpon>CoffeeDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CoffeeDataSet.xsd">
+    <None Include="Data\CoffeeDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CoffeeDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="CoffeeDataSet.xss">
+    <None Include="Data\CoffeeDataSet.xss">
       <DependentUpon>CoffeeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="HoaDon.edmx.diagram">
-      <DependentUpon>HoaDon.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -481,16 +444,6 @@
   <ItemGroup>
     <Content Include="Data\FileSricpt.sql" />
     <Content Include="Data\SQLQuery.sql" />
-    <Content Include="HoaDon.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HoaDon.edmx</DependentUpon>
-      <LastGenOutput>HoaDon.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="HoaDon.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HoaDon.edmx</DependentUpon>
-      <LastGenOutput>HoaDon.cs</LastGenOutput>
-    </Content>
     <Content Include="Resources\1489514002___Upload.png" />
     <Content Include="Resources\1489514013___Download.png" />
     <Content Include="Resources\add-icon.png" />
@@ -520,6 +473,8 @@
     <Content Include="Resources\Household-Table-icon.png" />
     <Content Include="Resources\icon-developer-icon - Copy.png" />
     <Content Include="Resources\icon-developer-icon.png" />
+    <Content Include="Resources\LogoSimple.bmp" />
+    <Content Include="Resources\LogoSimple.png" />
     <Content Include="Resources\logout-icon - Copy.png" />
     <Content Include="Resources\logout-icon.png" />
     <Content Include="Resources\Presentation-icon - Copy.png" />

@@ -48,6 +48,12 @@
     <Compile Include="ButtonBoTron.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PasswordTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PasswordTextBox.Designer.cs">
+      <DependentUpon>PasswordTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

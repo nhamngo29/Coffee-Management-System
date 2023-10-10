@@ -109,5 +109,16 @@ namespace BUS
                 throw ex;
             }
         }
+        public double TotalAmountByMothAndYear(int Year, int Month)
+        {
+            try
+            {
+                return BillDAO.Instance.TotalAmountByMothAndYear( Year, Month );
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

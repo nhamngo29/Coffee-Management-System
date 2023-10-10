@@ -61,7 +61,7 @@
             // btnAccept
             // 
             this.btnAccept.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAccept.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccept.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnAccept.Appearance.Options.UseFont = true;
             this.btnAccept.Location = new System.Drawing.Point(40, 422);
             this.btnAccept.Name = "btnAccept";
@@ -73,7 +73,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Location = new System.Drawing.Point(211, 422);
             this.btnCancel.Name = "btnCancel";
@@ -100,6 +100,7 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel7);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(19, 140);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(353, 258);
@@ -245,7 +246,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.lbBack);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;

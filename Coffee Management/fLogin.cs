@@ -90,6 +90,12 @@ namespace GUI
 
         private void fLogin_Load(object sender, EventArgs e)
         {
+            if(!DataProvider.Instance.TestConnection())
+            {
+                XtraMessageBox.Show("Lối cấu hình vui lòng cấu hình lại", "Thông báo");
+                fConfigure fConfigure=new fConfigure();
+                fConfigure.ShowDialog();
+            }    
             this.KeyPreview = true;
             txtUserName.Focus();
             Reset();
@@ -119,9 +125,9 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            
             Account account = new Account(txtUserName.Text, txtPassword.Text);
-            SplashScreenManager.CloseForm();
+            
             try
             {
                 if (AccountDAO.Instance.CheckLogin(account))//kiểm tra đang nhập

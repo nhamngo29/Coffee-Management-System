@@ -41,17 +41,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.btnEyePassword = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.btnEyePassword = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -114,7 +114,7 @@
             // 
             // panel
             // 
-            this.panel.Font = new System.Drawing.Font("Myriad Arabic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.panel.Location = new System.Drawing.Point(29, 271);
             this.panel.Name = "panel";
@@ -187,6 +187,27 @@
             this.txtUserName.Size = new System.Drawing.Size(204, 24);
             this.txtUserName.TabIndex = 1;
             // 
+            // btnEyePassword
+            // 
+            this.btnEyePassword.Appearance.BorderColor = System.Drawing.Color.White;
+            this.btnEyePassword.Appearance.Options.UseBorderColor = true;
+            this.btnEyePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEyePassword.ImageOptions.SvgImage")));
+            this.btnEyePassword.Location = new System.Drawing.Point(231, 220);
+            this.btnEyePassword.Name = "btnEyePassword";
+            this.btnEyePassword.Size = new System.Drawing.Size(36, 23);
+            this.btnEyePassword.TabIndex = 38;
+            this.btnEyePassword.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(63, 223);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.txtPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(202, 18);
+            this.txtPassword.TabIndex = 2;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -227,27 +248,6 @@
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(63, 223);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.txtPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtPassword.Properties.UseSystemPasswordChar = true;
-            this.txtPassword.Size = new System.Drawing.Size(202, 18);
-            this.txtPassword.TabIndex = 2;
-            // 
-            // btnEyePassword
-            // 
-            this.btnEyePassword.Appearance.BorderColor = System.Drawing.Color.White;
-            this.btnEyePassword.Appearance.Options.UseBorderColor = true;
-            this.btnEyePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnEyePassword.Location = new System.Drawing.Point(231, 220);
-            this.btnEyePassword.Name = "btnEyePassword";
-            this.btnEyePassword.Size = new System.Drawing.Size(36, 23);
-            this.btnEyePassword.TabIndex = 38;
-            this.btnEyePassword.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // fLogin
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -282,11 +282,11 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.Load += new System.EventHandler(this.fLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fLogin_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

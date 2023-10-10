@@ -425,21 +425,24 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Tên món";
-            this.columnHeader1.Width = 171;
+            this.columnHeader1.Width = 178;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 71;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Đơn giá";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 179;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 152;
             // 
             // labelControl3
@@ -553,7 +556,6 @@
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList.Images.SetKeyName(0, "check-1-icon.png");
             this.imageList.Images.SetKeyName(1, "Check-2-icon.png");
-            this.imageList.Images.SetKeyName(2, "add-icon.png");
             // 
             // groupBox1
             // 
@@ -590,9 +592,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("fMain.IconOptions.Icon")));
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fMain.IconOptions.Image")));
             this.KeyPreview = true;
             this.Name = "fMain";
             this.Text = "Màn hình chính";
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fMain_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

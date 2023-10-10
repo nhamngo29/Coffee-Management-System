@@ -39,7 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bookingDKGridControl = new DevExpress.XtraGrid.GridControl();
             this.bookingDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coffeeDataSet = new GUI.CoffeeDataSet();
+            this.coffeeDataset = new GUI.Data.CoffeeDataset();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFullName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,10 +47,17 @@
             this.colNumberPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBookingTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateTimeOffsetEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateTimeOffsetEdit();
             this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colstatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bookingDKTableAdapter = new GUI.CoffeeDataSetTableAdapters.BookingDKTableAdapter();
-            this.tableAdapterManager = new GUI.CoffeeDataSetTableAdapters.TableAdapterManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.bookingDKTableAdapter = new GUI.Data.CoffeeDatasetTableAdapters.BookingDKTableAdapter();
+            this.tableAdapterManager = new GUI.Data.CoffeeDatasetTableAdapters.TableAdapterManager();
             this.bookingDKBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -64,11 +71,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bookingDKBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties)).BeginInit();
@@ -77,11 +79,15 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKBindingNavigator)).BeginInit();
             this.bookingDKBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,7 +114,7 @@
             this.btnShowBill.Size = new System.Drawing.Size(141, 33);
             this.btnShowBill.TabIndex = 10;
             this.btnShowBill.Text = "Xem";
-            this.btnShowBill.Click += new System.EventHandler(this.btnShowBill_Click);
+            this.btnShowBill.Click += new System.EventHandler(this.btnShowBill_Click_1);
             // 
             // labelControl2
             // 
@@ -179,7 +185,12 @@
             this.bookingDKGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bookingDKGridControl.Location = new System.Drawing.Point(0, 0);
             this.bookingDKGridControl.MainView = this.gridView1;
+            this.bookingDKGridControl.MenuManager = this.barManager1;
             this.bookingDKGridControl.Name = "bookingDKGridControl";
+            this.bookingDKGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1,
+            this.repositoryItemTimeEdit1,
+            this.repositoryItemDateTimeOffsetEdit1});
             this.bookingDKGridControl.Size = new System.Drawing.Size(1124, 522);
             this.bookingDKGridControl.TabIndex = 0;
             this.bookingDKGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -188,12 +199,12 @@
             // bookingDKBindingSource
             // 
             this.bookingDKBindingSource.DataMember = "BookingDK";
-            this.bookingDKBindingSource.DataSource = this.coffeeDataSet;
+            this.bookingDKBindingSource.DataSource = this.coffeeDataset;
             // 
-            // coffeeDataSet
+            // coffeeDataset
             // 
-            this.coffeeDataSet.DataSetName = "CoffeeDataSet";
-            this.coffeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.coffeeDataset.DataSetName = "CoffeeDataset";
+            this.coffeeDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -204,8 +215,7 @@
             this.colNumberPhone,
             this.colQuantity,
             this.colBookingTime,
-            this.colNote,
-            this.colstatus});
+            this.colNote});
             this.gridView1.GridControl = this.bookingDKGridControl;
             this.gridView1.Name = "gridView1";
             // 
@@ -246,10 +256,20 @@
             // 
             // colBookingTime
             // 
+            this.colBookingTime.ColumnEdit = this.repositoryItemDateTimeOffsetEdit1;
+            this.colBookingTime.DisplayFormat.FormatString = "dd/mm/yyyy hh:mm:ss";
+            this.colBookingTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colBookingTime.FieldName = "BookingTime";
             this.colBookingTime.Name = "colBookingTime";
             this.colBookingTime.Visible = true;
             this.colBookingTime.VisibleIndex = 5;
+            // 
+            // repositoryItemDateTimeOffsetEdit1
+            // 
+            this.repositoryItemDateTimeOffsetEdit1.AutoHeight = false;
+            this.repositoryItemDateTimeOffsetEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateTimeOffsetEdit1.Name = "repositoryItemDateTimeOffsetEdit1";
             // 
             // colNote
             // 
@@ -258,12 +278,61 @@
             this.colNote.Visible = true;
             this.colNote.VisibleIndex = 6;
             // 
-            // colstatus
+            // barManager1
             // 
-            this.colstatus.FieldName = "status";
-            this.colstatus.Name = "colstatus";
-            this.colstatus.Visible = true;
-            this.colstatus.VisibleIndex = 7;
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1124, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 585);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1124, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 585);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1124, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 585);
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // repositoryItemTimeEdit1
+            // 
+            this.repositoryItemTimeEdit1.AutoHeight = false;
+            this.repositoryItemTimeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
             // 
             // bookingDKTableAdapter
             // 
@@ -285,7 +354,7 @@
             this.tableAdapterManager.staffTableAdapter = null;
             this.tableAdapterManager.TableCoffeeTableAdapter = null;
             this.tableAdapterManager.TypeFoodTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = GUI.CoffeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = GUI.Data.CoffeeDatasetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // bookingDKBindingNavigator
             // 
@@ -315,7 +384,7 @@
             this.bookingDKBindingNavigator.Name = "bookingDKBindingNavigator";
             this.bookingDKBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.bookingDKBindingNavigator.Size = new System.Drawing.Size(1124, 25);
-            this.bookingDKBindingNavigator.TabIndex = 2;
+            this.bookingDKBindingNavigator.TabIndex = 6;
             this.bookingDKBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
@@ -411,47 +480,7 @@
             this.bookingDKBindingNavigatorSaveItem.Name = "bookingDKBindingNavigatorSaveItem";
             this.bookingDKBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.bookingDKBindingNavigatorSaveItem.Text = "Save Data";
-            this.bookingDKBindingNavigatorSaveItem.Click += new System.EventHandler(this.bookingDKBindingNavigatorSaveItem_Click);
-            // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1124, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 585);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1124, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 585);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1124, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 585);
+            this.bookingDKBindingNavigatorSaveItem.Click += new System.EventHandler(this.bookingDKBindingNavigatorSaveItem_Click_1);
             // 
             // fReservation
             // 
@@ -477,12 +506,16 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coffeeDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKBindingNavigator)).EndInit();
             this.bookingDKBindingNavigator.ResumeLayout(false);
             this.bookingDKBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,12 +530,15 @@
         private DevExpress.XtraEditors.DateEdit deToDate;
         private DevExpress.XtraEditors.DateEdit deFromDate;
         private System.Windows.Forms.Panel panel2;
-        private CoffeeDataSet coffeeDataSet;
-        private System.Windows.Forms.BindingSource bookingDKBindingSource;
-        private CoffeeDataSetTableAdapters.BookingDKTableAdapter bookingDKTableAdapter;
-        private CoffeeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private System.Windows.Forms.BindingNavigator bookingDKBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.BindingSource bookingDKBindingSource;
+        private Data.CoffeeDataset coffeeDataset;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -514,6 +550,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bookingDKBindingNavigatorSaveItem;
+        private Data.CoffeeDatasetTableAdapters.BookingDKTableAdapter bookingDKTableAdapter;
+        private Data.CoffeeDatasetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl bookingDKGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
@@ -523,11 +561,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colBookingTime;
         private DevExpress.XtraGrid.Columns.GridColumn colNote;
-        private DevExpress.XtraGrid.Columns.GridColumn colstatus;
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateTimeOffsetEdit repositoryItemDateTimeOffsetEdit1;
     }
 }

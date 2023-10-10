@@ -31,7 +31,9 @@ namespace BUS
             }
             catch (Exception ex)
             {
+                
                 throw ex;
+                return null;
             }
         }
 

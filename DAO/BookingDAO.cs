@@ -46,6 +46,7 @@ namespace DAO
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
         }

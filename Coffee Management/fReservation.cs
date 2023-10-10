@@ -26,8 +26,6 @@ namespace GUI
         private void bookingDKBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.bookingDKBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.coffeeDataSet);
 
         }
 
@@ -35,20 +33,33 @@ namespace GUI
 
         private void btnShowBill_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.bookingDKTableAdapter.FillDK(this.coffeeDataSet.BookingDK, new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(deFromDate.DateTime, typeof(System.DateTime))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(deToDate.DateTime, typeof(System.DateTime))))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+            
         }
         
         private void fReservation_Load(object sender, EventArgs e)
         {
             deToDate.DateTime = DateTime.Now.AddMonths(1);
             btnShowBill.PerformClick();
+        }
+
+        private void bookingDKBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bookingDKBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.coffeeDataset);
+
+        }
+
+        private void btnShowBill_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bookingDKTableAdapter.FillDK(this.coffeeDataset.BookingDK, new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(deFromDate.DateTime, typeof(System.DateTime))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(deToDate.DateTime, typeof(System.DateTime))))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }
