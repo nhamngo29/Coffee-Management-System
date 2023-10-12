@@ -134,31 +134,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(694, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(694, 27);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 402);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 403);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(694, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(694, 19);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 378);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 376);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(694, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(694, 27);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 378);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 376);
             // 
             // fTable
             // 
@@ -172,6 +172,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fTable";
             this.Text = "Bàn";
+            this.Load += new System.EventHandler(this.fTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

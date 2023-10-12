@@ -156,31 +156,31 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1008, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1008, 27);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 446);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 447);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1008, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1008, 19);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 422);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 420);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1008, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1008, 27);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 422);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 420);
             // 
             // barButtonItem1
             // 
@@ -208,6 +208,7 @@ namespace GUI
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fDiscount";
             this.Text = "fDiscount";
+            this.Load += new System.EventHandler(this.fDiscount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

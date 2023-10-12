@@ -131,7 +131,7 @@ namespace DAO
         }
         public void SaveConfig(string pServer, string pUser, string pPass, string pDBname)
         {
-            DAO.Properties.Settings.Default.ConnectionString = $"Data Source={pServer};Initial Catalog={pDBname};User ID={pUser};Password= {pPass}";
+            Properties.Settings.Default.ConnectionString= $"Data Source={pServer};Initial Catalog={pDBname};User ID={pUser};Password= {pPass}";
             DAO.Properties.Settings.Default.Save();
         }
     }

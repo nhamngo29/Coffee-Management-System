@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
 using BUS;
-using DevExpress.ClipboardSource.SpreadsheetML;
 using System.IO;
-using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
+using System.Drawing;
+using System.Drawing.Printing;
 
 namespace GUI
 {
@@ -25,32 +23,15 @@ namespace GUI
             DateTime today = DateTime.Now;
             deFromDate.EditValue = new DateTime(today.Year, today.Month, 1);
             deToDate.EditValue = deFromDate.DateTime.AddMonths(1).AddDays(-1);
+            btnShowBill.PerformClick();
+
         }
 
         private void btnShowBill_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             LoadListBillByDateAndPage((DateTime)deFromDate.EditValue, (DateTime)deToDate.EditValue, int.Parse(txtNumPageBill.Text));
-            SplashScreenManager.CloseForm();
         }
-
-        void LoadListBillByDate(DateTime fromDate, DateTime toDate)
-        {
-            try
-            {
-                gcBill.DataSource = BillBUS.Instance.GetListBillByDate(fromDate, toDate);
-                gvBill.Columns[0].Caption = "Mã hóa đơn";
-                gvBill.Columns[1].Caption = "Tên bàn";
-                gvBill.Columns[2].Caption = "Ngày vào";
-                gvBill.Columns[3].Caption = "Giảm giá";
-                gvBill.Columns[4].Caption = "Tổng tiền";
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show("Error: " + ex);
-            }
-        }
-        void LoadListBillByDateAndPage(DateTime fromDate, DateTime toDate,int pageNum)
+        void LoadListBillByDateAndPage(DateTime fromDate, DateTime toDate, int pageNum)
         {
             try
             {
@@ -60,6 +41,7 @@ namespace GUI
                 gvBill.Columns[2].Caption = "Ngày vào";
                 gvBill.Columns[3].Caption = "Giảm giá";
                 gvBill.Columns[4].Caption = "Tổng tiền";
+               
             }
             catch (Exception ex)
             {
@@ -80,31 +62,31 @@ namespace GUI
             DateTime toDate = (DateTime)deToDate.EditValue;
             int sumRecord = BillBUS.Instance.GetNumBillListByDateAndPage(fromDate, toDate);
             int lastPage = sumRecord / 10;
-            if (sumRecord%10!=0)
+            if (sumRecord % 10 != 0)
             {
                 lastPage++;
             }
-            txtNumPageBill.Text=lastPage.ToString();
+            txtNumPageBill.Text = lastPage.ToString();
             btnFirstPage.Enabled = btnPreviours.Enabled = true;
             btnLastPage.Enabled = btnNext.Enabled = false;
         }
 
         private void txtNumPageBill_TextChanged(object sender, EventArgs e)
         {
-            gcBill.DataSource = BillBUS.Instance.LoadListBillByDateAndPage((DateTime)deFromDate.EditValue, (DateTime)deToDate.EditValue,Convert.ToInt32(txtNumPageBill.Text));
+            gcBill.DataSource = BillBUS.Instance.LoadListBillByDateAndPage((DateTime)deFromDate.EditValue, (DateTime)deToDate.EditValue, Convert.ToInt32(txtNumPageBill.Text));
         }
 
         private void btnPreviours_Click(object sender, EventArgs e)
         {
-            int page=Convert.ToInt32(txtNumPageBill.Text);
+            int page = Convert.ToInt32(txtNumPageBill.Text);
             if (page > 1)
                 page--;
             else
             {
                 btnFirstPage.Enabled = btnPreviours.Enabled = false;
                 btnLastPage.Enabled = btnNext.Enabled = true;
-            }    
-            txtNumPageBill.Text=page.ToString();
+            }
+            txtNumPageBill.Text = page.ToString();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -124,54 +106,48 @@ namespace GUI
             {
                 btnFirstPage.Enabled = btnPreviours.Enabled = true;
                 btnLastPage.Enabled = btnNext.Enabled = false;
-            }    
+            }
             txtNumPageBill.Text = page.ToString();
         }
-        private void ExportGridToExcel(GridControl gridControl, string filePath)
+        private void exportButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Tạo một workbook và một worksheet
-                IWorkbook workbook = new XSSFWorkbook();
-                ISheet sheet = workbook.CreateSheet("Sheet1");
-
-                GridView gridView = gridControl.MainView as GridView;
-
-                // Tạo tiêu đề cho các cột
-                for (int i = 0; i < gridView.Columns.Count; i++)
-                {
-                    sheet.CreateRow(0).CreateCell(i).SetCellValue(gridView.Columns[i].Caption);
-                }
-
-                // Sao chép dữ liệu từ GridView vào tệp Excel
-                for (int i = 0; i < gridView.RowCount; i++)
-                {
-                    for (int j = 0; j < gridView.Columns.Count; j++)
-                    {
-                        sheet.CreateRow(i + 1).CreateCell(j).SetCellValue(gridView.GetRowCellValue(i, gridView.Columns[j]).ToString());
-                    }
-                }
-
-                // Lưu workbook vào tệp Excel
-                using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-                {
-                    workbook.Write(fs);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
-            }
+            
         }
 
         private void btnExportEx_Click(object sender, EventArgs e)
         {
+            PrintableComponentLink link = new PrintableComponentLink(new PrintingSystem());
+            link.Component = gcBill; // gridViewControl1 là tên của GridView của bạn
+
+            // Tùy chỉnh trình xem in (Optional)
+            link.CreateMarginalHeaderArea += (s, args) =>
+            {
+                args.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+                args.Graph.Font = new Font("Arial", 10, FontStyle.Bold);
+            };
+
+            link.Margins = new Margins(50, 50, 50, 50);
+            link.Landscape = true;
+
+            // Xuất dữ liệu ra file PDF
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            saveFileDialog.Filter = "PDF Files (*.xlsx)|*.xlsx";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                ExportGridToExcel(gvBill.GridControl, saveFileDialog.FileName);
-                MessageBox.Show("Dữ liệu đã được xuất thành công!");
+                link.ExportToPdf(saveFileDialog.FileName);
+                MessageBox.Show("Dữ liệu đã được xuất ra file PDF.");
+            }
+        }
+
+        private void gvBill_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "DateColumnFieldName") // Thay "DateColumnFieldName" bằng tên thực sự của cột bạn muốn định dạng
+            {
+                if (e.Value is DateTime date)
+                {
+                    // Định dạng giá trị của cột thành chuỗi "dd/MM/yyyy"
+                    e.DisplayText = date.ToString("dd/MM/yyyy hh:mm:ss");
+                }
             }
         }
     }

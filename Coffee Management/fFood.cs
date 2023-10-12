@@ -16,12 +16,10 @@ namespace GUI
 
         public fFood()
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
             btnRemove.Enabled = false;
             btnSearch.Enabled = false;
             LoadFoodToGridControl();
-            SplashScreenManager.CloseForm();
         }
 
         private void LoadFoodToGridControl()
@@ -242,6 +240,11 @@ namespace GUI
         }
 
         private void gcFood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fFood_Load(object sender, EventArgs e)
         {
 
         }

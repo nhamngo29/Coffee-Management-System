@@ -266,5 +266,20 @@ namespace GUI
                 f.Show();
             }
         }
+
+        private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fStaff));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fStaff f = new fStaff();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

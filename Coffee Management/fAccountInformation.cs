@@ -59,7 +59,7 @@ namespace GUI
             {
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 newPass = GetMD5(newPass);
-                if (AccountBUS.Instance.UpdateInformation(userName, displayName, password, newPass))
+                if (AccountBUS.Instance.UpdateInformationAcc(userName, displayName, password, newPass))
                 {
                     SplashScreenManager.CloseForm();
                     XtraMessageBox.Show("Cập nhật thành công");

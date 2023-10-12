@@ -62,7 +62,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
             this.btnSearch.Location = new System.Drawing.Point(627, 62);
@@ -77,7 +77,7 @@
             this.txtSearchCategory.EditValue = "";
             this.txtSearchCategory.Location = new System.Drawing.Point(441, 63);
             this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.txtSearchCategory.Properties.Appearance.Options.UseFont = true;
             this.txtSearchCategory.Properties.NullText = "-- Tìm tên món ăn --";
             this.txtSearchCategory.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
@@ -88,9 +88,9 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(694, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(694, 27);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 398);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 395);
             // 
             // bar2
             // 
@@ -166,7 +166,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(694, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(694, 27);
             // 
             // barDockControlBottom
             // 
@@ -180,17 +180,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 398);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 395);
             // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(694, 24);
+            this.barDockControl1.Location = new System.Drawing.Point(694, 27);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 398);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 395);
             // 
             // btn
             // 
@@ -242,6 +242,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fGroupFood";
             this.Text = "GroupFood";
+            this.Load += new System.EventHandler(this.fGroupFood_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcGroupFood)).EndInit();

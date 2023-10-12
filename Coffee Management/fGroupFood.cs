@@ -204,5 +204,10 @@ namespace GUI
             }
             btnRemove.Enabled = false;
         }
+
+        private void fGroupFood_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

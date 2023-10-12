@@ -14,11 +14,9 @@ namespace GUI
 
         public fTable()
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
             LoadTable();
             btnRemove.Enabled = false;
-            SplashScreenManager.CloseForm();
         }
 
         private void LoadTable()
@@ -133,6 +131,11 @@ namespace GUI
         }
 
         private void gvTable_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+
+        }
+
+        private void fTable_Load(object sender, EventArgs e)
         {
 
         }

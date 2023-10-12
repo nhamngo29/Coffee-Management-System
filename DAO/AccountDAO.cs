@@ -35,6 +35,21 @@ namespace DAO
             //str_md5=str_md5.Reverse().ToString();
             return str_md5;
         }
+        public bool Insert(string userName, string displayName, int typeID)
+        {
+            string query = string.Format("SP_InsertAccount @UserName , @DisplayName , @TypeID , @Pass");
+            int result;
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(query,
+                    new object[] { userName, displayName, typeID , GetMD5("1")});
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result > 0;
+        }
         public bool CheckLogin(Account account)
         {
             string HasPassword = GetMD5(account.Password);//Mã hóa password
@@ -75,21 +90,7 @@ namespace DAO
             }
         }
 
-        public bool Insert(string userName, string displayName, int typeID)
-        {
-            string query = string.Format("SP_InsertAccount @UserName , @DisplayName , @TypeID");
-            int result;
-            try
-            {
-                result = DataProvider.Instance.ExecuteNonQuery(query,
-                    new object[] { userName, displayName, typeID });
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return result > 0;
-        }
+       
 
         public bool ResetPassword(string userName)
         {
@@ -121,7 +122,7 @@ namespace DAO
             return result > 0;
         }
 
-        public bool UpdateInformation(string userName, string displayName, string password, string newPass)
+        public bool UpdateInformationAcc(string userName, string displayName, string password, string newPass)
         {
             string query = "SP_UpdateAccount @UserName , @DisplayName , @Password , @NewPass";
             int result;
@@ -136,14 +137,14 @@ namespace DAO
             }
             return result > 0;
         }
-        public bool UpdateInformation(string userName,string displayName,int typeAccount)
+        public bool UpdateInformation(string userName,string displayName,int typeAccount,int staff)
         {
-            string query = "SP_UpdateAccountFromAdmin @UserName , @DisplayName , @TypeAccount";
+            string query = "SP_UpdateAccountFromAdmin @UserName , @DisplayName , @TypeAccount , @Staff";
             int result;
             try
             {
                 result = DataProvider.Instance.ExecuteNonQuery(query,
-                    new object[] { userName, displayName,typeAccount });
+                    new object[] { userName, displayName,typeAccount,staff });
             }
             catch (Exception ex)
             {

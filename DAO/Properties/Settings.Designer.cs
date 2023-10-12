@@ -26,7 +26,7 @@ namespace DAO.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0PQ4U60\\SERVER01;Initial Catalog=CoffeeManagement;User ID=sa;" +
-            "Password=02092002A")]
+            "Password=02092002Aa")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

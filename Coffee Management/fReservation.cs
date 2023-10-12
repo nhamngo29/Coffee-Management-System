@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.TextEditController.IME;
 using DevExpress.XtraReports.UI;
+using DevExpress.XtraSplashScreen;
 using MimeKit;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace GUI
         public fReservation()
         {
             InitializeComponent();
+            this.Load += fReservation_Load;
         }
 
         private void bookingDKBindingNavigatorSaveItem_Click(object sender, EventArgs e)

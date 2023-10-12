@@ -101,7 +101,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(694, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(694, 27);
             // 
             // barDockControlBottom
             // 
@@ -115,17 +115,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 398);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 395);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(694, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(694, 27);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 398);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 395);
             // 
             // btn
             // 
@@ -163,7 +163,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.Location = new System.Drawing.Point(615, 41);
             this.btnSearch.Name = "btnSearch";
@@ -179,7 +179,7 @@
             this.txtSearchCategory.Location = new System.Drawing.Point(429, 47);
             this.txtSearchCategory.MenuManager = this.barManager1;
             this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.txtSearchCategory.Properties.Appearance.Options.UseFont = true;
             this.txtSearchCategory.Properties.NullText = "-- Tìm tên món ăn --";
             this.txtSearchCategory.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
@@ -202,6 +202,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fCategory";
             this.Text = "Danh mục";
+            this.Load += new System.EventHandler(this.fCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCategory)).EndInit();

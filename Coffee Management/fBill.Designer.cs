@@ -59,7 +59,7 @@
             this.gcBill.Location = new System.Drawing.Point(0, 90);
             this.gcBill.MainView = this.gvBill;
             this.gcBill.Name = "gcBill";
-            this.gcBill.Size = new System.Drawing.Size(694, 295);
+            this.gcBill.Size = new System.Drawing.Size(961, 295);
             this.gcBill.TabIndex = 0;
             this.gcBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBill});
@@ -69,6 +69,7 @@
             this.gvBill.GridControl = this.gcBill;
             this.gvBill.Name = "gvBill";
             this.gvBill.OptionsBehavior.Editable = false;
+            this.gvBill.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gvBill_CustomColumnDisplayText);
             // 
             // deFromDate
             // 
@@ -88,7 +89,7 @@
             // 
             this.deToDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deToDate.EditValue = null;
-            this.deToDate.Location = new System.Drawing.Point(531, 34);
+            this.deToDate.Location = new System.Drawing.Point(798, 34);
             this.deToDate.Name = "deToDate";
             this.deToDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.deToDate.Properties.Appearance.Options.UseFont = true;
@@ -114,7 +115,7 @@
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(462, 37);
+            this.labelControl2.Location = new System.Drawing.Point(729, 37);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(63, 18);
             this.labelControl2.TabIndex = 4;
@@ -126,7 +127,7 @@
             this.btnShowBill.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnShowBill.Appearance.Options.UseFont = true;
             this.btnShowBill.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnShowBill.ImageOptions.SvgImage")));
-            this.btnShowBill.Location = new System.Drawing.Point(264, 29);
+            this.btnShowBill.Location = new System.Drawing.Point(397, 29);
             this.btnShowBill.Name = "btnShowBill";
             this.btnShowBill.Size = new System.Drawing.Size(141, 33);
             this.btnShowBill.TabIndex = 5;
@@ -136,7 +137,7 @@
             // btnFirstPage
             // 
             this.btnFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFirstPage.Location = new System.Drawing.Point(462, 392);
+            this.btnFirstPage.Location = new System.Drawing.Point(729, 392);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(22, 23);
             this.btnFirstPage.TabIndex = 6;
@@ -146,7 +147,7 @@
             // btnPreviours
             // 
             this.btnPreviours.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPreviours.Location = new System.Drawing.Point(490, 392);
+            this.btnPreviours.Location = new System.Drawing.Point(757, 392);
             this.btnPreviours.Name = "btnPreviours";
             this.btnPreviours.Size = new System.Drawing.Size(22, 23);
             this.btnPreviours.TabIndex = 7;
@@ -156,7 +157,7 @@
             // btnLastPage
             // 
             this.btnLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLastPage.Location = new System.Drawing.Point(575, 392);
+            this.btnLastPage.Location = new System.Drawing.Point(842, 392);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(22, 23);
             this.btnLastPage.TabIndex = 9;
@@ -166,7 +167,7 @@
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.Location = new System.Drawing.Point(547, 392);
+            this.btnNext.Location = new System.Drawing.Point(814, 392);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(22, 23);
             this.btnNext.TabIndex = 8;
@@ -177,7 +178,7 @@
             // 
             this.txtNumPageBill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumPageBill.EditValue = "1";
-            this.txtNumPageBill.Location = new System.Drawing.Point(519, 393);
+            this.txtNumPageBill.Location = new System.Drawing.Point(786, 393);
             this.txtNumPageBill.Name = "txtNumPageBill";
             this.txtNumPageBill.Size = new System.Drawing.Size(22, 20);
             this.txtNumPageBill.TabIndex = 10;
@@ -186,8 +187,8 @@
             // btnExportEx
             // 
             this.btnExportEx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportEx.BackColor = System.Drawing.Color.Gray;
-            this.btnExportEx.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnExportEx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportEx.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnExportEx.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnExportEx.BorderRadius = 10;
             this.btnExportEx.BorderSize = 0;
@@ -199,7 +200,7 @@
             this.btnExportEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExportEx.Location = new System.Drawing.Point(13, 387);
             this.btnExportEx.Name = "btnExportEx";
-            this.btnExportEx.Size = new System.Drawing.Size(84, 32);
+            this.btnExportEx.Size = new System.Drawing.Size(92, 32);
             this.btnExportEx.TabIndex = 11;
             this.btnExportEx.Text = "Xuất";
             this.btnExportEx.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -211,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 422);
+            this.ClientSize = new System.Drawing.Size(961, 422);
             this.Controls.Add(this.btnExportEx);
             this.Controls.Add(this.txtNumPageBill);
             this.Controls.Add(this.btnLastPage);

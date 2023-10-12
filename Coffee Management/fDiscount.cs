@@ -68,5 +68,10 @@ namespace GUI
             if (gvDiscount.FocusedRowHandle >= 0)
                 btnRemove.Enabled = true;
         }
+
+        private void fDiscount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

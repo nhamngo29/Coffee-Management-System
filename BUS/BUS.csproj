@@ -52,6 +52,7 @@
     <Compile Include="Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityBUS.cs" />
+    <Compile Include="StaffBUS.cs" />
     <Compile Include="TableBUS.cs" />
     <Compile Include="TempBillBUS.cs" />
     <Compile Include="TypeFoodBUS.cs" />

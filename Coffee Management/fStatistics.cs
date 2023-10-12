@@ -3,6 +3,7 @@ using DevExpress.XtraCharts;
 using DevExpress.XtraCharts.Design;
 using DevExpress.XtraCharts.Designer;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
 using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
@@ -22,17 +23,12 @@ namespace GUI
         public fStatistics()
         {
             InitializeComponent();
+            this.Load += fStatistics_Load;
         }
 
         private void fStatistics_Load(object sender, EventArgs e)
         {
             spinEdit1.Properties.MaxValue = DateTime.Now.Year;
-            // TODO: This line of code loads data into the 'coffeeDataset1.DataTableSumBillByMonth' table. You can move, or remove it, as needed.
-            this.dataTableSumBillByMonthTableAdapter.FillSumBillByMonth(this.coffeeDataset1.DataTableSumBillByMonth);
-            // TODO: This line of code loads data into the 'coffeeDataset.DataTableSumBillByMonth' table. You can move, or remove it, as needed.
-            this.dataTableSumBillByMonthTableAdapter.FillSumBillByMonth(this.coffeeDataset.DataTableSumBillByMonth);
-            // TODO: This line of code loads data into the 'coffeeDataset.Bill' table. You can move, or remove it, as needed.
-            this.billTableAdapter.Fill(this.coffeeDataset.Bill);
 
             performent(2023);
 

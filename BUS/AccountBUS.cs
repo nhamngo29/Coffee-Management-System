@@ -102,22 +102,22 @@ namespace BUS
             }
         }
 
-        public bool UpdateInformation(string userName, string displayName, string password, string newPass)
+        public bool UpdateInformationAcc(string userName, string displayName, string password, string newPass)
         {
             try
             {
-                return AccountDAO.Instance.UpdateInformation(userName, displayName, password, newPass);
+                return AccountDAO.Instance.UpdateInformationAcc(userName, displayName, password, newPass);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public bool UpdateInformation(string userName, string displayName,int typeAccount )
+        public bool UpdateInformation(string userName, string displayName,int typeAccount ,int staff)
         {
             try
             {
-                return AccountDAO.Instance.UpdateInformation(userName, displayName, typeAccount);
+                return AccountDAO.Instance.UpdateInformation(userName, displayName, typeAccount, staff);
             }
             catch (Exception ex)
             {

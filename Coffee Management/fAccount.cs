@@ -38,6 +38,7 @@ namespace GUI
                 gvAccount.Columns[0].Caption = "Tên đăng nhập";
                 gvAccount.Columns[1].Caption = "Tên hiển thị";
                 gvAccount.Columns[2].Caption = "Loại tài khoản";
+                gvAccount.Columns[2].Caption = "Nhân viên";
             }
             catch (Exception ex)
             {
@@ -52,6 +53,20 @@ namespace GUI
                 myLookup.ValueMember = "ID";
                 myLookup.NullText = "-- Chọn loại tài khoản --";
                 gvAccount.Columns[2].ColumnEdit = myLookup;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error: " + ex);
+            }
+            RepositoryItemLookUpEdit myLookup1 = new RepositoryItemLookUpEdit();
+            try
+            {
+                myLookup1.DataSource = StaffBUS.Instance.GetAll();
+                myLookup1.DisplayMember = "Name";
+                myLookup1.ValueMember = "ID";
+                myLookup1.NullText = "-- Chọn nhân viên --";
+                gvAccount.Columns[3].ColumnEdit = myLookup1;
+
             }
             catch (Exception ex)
             {
@@ -121,15 +136,23 @@ namespace GUI
                 return;
             }
 
-            if (AccountBUS.Instance.Insert(userName, displayName, accountType))
+            if(AccountBUS.Instance.SearchAccountByUserName(userName)!=null)
             {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                LoadAcount();
-                SplashScreenManager.CloseForm();
-                XtraMessageBox.Show("Thêm tài khoản mới thành công\n Mật khẩu mặc định là '1'\n Hãy đổi mật khẩu để bảo mật tài khoản", "Thông báo");
-            }
+                if (AccountBUS.Instance.Insert(userName, displayName, accountType))
+                {
+                    SplashScreenManager.ShowForm(typeof(WaitForm1));
+                    LoadAcount();
+                    SplashScreenManager.CloseForm();
+                    XtraMessageBox.Show("Thêm tài khoản mới thành công\n Mật khẩu mặc định là '1'\n Hãy đổi mật khẩu để bảo mật tài khoản", "Thông báo");
+                    AccountBUS.Instance.ResetPassword(userName);
+                }
+                else
+                    XtraMessageBox.Show("Thêm tài khoản mới thất bại", "Lỗi");
+            }    
             else
-                XtraMessageBox.Show("Thêm tài khoản mới thất bại", "Lỗi");
+            {
+                XtraMessageBox.Show("Tên đăng nhập đã tồn tại", "Thông báo");
+            }    
         }
 
         private void gcAccount_DoubleClick(object sender, EventArgs e)
@@ -226,7 +249,13 @@ namespace GUI
                 XtraMessageBox.Show("Hãy chọn loại account");
                 return;
             }
-            if (AccountBUS.Instance.UpdateInformation(id,name,int.Parse(typeAccount)))
+            string idStaff = view.GetRowCellValue(rowHandle, view.Columns[3]).ToString();
+            if (idStaff == "")
+            {
+                XtraMessageBox.Show("Hãy chọn nhân viên");
+                return;
+            }
+            if (AccountBUS.Instance.UpdateInformation(id,name,int.Parse(typeAccount),int.Parse(idStaff)))
             {
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 SplashScreenManager.CloseForm();

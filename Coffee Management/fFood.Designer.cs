@@ -146,31 +146,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(694, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(694, 27);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 402);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 403);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(694, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(694, 19);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 378);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 376);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(694, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(694, 27);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 378);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 376);
             // 
             // txtSearchFood
             // 
@@ -179,7 +179,7 @@
             this.txtSearchFood.Location = new System.Drawing.Point(429, 47);
             this.txtSearchFood.MenuManager = this.barManager1;
             this.txtSearchFood.Name = "txtSearchFood";
-            this.txtSearchFood.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchFood.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.txtSearchFood.Properties.Appearance.Options.UseFont = true;
             this.txtSearchFood.Properties.NullText = "-- Tìm tên món ăn --";
             this.txtSearchFood.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
@@ -190,7 +190,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.Location = new System.Drawing.Point(615, 42);
             this.btnSearch.Name = "btnSearch";
@@ -214,6 +214,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fFood";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.fFood_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

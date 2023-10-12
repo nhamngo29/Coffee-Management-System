@@ -14,12 +14,10 @@ namespace GUI
 
         public fCategory()
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
             btnRemove.Enabled = false;
             btnSearch.Enabled = false;
             LoadCategory();
-            SplashScreenManager.CloseForm();
         }
 
         private void LoadCategory()
@@ -155,6 +153,11 @@ namespace GUI
         }
 
         private void gcCategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fCategory_Load(object sender, EventArgs e)
         {
 
         }
