@@ -51,12 +51,13 @@
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(-3, 53);
+            this.chartControl1.Location = new System.Drawing.Point(-4, 69);
+            this.chartControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartControl1.Name = "chartControl1";
             series1.Name = "Series 1";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl1.Size = new System.Drawing.Size(874, 543);
+            this.chartControl1.Size = new System.Drawing.Size(1020, 710);
             this.chartControl1.TabIndex = 0;
             chartTitle1.Text = "Tổng tiền theo tháng năm";
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -68,8 +69,9 @@
             this.panel1.Controls.Add(this.spinEdit1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(874, 53);
+            this.panel1.Size = new System.Drawing.Size(1020, 108);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -77,9 +79,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(368, 11);
+            this.label1.Location = new System.Drawing.Point(429, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.Size = new System.Drawing.Size(75, 32);
             this.label1.TabIndex = 9;
             this.label1.Text = "Năm:";
             // 
@@ -91,7 +94,8 @@
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(433, 12);
+            this.spinEdit1.Location = new System.Drawing.Point(505, 36);
+            this.spinEdit1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.spinEdit1.Name = "spinEdit1";
             this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinEdit1.Properties.Appearance.Options.UseFont = true;
@@ -110,17 +114,18 @@
             0,
             0,
             0});
-            this.spinEdit1.Size = new System.Drawing.Size(126, 24);
+            this.spinEdit1.Size = new System.Drawing.Size(147, 31);
             this.spinEdit1.TabIndex = 10;
             this.spinEdit1.EditValueChanged += new System.EventHandler(this.spinEdit1_EditValueChanged);
             // 
             // fStatistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 597);
+            this.ClientSize = new System.Drawing.Size(1020, 781);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chartControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fStatistics";
             this.Text = "fStatistics";
             this.Load += new System.EventHandler(this.fStatistics_Load);

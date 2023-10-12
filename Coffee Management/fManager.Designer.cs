@@ -68,6 +68,7 @@
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem2 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -86,7 +87,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.NgayGio = new System.Windows.Forms.ToolStripStatusLabel();
             this.NhanVien = new System.Windows.Forms.ToolStripStatusLabel();
-            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -444,6 +444,14 @@
             this.barButtonItem18.Name = "barButtonItem18";
             this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
             // 
+            // barButtonItem19
+            // 
+            this.barButtonItem19.Caption = "Phân Quyền";
+            this.barButtonItem19.Id = 40;
+            this.barButtonItem19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.Image")));
+            this.barButtonItem19.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
+            this.barButtonItem19.Name = "barButtonItem19";
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -561,14 +569,6 @@
             this.NhanVien.Name = "NhanVien";
             this.NhanVien.Size = new System.Drawing.Size(76, 17);
             this.NhanVien.Text = "Chào mừng: ";
-            // 
-            // barButtonItem19
-            // 
-            this.barButtonItem19.Caption = "Phân Quyền";
-            this.barButtonItem19.Id = 40;
-            this.barButtonItem19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.Image")));
-            this.barButtonItem19.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
-            this.barButtonItem19.Name = "barButtonItem19";
             // 
             // fManager
             // 

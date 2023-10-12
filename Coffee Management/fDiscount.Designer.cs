@@ -62,10 +62,12 @@ namespace GUI
             this.gcDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcDiscount.Location = new System.Drawing.Point(0, 92);
+            this.gcDiscount.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcDiscount.Location = new System.Drawing.Point(0, 120);
             this.gcDiscount.MainView = this.gvDiscount;
+            this.gcDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcDiscount.Name = "gcDiscount";
-            this.gcDiscount.Size = new System.Drawing.Size(1007, 374);
+            this.gcDiscount.Size = new System.Drawing.Size(1175, 489);
             this.gcDiscount.TabIndex = 16;
             this.gcDiscount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDiscount});
@@ -73,6 +75,7 @@ namespace GUI
             // 
             // gvDiscount
             // 
+            this.gvDiscount.DetailHeight = 458;
             this.gvDiscount.GridControl = this.gcDiscount;
             this.gvDiscount.Name = "gvDiscount";
             this.gvDiscount.NewItemRowText = "Thêm mới";
@@ -156,31 +159,35 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1008, 27);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1176, 33);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 447);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 590);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1008, 19);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1176, 19);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 33);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 420);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 557);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1008, 27);
+            this.barDockControlRight.Location = new System.Drawing.Point(1176, 33);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 420);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 557);
             // 
             // barButtonItem1
             // 
@@ -198,14 +205,15 @@ namespace GUI
             // 
             // fDiscount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 466);
+            this.ClientSize = new System.Drawing.Size(1176, 609);
             this.Controls.Add(this.gcDiscount);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fDiscount";
             this.Text = "fDiscount";
             this.Load += new System.EventHandler(this.fDiscount_Load);
