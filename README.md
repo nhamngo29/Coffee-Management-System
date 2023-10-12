@@ -2,7 +2,7 @@
 <p>Language: C#</p>
 <p>Database: SQLSaver </p>
 <p>Thư viện hộ trợ: DevExpress</p>
->**Môn học: Phát triển phần mềm ứng dụng thông minh**
+**Môn học: Phát triển phần mềm ứng dụng thông minh**
 
 <hr/>
 <p>Giảng viên hướng dẫn:</p>
