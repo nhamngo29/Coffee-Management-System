@@ -39,8 +39,14 @@ namespace GUI
                 gvBill.Columns[0].Caption = "Mã hóa đơn";
                 gvBill.Columns[1].Caption = "Tên bàn";
                 gvBill.Columns[2].Caption = "Ngày vào";
-                gvBill.Columns[3].Caption = "Giảm giá";
-                gvBill.Columns[4].Caption = "Tổng tiền";
+                gvBill.Columns[2].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                gvBill.Columns[2].DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
+                gvBill.Columns[3].Caption = "Ngày ra";
+                gvBill.Columns[3].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                gvBill.Columns[3].DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
+                //gvBill.Columns[3].
+                gvBill.Columns[4].Caption = "Giảm giá";
+                gvBill.Columns[5].Caption = "Tổng tiền";
                
             }
             catch (Exception ex)
@@ -131,7 +137,7 @@ namespace GUI
 
             // Xuất dữ liệu ra file PDF
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "PDF Files (*.xlsx)|*.xlsx";
+            saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 link.ExportToPdf(saveFileDialog.FileName);

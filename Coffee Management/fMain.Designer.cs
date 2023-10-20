@@ -502,10 +502,11 @@
             0,
             0});
             this.spAmount.Properties.MinValue = new decimal(new int[] {
-            100,
+            1,
             0,
             0,
-            -2147483648});
+            0});
+            this.spAmount.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.spAmount.Size = new System.Drawing.Size(108, 32);
             this.spAmount.TabIndex = 8;
             // 

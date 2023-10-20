@@ -98,17 +98,26 @@ namespace GUI
                 return;
             }
 
-            Food newFood = new Food(name, int.Parse(typeID), price,"","");
-            if (FoodBUS.Instance.InsertFood(newFood))
+            if (FoodBUS.Instance.isExist(name))
             {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                LoadFoodToGridControl();
-                SplashScreenManager.CloseForm();
+                Food newFood = new Food(name, int.Parse(typeID), price, "", "");
+                if (FoodBUS.Instance.InsertFood(newFood))
+                {
+                    SplashScreenManager.ShowForm(typeof(WaitForm1));
+                    LoadFoodToGridControl();
+                    XtraMessageBox.Show("Thêm món mới thành công", "Thông báo");
+                    SplashScreenManager.CloseForm();
+                }
+                else
+                {
+                    SplashScreenManager.CloseForm();
+                    XtraMessageBox.Show("Thêm món mới thất bại", "Lỗi");
+                }
             }
             else
             {
-                SplashScreenManager.CloseForm();
-                XtraMessageBox.Show("Thêm món mới thất bại", "Lỗi");
+                XtraMessageBox.Show("Món đã tồn tại vui lòng thử lại");
+                view.DeleteRow(rowHandle);
             }
         }
 

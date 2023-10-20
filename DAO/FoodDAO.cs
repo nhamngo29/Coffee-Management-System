@@ -104,7 +104,19 @@ namespace DAO
             }
             return result > 0;
         }
-
+        public bool isExist(string Name)
+        {
+            try
+            {
+                return  DataProvider.Instance.ExecuteNonQuery("Select * from Food Name=" + Name)>0;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            return false;
+        }
         public bool DeleteFood(int ID)
         {
             int result;

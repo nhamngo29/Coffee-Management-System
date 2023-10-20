@@ -480,7 +480,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.skinDropDownButtonItem1);
             this.ribbonPageGroup2.ItemLinks.Add(this.skinPaletteDropDownButtonItem1);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Giao diện";
             // 
             // ribbonPageManager
             // 
@@ -582,6 +582,8 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("fManager.IconOptions.LargeImage")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fManager";
             this.Ribbon = this.ribbon;
             this.Text = "QUẢN LÝ QUÁN CAFE";

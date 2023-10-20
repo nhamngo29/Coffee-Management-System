@@ -92,5 +92,9 @@ namespace BUS
         {
             return FoodDAO.Instance.DeleteFood(ID);
         }
+        public bool isExist(string Name)
+        {
+           return FoodDAO.Instance.isExist(Name);
+        }
     }
 }

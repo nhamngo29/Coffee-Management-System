@@ -18,7 +18,7 @@ namespace DTO
         public Food(string name, int typeID, int price, string image, string describe)
         {
             Name = name;
-            TypeID = TypeID;
+            TypeID = typeID;
             Price = price;
             Image = image;
             Describe = describe;

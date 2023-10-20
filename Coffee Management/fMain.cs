@@ -126,7 +126,7 @@ namespace GUI
 
             (sender as SimpleButton).ImageIndex = 1;
             int tableID = ((sender as SimpleButton).Tag as Table).ID;
-            lbNumberTb.Text = tableID.ToString();
+            lbNumberTb.Text = (tableID-1).ToString();
             lsvBill.Tag = (sender as SimpleButton).Tag;
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
@@ -236,8 +236,11 @@ namespace GUI
         private void btnCheck_Click(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;//lấy ra id table
-            if (table == null)
+            if (table == null || table.Status=="Trống" )
+            {
+                XtraMessageBox.Show("Vui lòng chọn bàn có bill");
                 return;
+            }    
 
             int billID = -1;
             try
@@ -271,7 +274,8 @@ namespace GUI
                     SplashScreenManager.ShowForm(typeof(WaitForm1));
                     XtraReport report = new XtraReport();
                     report.DataSource = lstTempBill;
-                    report.Parameters["TableName"].Value = table.ID;//chuyền paramenter vào report
+                    report.Parameters["TongTien"].Value = totalPrice;
+                   report.Parameters["TableName"].Value = table.ID;//chuyền paramenter vào report
                     report.Parameters["Discount"].Value = discount;//chuyền paramenter vào report
                     report.Parameters["CreateDate"].Value = DateTime.Now;//chuyền paramenter vào report
                     report.Parameters["TotalPrice"].Value = finalPrice;//chuyền paramenter vào report
@@ -397,7 +401,6 @@ namespace GUI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(lsvBill.FocusedItem.Text);
             Table table = lsvBill.Tag as Table;
             if (table == null)
             {
@@ -490,13 +493,18 @@ namespace GUI
         {
             int id1 = (lsvBill.Tag as Table).ID;
             int id2;
-            if (lkedPickTable.EditValue == null)
+            if (lkedPickTable.EditValue == null )
             {
-                XtraMessageBox.Show("Hãy chọn bàn muốn chuyển");
+                XtraMessageBox.Show("Hãy chọn bàn muốn chuyển", "Thông báo");
                 return;
             }
             else
                 id2 = (int)lkedPickTable.EditValue;
+            if(id1 == id2)
+            {
+                XtraMessageBox.Show("2 bàn giống nhau vui lòng thử lại!","Thông báo");
+                return;
+            }    
 
             if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn chuyển {0} sang {1}?",
                 (lsvBill.Tag as Table).Name, lkedPickTable.Text),
@@ -527,7 +535,11 @@ namespace GUI
             }
             else
                 id2 = (int)lkedPickTable.EditValue;
-
+            if (id1 == id2)
+            {
+                XtraMessageBox.Show("2 bàn giống nhau vui lòng thử lại!", "Thông báo");
+                return;
+            }
             if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp bàn {0} sang {1}?",
                 (lsvBill.Tag as Table).Name, lkedPickTable.Text),
                 "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)

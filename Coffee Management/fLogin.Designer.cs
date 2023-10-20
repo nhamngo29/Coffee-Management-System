@@ -276,6 +276,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("fLogin.IconOptions.Icon")));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fLogin.IconOptions.Image")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";

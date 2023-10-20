@@ -49,6 +49,7 @@
     <Compile Include="CategoryBUS.cs" />
     <Compile Include="DiscountBUS.cs" />
     <Compile Include="FoodBUS.cs" />
+    <Compile Include="ImagesBUS.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityBUS.cs" />
