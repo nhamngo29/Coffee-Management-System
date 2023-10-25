@@ -91,5 +91,9 @@ namespace BUS
         {
             return TableDAO.Instance.DeleteTable(id);
         }
+        public bool isExist(string Name)
+        {
+            return TableDAO.Instance.IsExist(Name);
+        }
     }
 }

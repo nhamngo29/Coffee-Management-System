@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-
 using DTO;
 
 namespace DAO
@@ -88,6 +87,18 @@ namespace DAO
             string query = string.Format("SP_DeleteTableFood @ID");
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
             return result > 0;
+        }
+        public bool IsExist(string name)
+        {
+            try
+            {
+                return DataProvider.Instance.ExecuteNonQuery($"SELECT * FROM TableCoffee WHERE UPPER(Name) = UPPER(N'{name}')") > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
         }
     }
 }

@@ -8,6 +8,8 @@ namespace DTO
         public string DisplayName { get; set; }
         public string Password { get; set; }
         public int TypeID { get; set; }
+        public int IdStaff { get; set; }
+        public bool Active { get; set; }
 
         public Account(string userName, string password)
         {
@@ -15,12 +17,14 @@ namespace DTO
             this.Password = password;
         }
 
-        public Account(string userName, string displayName, int typeID, string password = null)
+        public Account(string userName, string displayName, int typeID, int idStaff,bool Active, string password = null)
         {
             this.UserName = userName;
             this.DisplayName = displayName;
             this.TypeID = typeID;
             this.Password = password;
+            IdStaff = idStaff;
+            this.Active = Active;
         }
 
         public Account(DataRow row)
@@ -29,6 +33,8 @@ namespace DTO
             this.DisplayName = row["DisplayName"].ToString();
             this.TypeID = (int)row["TypeID"];
             this.Password = row["Password"].ToString();
+            this.IdStaff = (int)row["IdSataff"];
+            this.Active = (bool)row["Active"];
         }
     }
 }

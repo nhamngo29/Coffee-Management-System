@@ -70,12 +70,12 @@ namespace DAO
             }
         }
 
-        public void CheckOut(int billID, int discount, int totalPrice)
+        public void CheckOut(int billID, int discount, int totalPrice,int staff)
         {
-            string query = "SP_CheckOut @ID , @Discount , @TotalPrice";
+            string query = "SP_CheckOut @ID , @Discount , @TotalPrice , @IdStaff";
             try
             {
-                DataProvider.Instance.ExecuteNonQuery(query, new object[] { billID, discount, totalPrice });
+                DataProvider.Instance.ExecuteNonQuery(query, new object[] { billID, discount, totalPrice ,staff});
             }
             catch { }
         }

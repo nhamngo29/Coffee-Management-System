@@ -90,12 +90,12 @@ namespace GUI
 
         private void fLogin_Load(object sender, EventArgs e)
         {
-            if(!DataProvider.Instance.TestConnection())
+            if (!DataProvider.Instance.TestConnection())
             {
                 XtraMessageBox.Show("Lối cấu hình vui lòng cấu hình lại", "Thông báo");
-                fConfigure fConfigure=new fConfigure();
+                fConfigure fConfigure = new fConfigure();
                 fConfigure.ShowDialog();
-            }    
+            }
             this.KeyPreview = true;
             txtUserName.Focus();
             Reset();
@@ -103,7 +103,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtPassword.Text=string.Empty;
+            txtPassword.Text = string.Empty;
             txtUserName.Clear();
             txtUserName.Focus();
         }
@@ -125,33 +125,40 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
             Account account = new Account(txtUserName.Text, txtPassword.Text);
-            
+
             try
             {
                 if (AccountDAO.Instance.CheckLogin(account))//kiểm tra đang nhập
                 {
                     if (txtCaptcha.Text == captchaText)//kiểm tra mã captcha
                     {
-                        
+
                         Account acc = AccountBUS.Instance.GetAccountByUserName(account.UserName);//lấy account theo username
-                        if (txtPassword.Text == "1")//mật khẩu nhập vào là một thì sẽ chuyển đến trang profile để đổi mật khẩu
+                        if (acc.Active == true)
                         {
-                            fAccountInformation form = new fAccountInformation(acc);
-                            this.Hide();
-                            form.ShowDialog();
-                            this.Show();
+                            if (txtPassword.Text == "1")//mật khẩu nhập vào là một thì sẽ chuyển đến trang profile để đổi mật khẩu
+                            {
+                                fAccountInformation form = new fAccountInformation(acc);
+                                this.Hide();
+                                form.ShowDialog();
+                                this.Show();
+                            }
+                            else
+                            {
+                                txtPassword.Text = string.Empty;
+                                txtUserName.Text = string.Empty;
+                                txtCaptcha.Text = string.Empty;
+                                fManager form = new fManager(acc);//chuyển đến trang manager
+                                this.Hide();
+                                form.ShowDialog();
+                                this.Show();
+                            }
                         }
                         else
                         {
-                            txtPassword.Text = string.Empty;
-                            txtUserName.Text = string.Empty;
-                            txtCaptcha.Text = string.Empty;
-                            fManager form = new fManager(acc);//chuyển đến trang manager
-                            this.Hide();
-                            form.ShowDialog();
-                            this.Show();
+                            XtraMessageBox.Show("Tài khoản đã bị khóa vui lòng liên hệ với Admin", "Thông báo");
                         }
                     }
                     else

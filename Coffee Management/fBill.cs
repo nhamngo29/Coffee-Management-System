@@ -7,6 +7,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting;
 using System.Drawing;
 using System.Drawing.Printing;
+using DevExpress.XtraEditors.Repository;
 
 namespace GUI
 {
@@ -47,7 +48,22 @@ namespace GUI
                 //gvBill.Columns[3].
                 gvBill.Columns[4].Caption = "Giảm giá";
                 gvBill.Columns[5].Caption = "Tổng tiền";
-               
+                gvBill.Columns[6].Caption = "Nhân viên";
+                RepositoryItemLookUpEdit myLookup = new RepositoryItemLookUpEdit();
+                try
+                {
+                    myLookup.DataSource = StaffBUS.Instance.GetAll();
+                    myLookup.DisplayMember = "Name";
+                    myLookup.ValueMember = "ID";
+                    myLookup.NullText = "Không có nhân viên";
+                    gvBill.Columns[6].ColumnEdit = myLookup;
+                    
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show("Error: " + ex);
+                }
+
             }
             catch (Exception ex)
             {

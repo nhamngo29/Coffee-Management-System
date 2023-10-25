@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -50,6 +51,17 @@ namespace BUS
         public bool Delete(int id)
         {
             return StaffDAO.Instance.Delete(id);
+        }
+        public Staff GetByID(int ID)
+        {
+            try
+            {
+                return StaffDAO.Instance.GetByID(ID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

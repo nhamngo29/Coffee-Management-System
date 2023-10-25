@@ -75,22 +75,12 @@ namespace GUI
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            UpdateAccount();
-            txtNewPassword.Text = string.Empty;
-            txtRetypePass.Text = string.Empty;
-            txtPassword.Text= string.Empty;
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (LoginAccount.Password == "C4CA4238A0B923820DCC509A6F75849B")
-            {
-                XtraMessageBox.Show("Nhằm đảm bảo bảo mật bạn cần đặt mất khẩu mới trước khi thoát");
-            }
-            else
-            {
-                this.Close();
-            }    
+            
         }
 
         private void txtUserName_EditValueChanged(object sender, EventArgs e)
@@ -113,6 +103,26 @@ namespace GUI
         private void fAccountInformation_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateAccount();
+            txtNewPassword.Text = string.Empty;
+            txtRetypePass.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+        }
+
+        private void btnCannel_Click(object sender, EventArgs e)
+        {
+            if (LoginAccount.Password == "C4CA4238A0B923820DCC509A6F75849B")
+            {
+                XtraMessageBox.Show("Nhằm đảm bảo bảo mật bạn cần đặt mất khẩu mới trước khi thoát");
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

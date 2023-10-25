@@ -73,6 +73,12 @@
             // 
             // gvFood
             // 
+            this.gvFood.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvFood.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gvFood.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvFood.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvFood.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvFood.Appearance.Row.Options.UseFont = true;
             this.gvFood.GridControl = this.gcFood;
             this.gvFood.Name = "gvFood";
             this.gvFood.NewItemRowText = "Thêm mới";

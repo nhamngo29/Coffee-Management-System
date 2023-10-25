@@ -45,7 +45,7 @@ namespace GUI
             SplashScreenManager.CloseForm();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        private  void Timer_Tick(object sender, EventArgs e)
         {
             if(countBooking!=BookingBUS.Instance.GetMaxID())
             {
@@ -261,7 +261,7 @@ namespace GUI
             }
             else
             {
-                fReservation f = new fReservation();
+                fReservation f = new fReservation(loginAccount);
                 f.MdiParent = this;
                 f.Show();
             }

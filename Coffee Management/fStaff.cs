@@ -48,6 +48,13 @@ namespace GUI
                 gv.Columns[0].OptionsColumn.AllowEdit = false;
                 gv.Columns[1].Caption = "Tên nhân viên";
                 gv.Columns[2].Caption = "Ngày sinh";
+                gv.Columns[2].DisplayFormat.FormatString="dd/mm/yyyy";
+                gv.Columns[2].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                gv.Columns[2].ColumnEdit = new RepositoryItemDateEdit();
+                RepositoryItemDateEdit dateEdit = gv.Columns[2].ColumnEdit as RepositoryItemDateEdit;
+                dateEdit.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                dateEdit.DisplayFormat.FormatString = "dd/MM/yyyy"; // Định dạng ngày tháng của bạn
+               
             }
             catch (Exception ex)
             {
@@ -101,13 +108,13 @@ namespace GUI
                 XtraMessageBox.Show("Tên không hợp lệ");
                 return;
             }
-            DateTime typeAccount = DateTime.Now;
-            if (typeAccount ==null)
+            DateTime dateTime = (DateTime)view.GetRowCellValue(rowHandle, view.Columns[2]);
+            if (dateTime == null)
             {
                 XtraMessageBox.Show("Hãy chọn ngày sinh");
                 return;
             }
-            if (StaffBUS.Instance.Update(int.Parse(id), name, typeAccount))
+            if (StaffBUS.Instance.Update(int.Parse(id), name, dateTime))
             {
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 SplashScreenManager.CloseForm();
@@ -168,6 +175,16 @@ namespace GUI
         }
 
         private void fStaff_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fStaff_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fStaff_Load_3(object sender, EventArgs e)
         {
 
         }

@@ -2,17 +2,17 @@
 {
 
 
-    partial class CoffeeDataset
+    partial class CoffeeDataSet
     {
-        partial class DataTableSumBillByMonthDataTable
-        {
-        }
     }
 }
 
-namespace GUI.Data.CoffeeDatasetTableAdapters {
-    
-    
+namespace GUI.Data.CoffeeDataSetTableAdapters
+{
+    partial class Booking1TableAdapter
+    {
+    }
+
     public partial class BookingDKTableAdapter {
     }
 }

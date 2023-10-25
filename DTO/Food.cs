@@ -28,7 +28,7 @@ namespace DTO
         {
             ID = id;
             Name = name;
-            TypeID = TypeID;
+            TypeID = typeID;
             Price = price;
             Image = image;
             Describe = describe;

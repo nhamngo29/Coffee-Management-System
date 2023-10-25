@@ -65,10 +65,9 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(732, 81);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(627, 62);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(78, 34);
+            this.btnSearch.Size = new System.Drawing.Size(67, 26);
             this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Tìm";
             // 
@@ -76,24 +75,22 @@
             // 
             this.txtSearchCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchCategory.EditValue = "";
-            this.txtSearchCategory.Location = new System.Drawing.Point(514, 82);
-            this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchCategory.Location = new System.Drawing.Point(441, 63);
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.txtSearchCategory.Properties.Appearance.Options.UseFont = true;
             this.txtSearchCategory.Properties.NullText = "-- Tìm tên món ăn --";
             this.txtSearchCategory.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
-            this.txtSearchCategory.Size = new System.Drawing.Size(210, 30);
+            this.txtSearchCategory.Size = new System.Drawing.Size(180, 24);
             this.txtSearchCategory.TabIndex = 25;
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(810, 33);
+            this.barDockControlRight.Location = new System.Drawing.Point(694, 27);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 519);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 395);
             // 
             // bar2
             // 
@@ -169,35 +166,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(810, 33);
+            this.barDockControlTop.Size = new System.Drawing.Size(694, 27);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 552);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 422);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(810, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(694, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 33);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 519);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 395);
             // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(810, 33);
+            this.barDockControl1.Location = new System.Drawing.Point(694, 27);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControl1.Size = new System.Drawing.Size(0, 519);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 395);
             // 
             // btn
             // 
@@ -210,13 +203,11 @@
             this.gcGroupFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcGroupFood.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gcGroupFood.Location = new System.Drawing.Point(0, 128);
+            this.gcGroupFood.Location = new System.Drawing.Point(0, 98);
             this.gcGroupFood.MainView = this.gvGroupFood;
-            this.gcGroupFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcGroupFood.MenuManager = this.barManager1;
             this.gcGroupFood.Name = "gcGroupFood";
-            this.gcGroupFood.Size = new System.Drawing.Size(810, 425);
+            this.gcGroupFood.Size = new System.Drawing.Size(694, 325);
             this.gcGroupFood.TabIndex = 32;
             this.gcGroupFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvGroupFood});
@@ -226,7 +217,11 @@
             // 
             // gvGroupFood
             // 
-            this.gvGroupFood.DetailHeight = 458;
+            this.gvGroupFood.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvGroupFood.Appearance.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gvGroupFood.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvGroupFood.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvGroupFood.Appearance.Row.Options.UseFont = true;
             this.gvGroupFood.GridControl = this.gcGroupFood;
             this.gvGroupFood.Name = "gvGroupFood";
             this.gvGroupFood.NewItemRowText = "Thêm mới";
@@ -239,9 +234,9 @@
             // fGroupFood
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 552);
+            this.ClientSize = new System.Drawing.Size(694, 422);
             this.Controls.Add(this.gcGroupFood);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchCategory);
@@ -250,7 +245,6 @@
             this.Controls.Add(this.barDockControl1);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fGroupFood";
             this.Text = "GroupFood";
             this.Load += new System.EventHandler(this.fGroupFood_Load);

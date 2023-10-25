@@ -76,7 +76,6 @@
             this.Name = "fAddTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm bàn";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fAddTable_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.txtTable.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

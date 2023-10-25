@@ -137,14 +137,14 @@ namespace DAO
             }
             return result > 0;
         }
-        public bool UpdateInformation(string userName,string displayName,int typeAccount,int staff)
+        public bool UpdateInformation(string userName,string displayName,int typeAccount,int staff,bool Active)
         {
-            string query = "SP_UpdateAccountFromAdmin @UserName , @DisplayName , @TypeAccount , @Staff";
+            string query = "SP_UpdateAccountFromAdmin @UserName , @DisplayName , @TypeAccount , @Staff , @Active";
             int result;
             try
             {
                 result = DataProvider.Instance.ExecuteNonQuery(query,
-                    new object[] { userName, displayName,typeAccount,staff });
+                    new object[] { userName, displayName,typeAccount,staff,Active });
             }
             catch (Exception ex)
             {

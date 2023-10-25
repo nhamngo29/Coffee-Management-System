@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using BUS;
 using DevExpress.XtraEditors;
 
 namespace GUI
@@ -11,6 +12,13 @@ namespace GUI
         public fAddTable()
         {
             InitializeComponent();
+            this.FormClosing += FAddTable_FormClosing;
+        }
+
+        private void FAddTable_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (txtTable.Text == "")
+                Table = -1;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -30,15 +38,12 @@ namespace GUI
             }
             else
             {
+                if(TableBUS.Instance.isExist(temp.ToString()));
                 Table = temp;
                 this.Close();
             }
         }
 
-        private void fAddTable_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (txtTable.Text == "")
-                Table = -1;
-        }
+        
     }
 }

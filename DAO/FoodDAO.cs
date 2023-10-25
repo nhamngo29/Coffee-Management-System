@@ -108,7 +108,7 @@ namespace DAO
         {
             try
             {
-                return  DataProvider.Instance.ExecuteNonQuery("Select * from Food Name=" + Name)>0;
+                return  DataProvider.Instance.ExecuteNonQuery($"SELECT * FROM Food WHERE UPPER(Name) = UPPER(N'{Name}')")>0;
             }
             catch (Exception)
             {

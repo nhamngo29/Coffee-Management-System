@@ -106,35 +106,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1213, 33);
+            this.barDockControlTop.Size = new System.Drawing.Size(1040, 27);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 681);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 521);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1213, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1040, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 33);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 648);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 494);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1213, 33);
+            this.barDockControlRight.Location = new System.Drawing.Point(1040, 27);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 648);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 494);
             // 
             // barButtonItem2
             // 
@@ -154,10 +150,9 @@
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.btnSearch.Appearance.Options.UseFont = true;
-            this.btnSearch.Location = new System.Drawing.Point(1135, 38);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(973, 29);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(78, 46);
+            this.btnSearch.Size = new System.Drawing.Size(67, 35);
             this.btnSearch.TabIndex = 32;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -166,15 +161,14 @@
             // 
             this.txtSearchAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchAccount.EditValue = "";
-            this.txtSearchAccount.Location = new System.Drawing.Point(918, 46);
-            this.txtSearchAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchAccount.Location = new System.Drawing.Point(787, 35);
             this.txtSearchAccount.MenuManager = this.barManager1;
             this.txtSearchAccount.Name = "txtSearchAccount";
             this.txtSearchAccount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.txtSearchAccount.Properties.Appearance.Options.UseFont = true;
             this.txtSearchAccount.Properties.NullText = "-- Tìm tên món ăn --";
             this.txtSearchAccount.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
-            this.txtSearchAccount.Size = new System.Drawing.Size(210, 30);
+            this.txtSearchAccount.Size = new System.Drawing.Size(180, 24);
             this.txtSearchAccount.TabIndex = 31;
             // 
             // gc
@@ -182,13 +176,11 @@
             this.gc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gc.Location = new System.Drawing.Point(0, 85);
+            this.gc.Location = new System.Drawing.Point(0, 65);
             this.gc.MainView = this.gv;
-            this.gc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gc.MenuManager = this.barManager1;
             this.gc.Name = "gc";
-            this.gc.Size = new System.Drawing.Size(1213, 596);
+            this.gc.Size = new System.Drawing.Size(1040, 456);
             this.gc.TabIndex = 30;
             this.gc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv});
@@ -197,7 +189,10 @@
             // 
             // gv
             // 
-            this.gv.DetailHeight = 458;
+            this.gv.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gv.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gv.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gv.Appearance.Row.Options.UseFont = true;
             this.gv.GridControl = this.gc;
             this.gv.Name = "gv";
             this.gv.NewItemRowText = "Thêm mới";
@@ -211,43 +206,39 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 33);
+            this.barDockControl1.Location = new System.Drawing.Point(0, 27);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControl1.Size = new System.Drawing.Size(0, 648);
+            this.barDockControl1.Size = new System.Drawing.Size(0, 494);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl2.Location = new System.Drawing.Point(1213, 33);
+            this.barDockControl2.Location = new System.Drawing.Point(1040, 27);
             this.barDockControl2.Manager = this.barManager1;
-            this.barDockControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControl2.Size = new System.Drawing.Size(0, 648);
+            this.barDockControl2.Size = new System.Drawing.Size(0, 494);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 681);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 521);
             this.barDockControl3.Manager = this.barManager1;
-            this.barDockControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControl3.Size = new System.Drawing.Size(1213, 0);
+            this.barDockControl3.Size = new System.Drawing.Size(1040, 0);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl4.Location = new System.Drawing.Point(0, 33);
+            this.barDockControl4.Location = new System.Drawing.Point(0, 27);
             this.barDockControl4.Manager = this.barManager1;
-            this.barDockControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.barDockControl4.Size = new System.Drawing.Size(1213, 0);
+            this.barDockControl4.Size = new System.Drawing.Size(1040, 0);
             // 
             // fStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 681);
+            this.ClientSize = new System.Drawing.Size(1040, 521);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchAccount);
             this.Controls.Add(this.gc);
@@ -259,7 +250,6 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fStaff";
             this.Text = "fStaff";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

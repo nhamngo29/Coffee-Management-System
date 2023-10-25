@@ -62,6 +62,10 @@
             // 
             // gvTable
             // 
+            this.gvTable.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTable.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvTable.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTable.Appearance.Row.Options.UseFont = true;
             this.gvTable.GridControl = this.gcTable;
             this.gvTable.Name = "gvTable";
             this.gvTable.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -46,7 +47,7 @@ namespace DAO
         public bool Update(int id, string name, DateTime DOB)
         {
             string query = "SP_UpdateStaff @ID , @Name , @DOB";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, name });
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, name,DOB });
             return result > 0;
         }
 
@@ -55,6 +56,18 @@ namespace DAO
             string query = string.Format("SP_DeleteStaff @ID");
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
             return result > 0;
+        }
+        public Staff GetByID(int id)
+        {
+            List<DTO.Staff> list = new List<DTO.Staff>();
+            string query = "select * from staff where ID=" + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                DTO.Staff type = new DTO.Staff(row);
+                list.Add(type);
+            }
+            return list[0];
         }
     }
 }

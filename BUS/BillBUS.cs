@@ -55,11 +55,11 @@ namespace BUS
             }
         }
 
-        public void CheckOut(int billID, int discount, int totalPrice)
+        public void CheckOut(int billID, int discount, int totalPrice,int staff)
         {
             try
             {
-                BillDAO.Instance.CheckOut(billID, discount, totalPrice);
+                BillDAO.Instance.CheckOut(billID, discount, totalPrice,staff);
             }
             catch { }
         }

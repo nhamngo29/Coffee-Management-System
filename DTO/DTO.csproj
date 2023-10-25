@@ -49,8 +49,10 @@
     <Compile Include="Category.cs" />
     <Compile Include="Discount.cs" />
     <Compile Include="Food.cs" />
-    <Compile Include="Image.cs" />
+    <Compile Include="NhomNguoiDung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen.cs" />
+    <Compile Include="Staff.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="TempBill.cs" />
     <Compile Include="TypeFood.cs" />

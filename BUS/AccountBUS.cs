@@ -113,15 +113,14 @@ namespace BUS
                 throw ex;
             }
         }
-        public bool UpdateInformation(string userName, string displayName,int typeAccount ,int staff)
+        public bool UpdateInformation(string userName, string displayName,int typeAccount ,int staff,bool active)
         {
             try
             {
-                return AccountDAO.Instance.UpdateInformation(userName, displayName, typeAccount, staff);
+                return AccountDAO.Instance.UpdateInformation(userName, displayName, typeAccount, staff, active);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
