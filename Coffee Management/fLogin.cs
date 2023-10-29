@@ -15,7 +15,14 @@ namespace GUI
         public fLogin()
         {
             InitializeComponent();
+            this.FormClosed += FLogin_FormClosed;
         }
+
+        private void FLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
         private Bitmap drawImage(string txt, int w, int h)
         {
             w = w + 20;
@@ -150,9 +157,9 @@ namespace GUI
                                 txtPassword.Text = string.Empty;
                                 txtUserName.Text = string.Empty;
                                 txtCaptcha.Text = string.Empty;
-                                fManager form = new fManager(acc);//chuyển đến trang manager
+                                Program._fManager = new fManager(acc);
                                 this.Hide();
-                                form.ShowDialog();
+                                Program._fManager.ShowDialog();
                                 this.Show();
                             }
                         }

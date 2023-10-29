@@ -42,7 +42,7 @@ namespace GUI
             if (f.Table == -1)
                 return;
             string table = "Bàn " + f.Table;
-            for (int i = 0; i < gvTable.RowCount - 1; i++)
+            for (int i = 0; i < gvTable.RowCount ; i++)
             {
                 if (table.Equals(gvTable.GetRowCellValue(i, gvTable.Columns[1]).ToString()))
                 {

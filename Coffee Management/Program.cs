@@ -8,12 +8,17 @@ namespace GUI
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static fLogin _fLogin;
+        public static fManager _fManager;
         [STAThread]
         static void Main()
         {
+           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fLogin());
+            _fLogin = new fLogin();
+            Application.Run(_fLogin);
         }
     }
 }

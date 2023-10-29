@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using DTO;
 using BUS;
 using DevExpress.XtraEditors.Filtering.Templates;
+using DevExpress.XtraSplashScreen;
 
 namespace GUI
 {
@@ -26,7 +27,10 @@ namespace GUI
             this.acc = acc;
             staff = StaffBUS.Instance.GetByID(acc.IdStaff);
             this.Load += fReservation_Load;
+            gridView1.CellValueChanging += GridView1_CellValueChanging;
         }
+
+       
 
         private void bookingDKBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -123,20 +127,25 @@ namespace GUI
         {
             XtraMessageBox.Show("Đã tích " + e.Column.AbsoluteIndex);
         }
-
+        private void GridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            
+        }
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (e.Column == colConfirm) 
+            if (e.Column == colConfirm)
             {
+
                 bool isChecked = (bool)gridView1.GetRowCellValue(e.RowHandle, e.Column);
-                string Fullname= gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[1]).ToString();
+                string Fullname = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[1]).ToString();
                 string Email = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[2]).ToString();
                 string NumberPhone = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[3]).ToString();
                 string Quantity = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[4]).ToString();
                 string Time = gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[5]).ToString();
-                
+
                 if (isChecked)
                 {
+                    SplashScreenManager.ShowForm(typeof(WaitForm1));
                     MailAddress myemail = new MailAddress("nhamngoinfo@gmail.com", "Coffee Z");
                     MailAddress mail_to = new MailAddress(Email, Fullname);
 
@@ -172,17 +181,27 @@ namespace GUI
                     try
                     {
                         client_smtp.Send(message);
+                        SplashScreenManager.CloseForm();
                         XtraMessageBox.Show("Đơn hàng đã được gửi xác nhân đến email của khách hàng");
+                        bookingDKBindingNavigatorSaveItem.PerformClick();
+
                     }
                     catch (Exception ex)
                     {
+                        SplashScreenManager.CloseForm();
                         Console.WriteLine("Lỗi: ");
                     }
+
                 }
             }
         }
 
         private void bookingDKGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

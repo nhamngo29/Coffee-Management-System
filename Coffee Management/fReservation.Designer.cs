@@ -62,11 +62,11 @@
             this.colNumberPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBookingTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateTimeOffsetEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateTimeOffsetEdit();
             this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colConfirm = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDateTimeOffsetEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateTimeOffsetEdit();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties)).BeginInit();
@@ -80,9 +80,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemDateTimeOffsetEdit2
@@ -104,6 +104,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1089, 57);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnShowBill
             // 
@@ -414,6 +415,13 @@
             this.colBookingTime.Visible = true;
             this.colBookingTime.VisibleIndex = 5;
             // 
+            // repositoryItemDateTimeOffsetEdit1
+            // 
+            this.repositoryItemDateTimeOffsetEdit1.AutoHeight = false;
+            this.repositoryItemDateTimeOffsetEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateTimeOffsetEdit1.Name = "repositoryItemDateTimeOffsetEdit1";
+            // 
             // colNote
             // 
             this.colNote.FieldName = "Note";
@@ -427,13 +435,6 @@
             this.colConfirm.Name = "colConfirm";
             this.colConfirm.Visible = true;
             this.colConfirm.VisibleIndex = 7;
-            // 
-            // repositoryItemDateTimeOffsetEdit1
-            // 
-            this.repositoryItemDateTimeOffsetEdit1.AutoHeight = false;
-            this.repositoryItemDateTimeOffsetEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateTimeOffsetEdit1.Name = "repositoryItemDateTimeOffsetEdit1";
             // 
             // repositoryItemDateEdit1
             // 
@@ -470,9 +471,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bookingDKGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,7 +485,6 @@
         private Data.CoffeeDataSetTableAdapters.BookingDKTableAdapter bookingDKTableAdapter;
         private Data.CoffeeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.SimpleButton btnShowBill;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.DateEdit deToDate;
@@ -520,5 +520,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colConfirm;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        public DevExpress.XtraEditors.SimpleButton btnShowBill;
     }
 }

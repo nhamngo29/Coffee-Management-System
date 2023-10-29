@@ -38,9 +38,9 @@ namespace GUI
             }
             else
             {
-                if(TableBUS.Instance.isExist(temp.ToString()));
-                Table = temp;
-                this.Close();
+               
+                    Table = temp;
+                    this.Close();
             }
         }
 
