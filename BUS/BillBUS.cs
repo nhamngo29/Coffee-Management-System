@@ -2,8 +2,6 @@
 using System.Data;
 
 using DAO;
-using DTO;
-
 namespace BUS
 {
     public class BillBUS

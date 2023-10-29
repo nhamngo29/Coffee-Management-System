@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Data;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using DTO;
-using System.Text;
-using System.Linq;
 namespace DAO
 {
     public class AccountDAO

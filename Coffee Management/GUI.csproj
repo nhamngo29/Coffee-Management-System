@@ -190,7 +190,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Data\CoffeeDataSet.cs">
       <DependentUpon>CoffeeDataSet.xsd</DependentUpon>
     </Compile>

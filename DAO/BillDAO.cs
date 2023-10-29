@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Data;
-
-using DTO;
-
 namespace DAO
 {
     public class BillDAO

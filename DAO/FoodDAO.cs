@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-
-using DTO;
-
 namespace DAO
 {
     public class FoodDAO

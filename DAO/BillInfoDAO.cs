@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data;
-
-using DTO;
-
-namespace DAO
+﻿namespace DAO
 {
     public class BillInfoDAO
     {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using DAO;
-using DTO;
-
+﻿using DAO;
 namespace BUS
 {
     public class BillInfoBUS
