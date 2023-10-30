@@ -25,20 +25,6 @@ namespace GUI
             this.tableAdapterManager.UpdateAll(this.coffeeDataSet);
 
         }
-
-        private void fill_IDToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.account1TableAdapter.Fill_ID(this.coffeeDataSet.Account1, ((int)(System.Convert.ChangeType(maIDToolStripTextBox.Text, typeof(int)))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void fDecentralization_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'coffeeDataSet.Account' table. You can move, or remove it, as needed.

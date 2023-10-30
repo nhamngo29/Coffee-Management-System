@@ -45,10 +45,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.account1BindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.fill_IDToolStrip = new System.Windows.Forms.ToolStrip();
-            this.maIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.maIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fill_IDToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.account1TableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.Account1TableAdapter();
             this.tableAdapterManager = new GUI.Data.CoffeeDataSetTableAdapters.TableAdapterManager();
             this.account1DataGridView = new System.Windows.Forms.DataGridView();
@@ -73,7 +69,6 @@
             this.account1BindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
-            this.fill_IDToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
@@ -213,37 +208,6 @@
             this.account1BindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.account1BindingNavigatorSaveItem.Text = "Save Data";
             this.account1BindingNavigatorSaveItem.Click += new System.EventHandler(this.account1BindingNavigatorSaveItem_Click);
-            // 
-            // fill_IDToolStrip
-            // 
-            this.fill_IDToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.maIDToolStripLabel,
-            this.maIDToolStripTextBox,
-            this.fill_IDToolStripButton});
-            this.fill_IDToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.fill_IDToolStrip.Name = "fill_IDToolStrip";
-            this.fill_IDToolStrip.Size = new System.Drawing.Size(1146, 25);
-            this.fill_IDToolStrip.TabIndex = 1;
-            this.fill_IDToolStrip.Text = "fill_IDToolStrip";
-            // 
-            // maIDToolStripLabel
-            // 
-            this.maIDToolStripLabel.Name = "maIDToolStripLabel";
-            this.maIDToolStripLabel.Size = new System.Drawing.Size(38, 22);
-            this.maIDToolStripLabel.Text = "maID:";
-            // 
-            // maIDToolStripTextBox
-            // 
-            this.maIDToolStripTextBox.Name = "maIDToolStripTextBox";
-            this.maIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fill_IDToolStripButton
-            // 
-            this.fill_IDToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fill_IDToolStripButton.Name = "fill_IDToolStripButton";
-            this.fill_IDToolStripButton.Size = new System.Drawing.Size(42, 22);
-            this.fill_IDToolStripButton.Text = "Fill_ID";
-            this.fill_IDToolStripButton.Click += new System.EventHandler(this.fill_IDToolStripButton_Click);
             // 
             // account1TableAdapter
             // 
@@ -425,7 +389,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.accountTypeComboBox);
             this.Controls.Add(this.account1DataGridView);
-            this.Controls.Add(this.fill_IDToolStrip);
             this.Controls.Add(this.account1BindingNavigator);
             this.Name = "fDecentralization";
             this.Text = "fDecentralization";
@@ -435,8 +398,6 @@
             this.account1BindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
-            this.fill_IDToolStrip.ResumeLayout(false);
-            this.fill_IDToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
@@ -465,10 +426,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton account1BindingNavigatorSaveItem;
-        private System.Windows.Forms.ToolStrip fill_IDToolStrip;
-        private System.Windows.Forms.ToolStripLabel maIDToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox maIDToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fill_IDToolStripButton;
         private System.Windows.Forms.DataGridView account1DataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
