@@ -17,5 +17,26 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void account1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.account1BindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.coffeeDataSet);
+
+        }
+
+        private void fill_IDToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.account1TableAdapter.Fill_ID(this.coffeeDataSet.Account1, ((int)(System.Convert.ChangeType(maIDToolStripTextBox.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
