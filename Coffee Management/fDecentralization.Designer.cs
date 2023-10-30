@@ -67,6 +67,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingNavigator)).BeginInit();
             this.account1BindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).BeginInit();
@@ -311,7 +312,6 @@
             // 
             this.accountTypeComboBox.DataSource = this.accountTypeBindingSource;
             this.accountTypeComboBox.DisplayMember = "TypeName";
-            this.accountTypeComboBox.Enabled = false;
             this.accountTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountTypeComboBox.FormattingEnabled = true;
             this.accountTypeComboBox.Location = new System.Drawing.Point(975, 91);
@@ -392,11 +392,21 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Active";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(703, 206);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = ">>";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // fDecentralization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 446);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.accountDataGridView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.accountTypeComboBox);
@@ -461,5 +471,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Button button1;
     }
 }
