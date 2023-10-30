@@ -41,8 +41,23 @@ namespace GUI
 
         private void fDecentralization_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'coffeeDataSet.Account' table. You can move, or remove it, as needed.
+            this.accountTableAdapter.Fill(this.coffeeDataSet.Account);
             // TODO: This line of code loads data into the 'coffeeDataSet.AccountType' table. You can move, or remove it, as needed.
             this.accountTypeTableAdapter.Fill(this.coffeeDataSet.AccountType);
+
+        }
+
+        private void select_US_NToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.accountTableAdapter.select_US_N(this.coffeeDataSet.Account);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

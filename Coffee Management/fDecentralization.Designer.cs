@@ -31,24 +31,24 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDecentralization));
             this.account1BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.account1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coffeeDataSet = new GUI.Data.CoffeeDataSet();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.account1BindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.fill_IDToolStrip = new System.Windows.Forms.ToolStrip();
             this.maIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.maIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fill_IDToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.account1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coffeeDataSet = new GUI.Data.CoffeeDataSet();
             this.account1TableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.Account1TableAdapter();
             this.tableAdapterManager = new GUI.Data.CoffeeDataSetTableAdapters.TableAdapterManager();
             this.account1DataGridView = new System.Windows.Forms.DataGridView();
@@ -57,13 +57,25 @@
             this.accountTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accountTypeTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountTypeTableAdapter();
             this.accountTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountTableAdapter();
+            this.accountDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingNavigator)).BeginInit();
             this.account1BindingNavigator.SuspendLayout();
-            this.fill_IDToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
+            this.fill_IDToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // account1BindingNavigator
@@ -92,9 +104,44 @@
             this.account1BindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.account1BindingNavigator.Name = "account1BindingNavigator";
             this.account1BindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.account1BindingNavigator.Size = new System.Drawing.Size(886, 25);
+            this.account1BindingNavigator.Size = new System.Drawing.Size(1146, 25);
             this.account1BindingNavigator.TabIndex = 0;
             this.account1BindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // account1BindingSource
+            // 
+            this.account1BindingSource.DataMember = "Account1";
+            this.account1BindingSource.DataSource = this.coffeeDataSet;
+            // 
+            // coffeeDataSet
+            // 
+            this.coffeeDataSet.DataSetName = "CoffeeDataSet";
+            this.coffeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -123,22 +170,14 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -161,26 +200,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // account1BindingNavigatorSaveItem
             // 
@@ -199,7 +220,7 @@
             this.fill_IDToolStripButton});
             this.fill_IDToolStrip.Location = new System.Drawing.Point(0, 25);
             this.fill_IDToolStrip.Name = "fill_IDToolStrip";
-            this.fill_IDToolStrip.Size = new System.Drawing.Size(886, 25);
+            this.fill_IDToolStrip.Size = new System.Drawing.Size(1146, 25);
             this.fill_IDToolStrip.TabIndex = 1;
             this.fill_IDToolStrip.Text = "fill_IDToolStrip";
             // 
@@ -211,7 +232,6 @@
             // 
             // maIDToolStripTextBox
             // 
-            this.maIDToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.maIDToolStripTextBox.Name = "maIDToolStripTextBox";
             this.maIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -222,16 +242,6 @@
             this.fill_IDToolStripButton.Size = new System.Drawing.Size(42, 22);
             this.fill_IDToolStripButton.Text = "Fill_ID";
             this.fill_IDToolStripButton.Click += new System.EventHandler(this.fill_IDToolStripButton_Click);
-            // 
-            // account1BindingSource
-            // 
-            this.account1BindingSource.DataMember = "Account1";
-            this.account1BindingSource.DataSource = this.coffeeDataSet;
-            // 
-            // coffeeDataSet
-            // 
-            this.coffeeDataSet.DataSetName = "CoffeeDataSet";
-            this.coffeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // account1TableAdapter
             // 
@@ -266,7 +276,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.account1DataGridView.DataSource = this.account1BindingSource;
-            this.account1DataGridView.Location = new System.Drawing.Point(475, 153);
+            this.account1DataGridView.Location = new System.Drawing.Point(820, 165);
             this.account1DataGridView.Name = "account1DataGridView";
             this.account1DataGridView.Size = new System.Drawing.Size(314, 200);
             this.account1DataGridView.TabIndex = 2;
@@ -301,18 +311,93 @@
             // 
             this.accountTypeComboBox.DataSource = this.accountTypeBindingSource;
             this.accountTypeComboBox.DisplayMember = "TypeName";
+            this.accountTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountTypeComboBox.FormattingEnabled = true;
-            this.accountTypeComboBox.Location = new System.Drawing.Point(630, 97);
+            this.accountTypeComboBox.Location = new System.Drawing.Point(975, 91);
             this.accountTypeComboBox.Name = "accountTypeComboBox";
-            this.accountTypeComboBox.Size = new System.Drawing.Size(159, 21);
+            this.accountTypeComboBox.Size = new System.Drawing.Size(159, 29);
             this.accountTypeComboBox.TabIndex = 3;
             this.accountTypeComboBox.ValueMember = "ID";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(817, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Loại tài khoản";
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataMember = "Account";
+            this.accountBindingSource.DataSource = this.coffeeDataSet;
+            // 
+            // accountTableAdapter
+            // 
+            this.accountTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountDataGridView
+            // 
+            this.accountDataGridView.AutoGenerateColumns = false;
+            this.accountDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewCheckBoxColumn1});
+            this.accountDataGridView.DataSource = this.accountBindingSource;
+            this.accountDataGridView.Location = new System.Drawing.Point(24, 165);
+            this.accountDataGridView.Name = "accountDataGridView";
+            this.accountDataGridView.Size = new System.Drawing.Size(643, 200);
+            this.accountDataGridView.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "UserName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "UserName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DisplayName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "DisplayName";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Password";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "TypeID";
+            this.dataGridViewTextBoxColumn6.HeaderText = "TypeID";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "IdSataff";
+            this.dataGridViewTextBoxColumn7.HeaderText = "IdSataff";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Active";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Active";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // fDecentralization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 391);
+            this.ClientSize = new System.Drawing.Size(1146, 446);
+            this.Controls.Add(this.accountDataGridView);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.accountTypeComboBox);
             this.Controls.Add(this.account1DataGridView);
             this.Controls.Add(this.fill_IDToolStrip);
@@ -323,12 +408,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingNavigator)).EndInit();
             this.account1BindingNavigator.ResumeLayout(false);
             this.account1BindingNavigator.PerformLayout();
-            this.fill_IDToolStrip.ResumeLayout(false);
-            this.fill_IDToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
+            this.fill_IDToolStrip.ResumeLayout(false);
+            this.fill_IDToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +450,15 @@
         private System.Windows.Forms.BindingSource accountTypeBindingSource;
         private Data.CoffeeDataSetTableAdapters.AccountTypeTableAdapter accountTypeTableAdapter;
         private System.Windows.Forms.ComboBox accountTypeComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource accountBindingSource;
+        private Data.CoffeeDataSetTableAdapters.AccountTableAdapter accountTableAdapter;
+        private System.Windows.Forms.DataGridView accountDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }

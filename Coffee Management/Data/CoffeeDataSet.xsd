@@ -77,7 +77,17 @@ SELECT UserName, DisplayName, Password, TypeID, IdSataff, Active FROM Account WH
               <Mapping SourceColumn="IdSataff" DataSetColumn="IdSataff" />
               <Mapping SourceColumn="Active" DataSetColumn="Active" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="CoffeeManagement.dbo.Account" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="select_US_N" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy_US_N" GeneratorSourceName="select_US_N" GetMethodModifier="Public" GetMethodName="GetDataBy_US_N" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy_US_N" UserSourceName="select_US_N">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        UserName, DisplayName
+FROM            Account</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TypeFoodTableAdapter" GeneratorDataComponentClassName="TypeFoodTableAdapter" Name="TypeFood" UserDataComponentName="TypeFoodTableAdapter">
             <MainSource>
