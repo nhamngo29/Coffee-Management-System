@@ -311,6 +311,7 @@
             // 
             this.accountTypeComboBox.DataSource = this.accountTypeBindingSource;
             this.accountTypeComboBox.DisplayMember = "TypeName";
+            this.accountTypeComboBox.Enabled = false;
             this.accountTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountTypeComboBox.FormattingEnabled = true;
             this.accountTypeComboBox.Location = new System.Drawing.Point(975, 91);
