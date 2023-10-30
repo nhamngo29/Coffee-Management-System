@@ -54,12 +54,16 @@
             this.account1DataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountTypeTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountTypeTableAdapter();
+            this.accountTypeComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingNavigator)).BeginInit();
             this.account1BindingNavigator.SuspendLayout();
             this.fill_IDToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // account1BindingNavigator
@@ -284,16 +288,38 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 150;
             // 
+            // accountTypeBindingSource
+            // 
+            this.accountTypeBindingSource.DataMember = "AccountType";
+            this.accountTypeBindingSource.DataSource = this.coffeeDataSet;
+            // 
+            // accountTypeTableAdapter
+            // 
+            this.accountTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountTypeComboBox
+            // 
+            this.accountTypeComboBox.DataSource = this.accountTypeBindingSource;
+            this.accountTypeComboBox.DisplayMember = "TypeName";
+            this.accountTypeComboBox.FormattingEnabled = true;
+            this.accountTypeComboBox.Location = new System.Drawing.Point(630, 97);
+            this.accountTypeComboBox.Name = "accountTypeComboBox";
+            this.accountTypeComboBox.Size = new System.Drawing.Size(159, 21);
+            this.accountTypeComboBox.TabIndex = 3;
+            this.accountTypeComboBox.ValueMember = "ID";
+            // 
             // fDecentralization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 391);
+            this.Controls.Add(this.accountTypeComboBox);
             this.Controls.Add(this.account1DataGridView);
             this.Controls.Add(this.fill_IDToolStrip);
             this.Controls.Add(this.account1BindingNavigator);
             this.Name = "fDecentralization";
             this.Text = "fDecentralization";
+            this.Load += new System.EventHandler(this.fDecentralization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingNavigator)).EndInit();
             this.account1BindingNavigator.ResumeLayout(false);
             this.account1BindingNavigator.PerformLayout();
@@ -302,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +360,8 @@
         private System.Windows.Forms.DataGridView account1DataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource accountTypeBindingSource;
+        private Data.CoffeeDataSetTableAdapters.AccountTypeTableAdapter accountTypeTableAdapter;
+        private System.Windows.Forms.ComboBox accountTypeComboBox;
     }
 }
