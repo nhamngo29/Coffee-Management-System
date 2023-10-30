@@ -281,5 +281,20 @@ namespace GUI
                 f.Show();
             }
         }
+
+        private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fDecentralization));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fDecentralization f = new fDecentralization();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
