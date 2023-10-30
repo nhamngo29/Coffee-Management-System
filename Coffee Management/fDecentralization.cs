@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fPhanQuyen : Form
+    public partial class fDecentralization : DevExpress.XtraEditors.XtraForm
     {
-        public fPhanQuyen()
+        public fDecentralization()
         {
             InitializeComponent();
         }
