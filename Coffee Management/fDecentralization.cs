@@ -60,5 +60,17 @@ namespace GUI
             }
 
         }
+
+        private void accountTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.account1TableAdapter.Fill_ID(this.coffeeDataSet.Account1, ((int)(System.Convert.ChangeType(accountTypeComboBox.SelectedValue, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
