@@ -264,6 +264,12 @@
     <Compile Include="fNhomNguoiDung.Designer.cs">
       <DependentUpon>fNhomNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="fPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPhanQuyen.Designer.cs">
+      <DependentUpon>fPhanQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="fReservation.cs">
       <SubType>Form</SubType>
     </Compile>
