@@ -985,6 +985,28 @@ SELECT UserName, DisplayName FROM Account WHERE (UserName = @UserName)</CommandT
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_PhanQuynTableAdapter" GeneratorDataComponentClassName="tb_PhanQuynTableAdapter" Name="tb_PhanQuyn" UserDataComponentName="tb_PhanQuynTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill_pq" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData_pq" GeneratorSourceName="Fill_pq" GetMethodModifier="Public" GetMethodName="GetData_pq" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData_pq" UserSourceName="Fill_pq">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        NhomNguoiDung.MaNhomNguoiDung, NhomNguoiDung.Name AS asTenNhomNguoiDung, Screen.Name AS TenManHinh, PhanQuyen.CoQuyen
+FROM            NhomNguoiDung INNER JOIN
+                         PhanQuyen ON NhomNguoiDung.MaNhomNguoiDung = PhanQuyen.MaNhomNguoiDung INNER JOIN
+                         Screen ON PhanQuyen.IdCreen = Screen.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaNhomNguoiDung" DataSetColumn="MaNhomNguoiDung" />
+              <Mapping SourceColumn="asTenNhomNguoiDung" DataSetColumn="asTenNhomNguoiDung" />
+              <Mapping SourceColumn="TenManHinh" DataSetColumn="TenManHinh" />
+              <Mapping SourceColumn="CoQuyen" DataSetColumn="CoQuyen" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1258,61 +1280,83 @@ SELECT UserName, DisplayName FROM Account WHERE (UserName = @UserName)</CommandT
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BookingDK" msprop:Generator_RowClassName="BookingDKRow" msprop:Generator_RowEvHandlerName="BookingDKRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingDKRowDeleted" msprop:Generator_RowDeletingName="BookingDKRowDeleting" msprop:Generator_RowEvArgName="BookingDKRowChangeEvent" msprop:Generator_TablePropName="BookingDK" msprop:Generator_RowChangedName="BookingDKRowChanged" msprop:Generator_UserTableName="BookingDK" msprop:Generator_RowChangingName="BookingDKRowChanging" msprop:Generator_TableClassName="BookingDKDataTable" msprop:Generator_TableVarName="tableBookingDK">
+        <xs:element name="BookingDK" msprop:Generator_RowEvHandlerName="BookingDKRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingDKRowDeleted" msprop:Generator_RowDeletingName="BookingDKRowDeleting" msprop:Generator_RowEvArgName="BookingDKRowChangeEvent" msprop:Generator_TablePropName="BookingDK" msprop:Generator_RowChangedName="BookingDKRowChanged" msprop:Generator_UserTableName="BookingDK" msprop:Generator_RowChangingName="BookingDKRowChanging" msprop:Generator_RowClassName="BookingDKRow" msprop:Generator_TableClassName="BookingDKDataTable" msprop:Generator_TableVarName="tableBookingDK">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="FullName" msprop:Generator_UserColumnName="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" minOccurs="0">
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_UserColumnName="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="60" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NumberPhone" msprop:Generator_UserColumnName="NumberPhone" msprop:Generator_ColumnPropNameInTable="NumberPhoneColumn" msprop:Generator_ColumnPropNameInRow="NumberPhone" msprop:Generator_ColumnVarNameInTable="columnNumberPhone" minOccurs="0">
+              <xs:element name="NumberPhone" msprop:Generator_ColumnPropNameInTable="NumberPhoneColumn" msprop:Generator_ColumnPropNameInRow="NumberPhone" msprop:Generator_UserColumnName="NumberPhone" msprop:Generator_ColumnVarNameInTable="columnNumberPhone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" type="xs:int" minOccurs="0" />
-              <xs:element name="BookingTime" msprop:Generator_UserColumnName="BookingTime" msprop:Generator_ColumnPropNameInTable="BookingTimeColumn" msprop:Generator_ColumnPropNameInRow="BookingTime" msprop:Generator_ColumnVarNameInTable="columnBookingTime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Note" msprop:Generator_UserColumnName="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnVarNameInTable="columnNote" minOccurs="0">
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" type="xs:int" minOccurs="0" />
+              <xs:element name="BookingTime" msprop:Generator_ColumnPropNameInTable="BookingTimeColumn" msprop:Generator_ColumnPropNameInRow="BookingTime" msprop:Generator_UserColumnName="BookingTime" msprop:Generator_ColumnVarNameInTable="columnBookingTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_UserColumnName="Note" msprop:Generator_ColumnVarNameInTable="columnNote" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Confirm" msprop:Generator_UserColumnName="Confirm" msprop:Generator_ColumnPropNameInTable="ConfirmColumn" msprop:Generator_ColumnPropNameInRow="Confirm" msprop:Generator_ColumnVarNameInTable="columnConfirm" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Confirm" msprop:Generator_ColumnPropNameInTable="ConfirmColumn" msprop:Generator_ColumnPropNameInRow="Confirm" msprop:Generator_UserColumnName="Confirm" msprop:Generator_ColumnVarNameInTable="columnConfirm" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Account1" msprop:Generator_RowEvHandlerName="Account1RowChangeEventHandler" msprop:Generator_RowDeletedName="Account1RowDeleted" msprop:Generator_RowDeletingName="Account1RowDeleting" msprop:Generator_RowEvArgName="Account1RowChangeEvent" msprop:Generator_TablePropName="Account1" msprop:Generator_RowChangedName="Account1RowChanged" msprop:Generator_RowChangingName="Account1RowChanging" msprop:Generator_TableClassName="Account1DataTable" msprop:Generator_RowClassName="Account1Row" msprop:Generator_TableVarName="tableAccount1" msprop:Generator_UserTableName="Account1">
+        <xs:element name="Account1" msprop:Generator_RowClassName="Account1Row" msprop:Generator_RowEvHandlerName="Account1RowChangeEventHandler" msprop:Generator_RowDeletedName="Account1RowDeleted" msprop:Generator_RowDeletingName="Account1RowDeleting" msprop:Generator_RowEvArgName="Account1RowChangeEvent" msprop:Generator_TablePropName="Account1" msprop:Generator_RowChangedName="Account1RowChanged" msprop:Generator_UserTableName="Account1" msprop:Generator_RowChangingName="Account1RowChanging" msprop:Generator_TableClassName="Account1DataTable" msprop:Generator_TableVarName="tableAccount1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_UserColumnName="UserName">
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_UserColumnName="DisplayName">
+              <xs:element name="DisplayName" msprop:Generator_UserColumnName="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_PhanQuyn" msprop:Generator_RowEvHandlerName="tb_PhanQuynRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_PhanQuynRowDeleted" msprop:Generator_RowDeletingName="tb_PhanQuynRowDeleting" msprop:Generator_RowEvArgName="tb_PhanQuynRowChangeEvent" msprop:Generator_TablePropName="tb_PhanQuyn" msprop:Generator_RowChangedName="tb_PhanQuynRowChanged" msprop:Generator_RowChangingName="tb_PhanQuynRowChanging" msprop:Generator_TableClassName="tb_PhanQuynDataTable" msprop:Generator_RowClassName="tb_PhanQuynRow" msprop:Generator_TableVarName="tabletb_PhanQuyn" msprop:Generator_UserTableName="tb_PhanQuyn">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaNhomNguoiDung" msprop:Generator_ColumnPropNameInRow="MaNhomNguoiDung" msprop:Generator_ColumnPropNameInTable="MaNhomNguoiDungColumn" msprop:Generator_ColumnVarNameInTable="columnMaNhomNguoiDung" msprop:Generator_UserColumnName="MaNhomNguoiDung" type="xs:int" />
+              <xs:element name="asTenNhomNguoiDung" msprop:Generator_ColumnPropNameInRow="asTenNhomNguoiDung" msprop:Generator_ColumnPropNameInTable="asTenNhomNguoiDungColumn" msprop:Generator_ColumnVarNameInTable="columnasTenNhomNguoiDung" msprop:Generator_UserColumnName="asTenNhomNguoiDung" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenManHinh" msprop:Generator_ColumnPropNameInRow="TenManHinh" msprop:Generator_ColumnPropNameInTable="TenManHinhColumn" msprop:Generator_ColumnVarNameInTable="columnTenManHinh" msprop:Generator_UserColumnName="TenManHinh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CoQuyen" msprop:Generator_ColumnPropNameInRow="CoQuyen" msprop:Generator_ColumnPropNameInTable="CoQuyenColumn" msprop:Generator_ColumnVarNameInTable="columnCoQuyen" msprop:Generator_UserColumnName="CoQuyen" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1387,16 +1431,16 @@ SELECT UserName, DisplayName FROM Account WHERE (UserName = @UserName)</CommandT
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Account__IdSataf__4AB81AF0" msdata:parent="staff" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__IdSataf__4AB81AF0" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_UserRelationName="FK__Account__IdSataf__4AB81AF0" msprop:Generator_ParentPropName="staffRow" />
-      <msdata:Relationship name="FK__Account__TypeID__4BAC3F29" msdata:parent="AccountType" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F29" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F29" msprop:Generator_ParentPropName="AccountTypeRow" />
-      <msdata:Relationship name="FK__TypeFood__IdCate__534D60F1" msdata:parent="CategoryFood" msdata:child="TypeFood" msdata:parentkey="ID" msdata:childkey="IdCategory" msprop:Generator_UserParentTable="CategoryFood" msprop:Generator_UserChildTable="TypeFood" msprop:Generator_RelationVarName="relationFK__TypeFood__IdCate__534D60F1" msprop:Generator_ChildPropName="GetTypeFoodRows" msprop:Generator_UserRelationName="FK__TypeFood__IdCate__534D60F1" msprop:Generator_ParentPropName="CategoryFoodRow" />
-      <msdata:Relationship name="FK__Bill__IdSataff__4CA06362" msdata:parent="staff" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__IdSataff__4CA06362" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_UserRelationName="FK__Bill__IdSataff__4CA06362" msprop:Generator_ParentPropName="staffRow" />
-      <msdata:Relationship name="FK__Bill__TableID__4D94879B" msdata:parent="TableCoffee" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="TableID" msprop:Generator_UserParentTable="TableCoffee" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__TableID__4D94879B" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_UserRelationName="FK__Bill__TableID__4D94879B" msprop:Generator_ParentPropName="TableCoffeeRow" />
-      <msdata:Relationship name="FK__BillInfo__BillID__4E88ABD4" msdata:parent="Bill" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="BillID" msprop:Generator_UserParentTable="Bill" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__BillID__4E88ABD4" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_ParentPropName="BillRow" msprop:Generator_UserRelationName="FK__BillInfo__BillID__4E88ABD4" />
-      <msdata:Relationship name="FK__BillInfo__FoodID__4F7CD00D" msdata:parent="Food" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="FoodID" msprop:Generator_UserParentTable="Food" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__FoodID__4F7CD00D" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_UserRelationName="FK__BillInfo__FoodID__4F7CD00D" msprop:Generator_ParentPropName="FoodRow" />
-      <msdata:Relationship name="FK_Food_Type" msdata:parent="TypeFood" msdata:child="Food" msdata:parentkey="Id" msdata:childkey="Type" msprop:Generator_UserParentTable="TypeFood" msprop:Generator_UserChildTable="Food" msprop:Generator_RelationVarName="relationFK_Food_Type" msprop:Generator_ChildPropName="GetFoodRows" msprop:Generator_ParentPropName="TypeFoodRow" msprop:Generator_UserRelationName="FK_Food_Type" />
-      <msdata:Relationship name="FK_NhomNguoiDung_AccountType" msdata:parent="AccountType" msdata:child="NhomNguoiDung" msdata:parentkey="ID" msdata:childkey="AccountTypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="NhomNguoiDung" msprop:Generator_RelationVarName="relationFK_NhomNguoiDung_AccountType" msprop:Generator_ChildPropName="GetNhomNguoiDungRows" msprop:Generator_ParentPropName="AccountTypeRow" msprop:Generator_UserRelationName="FK_NhomNguoiDung_AccountType" />
-      <msdata:Relationship name="FK_PhanQuyen_Screen" msdata:parent="Screen" msdata:child="PhanQuyen" msdata:parentkey="Id" msdata:childkey="IdCreen" msprop:Generator_UserParentTable="Screen" msprop:Generator_UserChildTable="PhanQuyen" msprop:Generator_RelationVarName="relationFK_PhanQuyen_Screen" msprop:Generator_ChildPropName="GetPhanQuyenRows" msprop:Generator_UserRelationName="FK_PhanQuyen_Screen" msprop:Generator_ParentPropName="ScreenRow" />
+      <msdata:Relationship name="FK__Account__IdSataf__4AB81AF0" msdata:parent="staff" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__IdSataf__4AB81AF0" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_ParentPropName="staffRow" msprop:Generator_UserRelationName="FK__Account__IdSataf__4AB81AF0" />
+      <msdata:Relationship name="FK__Account__TypeID__4BAC3F29" msdata:parent="AccountType" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F29" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_ParentPropName="AccountTypeRow" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F29" />
+      <msdata:Relationship name="FK__TypeFood__IdCate__534D60F1" msdata:parent="CategoryFood" msdata:child="TypeFood" msdata:parentkey="ID" msdata:childkey="IdCategory" msprop:Generator_UserParentTable="CategoryFood" msprop:Generator_UserChildTable="TypeFood" msprop:Generator_RelationVarName="relationFK__TypeFood__IdCate__534D60F1" msprop:Generator_ChildPropName="GetTypeFoodRows" msprop:Generator_ParentPropName="CategoryFoodRow" msprop:Generator_UserRelationName="FK__TypeFood__IdCate__534D60F1" />
+      <msdata:Relationship name="FK__Bill__IdSataff__4CA06362" msdata:parent="staff" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__IdSataff__4CA06362" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_ParentPropName="staffRow" msprop:Generator_UserRelationName="FK__Bill__IdSataff__4CA06362" />
+      <msdata:Relationship name="FK__Bill__TableID__4D94879B" msdata:parent="TableCoffee" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="TableID" msprop:Generator_UserParentTable="TableCoffee" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__TableID__4D94879B" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_ParentPropName="TableCoffeeRow" msprop:Generator_UserRelationName="FK__Bill__TableID__4D94879B" />
+      <msdata:Relationship name="FK__BillInfo__BillID__4E88ABD4" msdata:parent="Bill" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="BillID" msprop:Generator_UserParentTable="Bill" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__BillID__4E88ABD4" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_UserRelationName="FK__BillInfo__BillID__4E88ABD4" msprop:Generator_ParentPropName="BillRow" />
+      <msdata:Relationship name="FK__BillInfo__FoodID__4F7CD00D" msdata:parent="Food" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="FoodID" msprop:Generator_UserParentTable="Food" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__FoodID__4F7CD00D" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_ParentPropName="FoodRow" msprop:Generator_UserRelationName="FK__BillInfo__FoodID__4F7CD00D" />
+      <msdata:Relationship name="FK_Food_Type" msdata:parent="TypeFood" msdata:child="Food" msdata:parentkey="Id" msdata:childkey="Type" msprop:Generator_UserParentTable="TypeFood" msprop:Generator_UserChildTable="Food" msprop:Generator_RelationVarName="relationFK_Food_Type" msprop:Generator_ChildPropName="GetFoodRows" msprop:Generator_UserRelationName="FK_Food_Type" msprop:Generator_ParentPropName="TypeFoodRow" />
+      <msdata:Relationship name="FK_NhomNguoiDung_AccountType" msdata:parent="AccountType" msdata:child="NhomNguoiDung" msdata:parentkey="ID" msdata:childkey="AccountTypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="NhomNguoiDung" msprop:Generator_RelationVarName="relationFK_NhomNguoiDung_AccountType" msprop:Generator_ChildPropName="GetNhomNguoiDungRows" msprop:Generator_UserRelationName="FK_NhomNguoiDung_AccountType" msprop:Generator_ParentPropName="AccountTypeRow" />
+      <msdata:Relationship name="FK_PhanQuyen_Screen" msdata:parent="Screen" msdata:child="PhanQuyen" msdata:parentkey="Id" msdata:childkey="IdCreen" msprop:Generator_UserParentTable="Screen" msprop:Generator_UserChildTable="PhanQuyen" msprop:Generator_RelationVarName="relationFK_PhanQuyen_Screen" msprop:Generator_ChildPropName="GetPhanQuyenRows" msprop:Generator_ParentPropName="ScreenRow" msprop:Generator_UserRelationName="FK_PhanQuyen_Screen" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
