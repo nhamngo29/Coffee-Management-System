@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label nameLabel;
             this.nhomNguoiDungDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,7 +38,6 @@
             this.coffeeDataSet = new GUI.Data.CoffeeDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.phanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.screenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.account1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.account1TableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.Account1TableAdapter();
             this.tableAdapterManager = new GUI.Data.CoffeeDataSetTableAdapters.TableAdapterManager();
@@ -46,34 +46,43 @@
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhomNguoiDungTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.NhomNguoiDungTableAdapter();
             this.phanQuyenTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.PhanQuyenTableAdapter();
-            this.screenTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.ScreenTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
+            this.nhomNguoiDungBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nhomNguoiDungComboBox = new System.Windows.Forms.ComboBox();
             this.tb_PhanQuynBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_PhanQuynTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.tb_PhanQuynTableAdapter();
             this.fill_pqToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillManhomToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.fillManhomToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.tenToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.tenToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fill_pqToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tb_PhanQuynDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tb_PhanQuynBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_PhanQuynComboBox = new System.Windows.Forms.ComboBox();
+            nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.screenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource)).BeginInit();
             this.fill_pqToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nameLabel.Location = new System.Drawing.Point(668, 98);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(123, 20);
+            nameLabel.TabIndex = 5;
+            nameLabel.Text = "Loại người dùng";
             // 
             // nhomNguoiDungDataGridView
             // 
@@ -132,11 +141,6 @@
             this.phanQuyenBindingSource.DataMember = "PhanQuyen";
             this.phanQuyenBindingSource.DataSource = this.coffeeDataSet;
             // 
-            // screenBindingSource
-            // 
-            this.screenBindingSource.DataMember = "Screen";
-            this.screenBindingSource.DataSource = this.coffeeDataSet;
-            // 
             // account1BindingSource
             // 
             this.account1BindingSource.DataMember = "Account1";
@@ -189,20 +193,33 @@
             // 
             this.phanQuyenTableAdapter.ClearBeforeFill = true;
             // 
-            // screenTableAdapter
-            // 
-            this.screenTableAdapter.ClearBeforeFill = true;
-            // 
             // label1
             // 
             this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Caret;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(603, 105);
+            this.label1.Location = new System.Drawing.Point(612, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 19);
             this.label1.TabIndex = 5;
             this.label1.Text = "Danh sách chức năng";
+            // 
+            // nhomNguoiDungBindingSource1
+            // 
+            this.nhomNguoiDungBindingSource1.DataMember = "NhomNguoiDung";
+            this.nhomNguoiDungBindingSource1.DataSource = this.coffeeDataSet;
+            // 
+            // nhomNguoiDungComboBox
+            // 
+            this.nhomNguoiDungComboBox.DataSource = this.nhomNguoiDungBindingSource1;
+            this.nhomNguoiDungComboBox.DisplayMember = "Name";
+            this.nhomNguoiDungComboBox.FormattingEnabled = true;
+            this.nhomNguoiDungComboBox.Location = new System.Drawing.Point(816, 100);
+            this.nhomNguoiDungComboBox.Name = "nhomNguoiDungComboBox";
+            this.nhomNguoiDungComboBox.Size = new System.Drawing.Size(248, 21);
+            this.nhomNguoiDungComboBox.TabIndex = 7;
+            this.nhomNguoiDungComboBox.ValueMember = "MaNhomNguoiDung";
+            this.nhomNguoiDungComboBox.SelectedIndexChanged += new System.EventHandler(this.nhomNguoiDungComboBox_SelectedIndexChanged);
             // 
             // tb_PhanQuynBindingSource
             // 
@@ -216,25 +233,25 @@
             // fill_pqToolStrip
             // 
             this.fill_pqToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillManhomToolStripLabel,
-            this.fillManhomToolStripTextBox,
+            this.tenToolStripLabel,
+            this.tenToolStripTextBox,
             this.fill_pqToolStripButton});
             this.fill_pqToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fill_pqToolStrip.Name = "fill_pqToolStrip";
-            this.fill_pqToolStrip.Size = new System.Drawing.Size(1167, 25);
-            this.fill_pqToolStrip.TabIndex = 6;
+            this.fill_pqToolStrip.Size = new System.Drawing.Size(1200, 25);
+            this.fill_pqToolStrip.TabIndex = 8;
             this.fill_pqToolStrip.Text = "fill_pqToolStrip";
             // 
-            // fillManhomToolStripLabel
+            // tenToolStripLabel
             // 
-            this.fillManhomToolStripLabel.Name = "fillManhomToolStripLabel";
-            this.fillManhomToolStripLabel.Size = new System.Drawing.Size(72, 22);
-            this.fillManhomToolStripLabel.Text = "fillManhom:";
+            this.tenToolStripLabel.Name = "tenToolStripLabel";
+            this.tenToolStripLabel.Size = new System.Drawing.Size(27, 22);
+            this.tenToolStripLabel.Text = "ten:";
             // 
-            // fillManhomToolStripTextBox
+            // tenToolStripTextBox
             // 
-            this.fillManhomToolStripTextBox.Name = "fillManhomToolStripTextBox";
-            this.fillManhomToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            this.tenToolStripTextBox.Name = "tenToolStripTextBox";
+            this.tenToolStripTextBox.Size = new System.Drawing.Size(100, 23);
             // 
             // fill_pqToolStripButton
             // 
@@ -254,10 +271,10 @@
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn6});
             this.tb_PhanQuynDataGridView.DataSource = this.tb_PhanQuynBindingSource;
-            this.tb_PhanQuynDataGridView.Location = new System.Drawing.Point(607, 159);
+            this.tb_PhanQuynDataGridView.Location = new System.Drawing.Point(616, 159);
             this.tb_PhanQuynDataGridView.Name = "tb_PhanQuynDataGridView";
-            this.tb_PhanQuynDataGridView.Size = new System.Drawing.Size(454, 220);
-            this.tb_PhanQuynDataGridView.TabIndex = 6;
+            this.tb_PhanQuynDataGridView.Size = new System.Drawing.Size(448, 220);
+            this.tb_PhanQuynDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -283,30 +300,15 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "TenNhomNguoiDung";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // tb_PhanQuynBindingSource1
-            // 
-            this.tb_PhanQuynBindingSource1.DataMember = "tb_PhanQuyn";
-            this.tb_PhanQuynBindingSource1.DataSource = this.coffeeDataSet;
-            // 
-            // tb_PhanQuynComboBox
-            // 
-            this.tb_PhanQuynComboBox.DataSource = this.tb_PhanQuynBindingSource1;
-            this.tb_PhanQuynComboBox.DisplayMember = "TenManHinh";
-            this.tb_PhanQuynComboBox.FormattingEnabled = true;
-            this.tb_PhanQuynComboBox.Location = new System.Drawing.Point(797, 107);
-            this.tb_PhanQuynComboBox.Name = "tb_PhanQuynComboBox";
-            this.tb_PhanQuynComboBox.Size = new System.Drawing.Size(264, 21);
-            this.tb_PhanQuynComboBox.TabIndex = 6;
-            this.tb_PhanQuynComboBox.ValueMember = "MaNhomNguoiDung";
-            // 
             // fDecentralization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 606);
-            this.Controls.Add(this.tb_PhanQuynComboBox);
+            this.ClientSize = new System.Drawing.Size(1200, 606);
             this.Controls.Add(this.tb_PhanQuynDataGridView);
             this.Controls.Add(this.fill_pqToolStrip);
+            this.Controls.Add(this.nhomNguoiDungComboBox);
+            this.Controls.Add(nameLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nhomNguoiDungDataGridView);
@@ -317,15 +319,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.screenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource)).EndInit();
             this.fill_pqToolStrip.ResumeLayout(false);
             this.fill_pqToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,22 +350,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource phanQuyenBindingSource;
         private Data.CoffeeDataSetTableAdapters.PhanQuyenTableAdapter phanQuyenTableAdapter;
-        private System.Windows.Forms.BindingSource screenBindingSource;
-        private Data.CoffeeDataSetTableAdapters.ScreenTableAdapter screenTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource nhomNguoiDungBindingSource1;
+        private System.Windows.Forms.ComboBox nhomNguoiDungComboBox;
         private System.Windows.Forms.BindingSource tb_PhanQuynBindingSource;
         private Data.CoffeeDataSetTableAdapters.tb_PhanQuynTableAdapter tb_PhanQuynTableAdapter;
         private System.Windows.Forms.ToolStrip fill_pqToolStrip;
-        private System.Windows.Forms.ToolStripLabel fillManhomToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox fillManhomToolStripTextBox;
+        private System.Windows.Forms.ToolStripLabel tenToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox tenToolStripTextBox;
         private System.Windows.Forms.ToolStripButton fill_pqToolStripButton;
         private System.Windows.Forms.DataGridView tb_PhanQuynDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.BindingSource tb_PhanQuynBindingSource1;
-        private System.Windows.Forms.ComboBox tb_PhanQuynComboBox;
     }
 }

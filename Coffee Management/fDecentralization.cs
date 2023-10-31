@@ -27,11 +27,7 @@ namespace GUI
         }
         private void fDecentralization_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'coffeeDataSet.tb_PhanQuyn' table. You can move, or remove it, as needed.
-            this.tb_PhanQuynTableAdapter.Fill_pq(this.coffeeDataSet.tb_PhanQuyn);
-            // TODO: This line of code loads data into the 'coffeeDataSet.DataTable1' table. You can move, or remove it, as needed.
-            // TODO: This line of code loads data into the 'coffeeDataSet.Screen' table. You can move, or remove it, as needed.
-            this.screenTableAdapter.Fill(this.coffeeDataSet.Screen);
+
             // TODO: This line of code loads data into the 'coffeeDataSet.PhanQuyen' table. You can move, or remove it, as needed.
             this.phanQuyenTableAdapter.Fill(this.coffeeDataSet.PhanQuyen);
             // TODO: This line of code loads data into the 'coffeeDataSet.NhomNguoiDung' table. You can move, or remove it, as needed.
@@ -43,13 +39,25 @@ namespace GUI
         {
             try
             {
-                this.tb_PhanQuynTableAdapter.Fill_pq(this.coffeeDataSet.tb_PhanQuyn, ((int)(System.Convert.ChangeType(fillManhomToolStripTextBox.Text, typeof(int)))));
+                this.tb_PhanQuynTableAdapter.Fill_pq(this.coffeeDataSet.tb_PhanQuyn, tenToolStripTextBox.Text);
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void nhomNguoiDungComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tb_PhanQuynTableAdapter.Fill_pq(this.coffeeDataSet.tb_PhanQuyn, nhomNguoiDungComboBox.SelectedText);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

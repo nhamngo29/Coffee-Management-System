@@ -14716,19 +14716,24 @@ SELECT ID, FullName, Email, NumberPhone, Quantity, BookingTime, Note, Confirm FR
             this._commandCollection[0].CommandText = @"SELECT        NhomNguoiDung.MaNhomNguoiDung, NhomNguoiDung.Name AS TenNhomNguoiDung, Screen.Name AS TenManHinh, PhanQuyen.CoQuyen
 FROM            NhomNguoiDung INNER JOIN
                          PhanQuyen ON NhomNguoiDung.MaNhomNguoiDung = PhanQuyen.MaNhomNguoiDung INNER JOIN
-                         Screen ON PhanQuyen.IdCreen = Screen.Id
-where NhomNguoiDung.MaNhomNguoiDung = @fillManhom";
+                         Screen ON PhanQuyen.IdCreen = Screen.Id 
+where NhomNguoiDung.Name = @ten";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fillManhom", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaNhomNguoiDung", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ten", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "TenNhomNguoiDung", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill_pq(CoffeeDataSet.tb_PhanQuynDataTable dataTable, int fillManhom) {
+        public virtual int Fill_pq(CoffeeDataSet.tb_PhanQuynDataTable dataTable, string ten) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(fillManhom));
+            if ((ten == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ten));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -14740,9 +14745,14 @@ where NhomNguoiDung.MaNhomNguoiDung = @fillManhom";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CoffeeDataSet.tb_PhanQuynDataTable GetData_pq(int fillManhom) {
+        public virtual CoffeeDataSet.tb_PhanQuynDataTable GetData_pq(string ten) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(fillManhom));
+            if ((ten == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ten));
+            }
             CoffeeDataSet.tb_PhanQuynDataTable dataTable = new CoffeeDataSet.tb_PhanQuynDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
