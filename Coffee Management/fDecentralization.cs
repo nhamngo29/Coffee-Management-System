@@ -39,6 +39,17 @@ namespace GUI
 
         }
 
+        private void fill_pqToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tb_PhanQuynTableAdapter.Fill_pq(this.coffeeDataSet.tb_PhanQuyn, ((int)(System.Convert.ChangeType(fillManhomToolStripTextBox.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
+        }
     }
 }

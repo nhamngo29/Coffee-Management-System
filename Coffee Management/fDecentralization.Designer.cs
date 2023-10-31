@@ -36,14 +36,7 @@
             this.nhomNguoiDungBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coffeeDataSet = new GUI.Data.CoffeeDataSet();
             this.label2 = new System.Windows.Forms.Label();
-            this.phanQuyenDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.phanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.screenDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.screenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.account1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.account1TableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.Account1TableAdapter();
@@ -54,25 +47,32 @@
             this.nhomNguoiDungTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.NhomNguoiDungTableAdapter();
             this.phanQuyenTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.PhanQuyenTableAdapter();
             this.screenTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.ScreenTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             this.tb_PhanQuynBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_PhanQuynTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.tb_PhanQuynTableAdapter();
+            this.fill_pqToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillManhomToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.fillManhomToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fill_pqToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tb_PhanQuynDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tb_PhanQuynBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_PhanQuynComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.screenDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource)).BeginInit();
+            this.fill_pqToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // nhomNguoiDungDataGridView
@@ -84,7 +84,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.nhomNguoiDungDataGridView.DataSource = this.nhomNguoiDungBindingSource;
-            this.nhomNguoiDungDataGridView.Location = new System.Drawing.Point(12, 74);
+            this.nhomNguoiDungDataGridView.Location = new System.Drawing.Point(12, 159);
             this.nhomNguoiDungDataGridView.Name = "nhomNguoiDungDataGridView";
             this.nhomNguoiDungDataGridView.Size = new System.Drawing.Size(345, 100);
             this.nhomNguoiDungDataGridView.TabIndex = 0;
@@ -121,73 +121,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 52);
+            this.label2.Location = new System.Drawing.Point(51, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(238, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Danh sách nhóm người dùng";
             // 
-            // phanQuyenDataGridView
-            // 
-            this.phanQuyenDataGridView.AutoGenerateColumns = false;
-            this.phanQuyenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.phanQuyenDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn1});
-            this.phanQuyenDataGridView.DataSource = this.phanQuyenBindingSource;
-            this.phanQuyenDataGridView.Location = new System.Drawing.Point(513, 74);
-            this.phanQuyenDataGridView.Name = "phanQuyenDataGridView";
-            this.phanQuyenDataGridView.Size = new System.Drawing.Size(344, 220);
-            this.phanQuyenDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MaNhomNguoiDung";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MaNhomNguoiDung";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "IdCreen";
-            this.dataGridViewTextBoxColumn5.HeaderText = "IdCreen";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "CoQuyen";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "CoQuyen";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
             // phanQuyenBindingSource
             // 
             this.phanQuyenBindingSource.DataMember = "PhanQuyen";
             this.phanQuyenBindingSource.DataSource = this.coffeeDataSet;
-            // 
-            // screenDataGridView
-            // 
-            this.screenDataGridView.AutoGenerateColumns = false;
-            this.screenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.screenDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.screenDataGridView.DataSource = this.screenBindingSource;
-            this.screenDataGridView.Location = new System.Drawing.Point(863, 74);
-            this.screenDataGridView.Name = "screenDataGridView";
-            this.screenDataGridView.Size = new System.Drawing.Size(243, 220);
-            this.screenDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // screenBindingSource
             // 
@@ -250,6 +193,17 @@
             // 
             this.screenTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Caret;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(603, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Danh sách chức năng";
+            // 
             // tb_PhanQuynBindingSource
             // 
             this.tb_PhanQuynBindingSource.DataMember = "tb_PhanQuyn";
@@ -259,53 +213,101 @@
             // 
             this.tb_PhanQuynTableAdapter.ClearBeforeFill = true;
             // 
+            // fill_pqToolStrip
+            // 
+            this.fill_pqToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillManhomToolStripLabel,
+            this.fillManhomToolStripTextBox,
+            this.fill_pqToolStripButton});
+            this.fill_pqToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fill_pqToolStrip.Name = "fill_pqToolStrip";
+            this.fill_pqToolStrip.Size = new System.Drawing.Size(1167, 25);
+            this.fill_pqToolStrip.TabIndex = 6;
+            this.fill_pqToolStrip.Text = "fill_pqToolStrip";
+            // 
+            // fillManhomToolStripLabel
+            // 
+            this.fillManhomToolStripLabel.Name = "fillManhomToolStripLabel";
+            this.fillManhomToolStripLabel.Size = new System.Drawing.Size(72, 22);
+            this.fillManhomToolStripLabel.Text = "fillManhom:";
+            // 
+            // fillManhomToolStripTextBox
+            // 
+            this.fillManhomToolStripTextBox.Name = "fillManhomToolStripTextBox";
+            this.fillManhomToolStripTextBox.Size = new System.Drawing.Size(100, 23);
+            // 
+            // fill_pqToolStripButton
+            // 
+            this.fill_pqToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fill_pqToolStripButton.Name = "fill_pqToolStripButton";
+            this.fill_pqToolStripButton.Size = new System.Drawing.Size(45, 19);
+            this.fill_pqToolStripButton.Text = "Fill_pq";
+            this.fill_pqToolStripButton.Click += new System.EventHandler(this.fill_pqToolStripButton_Click);
+            // 
             // tb_PhanQuynDataGridView
             // 
             this.tb_PhanQuynDataGridView.AutoGenerateColumns = false;
             this.tb_PhanQuynDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tb_PhanQuynDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewCheckBoxColumn2});
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn6});
             this.tb_PhanQuynDataGridView.DataSource = this.tb_PhanQuynBindingSource;
-            this.tb_PhanQuynDataGridView.Location = new System.Drawing.Point(233, 327);
+            this.tb_PhanQuynDataGridView.Location = new System.Drawing.Point(607, 159);
             this.tb_PhanQuynDataGridView.Name = "tb_PhanQuynDataGridView";
-            this.tb_PhanQuynDataGridView.Size = new System.Drawing.Size(441, 220);
-            this.tb_PhanQuynDataGridView.TabIndex = 4;
+            this.tb_PhanQuynDataGridView.Size = new System.Drawing.Size(454, 220);
+            this.tb_PhanQuynDataGridView.TabIndex = 6;
             // 
-            // dataGridViewTextBoxColumn8
+            // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "MaNhomNguoiDung";
-            this.dataGridViewTextBoxColumn8.HeaderText = "MaNhomNguoiDung";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MaNhomNguoiDung";
+            this.dataGridViewTextBoxColumn4.HeaderText = "MaNhomNguoiDung";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "asTenNhomNguoiDung";
-            this.dataGridViewTextBoxColumn9.HeaderText = "asTenNhomNguoiDung";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "TenManHinh";
+            this.dataGridViewTextBoxColumn5.HeaderText = "TenManHinh";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // dataGridViewTextBoxColumn10
+            // dataGridViewCheckBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "TenManHinh";
-            this.dataGridViewTextBoxColumn10.HeaderText = "TenManHinh";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "CoQuyen";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "CoQuyen";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // dataGridViewCheckBoxColumn2
+            // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "CoQuyen";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "CoQuyen";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "TenNhomNguoiDung";
+            this.dataGridViewTextBoxColumn6.HeaderText = "TenNhomNguoiDung";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // tb_PhanQuynBindingSource1
+            // 
+            this.tb_PhanQuynBindingSource1.DataMember = "tb_PhanQuyn";
+            this.tb_PhanQuynBindingSource1.DataSource = this.coffeeDataSet;
+            // 
+            // tb_PhanQuynComboBox
+            // 
+            this.tb_PhanQuynComboBox.DataSource = this.tb_PhanQuynBindingSource1;
+            this.tb_PhanQuynComboBox.DisplayMember = "TenManHinh";
+            this.tb_PhanQuynComboBox.FormattingEnabled = true;
+            this.tb_PhanQuynComboBox.Location = new System.Drawing.Point(797, 107);
+            this.tb_PhanQuynComboBox.Name = "tb_PhanQuynComboBox";
+            this.tb_PhanQuynComboBox.Size = new System.Drawing.Size(264, 21);
+            this.tb_PhanQuynComboBox.TabIndex = 6;
+            this.tb_PhanQuynComboBox.ValueMember = "MaNhomNguoiDung";
             // 
             // fDecentralization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 606);
+            this.ClientSize = new System.Drawing.Size(1167, 606);
+            this.Controls.Add(this.tb_PhanQuynComboBox);
             this.Controls.Add(this.tb_PhanQuynDataGridView);
-            this.Controls.Add(this.screenDataGridView);
-            this.Controls.Add(this.phanQuyenDataGridView);
+            this.Controls.Add(this.fill_pqToolStrip);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nhomNguoiDungDataGridView);
             this.Name = "fDecentralization";
@@ -314,15 +316,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.screenDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource)).EndInit();
+            this.fill_pqToolStrip.ResumeLayout(false);
+            this.fill_pqToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_PhanQuynBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,21 +349,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource phanQuyenBindingSource;
         private Data.CoffeeDataSetTableAdapters.PhanQuyenTableAdapter phanQuyenTableAdapter;
-        private System.Windows.Forms.DataGridView phanQuyenDataGridView;
+        private System.Windows.Forms.BindingSource screenBindingSource;
+        private Data.CoffeeDataSetTableAdapters.ScreenTableAdapter screenTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource tb_PhanQuynBindingSource;
+        private Data.CoffeeDataSetTableAdapters.tb_PhanQuynTableAdapter tb_PhanQuynTableAdapter;
+        private System.Windows.Forms.ToolStrip fill_pqToolStrip;
+        private System.Windows.Forms.ToolStripLabel fillManhomToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox fillManhomToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fill_pqToolStripButton;
+        private System.Windows.Forms.DataGridView tb_PhanQuynDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.BindingSource screenBindingSource;
-        private Data.CoffeeDataSetTableAdapters.ScreenTableAdapter screenTableAdapter;
-        private System.Windows.Forms.DataGridView screenDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource tb_PhanQuynBindingSource;
-        private Data.CoffeeDataSetTableAdapters.tb_PhanQuynTableAdapter tb_PhanQuynTableAdapter;
-        private System.Windows.Forms.DataGridView tb_PhanQuynDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.BindingSource tb_PhanQuynBindingSource1;
+        private System.Windows.Forms.ComboBox tb_PhanQuynComboBox;
     }
 }
