@@ -13,6 +13,7 @@ namespace GUI
 {
     public partial class fDecentralization : DevExpress.XtraEditors.XtraForm
     {
+
         public fDecentralization()
         {
             InitializeComponent();
@@ -27,6 +28,8 @@ namespace GUI
         }
         private void fDecentralization_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'coffeeDataSet.Screen' table. You can move, or remove it, as needed.
+            this.screenTableAdapter.Fill(this.coffeeDataSet.Screen);
 
             // TODO: This line of code loads data into the 'coffeeDataSet.PhanQuyen' table. You can move, or remove it, as needed.
             this.phanQuyenTableAdapter.Fill(this.coffeeDataSet.PhanQuyen);
@@ -34,30 +37,20 @@ namespace GUI
             this.nhomNguoiDungTableAdapter.Fill(this.coffeeDataSet.NhomNguoiDung);
 
         }
-
-        private void fill_pqToolStripButton_Click(object sender, EventArgs e)
+        public void LoadDataCondition()
         {
-            try
-            {
-                this.tb_PhanQuynTableAdapter.Fill_pq(this.coffeeDataSet.tb_PhanQuyn, tenToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+           // this.getPhanQuyenTableAdapter.Fill(this.coffeeDataSet.getPhanQuyen,
+           //qL_NhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString());
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void nhomNguoiDungComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void fillToolStripButton_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                this.tb_PhanQuynTableAdapter.Fill_pq(this.coffeeDataSet.tb_PhanQuyn, nhomNguoiDungComboBox.SelectedText);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+
         }
     }
 }
