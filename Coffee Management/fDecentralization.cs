@@ -27,6 +27,8 @@ namespace GUI
         }
         private void fDecentralization_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'coffeeDataSet.PhanQuyen' table. You can move, or remove it, as needed.
+            this.phanQuyenTableAdapter.Fill(this.coffeeDataSet.PhanQuyen);
             // TODO: This line of code loads data into the 'coffeeDataSet.NhomNguoiDung' table. You can move, or remove it, as needed.
             this.nhomNguoiDungTableAdapter.Fill(this.coffeeDataSet.NhomNguoiDung);
 
