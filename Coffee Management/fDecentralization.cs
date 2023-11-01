@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using GUI.Data.CoffeeDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,8 @@ namespace GUI
         }
         private void fDecentralization_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'coffeeDataSet.PhanQuyen' table. You can move, or remove it, as needed.
+            this.phanQuyenTableAdapter.Fill(this.coffeeDataSet.PhanQuyen);
             // TODO: This line of code loads data into the 'coffeeDataSet.Screen' table. You can move, or remove it, as needed.
             this.screenTableAdapter.Fill(this.coffeeDataSet.Screen);
 
@@ -39,18 +42,37 @@ namespace GUI
         }
         public void LoadDataCondition()
         {
-           // this.getPhanQuyenTableAdapter.Fill(this.coffeeDataSet.getPhanQuyen,
-           //qL_NhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString());
+            this.getPhanQuyenTableAdapter.Fill(this.coffeeDataSet.getPhanQuyen, ((int)(System.Convert.ChangeType(nhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString(), typeof(int)))));
+ 
+        }
+        
+        private void nhomNguoiDungDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            LoadDataCondition();
         }
 
-        private void fillToolStripButton_Click(object sender, EventArgs e)
+        private void btn_Save_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void fillToolStripButton_Click_1(object sender, EventArgs e)
-        {
-
+            int _NhomNguoiDung = ((int)(System.Convert.ChangeType(nhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString(), typeof(int))));
+            foreach (DataGridViewRow item in getPhanQuyenDataGridView.Rows)
+            {
+                if(getPhanQuyenTableAdapter.GDB_KTKC(_NhomNguoiDung, item.Cells[0].Value.ToString()) == null)
+                {
+                    try
+                    {
+                        phanQuyenTableAdapter.InsertQuery(_NhomNguoiDung,item.Cells[0].Value.ToString(), (bool)(item.Cells[2].Value));
+                    }
+                    catch
+                    {
+                        phanQuyenTableAdapter.Insert(_NhomNguoiDung,item.Cells[0].Value.ToString(), false);
+                    }
+                }
+                else
+                {
+                    phanQuyenTableAdapter.UpdateQuery((item.Cells[2] == null) ? false:(bool)(item.Cells[2].Value), _NhomNguoiDung, item.Cells[0].Value.ToString());
+                }
+            }
         }
     }
 }
+
