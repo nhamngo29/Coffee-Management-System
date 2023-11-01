@@ -38,9 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.screenDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.screenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Save = new System.Windows.Forms.Button();
             this.account1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -67,7 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.screenDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).BeginInit();
@@ -137,7 +133,7 @@
             this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Caret;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(452, 193);
+            this.label1.Location = new System.Drawing.Point(587, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 19);
             this.label1.TabIndex = 5;
@@ -147,38 +143,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 193);
+            this.label3.Location = new System.Drawing.Point(36, 193);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 19);
+            this.label3.Size = new System.Drawing.Size(274, 19);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Danh sách nhóm màn hình chứ năng";
-            // 
-            // screenDataGridView
-            // 
-            this.screenDataGridView.AutoGenerateColumns = false;
-            this.screenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.screenDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.screenDataGridView.DataSource = this.screenBindingSource;
-            this.screenDataGridView.Location = new System.Drawing.Point(12, 215);
-            this.screenDataGridView.Name = "screenDataGridView";
-            this.screenDataGridView.Size = new System.Drawing.Size(345, 252);
-            this.screenDataGridView.TabIndex = 6;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn7.FillWeight = 200F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 200;
+            this.label3.Text = "DANH SÁCH QUYỀN THEO NHÓM";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // screenBindingSource
             // 
@@ -187,7 +157,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(819, 437);
+            this.btn_Save.Location = new System.Drawing.Point(668, 381);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(83, 30);
             this.btn_Save.TabIndex = 7;
@@ -288,7 +258,7 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewCheckBoxColumn2});
             this.getPhanQuyenDataGridView.DataSource = this.getPhanQuyenBindingSource;
-            this.getPhanQuyenDataGridView.Location = new System.Drawing.Point(965, 215);
+            this.getPhanQuyenDataGridView.Location = new System.Drawing.Point(12, 215);
             this.getPhanQuyenDataGridView.Name = "getPhanQuyenDataGridView";
             this.getPhanQuyenDataGridView.Size = new System.Drawing.Size(347, 220);
             this.getPhanQuyenDataGridView.TabIndex = 9;
@@ -311,7 +281,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewCheckBoxColumn1});
             this.phanQuyenDataGridView.DataSource = this.phanQuyenBindingSource;
-            this.phanQuyenDataGridView.Location = new System.Drawing.Point(420, 215);
+            this.phanQuyenDataGridView.Location = new System.Drawing.Point(555, 75);
             this.phanQuyenDataGridView.Name = "phanQuyenDataGridView";
             this.phanQuyenDataGridView.Size = new System.Drawing.Size(347, 252);
             this.phanQuyenDataGridView.TabIndex = 9;
@@ -342,7 +312,6 @@
             this.Controls.Add(this.phanQuyenDataGridView);
             this.Controls.Add(this.getPhanQuyenDataGridView);
             this.Controls.Add(this.btn_Save);
-            this.Controls.Add(this.screenDataGridView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -353,7 +322,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.screenDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.account1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountTypeBindingSource)).EndInit();
@@ -389,9 +357,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource screenBindingSource;
         private Data.CoffeeDataSetTableAdapters.ScreenTableAdapter screenTableAdapter;
-        private System.Windows.Forms.DataGridView screenDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.BindingSource getPhanQuyenBindingSource;
         private Data.CoffeeDataSetTableAdapters.getPhanQuyenTableAdapter getPhanQuyenTableAdapter;

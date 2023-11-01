@@ -43,14 +43,12 @@ namespace GUI
         public void LoadDataCondition()
         {
             this.getPhanQuyenTableAdapter.Fill(this.coffeeDataSet.getPhanQuyen, ((int)(System.Convert.ChangeType(nhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString(), typeof(int)))));
- 
         }
         
         private void nhomNguoiDungDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             LoadDataCondition();
         }
-
         private void btn_Save_Click(object sender, EventArgs e)
         {
             int _NhomNguoiDung = ((int)(System.Convert.ChangeType(nhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString(), typeof(int))));
@@ -60,7 +58,7 @@ namespace GUI
                 {
                     try
                     {
-                        phanQuyenTableAdapter.InsertQuery(_NhomNguoiDung,item.Cells[0].Value.ToString(), (bool)(item.Cells[2].Value));
+                        phanQuyenTableAdapter.Insert(_NhomNguoiDung,item.Cells[0].Value.ToString(), (bool)(item.Cells[2].Value));
                     }
                     catch
                     {
@@ -72,6 +70,11 @@ namespace GUI
                     phanQuyenTableAdapter.UpdateQuery((item.Cells[2] == null) ? false:(bool)(item.Cells[2].Value), _NhomNguoiDung, item.Cells[0].Value.ToString());
                 }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
