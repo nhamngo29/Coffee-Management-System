@@ -52,6 +52,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormImageViewer";
             this.Load += new System.EventHandler(this.FormImageViewer_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormImageViewer_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
