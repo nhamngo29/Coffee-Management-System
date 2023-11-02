@@ -605,7 +605,7 @@
             this.KeyPreview = true;
             this.Name = "fManager";
             this.Ribbon = this.ribbon;
-            this.Text = "QUẢN LÝ QUÁN CAFE";
+            this.Text = "x";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fManager_FormClosing);
             this.Load += new System.EventHandler(this.fManager_Load);
