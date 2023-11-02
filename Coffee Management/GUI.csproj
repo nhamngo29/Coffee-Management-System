@@ -239,6 +239,12 @@
     <Compile Include="fNhomNguoiDung.Designer.cs">
       <DependentUpon>fNhomNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImageViewer.Designer.cs">
+      <DependentUpon>FormImageViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="fReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fNhomNguoiDung.resx">
       <DependentUpon>fNhomNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImageViewer.resx">
+      <DependentUpon>FormImageViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fReservation.resx">
       <DependentUpon>fReservation.cs</DependentUpon>

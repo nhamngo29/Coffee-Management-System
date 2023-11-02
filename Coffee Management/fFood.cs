@@ -9,6 +9,8 @@ using BUS;
 using DTO;
 using System.IO;
 using System.Drawing;
+using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace GUI
 {
@@ -90,6 +92,8 @@ namespace GUI
                 gvFood.Columns[2].Caption = "Loại";
                 gvFood.Columns[3].Caption = "Đơn giá";
                 gvFood.Columns[4].Caption = "Hình ảnh";
+                gvFood.Columns[5].Caption = "Hình ảnh";
+
             }
             catch (Exception ex)
             {
@@ -162,7 +166,7 @@ namespace GUI
 
             if (FoodBUS.Instance.isExist(name))
             {
-                Food newFood = new Food(name, int.Parse(typeID), price, "", "");
+                Food newFood = new Food(name, int.Parse(typeID), price, "", "",null);
                 if (FoodBUS.Instance.InsertFood(newFood))
                 {
                     SplashScreenManager.ShowForm(typeof(WaitForm1));
@@ -225,7 +229,7 @@ namespace GUI
             }
 
             SplashScreenManager.ShowForm(typeof(WaitForm1));
-            Food food = new Food(int.Parse(id), name, int.Parse(typeID), price,"","");
+            Food food = new Food(int.Parse(id), name, int.Parse(typeID), price,"","",null);
             if (FoodBUS.Instance.UpdateFood(food))
             {
                 LoadFoodToGridControl();
@@ -312,7 +316,7 @@ namespace GUI
             if (price == null || price == DBNull.Value)
                 return;
                 
-            curFood = new Food(name.ToString(), (int)categoryID, (int)price,"","");
+            curFood = new Food(name.ToString(), (int)categoryID, (int)price,"","",null);
         }
 
         private void gcFood_Click(object sender, EventArgs e)
@@ -321,6 +325,28 @@ namespace GUI
         }
 
         private void fFood_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gvFood_RowClick_1(object sender, RowClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.Clicks == 1)
+            {
+                GridView view = sender as GridView;
+                GridHitInfo hitInfo = view.CalcHitInfo(e.Location);
+
+                if (hitInfo.InRowCell && hitInfo.Column.FieldName == "ImageFood")
+                {
+                    string imagePath = view.GetRowCellValue(e.RowHandle, "ImagePathColumn").ToString();
+
+                    // Mở một cửa sổ xem hình ảnh lớn tại đây
+                    FormImageViewer imageViewer = new FormImageViewer(imagePath);
+                    imageViewer.ShowDialog();
+                }
+            }
+        }
+        private void gvFood_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
 
         }

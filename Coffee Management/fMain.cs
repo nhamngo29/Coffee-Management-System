@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using MailKit.Security;
 using System.Net.Http;
 using System.Text;
+using DevExpress.Data.Utils;
 
 namespace GUI
 {
@@ -561,24 +562,45 @@ namespace GUI
         private void lkedPickFood_EditValueChanged(object sender, EventArgs e)
         {
             Food a = FoodBUS.Instance.GetFoodByID((int)lkedPickFood.EditValue);
-            string resourcesDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", a.Image + ".jpg");
-            if (File.Exists(resourcesDirectory))
+            try
             {
-                try
+                if (a.ImageFood != null && a.ImageFood.Length > 0)
                 {
-                    // Đọc tệp hình ảnh
-                    using (var imageStream = File.OpenRead(resourcesDirectory))
+
+                    using (MemoryStream stream = new MemoryStream(a.ImageFood))
                     {
-                        Image image = Image.FromStream(imageStream);
+                        Image image = Image.FromStream(stream);
                         pbxBox.Image = image;
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    // Xử lý ngoại lệ nếu có lỗi khi đọc tệp hình ảnh.
-                    Console.WriteLine("Lỗi khi đọc tệp hình ảnh: " + ex.Message);
+                    pbxBox.Image = null;
                 }
             }
+            catch (Exception)
+            {
+
+                
+            }
+            //string resourcesDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", a.Image + ".jpg");
+            //if (File.Exists(resourcesDirectory))
+            //{
+            //    try
+            //    {
+            //        // Đọc tệp hình ảnh
+            //        using (var imageStream = File.OpenRead(resourcesDirectory))
+            //        {
+            //            Image image = Image.FromStream(imageStream);
+            //            pbxBox.Image = image;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        // Xử lý ngoại lệ nếu có lỗi khi đọc tệp hình ảnh.
+            //        Console.WriteLine("Lỗi khi đọc tệp hình ảnh: " + ex.Message);
+            //    }
+            //}
         }
 
         private void fMain_Load(object sender, EventArgs e)
