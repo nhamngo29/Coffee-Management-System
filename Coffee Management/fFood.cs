@@ -9,6 +9,9 @@ using BUS;
 using DTO;
 using System.IO;
 using System.Drawing;
+using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System.Drawing.Imaging;
 
 namespace GUI
 {
@@ -21,60 +24,19 @@ namespace GUI
             InitializeComponent();
             btnRemove.Enabled = false;
             btnSearch.Enabled = false;
-            LoadFoodToGridControl();
             this.gvFood.RowCellClick += GvFood_RowCellClick;
-            this.gvFood.RowClick += GvFood_RowClick;
-        }
-
-        private void GvFood_RowClick(object sender, RowClickEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && e.Clicks == 1)
-            {
-                object imageValue = gvFood.GetRowCellValue(e.RowHandle, "Hình ảnh");
-
-                if (imageValue != null)
-                {
-                    byte[] imageData = imageValue as byte[];
-
-                    if (imageData != null)
-                    {
-                        // Tạo một cửa sổ hoặc form popup để hiển thị hình ảnh
-                        Form imageForm = new Form();
-                        PictureBox pictureBox = new PictureBox();
-                        pictureBox.Image = Image.FromStream(new MemoryStream(imageData));
-                        pictureBox.Dock = DockStyle.Fill;
-                        imageForm.Controls.Add(pictureBox);
-                        imageForm.Size = pictureBox.Image.Size;
-                        imageForm.ShowDialog();
-                    }
-                }
-            }
+            LoadFoodToGridControl();
         }
 
         private void GvFood_RowCellClick(object sender, RowCellClickEventArgs e)
         {
-            if (e.Clicks == 2 && e.Column.FieldName == "Hình ảnh")
+            GridView view = sender as GridView;
+            if (view.Columns[5] != null)
             {
-                object imageValue = gvFood.GetRowCellValue(e.RowHandle, "Hình ảnh");
-
-                if (imageValue != null)
+                byte[] imageData = view.GetRowCellValue(e.RowHandle, e.Column) as byte[];
+                if (imageData != null)
                 {
-                    // Kiểm tra nếu giá trị không rỗng
-                    byte[] imageData = imageValue as byte[]; // Giả sử dữ liệu hình ảnh được lưu trong cột dưới dạng mảng byte
-
-                    if (imageData != null)
-                    {
-                        // Ở đây, bạn có thể hiển thị hình ảnh trong một cửa sổ mới hoặc một form popup.
-                        // Ví dụ, bạn có thể sử dụng một PictureBox để hiển thị hình ảnh.
-
-                        Form imageForm = new Form();
-                        PictureBox pictureBox = new PictureBox();
-                        pictureBox.Image = Image.FromStream(new MemoryStream(imageData));
-                        pictureBox.Dock = DockStyle.Fill;
-                        imageForm.Controls.Add(pictureBox);
-                        imageForm.Size = pictureBox.Image.Size;
-                        imageForm.ShowDialog();
-                    }
+                    ShowImageInPopup(imageData);
                 }
             }
         }
@@ -89,7 +51,9 @@ namespace GUI
                 gvFood.Columns[1].Caption = "Tên";
                 gvFood.Columns[2].Caption = "Loại";
                 gvFood.Columns[3].Caption = "Đơn giá";
-                gvFood.Columns[4].Caption = "Hình ảnh";
+                gvFood.Columns[4].Caption = "Mô tả";
+                gvFood.Columns[5].Caption = "Hình ảnh";
+
             }
             catch (Exception ex)
             {
@@ -121,12 +85,36 @@ namespace GUI
         private void gvFood_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             GridView view = sender as GridView;
-            if (view.IsNewItemRow(e.RowHandle))//
+            if (view.IsNewItemRow(e.RowHandle))
                 AddFood(view, e.RowHandle);
             else
                 UpdateFood(view, e.RowHandle);
         }
-        
+        private byte[] GetImageBytesFromRow(int rowHandle, GridView view)
+        {
+            byte[] imageData = null;
+
+            // Kiểm tra xem có hình ảnh trong cột không
+            if (view.IsDataRow(rowHandle) && view.GetRowCellValue(rowHandle, "Image Food") != null)
+            {
+                // Lấy đường dẫn hình ảnh từ cột dữ liệu
+                string imagePath = view.GetRowCellValue(rowHandle, "Image Food").ToString();
+
+                // Chuyển hình ảnh thành mảng byte[]
+                if (!string.IsNullOrEmpty(imagePath))
+                {
+                    using (Image image = Image.FromFile(imagePath))
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        image.Save(ms, ImageFormat.Jpeg); // Thay đổi định dạng tùy theo loại hình ảnh
+                        imageData = ms.ToArray();
+                    }
+                }
+            }
+
+            return imageData;
+        }
+
         private void AddFood(GridView view, int rowHandle)
         {
             string name = view.GetRowCellValue(rowHandle, view.Columns[1]).ToString();
@@ -159,30 +147,40 @@ namespace GUI
                 view.DeleteRow(rowHandle);
                 return;
             }
+            //byte[] ImageFood = Convert.FromBase64String(view.GetRowCellValue(rowHandle, view.Columns[6]).ToString());
 
-            if (FoodBUS.Instance.isExist(name))
+            byte[] imageData = view.GetRowCellValue(rowHandle, view.Columns[6]) as byte[];
+            if (imageData == null)
             {
-                Food newFood = new Food(name, int.Parse(typeID), price, "", "");
-                if (FoodBUS.Instance.InsertFood(newFood))
+                XtraMessageBox.Show("Hình ảnh không được để trống");
+                view.DeleteRow(rowHandle);
+                return;
+            }
+            for (int i = 0; i < gvFood.RowCount - 1; i++)
+            {
+                if (name.Equals(gvFood.GetRowCellValue(i, gvFood.Columns[1]).ToString()))
                 {
-                    SplashScreenManager.ShowForm(typeof(WaitForm1));
-                    LoadFoodToGridControl();
-                    XtraMessageBox.Show("Thêm món mới thành công", "Thông báo");
-                    SplashScreenManager.CloseForm();
+                    XtraMessageBox.Show("Tên món này đã tồn tại!");
+                    return;
                 }
-                else
-                {
-                    SplashScreenManager.CloseForm();
-                    XtraMessageBox.Show("Thêm món mới thất bại", "Lỗi");
-                }
+            }
+
+            Food newFood = new Food(name, int.Parse(typeID), price, "", imageData);
+            if (FoodBUS.Instance.InsertFood(newFood))
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                LoadFoodToGridControl();
+                XtraMessageBox.Show("Thêm món mới thành công", "Thông báo");
+                SplashScreenManager.CloseForm();
             }
             else
             {
-                XtraMessageBox.Show("Món đã tồn tại vui lòng thử lại");
-                view.DeleteRow(rowHandle);
+                SplashScreenManager.CloseForm();
+                XtraMessageBox.Show("Thêm món mới thất bại", "Lỗi");
+                {
+                }
             }
         }
-
         private void UpdateFood(GridView view, int rowHandle)
         {
             string id = view.GetRowCellValue(rowHandle, view.Columns[0]).ToString();
@@ -223,9 +221,24 @@ namespace GUI
                 view.DeleteRow(rowHandle);
                 return;
             }
+            byte[] imageData = view.GetRowCellValue(rowHandle, view.Columns[5]) as byte[];
+            if (imageData == null)
+            {
+                XtraMessageBox.Show("Hình ảnh không được để trống");
+                view.DeleteRow(rowHandle);
+                return;
+            }
+            for (int i = 0; i < gvFood.RowCount - 1; i++)
+            {
+                if (name.Equals(gvFood.GetRowCellValue(i, gvFood.Columns[1]).ToString())&&i!=rowHandle)
+                {
+                    XtraMessageBox.Show("Tên món này đã tồn tại!");
+                    return;
+                }
+            }
 
             SplashScreenManager.ShowForm(typeof(WaitForm1));
-            Food food = new Food(int.Parse(id), name, int.Parse(typeID), price,"","");
+            Food food = new Food(int.Parse(id), name, int.Parse(typeID), price, "", imageData);
             if (FoodBUS.Instance.UpdateFood(food))
             {
                 LoadFoodToGridControl();
@@ -311,13 +324,17 @@ namespace GUI
             object price = gvFood.GetRowCellValue(gvFood.FocusedRowHandle, gvFood.Columns[3]);
             if (price == null || price == DBNull.Value)
                 return;
-                
-            curFood = new Food(name.ToString(), (int)categoryID, (int)price,"","");
+
+            curFood = new Food(name.ToString(), (int)categoryID, (int)price,  "", null);
         }
-
-        private void gcFood_Click(object sender, EventArgs e)
+        private void ShowImageInPopup(byte[] imageData)
         {
+            // Tạo một form popup hoặc UserControl để hiển thị hình ảnh lớn
+            // Hiển thị hình ảnh bằng PictureBox hoặc một điều khiển tương tự.
+            // Đặt dữ liệu hình ảnh cho PictureBox.
 
+            FormImageViewer imagePopup = new FormImageViewer(imageData);
+            imagePopup.ShowDialog();
         }
 
         private void fFood_Load(object sender, EventArgs e)

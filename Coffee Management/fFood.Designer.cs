@@ -68,7 +68,6 @@
             this.gcFood.TabIndex = 15;
             this.gcFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFood});
-            this.gcFood.Click += new System.EventHandler(this.gcFood_Click);
             this.gcFood.DoubleClick += new System.EventHandler(this.gcFood_DoubleClick);
             // 
             // gvFood

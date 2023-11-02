@@ -72,12 +72,12 @@ namespace DAO
 
         public bool InsertFood(DTO.Food newFood)
         {
-            string query = string.Format("SP_InsertFood @Name , @TypeID , @Price");
+            string query = string.Format("SP_InsertFood @Name , @TypeID , @Price , @Image");
             int result;
             try
             {
                 result = DataProvider.Instance.ExecuteNonQuery(query,
-                    new object[] { newFood.Name, newFood.TypeID, newFood.Price });
+                    new object[] { newFood.Name, newFood.TypeID, newFood.Price,newFood.ImageFood });
             }
             catch (Exception ex)
             {
@@ -88,12 +88,12 @@ namespace DAO
 
         public bool UpdateFood(DTO.Food food)
         {
-            string query = string.Format("SP_UpdateFood @ID , @Name , @TypeID , @Price");
+            string query = string.Format("SP_UpdateFood @ID , @Name , @TypeID , @Price , @Image");
             int result;
             try
             {
                 result = DataProvider.Instance.ExecuteNonQuery(query,
-                    new object[] { food.ID, food.Name, food.TypeID, food.Price });
+                    new object[] { food.ID, food.Name, food.TypeID, food.Price,food.ImageFood });
             }
             catch (Exception ex)
             {
