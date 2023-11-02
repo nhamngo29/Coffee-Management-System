@@ -13,26 +13,23 @@ namespace DTO
         public string Name { get; set; }
         public int TypeID { get; set; }
         public int Price { get; set; }
-        public string Image { get; set; }
         public string Describe { get; set; }
         public byte[] ImageFood { get; set; }=null;
-        public Food(string name, int typeID, int price, string image, string describe, byte[] imageFood)
+        public Food(string name, int typeID, int price, string describe, byte[] imageFood)
         {
             Name = name;
             TypeID = typeID;
             Price = price;
-            Image = image;
             Describe = describe;
             ImageFood = imageFood;
         }
 
-        public Food(int id, string name, int typeID, int price, string image, string describe, byte[] imageFood)
+        public Food(int id, string name, int typeID, int price, string describe, byte[] imageFood)
         {
             ID = id;
             Name = name;
             TypeID = typeID;
             Price = price;
-            Image = image;
             Describe = describe;
             ImageFood = imageFood;
         }
@@ -43,7 +40,6 @@ namespace DTO
             Name = row["Name"].ToString();
             TypeID = (int)row["Type"];
             Price = (int)row["Price"];
-            Image = (string)row["Image"].ToString();
             Describe = (string)row["Describe"].ToString();
             ImageFood = (byte[])row["ImageFood"];
         }

@@ -68,7 +68,6 @@
             this.gcFood.TabIndex = 15;
             this.gcFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFood});
-            this.gcFood.Click += new System.EventHandler(this.gcFood_Click);
             this.gcFood.DoubleClick += new System.EventHandler(this.gcFood_DoubleClick);
             // 
             // gvFood
@@ -85,8 +84,6 @@
             this.gvFood.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gvFood.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.gvFood.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gvFood.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvFood_RowClick_1);
-            this.gvFood.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvFood_SelectionChanged);
             this.gvFood.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvFood_FocusedRowChanged);
             this.gvFood.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gvFood_ValidateRow);
             // 
