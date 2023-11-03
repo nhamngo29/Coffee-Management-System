@@ -220,7 +220,7 @@ namespace GUI
                 f.Show();
                 SplashScreenManager.CloseForm();
             }
-        }
+        } 
         private void btnLog_ItemClick(object sender, ItemClickEventArgs e)
         {
 
