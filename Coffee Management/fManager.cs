@@ -38,7 +38,6 @@ namespace GUI
             ribbonPageGroupSystem.Text = loginAccount.DisplayName;
             this.NhanVien.Text += loginAccount.DisplayName;
             Timer timer = new Timer();
-            countBooking=BookingBUS.Instance.GetMaxID();
             timer.Tick += Timer_Tick;
             timer.Start();
             barButtonItem6.PerformClick();
@@ -47,11 +46,6 @@ namespace GUI
 
         private  void Timer_Tick(object sender, EventArgs e)
         {
-            if(countBooking!=BookingBUS.Instance.GetMaxID())
-            {
-                countBooking = BookingBUS.Instance.GetMaxID();
-                XtraMessageBox.Show("Có đơn đặt hàng mới vui lòng kiểm tra", "Thông báo");
-            }
             this.NgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
 
@@ -110,6 +104,7 @@ namespace GUI
 
         private void btnViewFood_ItemClick(object sender, ItemClickEventArgs e)
         {
+
             Form frm = this.CheckFormExist(typeof(fFood));
             if (frm != null)
             {
@@ -117,9 +112,11 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fFood f = new fFood();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -132,9 +129,11 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fCategory f = new fCategory();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
@@ -146,9 +145,11 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fGroupFood f = new fGroupFood();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
         private void btnViewTable_ItemClick(object sender, ItemClickEventArgs e)
@@ -160,9 +161,11 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fTable f = new fTable();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -175,10 +178,12 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fAccount f = new fAccount();
                 f.LoginUserName = loginAccount.UserName;
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -191,15 +196,17 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fBill f = new fBill();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
 
         private void btnStatistic_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
+
             Form frm = this.CheckFormExist(typeof(fStatistics));
             if (frm != null)
             {
@@ -207,11 +214,12 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fStatistics f = new fStatistics();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
-            SplashScreenManager.CloseForm();
         }
         private void btnLog_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -245,15 +253,17 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fDiscount f = new fDiscount();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
 
         private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
             Form frm = this.CheckFormExist(typeof(fReservation));
             if (frm != null)
             {
@@ -261,10 +271,13 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fReservation f = new fReservation(loginAccount);
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
         }
 
         private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
@@ -276,9 +289,11 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fStaff f = new fStaff();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -291,9 +306,11 @@ namespace GUI
             }
             else
             {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fDecentralization f = new fDecentralization();
                 f.MdiParent = this;
                 f.Show();
+                SplashScreenManager.CloseForm();
             }
         }
     }

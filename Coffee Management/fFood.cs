@@ -149,7 +149,7 @@ namespace GUI
             }
             //byte[] ImageFood = Convert.FromBase64String(view.GetRowCellValue(rowHandle, view.Columns[6]).ToString());
 
-            byte[] imageData = view.GetRowCellValue(rowHandle, view.Columns[6]) as byte[];
+            byte[] imageData = view.GetRowCellValue(rowHandle, view.Columns[5]) as byte[];
             if (imageData == null)
             {
                 XtraMessageBox.Show("Hình ảnh không được để trống");

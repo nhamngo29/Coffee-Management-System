@@ -1,7 +1,7 @@
-﻿using DAO;
+﻿using DTO;
 using System;
 using System.Data;
-
+using DAO;
 namespace BUS
 {
     public class BookingBUS

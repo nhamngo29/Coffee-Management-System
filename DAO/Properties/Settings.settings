@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User ID=sa;Password=02092002Aa</Value>
+      <Value Profile="(Default)">Data Source=SQL5109.site4now.net;Initial Catalog=db_aa0f87_02092002aa;User Id=db_aa0f87_02092002aa_admin;Password=02092002Aa</Value>
     </Setting>
   </Settings>
 </SettingsFile>

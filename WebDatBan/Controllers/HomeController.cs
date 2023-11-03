@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebDatBan.Models;
-
+using DTO;
+using BUS;
 namespace WebDatBan.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        CoffeeManagementContext db = new CoffeeManagementContext();
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -32,10 +33,16 @@ namespace WebDatBan.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Booking ct)
         {
-            db.Bookings.Add(ct);
-            db.SaveChanges();
-            TempData["Sucess"] = "Đặt bàn thành công.!";
-            return RedirectToAction("index");
+            try
+            {
+                BookingBUS.Instance.InsertCategory(ct);
+                TempData["Sucess"] = "Đặt bàn thành công.!";
+                return RedirectToAction("index");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("index");
+            }
         }
     }
 }

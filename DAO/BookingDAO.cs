@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using DTO;
 namespace DAO
 {
     public class BookingDAO
@@ -74,7 +75,7 @@ namespace DAO
 
         public bool Insert(Booking booking)
         {
-            string query = string.Format("insert into Booking values (N'{0}',{1},{2},{3},{4},N'{5},{6})", booking.FullName, booking.Email, booking.NumberPhone, booking.Quantity, booking.BookingTime, booking.Note, booking.status);
+            string query = string.Format("insert into Booking values (N'{0}','{1}',{2},{3},'{4}',N'{5}',{6})", booking.FullName, booking.Email, booking.NumberPhone, booking.Quantity, booking.BookingTime, booking.Note, (booking.status == true) ? 1 : 0);
             int result;
             try
             {

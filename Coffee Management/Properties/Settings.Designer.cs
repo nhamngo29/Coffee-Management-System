@@ -26,8 +26,8 @@ namespace GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User ID=sa;Password=" +
-            "02092002Aa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5109.site4now.net;Initial Catalog=db_aa0f87_02092002aa;User Id=db_" +
+            "aa0f87_02092002aa_admin;Password=02092002Aa")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
