@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAccountInformation));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtNewPassword = new CustomComponent.PasswordTextBox();
             this.txtRetypePass = new DevExpress.XtraEditors.TextEdit();
@@ -75,8 +76,8 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel7);
-            this.panel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(19, 140);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(424, 140);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(353, 258);
             this.panel2.TabIndex = 7;
@@ -239,7 +240,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 83);
+            this.panel1.Size = new System.Drawing.Size(1195, 83);
             this.panel1.TabIndex = 8;
             // 
             // lbBack
@@ -260,7 +261,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(134, 21);
+            this.label1.Location = new System.Drawing.Point(539, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 37);
             this.label1.TabIndex = 0;
@@ -278,9 +279,11 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(35, 446);
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(416, 446);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(118, 46);
+            this.btnUpdate.Size = new System.Drawing.Size(136, 62);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.TextColor = System.Drawing.Color.White;
@@ -299,9 +302,9 @@
             this.btnCannel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCannel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCannel.ForeColor = System.Drawing.Color.White;
-            this.btnCannel.Location = new System.Drawing.Point(237, 446);
+            this.btnCannel.Location = new System.Drawing.Point(648, 446);
             this.btnCannel.Name = "btnCannel";
-            this.btnCannel.Size = new System.Drawing.Size(118, 46);
+            this.btnCannel.Size = new System.Drawing.Size(129, 62);
             this.btnCannel.TabIndex = 9;
             this.btnCannel.Text = "Hủy";
             this.btnCannel.TextColor = System.Drawing.Color.White;
@@ -314,7 +317,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 567);
+            this.ClientSize = new System.Drawing.Size(1195, 567);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCannel);
             this.Controls.Add(this.panel1);
