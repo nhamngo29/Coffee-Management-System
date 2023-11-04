@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNewPassword = new CustomComponent.PasswordTextBox();
             this.txtRetypePass = new DevExpress.XtraEditors.TextEdit();
-            this.txtNewPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtDisplayName = new DevExpress.XtraEditors.TextEdit();
             this.txtUserName = new DevExpress.XtraEditors.TextEdit();
@@ -47,11 +47,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbBack = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCannel = new CustomComponent.ButtonBoTron();
             this.btnUpdate = new CustomComponent.ButtonBoTron();
+            this.btnCannel = new CustomComponent.ButtonBoTron();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRetypePass.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNewPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDisplayName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
@@ -61,8 +60,8 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.txtRetypePass);
             this.panel2.Controls.Add(this.txtNewPassword);
+            this.panel2.Controls.Add(this.txtRetypePass);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.txtDisplayName);
             this.panel2.Controls.Add(this.txtUserName);
@@ -82,6 +81,17 @@
             this.panel2.Size = new System.Drawing.Size(353, 258);
             this.panel2.TabIndex = 7;
             // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtNewPassword.Location = new System.Drawing.Point(144, 160);
+            this.txtNewPassword.Multiline = true;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Size = new System.Drawing.Size(192, 22);
+            this.txtNewPassword.TabIndex = 4;
+            this.txtNewPassword.UseSystemPasswordChar = true;
+            // 
             // txtRetypePass
             // 
             this.txtRetypePass.Location = new System.Drawing.Point(144, 215);
@@ -92,17 +102,7 @@
             this.txtRetypePass.Properties.UseSystemPasswordChar = true;
             this.txtRetypePass.Size = new System.Drawing.Size(192, 20);
             this.txtRetypePass.TabIndex = 5;
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.Location = new System.Drawing.Point(144, 163);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtNewPassword.Properties.Appearance.Options.UseFont = true;
-            this.txtNewPassword.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtNewPassword.Properties.UseSystemPasswordChar = true;
-            this.txtNewPassword.Size = new System.Drawing.Size(192, 20);
-            this.txtNewPassword.TabIndex = 4;
+            this.txtRetypePass.TextChanged += new System.EventHandler(this.txtRetypePass_TextChanged);
             // 
             // txtPassword
             // 
@@ -127,6 +127,7 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.Enabled = false;
             this.txtUserName.Location = new System.Drawing.Point(144, 16);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
@@ -265,27 +266,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Profile";
             // 
-            // btnCannel
-            // 
-            this.btnCannel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCannel.BackColor = System.Drawing.Color.Silver;
-            this.btnCannel.BackgroundColor = System.Drawing.Color.Silver;
-            this.btnCannel.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCannel.BorderRadius = 20;
-            this.btnCannel.BorderSize = 0;
-            this.btnCannel.FlatAppearance.BorderSize = 0;
-            this.btnCannel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCannel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCannel.ForeColor = System.Drawing.Color.White;
-            this.btnCannel.Location = new System.Drawing.Point(237, 446);
-            this.btnCannel.Name = "btnCannel";
-            this.btnCannel.Size = new System.Drawing.Size(118, 46);
-            this.btnCannel.TabIndex = 9;
-            this.btnCannel.Text = "Hủy";
-            this.btnCannel.TextColor = System.Drawing.Color.White;
-            this.btnCannel.UseVisualStyleBackColor = false;
-            this.btnCannel.Click += new System.EventHandler(this.btnCannel_Click);
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -307,6 +287,27 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnCannel
+            // 
+            this.btnCannel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCannel.BackColor = System.Drawing.Color.Silver;
+            this.btnCannel.BackgroundColor = System.Drawing.Color.Silver;
+            this.btnCannel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCannel.BorderRadius = 20;
+            this.btnCannel.BorderSize = 0;
+            this.btnCannel.FlatAppearance.BorderSize = 0;
+            this.btnCannel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCannel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCannel.ForeColor = System.Drawing.Color.White;
+            this.btnCannel.Location = new System.Drawing.Point(237, 446);
+            this.btnCannel.Name = "btnCannel";
+            this.btnCannel.Size = new System.Drawing.Size(118, 46);
+            this.btnCannel.TabIndex = 9;
+            this.btnCannel.Text = "Hủy";
+            this.btnCannel.TextColor = System.Drawing.Color.White;
+            this.btnCannel.UseVisualStyleBackColor = false;
+            this.btnCannel.Click += new System.EventHandler(this.btnCannel_Click);
+            // 
             // fAccountInformation
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -325,7 +326,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRetypePass.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNewPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDisplayName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
@@ -351,11 +351,11 @@
         private System.Windows.Forms.Label lbBack;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit txtRetypePass;
-        private DevExpress.XtraEditors.TextEdit txtNewPassword;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private DevExpress.XtraEditors.TextEdit txtDisplayName;
         private DevExpress.XtraEditors.TextEdit txtUserName;
         private CustomComponent.ButtonBoTron btnCannel;
         private CustomComponent.ButtonBoTron btnUpdate;
+        private CustomComponent.PasswordTextBox txtNewPassword;
     }
 }

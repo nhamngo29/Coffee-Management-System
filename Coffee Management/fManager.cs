@@ -263,7 +263,6 @@ namespace GUI
 
         private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             Form frm = this.CheckFormExist(typeof(fReservation));
             if (frm != null)
             {
@@ -277,7 +276,6 @@ namespace GUI
                 f.Show();
                 SplashScreenManager.CloseForm();
             }
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
         }
 
         private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)

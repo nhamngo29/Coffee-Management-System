@@ -21,13 +21,11 @@ namespace GUI
 
         public fAccount()
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
             LoadAcount();
             btnRemove.Enabled = false;
             btnResetPassword.Enabled = false;
             btnSearch.Enabled = false;
-            SplashScreenManager.CloseForm();
         }
 
         private void LoadAcount()

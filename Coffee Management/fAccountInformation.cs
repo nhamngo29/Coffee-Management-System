@@ -12,17 +12,19 @@ namespace GUI
     public partial class fAccountInformation : DevExpress.XtraEditors.XtraForm
     {
         private Account loginAccount;
-
+        ErrorProvider errorProvider;
         public Account LoginAccount
         {
             get { return loginAccount; }
             set { loginAccount = value; ChangeAccount(loginAccount); }
+            
         }
 
         public fAccountInformation(Account acc)
         {
             InitializeComponent();
             LoginAccount = acc;
+            errorProvider=new ErrorProvider();
         }
 
         void ChangeAccount(Account acc)
@@ -108,8 +110,8 @@ namespace GUI
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             UpdateAccount();
-            txtNewPassword.Text = string.Empty;
             txtRetypePass.Text = string.Empty;
+            txtNewPassword.Text = string.Empty;
             txtPassword.Text = string.Empty;
         }
 
@@ -123,6 +125,22 @@ namespace GUI
             {
                 this.Close();
             }
+        }
+
+        private void a_EditValueChanged(object sender, EventArgs e)
+        {
+                    }
+
+        private void txtRetypePass_TextChanged(object sender, EventArgs e)
+        {
+            if(!txtRetypePass.Text.Equals(txtNewPassword.Text))
+            {
+                errorProvider.SetError(txtRetypePass, "Mật khẩu không khớp!");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }    
         }
     }
 }
