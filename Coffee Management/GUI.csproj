@@ -191,6 +191,12 @@
     <Compile Include="fAddTable.Designer.cs">
       <DependentUpon>fAddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddUser.Designer.cs">
+      <DependentUpon>fAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="fBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fAddTable.resx">
       <DependentUpon>fAddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddUser.resx">
+      <DependentUpon>fAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>

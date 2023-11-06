@@ -311,5 +311,23 @@ namespace GUI
                 SplashScreenManager.CloseForm();
             }
         }
+
+        private void babtn_AddUser_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fAddUser));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                fAddUser f = new fAddUser();
+                f.MdiParent = this;
+                f.Show();
+                SplashScreenManager.CloseForm();
+            }
+        }
     }
 }
