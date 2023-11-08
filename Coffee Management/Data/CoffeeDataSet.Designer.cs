@@ -16191,10 +16191,10 @@ WHERE        (AccountType.TypeName = @loai)";
             this._commandCollection[1].CommandText = @"SELECT        Account.UserName, Account.DisplayName, Account.TypeID, AccountType.TypeName, Account.Active
 FROM            AccountType INNER JOIN
                          Account ON AccountType.ID = Account.TypeID
-WHERE        Account.UserName = @user and Account.TypeID =@Manhom";
+WHERE        Account.UserName = @user and AccountType.TypeName =@Manhom";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manhom", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TypeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manhom", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "TypeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16237,7 +16237,7 @@ WHERE        Account.UserName = @user and Account.TypeID =@Manhom";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(CoffeeDataSet.getFillUserDataTable dataTable, string user, int Manhom) {
+        public virtual int FillBy(CoffeeDataSet.getFillUserDataTable dataTable, string user, string Manhom) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((user == null)) {
                 throw new global::System.ArgumentNullException("user");
@@ -16245,7 +16245,12 @@ WHERE        Account.UserName = @user and Account.TypeID =@Manhom";
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(user));
             }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Manhom));
+            if ((Manhom == null)) {
+                throw new global::System.ArgumentNullException("Manhom");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Manhom));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -16257,7 +16262,7 @@ WHERE        Account.UserName = @user and Account.TypeID =@Manhom";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual CoffeeDataSet.getFillUserDataTable KTKC(string user, int Manhom) {
+        public virtual CoffeeDataSet.getFillUserDataTable KTKC(string user, string Manhom) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((user == null)) {
                 throw new global::System.ArgumentNullException("user");
@@ -16265,7 +16270,12 @@ WHERE        Account.UserName = @user and Account.TypeID =@Manhom";
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(user));
             }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Manhom));
+            if ((Manhom == null)) {
+                throw new global::System.ArgumentNullException("Manhom");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Manhom));
+            }
             CoffeeDataSet.getFillUserDataTable dataTable = new CoffeeDataSet.getFillUserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
