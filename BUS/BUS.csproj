@@ -69,6 +69,7 @@
     <Compile Include="CategoryBUS.cs" />
     <Compile Include="DiscountBUS.cs" />
     <Compile Include="FoodBUS.cs" />
+    <Compile Include="ImportBUS.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="NhomNguoiDungBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

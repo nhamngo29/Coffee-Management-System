@@ -60,18 +60,18 @@ namespace GUI
 
         private void btnAddUser_Click_1(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in gridView2.GetSelectedRows())
-            {
-                // Nhớ kiểm tra trước khi thêm trùng khóa chính
-                if (this.account1TableAdapter.KTKC(item.Cells[0].Value.ToString(), ((int)(Convert.ChangeType(accountTypeComboBox.SelectedValue.ToString(), typeof(int))))) == null)
-                {
-                    MessageBox.Show("Đã tồn tại");
-                }
-                else
-                {
-                    this.account1TableAdapter.InsertQuery(item.Cells[0].Value.ToString(), item.Cells[1].Value.ToString(), item.Cells[2].Value.ToString(), ((int)(Convert.ChangeType(accountTypeComboBox.SelectedValue.ToString(), typeof(int))), ((Convert.ChangeType(item.Cells[4].Value.ToString(), typeof(int?)), typeof(int))), ((bool)(Convert.ChangeType(item.Cells[5].ToString(), typeof(bool)))))); //accountTypeComboBox.SelectedValue.ToString(), string.Empty);
-                }
-            }
+            //foreach (DataGridViewRow item in gridView2.GetSelectedRows())
+            //{
+            //    // Nhớ kiểm tra trước khi thêm trùng khóa chính
+            //    if (this.account1TableAdapter.KTKC(item.Cells[0].Value.ToString(), ((int)(Convert.ChangeType(accountTypeComboBox.SelectedValue.ToString(), typeof(int))))) == null)
+            //    {
+            //        MessageBox.Show("Đã tồn tại");
+            //    }
+            //    else
+            //    {
+            //        this.account1TableAdapter.InsertQuery(item.Cells[0].Value.ToString(), item.Cells[1].Value.ToString(), item.Cells[2].Value.ToString(), ((int)(Convert.ChangeType(accountTypeComboBox.SelectedValue.ToString(), typeof(int))), ((Convert.ChangeType(item.Cells[4].Value.ToString(), typeof(int?)), typeof(int))), ((bool)(Convert.ChangeType(item.Cells[5].ToString(), typeof(bool)))))); //accountTypeComboBox.SelectedValue.ToString(), string.Empty);
+            //    }
+            //}
             LoadComboByCondition();
         }
     }

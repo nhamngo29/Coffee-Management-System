@@ -122,10 +122,6 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -187,6 +183,12 @@
     </Compile>
     <Compile Include="fAccountInformation.Designer.cs">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAddImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddImport.Designer.cs">
+      <DependentUpon>fAddImport.cs</DependentUpon>
     </Compile>
     <Compile Include="fAddTable.cs">
       <SubType>Form</SubType>
@@ -284,6 +286,12 @@
     <Compile Include="fGroupFood.Designer.cs">
       <DependentUpon>fGroupFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import.Designer.cs">
+      <DependentUpon>Import.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="fManager.cs">
@@ -329,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fAccountInformation.resx">
       <DependentUpon>fAccountInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddImport.resx">
+      <DependentUpon>fAddImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAddTable.resx">
       <DependentUpon>fAddTable.cs</DependentUpon>
@@ -377,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fGroupFood.resx">
       <DependentUpon>fGroupFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Import.resx">
+      <DependentUpon>Import.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -516,15 +530,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="MIMEDIRLib">
-      <Guid>{0006F080-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="MIMEEDIT">
       <Guid>{1C82EAD8-508E-11D1-8DCF-00C04FB951F9}</Guid>
       <VersionMajor>1</VersionMajor>
