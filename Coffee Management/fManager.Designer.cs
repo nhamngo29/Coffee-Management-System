@@ -87,6 +87,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.NgayGio = new System.Windows.Forms.ToolStripStatusLabel();
             this.NhanVien = new System.Windows.Forms.ToolStripStatusLabel();
+            this.babtn_AddUser = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -137,10 +138,11 @@
             this.barButtonItem17,
             this.ribbonGalleryBarItem2,
             this.barButtonItem18,
-            this.barButtonItem19});
+            this.barButtonItem19,
+            this.babtn_AddUser});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ribbon.MaxItemId = 42;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbon.MaxItemId = 43;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 440;
             this.ribbon.PageHeaderItemLinks.Add(this.barButtonItem17);
@@ -537,6 +539,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem18);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem19);
+            this.ribbonPageGroup3.ItemLinks.Add(this.babtn_AddUser);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Tag = "QuanLy03";
             this.ribbonPageGroup3.Text = "Nhân viên";
@@ -596,6 +599,13 @@
             this.NhanVien.Size = new System.Drawing.Size(76, 17);
             this.NhanVien.Text = "Chào mừng: ";
             // 
+            // babtn_AddUser
+            // 
+            this.babtn_AddUser.Caption = "Thêm người dùng";
+            this.babtn_AddUser.Id = 42;
+            this.babtn_AddUser.Name = "babtn_AddUser";
+            this.babtn_AddUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.babtn_AddUser_ItemClick);
+            // 
             // fManager
             // 
             this.Appearance.Options.UseFont = true;
@@ -610,7 +620,7 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("fManager.IconOptions.LargeImage")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fManager";
             this.Ribbon = this.ribbon;
             this.Text = "Coffee Z";
@@ -687,5 +697,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
+        private DevExpress.XtraBars.BarButtonItem babtn_AddUser;
     }
 }
