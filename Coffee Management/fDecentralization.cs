@@ -39,6 +39,7 @@ namespace GUI
             // TODO: This line of code loads data into the 'coffeeDataSet.NhomNguoiDung' table. You can move, or remove it, as needed.
             this.nhomNguoiDungTableAdapter.Fill(this.coffeeDataSet.NhomNguoiDung);
 
+
         }
         public void LoadDataCondition()
         {

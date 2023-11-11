@@ -22,7 +22,6 @@ namespace GUI
         {
             
         }
-
         private Bitmap drawImage(string txt, int w, int h)
         {
             w = w + 20;
@@ -157,7 +156,9 @@ namespace GUI
                                 txtPassword.Text = string.Empty;
                                 txtUserName.Text = string.Empty;
                                 txtCaptcha.Text = string.Empty;
+                                
                                 Program._fManager = new fManager(acc);
+
                                 this.Hide();
                                 Program._fManager.ShowDialog();
                                 this.Show();

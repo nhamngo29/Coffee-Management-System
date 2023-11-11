@@ -51,7 +51,7 @@
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl1.Location = new System.Drawing.Point(-3, 83);
+            this.chartControl1.Location = new System.Drawing.Point(-2, 83);
             this.chartControl1.Name = "chartControl1";
             series1.Name = "Series 1";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
