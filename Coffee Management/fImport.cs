@@ -27,5 +27,11 @@ namespace GUI
         {
             gcImport.DataSource = ImportBUS.Instance.GetAll();
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddImportProduct addImportProduct = new AddImportProduct();
+            addImportProduct.ShowDialog();
+        }
     }
 }

@@ -344,5 +344,20 @@ namespace GUI
                 f.Show();
             }
         }
+
+        private void btnNhapKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fImport));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fImport f = new fImport();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

@@ -1015,7 +1015,7 @@ SELECT UserName, DisplayName FROM Account WHERE (UserName = @UserName)</CommandT
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getPhanQuyenTableAdapter" GeneratorDataComponentClassName="getPhanQuyenTableAdapter" Name="getPhanQuyen" UserDataComponentName="getPhanQuyenTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Screen.Id, Screen.Name, PhanQuyen.CoQuyen
@@ -1053,7 +1053,7 @@ and IdCreen = @maManhinh </CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getFullUserTableAdapter" GeneratorDataComponentClassName="getFullUserTableAdapter" Name="getFullUser" UserDataComponentName="getFullUserTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Account.UserName, Account.DisplayName, Account.TypeID, AccountType.TypeName, Account.Active
@@ -1075,7 +1075,7 @@ FROM            Account INNER JOIN
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getFillUserTableAdapter" GeneratorDataComponentClassName="getFillUserTableAdapter" Name="getFillUser" UserDataComponentName="getFillUserTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Account.UserName, Account.DisplayName, Account.TypeID, AccountType.TypeName, Account.Active
@@ -1097,7 +1097,7 @@ WHERE        (AccountType.TypeName = @loai)</CommandText>
               <Mapping SourceColumn="Active" DataSetColumn="Active" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="KTKC" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="KTKC" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="KTKC" UserSourceName="FillBy">
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="KTKC" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="KTKC" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="KTKC" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Account.UserName, Account.DisplayName, Account.TypeID, AccountType.TypeName, Account.Active
@@ -1112,6 +1112,147 @@ WHERE        Account.UserName = @user and AccountType.TypeName =@Manhom</Command
                 </SelectCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DetailImportProductTableAdapter" GeneratorDataComponentClassName="DetailImportProductTableAdapter" Name="DetailImportProduct" UserDataComponentName="DetailImportProductTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="CoffeeManagement.dbo.DetailImportProduct" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[DetailImportProduct] WHERE (([ID] = @Original_ID) AND ([IdImport] = @Original_IdImport) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_NameProduct = 1 AND [NameProduct] IS NULL) OR ([NameProduct] = @Original_NameProduct)) AND ((@IsNull_Unit = 1 AND [Unit] IS NULL) OR ([Unit] = @Original_Unit)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdImport" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdImport" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Price" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Price" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NameProduct" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NameProduct" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NameProduct" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NameProduct" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Unit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Unit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Unit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Unit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[DetailImportProduct] ([IdImport], [Quantity], [Price], [NameProduct], [Unit]) VALUES (@IdImport, @Quantity, @Price, @NameProduct, @Unit);
+SELECT ID, IdImport, Quantity, Price, NameProduct, Unit FROM DetailImportProduct WHERE (ID = SCOPE_IDENTITY()) AND (IdImport = @IdImport)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdImport" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdImport" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NameProduct" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NameProduct" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Unit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Unit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, IdImport, Quantity, Price, NameProduct, Unit FROM dbo.DetailImportProduct</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[DetailImportProduct] SET [IdImport] = @IdImport, [Quantity] = @Quantity, [Price] = @Price, [NameProduct] = @NameProduct, [Unit] = @Unit WHERE (([ID] = @Original_ID) AND ([IdImport] = @Original_IdImport) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_NameProduct = 1 AND [NameProduct] IS NULL) OR ([NameProduct] = @Original_NameProduct)) AND ((@IsNull_Unit = 1 AND [Unit] IS NULL) OR ([Unit] = @Original_Unit)));
+SELECT ID, IdImport, Quantity, Price, NameProduct, Unit FROM DetailImportProduct WHERE (ID = @ID) AND (IdImport = @IdImport)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdImport" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdImport" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NameProduct" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NameProduct" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Unit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Unit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdImport" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdImport" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Price" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Price" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NameProduct" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NameProduct" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NameProduct" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NameProduct" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Unit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Unit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Unit" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Unit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="IdImport" DataSetColumn="IdImport" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+              <Mapping SourceColumn="NameProduct" DataSetColumn="NameProduct" />
+              <Mapping SourceColumn="Unit" DataSetColumn="Unit" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ImportProductTableAdapter" GeneratorDataComponentClassName="ImportProductTableAdapter" Name="ImportProduct" UserDataComponentName="ImportProductTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="CoffeeManagement.dbo.ImportProduct" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[ImportProduct] WHERE (([ID] = @Original_ID) AND ((@IsNull_ImportDate = 1 AND [ImportDate] IS NULL) OR ([ImportDate] = @Original_ImportDate)) AND ((@IsNull_IdStaff = 1 AND [IdStaff] IS NULL) OR ([IdStaff] = @Original_IdStaff)) AND ((@IsNull_Supplier = 1 AND [Supplier] IS NULL) OR ([Supplier] = @Original_Supplier)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ImportDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ImportDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ImportDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ImportDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdStaff" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdStaff" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdStaff" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdStaff" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Supplier" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Supplier" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Supplier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[ImportProduct] ([ImportDate], [IdStaff], [Supplier], [Note]) VALUES (@ImportDate, @IdStaff, @Supplier, @Note);
+SELECT ID, ImportDate, IdStaff, Supplier, Note FROM ImportProduct WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ImportDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ImportDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdStaff" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdStaff" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Supplier" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Supplier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, ImportDate, IdStaff, Supplier, Note FROM dbo.ImportProduct</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[ImportProduct] SET [ImportDate] = @ImportDate, [IdStaff] = @IdStaff, [Supplier] = @Supplier, [Note] = @Note WHERE (([ID] = @Original_ID) AND ((@IsNull_ImportDate = 1 AND [ImportDate] IS NULL) OR ([ImportDate] = @Original_ImportDate)) AND ((@IsNull_IdStaff = 1 AND [IdStaff] IS NULL) OR ([IdStaff] = @Original_IdStaff)) AND ((@IsNull_Supplier = 1 AND [Supplier] IS NULL) OR ([Supplier] = @Original_Supplier)));
+SELECT ID, ImportDate, IdStaff, Supplier, Note FROM ImportProduct WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ImportDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ImportDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdStaff" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdStaff" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Supplier" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Supplier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Note" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ImportDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ImportDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ImportDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ImportDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdStaff" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdStaff" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdStaff" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdStaff" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Supplier" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Supplier" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Supplier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ImportDate" DataSetColumn="ImportDate" />
+              <Mapping SourceColumn="IdStaff" DataSetColumn="IdStaff" />
+              <Mapping SourceColumn="Supplier" DataSetColumn="Supplier" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -1465,61 +1606,108 @@ WHERE        Account.UserName = @user and AccountType.TypeName =@Manhom</Command
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="getFullUser" msprop:Generator_RowClassName="getFullUserRow" msprop:Generator_RowEvHandlerName="getFullUserRowChangeEventHandler" msprop:Generator_RowDeletedName="getFullUserRowDeleted" msprop:Generator_RowDeletingName="getFullUserRowDeleting" msprop:Generator_RowEvArgName="getFullUserRowChangeEvent" msprop:Generator_TablePropName="getFullUser" msprop:Generator_RowChangedName="getFullUserRowChanged" msprop:Generator_UserTableName="getFullUser" msprop:Generator_RowChangingName="getFullUserRowChanging" msprop:Generator_TableClassName="getFullUserDataTable" msprop:Generator_TableVarName="tablegetFullUser">
+        <xs:element name="getFullUser" msprop:Generator_RowEvHandlerName="getFullUserRowChangeEventHandler" msprop:Generator_RowDeletedName="getFullUserRowDeleted" msprop:Generator_RowDeletingName="getFullUserRowDeleting" msprop:Generator_RowEvArgName="getFullUserRowChangeEvent" msprop:Generator_TablePropName="getFullUser" msprop:Generator_RowChangedName="getFullUserRowChanged" msprop:Generator_UserTableName="getFullUser" msprop:Generator_RowChangingName="getFullUserRowChanging" msprop:Generator_RowClassName="getFullUserRow" msprop:Generator_TableClassName="getFullUserDataTable" msprop:Generator_TableVarName="tablegetFullUser">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName">
+              <xs:element name="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DisplayName" msprop:Generator_UserColumnName="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName">
+              <xs:element name="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_UserColumnName="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TypeID" msprop:Generator_UserColumnName="TypeID" msprop:Generator_ColumnPropNameInTable="TypeIDColumn" msprop:Generator_ColumnPropNameInRow="TypeID" msprop:Generator_ColumnVarNameInTable="columnTypeID" type="xs:int" />
-              <xs:element name="TypeName" msprop:Generator_UserColumnName="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName">
+              <xs:element name="TypeID" msprop:Generator_ColumnPropNameInTable="TypeIDColumn" msprop:Generator_ColumnPropNameInRow="TypeID" msprop:Generator_UserColumnName="TypeID" msprop:Generator_ColumnVarNameInTable="columnTypeID" type="xs:int" />
+              <xs:element name="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_UserColumnName="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Active" msprop:Generator_UserColumnName="Active" msprop:Generator_ColumnPropNameInTable="ActiveColumn" msprop:Generator_ColumnPropNameInRow="Active" msprop:Generator_ColumnVarNameInTable="columnActive" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Active" msprop:Generator_ColumnPropNameInTable="ActiveColumn" msprop:Generator_ColumnPropNameInRow="Active" msprop:Generator_UserColumnName="Active" msprop:Generator_ColumnVarNameInTable="columnActive" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="getFillUser" msprop:Generator_RowClassName="getFillUserRow" msprop:Generator_RowEvHandlerName="getFillUserRowChangeEventHandler" msprop:Generator_RowDeletedName="getFillUserRowDeleted" msprop:Generator_RowDeletingName="getFillUserRowDeleting" msprop:Generator_RowEvArgName="getFillUserRowChangeEvent" msprop:Generator_TablePropName="getFillUser" msprop:Generator_RowChangedName="getFillUserRowChanged" msprop:Generator_UserTableName="getFillUser" msprop:Generator_RowChangingName="getFillUserRowChanging" msprop:Generator_TableClassName="getFillUserDataTable" msprop:Generator_TableVarName="tablegetFillUser">
+        <xs:element name="getFillUser" msprop:Generator_RowEvHandlerName="getFillUserRowChangeEventHandler" msprop:Generator_RowDeletedName="getFillUserRowDeleted" msprop:Generator_RowDeletingName="getFillUserRowDeleting" msprop:Generator_RowEvArgName="getFillUserRowChangeEvent" msprop:Generator_TablePropName="getFillUser" msprop:Generator_RowChangedName="getFillUserRowChanged" msprop:Generator_UserTableName="getFillUser" msprop:Generator_RowChangingName="getFillUserRowChanging" msprop:Generator_RowClassName="getFillUserRow" msprop:Generator_TableClassName="getFillUserDataTable" msprop:Generator_TableVarName="tablegetFillUser">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName">
+              <xs:element name="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DisplayName" msprop:Generator_UserColumnName="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName">
+              <xs:element name="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_UserColumnName="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TypeID" msprop:Generator_UserColumnName="TypeID" msprop:Generator_ColumnPropNameInTable="TypeIDColumn" msprop:Generator_ColumnPropNameInRow="TypeID" msprop:Generator_ColumnVarNameInTable="columnTypeID" type="xs:int" />
-              <xs:element name="TypeName" msprop:Generator_UserColumnName="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName">
+              <xs:element name="TypeID" msprop:Generator_ColumnPropNameInTable="TypeIDColumn" msprop:Generator_ColumnPropNameInRow="TypeID" msprop:Generator_UserColumnName="TypeID" msprop:Generator_ColumnVarNameInTable="columnTypeID" type="xs:int" />
+              <xs:element name="TypeName" msprop:Generator_ColumnPropNameInTable="TypeNameColumn" msprop:Generator_ColumnPropNameInRow="TypeName" msprop:Generator_UserColumnName="TypeName" msprop:Generator_ColumnVarNameInTable="columnTypeName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Active" msprop:Generator_UserColumnName="Active" msprop:Generator_ColumnPropNameInTable="ActiveColumn" msprop:Generator_ColumnPropNameInRow="Active" msprop:Generator_ColumnVarNameInTable="columnActive" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Active" msprop:Generator_ColumnPropNameInTable="ActiveColumn" msprop:Generator_ColumnPropNameInRow="Active" msprop:Generator_UserColumnName="Active" msprop:Generator_ColumnVarNameInTable="columnActive" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DetailImportProduct" msprop:Generator_RowEvHandlerName="DetailImportProductRowChangeEventHandler" msprop:Generator_RowDeletedName="DetailImportProductRowDeleted" msprop:Generator_RowDeletingName="DetailImportProductRowDeleting" msprop:Generator_RowEvArgName="DetailImportProductRowChangeEvent" msprop:Generator_TablePropName="DetailImportProduct" msprop:Generator_RowChangedName="DetailImportProductRowChanged" msprop:Generator_RowChangingName="DetailImportProductRowChanging" msprop:Generator_TableClassName="DetailImportProductDataTable" msprop:Generator_RowClassName="DetailImportProductRow" msprop:Generator_TableVarName="tableDetailImportProduct" msprop:Generator_UserTableName="DetailImportProduct">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="IdImport" msprop:Generator_ColumnPropNameInRow="IdImport" msprop:Generator_ColumnPropNameInTable="IdImportColumn" msprop:Generator_ColumnVarNameInTable="columnIdImport" msprop:Generator_UserColumnName="IdImport" type="xs:int" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="Price" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_UserColumnName="Price" type="xs:int" minOccurs="0" />
+              <xs:element name="NameProduct" msprop:Generator_ColumnPropNameInRow="NameProduct" msprop:Generator_ColumnPropNameInTable="NameProductColumn" msprop:Generator_ColumnVarNameInTable="columnNameProduct" msprop:Generator_UserColumnName="NameProduct" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unit" msprop:Generator_ColumnPropNameInRow="Unit" msprop:Generator_ColumnPropNameInTable="UnitColumn" msprop:Generator_ColumnVarNameInTable="columnUnit" msprop:Generator_UserColumnName="Unit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImportProduct" msprop:Generator_RowEvHandlerName="ImportProductRowChangeEventHandler" msprop:Generator_RowDeletedName="ImportProductRowDeleted" msprop:Generator_RowDeletingName="ImportProductRowDeleting" msprop:Generator_RowEvArgName="ImportProductRowChangeEvent" msprop:Generator_TablePropName="ImportProduct" msprop:Generator_RowChangedName="ImportProductRowChanged" msprop:Generator_RowChangingName="ImportProductRowChanging" msprop:Generator_TableClassName="ImportProductDataTable" msprop:Generator_RowClassName="ImportProductRow" msprop:Generator_TableVarName="tableImportProduct" msprop:Generator_UserTableName="ImportProduct">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ImportDate" msprop:Generator_ColumnPropNameInRow="ImportDate" msprop:Generator_ColumnPropNameInTable="ImportDateColumn" msprop:Generator_ColumnVarNameInTable="columnImportDate" msprop:Generator_UserColumnName="ImportDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IdStaff" msprop:Generator_ColumnPropNameInRow="IdStaff" msprop:Generator_ColumnPropNameInTable="IdStaffColumn" msprop:Generator_ColumnVarNameInTable="columnIdStaff" msprop:Generator_UserColumnName="IdStaff" type="xs:int" minOccurs="0" />
+              <xs:element name="Supplier" msprop:Generator_ColumnPropNameInRow="Supplier" msprop:Generator_ColumnPropNameInTable="SupplierColumn" msprop:Generator_ColumnVarNameInTable="columnSupplier" msprop:Generator_UserColumnName="Supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Note" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1603,21 +1791,32 @@ WHERE        Account.UserName = @user and AccountType.TypeName =@Manhom</Command
       <xs:selector xpath=".//mstns:getFillUser" />
       <xs:field xpath="mstns:UserName" />
     </xs:unique>
+    <xs:unique name="DetailImportProduct_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DetailImportProduct" />
+      <xs:field xpath="mstns:ID" />
+      <xs:field xpath="mstns:IdImport" />
+    </xs:unique>
+    <xs:unique name="ImportProduct_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ImportProduct" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Account__IdSataf__4AB81AF0" msdata:parent="staff" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__IdSataf__4AB81AF0" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_UserRelationName="FK__Account__IdSataf__4AB81AF0" msprop:Generator_ParentPropName="staffRow" />
-      <msdata:Relationship name="FK__Account__TypeID__4BAC3F29" msdata:parent="AccountType" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F29" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F29" msprop:Generator_ParentPropName="AccountTypeRow" />
-      <msdata:Relationship name="FK__TypeFood__IdCate__534D60F1" msdata:parent="CategoryFood" msdata:child="TypeFood" msdata:parentkey="ID" msdata:childkey="IdCategory" msprop:Generator_UserParentTable="CategoryFood" msprop:Generator_UserChildTable="TypeFood" msprop:Generator_RelationVarName="relationFK__TypeFood__IdCate__534D60F1" msprop:Generator_ChildPropName="GetTypeFoodRows" msprop:Generator_UserRelationName="FK__TypeFood__IdCate__534D60F1" msprop:Generator_ParentPropName="CategoryFoodRow" />
-      <msdata:Relationship name="FK__Bill__IdSataff__4CA06362" msdata:parent="staff" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__IdSataff__4CA06362" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_UserRelationName="FK__Bill__IdSataff__4CA06362" msprop:Generator_ParentPropName="staffRow" />
-      <msdata:Relationship name="FK__Bill__TableID__4D94879B" msdata:parent="TableCoffee" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="TableID" msprop:Generator_UserParentTable="TableCoffee" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__TableID__4D94879B" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_UserRelationName="FK__Bill__TableID__4D94879B" msprop:Generator_ParentPropName="TableCoffeeRow" />
-      <msdata:Relationship name="FK__BillInfo__BillID__4E88ABD4" msdata:parent="Bill" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="BillID" msprop:Generator_UserParentTable="Bill" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__BillID__4E88ABD4" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_ParentPropName="BillRow" msprop:Generator_UserRelationName="FK__BillInfo__BillID__4E88ABD4" />
-      <msdata:Relationship name="FK__BillInfo__FoodID__4F7CD00D" msdata:parent="Food" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="FoodID" msprop:Generator_UserParentTable="Food" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__FoodID__4F7CD00D" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_UserRelationName="FK__BillInfo__FoodID__4F7CD00D" msprop:Generator_ParentPropName="FoodRow" />
-      <msdata:Relationship name="FK_Food_Type" msdata:parent="TypeFood" msdata:child="Food" msdata:parentkey="Id" msdata:childkey="Type" msprop:Generator_UserParentTable="TypeFood" msprop:Generator_UserChildTable="Food" msprop:Generator_RelationVarName="relationFK_Food_Type" msprop:Generator_ChildPropName="GetFoodRows" msprop:Generator_ParentPropName="TypeFoodRow" msprop:Generator_UserRelationName="FK_Food_Type" />
-      <msdata:Relationship name="FK_NhomNguoiDung_AccountType" msdata:parent="AccountType" msdata:child="NhomNguoiDung" msdata:parentkey="ID" msdata:childkey="AccountTypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="NhomNguoiDung" msprop:Generator_RelationVarName="relationFK_NhomNguoiDung_AccountType" msprop:Generator_ChildPropName="GetNhomNguoiDungRows" msprop:Generator_ParentPropName="AccountTypeRow" msprop:Generator_UserRelationName="FK_NhomNguoiDung_AccountType" />
-      <msdata:Relationship name="FK_PhanQuyen_Screen" msdata:parent="Screen" msdata:child="PhanQuyen" msdata:parentkey="Id" msdata:childkey="IdCreen" msprop:Generator_UserParentTable="Screen" msprop:Generator_UserChildTable="PhanQuyen" msprop:Generator_RelationVarName="relationFK_PhanQuyen_Screen" msprop:Generator_ChildPropName="GetPhanQuyenRows" msprop:Generator_UserRelationName="FK_PhanQuyen_Screen" msprop:Generator_ParentPropName="ScreenRow" />
-      <msdata:Relationship name="FK__Account__TypeID__4BAC3F291" msdata:parent="AccountType" msdata:child="getFullUser" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="getFullUser" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F291" msprop:Generator_ChildPropName="GetgetFullUserRows" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F291" msprop:Generator_ParentPropName="AccountTypeRow" />
-      <msdata:Relationship name="FK__Account__TypeID__4BAC3F292" msdata:parent="AccountType" msdata:child="getFillUser" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="getFillUser" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F292" msprop:Generator_ChildPropName="GetgetFillUserRows" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F292" msprop:Generator_ParentPropName="AccountTypeRow" />
+      <msdata:Relationship name="FK__Account__IdSataf__4AB81AF0" msdata:parent="staff" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__IdSataf__4AB81AF0" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_ParentPropName="staffRow" msprop:Generator_UserRelationName="FK__Account__IdSataf__4AB81AF0" />
+      <msdata:Relationship name="FK__Account__TypeID__4BAC3F29" msdata:parent="AccountType" msdata:child="Account" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="Account" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F29" msprop:Generator_ChildPropName="GetAccountRows" msprop:Generator_ParentPropName="AccountTypeRow" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F29" />
+      <msdata:Relationship name="FK__TypeFood__IdCate__534D60F1" msdata:parent="CategoryFood" msdata:child="TypeFood" msdata:parentkey="ID" msdata:childkey="IdCategory" msprop:Generator_UserParentTable="CategoryFood" msprop:Generator_UserChildTable="TypeFood" msprop:Generator_RelationVarName="relationFK__TypeFood__IdCate__534D60F1" msprop:Generator_ChildPropName="GetTypeFoodRows" msprop:Generator_ParentPropName="CategoryFoodRow" msprop:Generator_UserRelationName="FK__TypeFood__IdCate__534D60F1" />
+      <msdata:Relationship name="FK__Bill__IdSataff__4CA06362" msdata:parent="staff" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="IdSataff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__IdSataff__4CA06362" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_ParentPropName="staffRow" msprop:Generator_UserRelationName="FK__Bill__IdSataff__4CA06362" />
+      <msdata:Relationship name="FK__Bill__TableID__4D94879B" msdata:parent="TableCoffee" msdata:child="Bill" msdata:parentkey="ID" msdata:childkey="TableID" msprop:Generator_UserParentTable="TableCoffee" msprop:Generator_UserChildTable="Bill" msprop:Generator_RelationVarName="relationFK__Bill__TableID__4D94879B" msprop:Generator_ChildPropName="GetBillRows" msprop:Generator_ParentPropName="TableCoffeeRow" msprop:Generator_UserRelationName="FK__Bill__TableID__4D94879B" />
+      <msdata:Relationship name="FK__BillInfo__BillID__4E88ABD4" msdata:parent="Bill" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="BillID" msprop:Generator_UserParentTable="Bill" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__BillID__4E88ABD4" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_UserRelationName="FK__BillInfo__BillID__4E88ABD4" msprop:Generator_ParentPropName="BillRow" />
+      <msdata:Relationship name="FK__BillInfo__FoodID__4F7CD00D" msdata:parent="Food" msdata:child="BillInfo" msdata:parentkey="ID" msdata:childkey="FoodID" msprop:Generator_UserParentTable="Food" msprop:Generator_UserChildTable="BillInfo" msprop:Generator_RelationVarName="relationFK__BillInfo__FoodID__4F7CD00D" msprop:Generator_ChildPropName="GetBillInfoRows" msprop:Generator_ParentPropName="FoodRow" msprop:Generator_UserRelationName="FK__BillInfo__FoodID__4F7CD00D" />
+      <msdata:Relationship name="FK_Food_Type" msdata:parent="TypeFood" msdata:child="Food" msdata:parentkey="Id" msdata:childkey="Type" msprop:Generator_UserParentTable="TypeFood" msprop:Generator_UserChildTable="Food" msprop:Generator_RelationVarName="relationFK_Food_Type" msprop:Generator_ChildPropName="GetFoodRows" msprop:Generator_UserRelationName="FK_Food_Type" msprop:Generator_ParentPropName="TypeFoodRow" />
+      <msdata:Relationship name="FK_NhomNguoiDung_AccountType" msdata:parent="AccountType" msdata:child="NhomNguoiDung" msdata:parentkey="ID" msdata:childkey="AccountTypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="NhomNguoiDung" msprop:Generator_RelationVarName="relationFK_NhomNguoiDung_AccountType" msprop:Generator_ChildPropName="GetNhomNguoiDungRows" msprop:Generator_UserRelationName="FK_NhomNguoiDung_AccountType" msprop:Generator_ParentPropName="AccountTypeRow" />
+      <msdata:Relationship name="FK_PhanQuyen_Screen" msdata:parent="Screen" msdata:child="PhanQuyen" msdata:parentkey="Id" msdata:childkey="IdCreen" msprop:Generator_UserParentTable="Screen" msprop:Generator_UserChildTable="PhanQuyen" msprop:Generator_RelationVarName="relationFK_PhanQuyen_Screen" msprop:Generator_ChildPropName="GetPhanQuyenRows" msprop:Generator_ParentPropName="ScreenRow" msprop:Generator_UserRelationName="FK_PhanQuyen_Screen" />
+      <msdata:Relationship name="FK__Account__TypeID__4BAC3F291" msdata:parent="AccountType" msdata:child="getFullUser" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="getFullUser" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F291" msprop:Generator_ChildPropName="GetgetFullUserRows" msprop:Generator_ParentPropName="AccountTypeRow" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F291" />
+      <msdata:Relationship name="FK__Account__TypeID__4BAC3F292" msdata:parent="AccountType" msdata:child="getFillUser" msdata:parentkey="ID" msdata:childkey="TypeID" msprop:Generator_UserParentTable="AccountType" msprop:Generator_UserChildTable="getFillUser" msprop:Generator_RelationVarName="relationFK__Account__TypeID__4BAC3F292" msprop:Generator_ChildPropName="GetgetFillUserRows" msprop:Generator_ParentPropName="AccountTypeRow" msprop:Generator_UserRelationName="FK__Account__TypeID__4BAC3F292" />
+      <msdata:Relationship name="FK_DetailImportProduct_IdImport" msdata:parent="ImportProduct" msdata:child="DetailImportProduct" msdata:parentkey="ID" msdata:childkey="IdImport" msprop:Generator_UserParentTable="ImportProduct" msprop:Generator_UserChildTable="DetailImportProduct" msprop:Generator_RelationVarName="relationFK_DetailImportProduct_IdImport" msprop:Generator_UserRelationName="FK_DetailImportProduct_IdImport" msprop:Generator_ChildPropName="GetDetailImportProductRows" msprop:Generator_ParentPropName="ImportProductRow" />
+      <msdata:Relationship name="FK_ImportProduct_Staff" msdata:parent="staff" msdata:child="ImportProduct" msdata:parentkey="ID" msdata:childkey="IdStaff" msprop:Generator_UserParentTable="staff" msprop:Generator_UserChildTable="ImportProduct" msprop:Generator_RelationVarName="relationFK_ImportProduct_Staff" msprop:Generator_ChildPropName="GetImportProductRows" msprop:Generator_ParentPropName="staffRow" msprop:Generator_UserRelationName="FK_ImportProduct_Staff" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
