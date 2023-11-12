@@ -1,23 +1,24 @@
-﻿using DevExpress.Skins;
-using DevExpress.UserSkins;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Coffee_Management
+namespace GUI
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static fLogin _fLogin;
+        public static fManager _fManager;
         [STAThread]
         static void Main()
         {
+           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fMain());
+            _fLogin = new fLogin();
+            Application.Run(_fLogin);
         }
     }
 }
