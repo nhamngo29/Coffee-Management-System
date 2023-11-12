@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Import : DevExpress.XtraEditors.XtraForm
+    public partial class fImport : DevExpress.XtraEditors.XtraForm
     {
-        public Import()
+        public fImport()
         {
             InitializeComponent();
         }

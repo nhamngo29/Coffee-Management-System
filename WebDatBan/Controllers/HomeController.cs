@@ -41,6 +41,7 @@ namespace WebDatBan.Controllers
             }
             catch (Exception)
             {
+
                 return RedirectToAction("index");
             }
         }

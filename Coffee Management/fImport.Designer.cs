@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Import
+    partial class fImport
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Import));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fImport));
             this.gcImport = new DevExpress.XtraGrid.GridControl();
             this.gvImport = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();

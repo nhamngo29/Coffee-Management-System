@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using System;
+using System.Collections.Generic;
 using System.Data;
 namespace DAO
 {
@@ -129,6 +131,18 @@ namespace DAO
             {
                 return 0;
             }
+        }
+        public Bill GeByID(int id)
+        {
+            List<Bill> list = new List<Bill>();
+            string query = "select * from bill where ID=" +id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                Bill type = new Bill(row);
+                list.Add(type);
+            }
+            return list[0];
         }
     }
 }

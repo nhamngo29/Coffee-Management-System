@@ -1,4 +1,7 @@
 ﻿using DAO;
+using DTO;
+using System.Collections.Generic;
+
 namespace BUS
 {
     public class BillInfoBUS
@@ -40,6 +43,18 @@ namespace BUS
                 BillInfoDAO.Instance.DeleteBillInfoByBillID(billID);
             }
             catch { }
+        }
+        public List<BillInfo> GetBillInfoByBillID(int billID)
+        {
+            try
+            {
+                return BillInfoDAO.Instance.GetListBillInfoByIDBill(billID);
+            }
+            catch
+            {
+                return null;
+                throw;
+            }
         }
     }
 }

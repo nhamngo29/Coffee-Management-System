@@ -35,5 +35,18 @@ namespace DAO.Properties {
                 this["ConnectionString"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User Id=sa;Password=" +
+            "02092002Aa")]
+        public string ConnectionString01 {
+            get {
+                return ((string)(this["ConnectionString01"]));
+            }
+            set {
+                this["ConnectionString01"] = value;
+            }
+        }
     }
 }

@@ -8,17 +8,20 @@ using DevExpress.XtraPrinting;
 using System.Drawing;
 using System.Drawing.Printing;
 using DevExpress.XtraEditors.Repository;
+using DTO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GUI
 {
     public partial class fBill : DevExpress.XtraEditors.XtraForm
     {
-
+        List<BillInfo> billInfos = new List<BillInfo>();
         public fBill()
         {
             InitializeComponent();
         }
-
+        
         private void fBill_Load(object sender, EventArgs e)
         {
             DateTime today = DateTime.Now;
@@ -36,6 +39,7 @@ namespace GUI
         {
             try
             {
+               
                 gcBill.DataSource = BillBUS.Instance.LoadListBillByDateAndPage(fromDate, toDate, pageNum);
                 gvBill.Columns[0].Caption = "Mã hóa đơn";
                 gvBill.Columns[1].Caption = "Tên bàn";
@@ -171,6 +175,45 @@ namespace GUI
                     e.DisplayText = date.ToString("dd/MM/yyyy hh:mm:ss");
                 }
             }
+        }
+
+        private void gvBill_MasterRowEmpty(object sender, MasterRowEmptyEventArgs e)
+        {
+            GridView view = sender as GridView;
+           
+            int id = (int)view.GetDataRow(e.RowHandle)[0];
+            Bill bill = BillBUS.Instance.GetByID(id);
+            if(bill!=null)
+            {
+                e.IsEmpty = false;
+            }    
+                
+        } 
+
+        private void gvBill_MasterRowGetChildList(object sender, MasterRowGetChildListEventArgs e)
+        {
+            GridView view = sender as GridView;
+            int id = (int)view.GetDataRow(e.RowHandle)[0];
+            Bill bill = BillBUS.Instance.GetByID(id);
+            if (bill != null)
+            {
+                e.ChildList = ViewModelBillInfoBUS.Instance.GetByID(bill.ID);
+            }    
+        }
+
+        private void gvBill_MasterRowGetRelationCount(object sender, MasterRowGetRelationCountEventArgs e)
+        {
+            e.RelationCount = 1;
+        }
+
+        private void gvBill_MasterRowGetRelationName(object sender, MasterRowGetRelationNameEventArgs e)
+        {
+            e.RelationName = "Chi tiết hóa đơn";
+        }
+
+        private void gcBill_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

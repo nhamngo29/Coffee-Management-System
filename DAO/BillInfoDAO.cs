@@ -1,4 +1,9 @@
-﻿namespace DAO
+﻿using DTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+
+namespace DAO
 {
     public class BillInfoDAO
     {
@@ -42,6 +47,27 @@
                 DataProvider.Instance.ExecuteNonQuery(query, new object[] { billID });
             }
             catch { }
+        }
+        public List<BillInfo> GetListBillInfoByIDBill(int id)
+        {
+            List<BillInfo> list = new List<BillInfo>();
+            string query = string.Format("select * from billinfo where BillID=" + id);
+            DataTable table = new DataTable();
+            try
+            {
+                table = DataProvider.Instance.ExecuteQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
+                BillInfo category = new BillInfo(row);
+                list.Add(category);
+            }
+            return list;
         }
     }
 }

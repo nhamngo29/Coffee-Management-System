@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class fAddImport : DevExpress.XtraEditors.XtraForm
+    public partial class AddImportProduct : DevExpress.XtraEditors.XtraForm
     {
-        public fAddImport()
+        public AddImportProduct()
         {
             InitializeComponent();
         }

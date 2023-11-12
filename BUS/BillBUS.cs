@@ -2,6 +2,8 @@
 using System.Data;
 
 using DAO;
+using DTO;
+
 namespace BUS
 {
     public class BillBUS
@@ -118,5 +120,17 @@ namespace BUS
                 return 0;
             }
         }
+        public Bill GetByID(int id)
+        {
+            try
+            {
+                return BillDAO.Instance.GeByID(id);
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }    
     }
 }

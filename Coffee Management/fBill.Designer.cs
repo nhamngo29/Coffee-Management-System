@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBill));
+            this.gvlvBillInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcBill = new DevExpress.XtraGrid.GridControl();
             this.gvBill = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.deFromDate = new DevExpress.XtraEditors.DateEdit();
@@ -42,6 +44,7 @@
             this.btnNext = new DevExpress.XtraEditors.SimpleButton();
             this.txtNumPageBill = new DevExpress.XtraEditors.TextEdit();
             this.btnExportEx = new CustomComponent.ButtonBoTron();
+            ((System.ComponentModel.ISupportInitialize)(this.gvlvBillInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFromDate.Properties)).BeginInit();
@@ -51,18 +54,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNumPageBill.Properties)).BeginInit();
             this.SuspendLayout();
             // 
+            // gvlvBillInfo
+            // 
+            this.gvlvBillInfo.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvlvBillInfo.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvlvBillInfo.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvlvBillInfo.Appearance.Row.Options.UseFont = true;
+            this.gvlvBillInfo.GridControl = this.gcBill;
+            this.gvlvBillInfo.Name = "gvlvBillInfo";
+            // 
             // gcBill
             // 
             this.gcBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            gridLevelNode1.LevelTemplate = this.gvlvBillInfo;
+            gridLevelNode1.RelationName = "Chi tiết hóa đơn";
+            this.gcBill.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gcBill.Location = new System.Drawing.Point(0, 90);
             this.gcBill.MainView = this.gvBill;
             this.gcBill.Name = "gcBill";
             this.gcBill.Size = new System.Drawing.Size(961, 295);
             this.gcBill.TabIndex = 0;
             this.gcBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvBill});
+            this.gvBill,
+            this.gvlvBillInfo});
+            this.gcBill.Click += new System.EventHandler(this.gcBill_Click);
             // 
             // gvBill
             // 
@@ -78,6 +96,10 @@
             this.gvBill.GridControl = this.gcBill;
             this.gvBill.Name = "gvBill";
             this.gvBill.OptionsBehavior.Editable = false;
+            this.gvBill.MasterRowEmpty += new DevExpress.XtraGrid.Views.Grid.MasterRowEmptyEventHandler(this.gvBill_MasterRowEmpty);
+            this.gvBill.MasterRowGetChildList += new DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventHandler(this.gvBill_MasterRowGetChildList);
+            this.gvBill.MasterRowGetRelationName += new DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationNameEventHandler(this.gvBill_MasterRowGetRelationName);
+            this.gvBill.MasterRowGetRelationCount += new DevExpress.XtraGrid.Views.Grid.MasterRowGetRelationCountEventHandler(this.gvBill_MasterRowGetRelationCount);
             this.gvBill.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gvBill_CustomColumnDisplayText);
             // 
             // deFromDate
@@ -237,6 +259,7 @@
             this.Name = "fBill";
             this.Text = "Danh sách hóa đơn";
             this.Load += new System.EventHandler(this.fBill_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gvlvBillInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFromDate.Properties.CalendarTimeProperties)).EndInit();
@@ -264,5 +287,6 @@
         private DevExpress.XtraEditors.SimpleButton btnNext;
         private DevExpress.XtraEditors.TextEdit txtNumPageBill;
         private CustomComponent.ButtonBoTron btnExportEx;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvlvBillInfo;
     }
 }

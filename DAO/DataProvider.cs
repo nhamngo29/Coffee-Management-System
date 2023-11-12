@@ -9,6 +9,7 @@ namespace DAO
     public class DataProvider
     {
         private static DataProvider instance;
+        private readonly string Connectionstring=Properties.Settings.Default.ConnectionString01;
         public static DataProvider Instance
         {
             get
@@ -22,7 +23,7 @@ namespace DAO
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable table = new DataTable();
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(Connectionstring))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -49,7 +50,7 @@ namespace DAO
         }
         public bool TestConnection()
         {
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(Connectionstring))
             {
                 try
                 {
@@ -66,7 +67,7 @@ namespace DAO
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int row = 0;
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(Connectionstring))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -93,7 +94,7 @@ namespace DAO
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(Connectionstring))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);

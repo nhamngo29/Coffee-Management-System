@@ -11,18 +11,20 @@ namespace DTO
     public class DetailImport
     {
         public int IdImport { get; set; }
-        public int IdPorduct { get; set; }
+        public int ID { get; set; }
         public int Quantity { get; set; }
         public float Price { get; set; }
         public string NameProduct { get; set; }
+        public string Unit {  get; set; }
 
-        public DetailImport(int idImport, int idPorduct, int quantity, float price, string nameProduct)
+        public DetailImport(int idImport, int iD, int quantity, float price, string nameProduct, string unit)
         {
             IdImport = idImport;
-            IdPorduct = idPorduct;
+            ID = iD;
             Quantity = quantity;
             Price = price;
             NameProduct = nameProduct;
+            Unit = unit;
         }
 
         public DetailImport()
@@ -31,10 +33,11 @@ namespace DTO
         public DetailImport(DataRow row)
         {
             IdImport = (int)row["IdImport"];
-            IdPorduct = (int)row["IdPorduct"];
+            ID = (int)row["ID"];
             Quantity = (int)row["Quantity"];
             Price = (int)row["Price"];
             NameProduct = (string)row["NameProduct"];
+            Unit = (string)row["Unit"];
         }
     }
 }

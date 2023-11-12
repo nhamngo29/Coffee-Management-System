@@ -25,7 +25,7 @@ namespace DAO
 
         public DataTable GetAll()
         {
-            string query = "select * from Import";
+            string query = "select * from ImportProduct";
             try
             {
                 return DataProvider.Instance.ExecuteQuery(query);
