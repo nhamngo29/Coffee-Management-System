@@ -18,7 +18,7 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             _fLogin = new fLogin();
-            Application.Run(_fLogin);
+            Application.Run(new fImport());
         }
     }
 }

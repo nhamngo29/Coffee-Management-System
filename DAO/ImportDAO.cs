@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -34,6 +35,33 @@ namespace DAO
             {
                 throw ex;
             }
+        }
+        public Import GetImportMax()
+        {
+            List<Import> list = new List<Import>();
+            string query = "SELECT TOP 1 * FROM ImportProduct ORDER BY ID DESC";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                Import type = new Import(row);
+                list.Add(type);
+            }
+            return list[0];
+        }
+        public bool Insert(Import import)
+        {
+            string query = string.Format("SP_InsertImportProduct @Date , @IdStaff , @IdSupplier , @Note");
+            int result;
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(query,
+                    new object[] { import.ImportDate, import.IdStaff, import.IdSupplier, import.Note});
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result > 0;
         }
     }
 }

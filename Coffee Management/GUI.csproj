@@ -508,7 +508,7 @@
     <Content Include="Resources\icon-developer-icon - Copy.png" />
     <Content Include="Resources\icon-developer-icon.png" />
     <Content Include="Resources\LogoSimple.bmp" />
-    <Content Include="Resources\LogoSimple.png" />
+    <None Include="Resources\LogoSimple.png" />
     <Content Include="Resources\logout-icon - Copy.png" />
     <Content Include="Resources\logout-icon.png" />
     <Content Include="Resources\Presentation-icon - Copy.png" />

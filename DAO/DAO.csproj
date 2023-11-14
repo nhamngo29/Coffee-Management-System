@@ -97,6 +97,7 @@
     <Compile Include="ScreenDAO.cs" />
     <Compile Include="SecurityDAO.cs" />
     <Compile Include="StaffDAO.cs" />
+    <Compile Include="SupplierDAO.cs" />
     <Compile Include="TableDAO.cs" />
     <Compile Include="TempBillDAO.cs" />
     <Compile Include="TypeFoodDAO.cs" />

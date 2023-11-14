@@ -208,13 +208,16 @@
   <data name="Button-Next-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button-Next-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Backup-restore-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Backup-restore-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="email-send-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\email-send-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Backup-restore-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Backup-restore-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LogoSimple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoSimple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

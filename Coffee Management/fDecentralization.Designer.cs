@@ -62,6 +62,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.accountTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountTableAdapter();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhomNguoiDungBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
@@ -186,8 +187,10 @@
             this.tableAdapterManager.BookingDKTableAdapter = null;
             this.tableAdapterManager.BookingTableAdapter = null;
             this.tableAdapterManager.CategoryFoodTableAdapter = null;
+            this.tableAdapterManager.DetailImportProductTableAdapter = null;
             this.tableAdapterManager.discountTableAdapter = null;
             this.tableAdapterManager.FoodTableAdapter = null;
+            this.tableAdapterManager.ImportProductTableAdapter = null;
             this.tableAdapterManager.NhomNguoiDungTableAdapter = null;
             this.tableAdapterManager.PhanQuyenTableAdapter = null;
             this.tableAdapterManager.ScreenTableAdapter = null;
@@ -309,11 +312,20 @@
             // 
             this.accountTableAdapter.ClearBeforeFill = true;
             // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(10, 618);
+            this.splitterControl1.TabIndex = 10;
+            this.splitterControl1.TabStop = false;
+            // 
             // fDecentralization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1408, 618);
+            this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.phanQuyenDataGridView);
             this.Controls.Add(this.getPhanQuyenDataGridView);
             this.Controls.Add(this.btn_Save);
@@ -376,5 +388,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private Data.CoffeeDataSetTableAdapters.AccountTableAdapter accountTableAdapter;
+        private DevExpress.XtraEditors.SplitterControl splitterControl1;
     }
 }
