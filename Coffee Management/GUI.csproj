@@ -277,6 +277,12 @@
     <Compile Include="fStatistics.Designer.cs">
       <DependentUpon>fStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="fStatisticsImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fStatisticsImport.Designer.cs">
+      <DependentUpon>fStatisticsImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="fTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fStatistics.resx">
       <DependentUpon>fStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fStatisticsImport.resx">
+      <DependentUpon>fStatisticsImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTable.resx">
       <DependentUpon>fTable.cs</DependentUpon>

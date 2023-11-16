@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBill));
             this.gvlvBillInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Amnout = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcBill = new DevExpress.XtraGrid.GridControl();
             this.gvBill = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.deFromDate = new DevExpress.XtraEditors.DateEdit();
@@ -60,18 +65,68 @@
             this.gvlvBillInfo.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvlvBillInfo.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvlvBillInfo.Appearance.Row.Options.UseFont = true;
+            this.gvlvBillInfo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.Name,
+            this.Amnout,
+            this.Price,
+            this.Total});
             this.gvlvBillInfo.GridControl = this.gcBill;
             this.gvlvBillInfo.Name = "gvlvBillInfo";
+            // 
+            // ID
+            // 
+            this.ID.Caption = "Mã món";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 0;
+            // 
+            // Name
+            // 
+            this.Name.Caption = "Tên món";
+            this.Name.FieldName = "Name";
+            this.Name.Name = "Name";
+            this.Name.Visible = true;
+            this.Name.VisibleIndex = 1;
+            // 
+            // Amnout
+            // 
+            this.Amnout.Caption = "Số lượng";
+            this.Amnout.FieldName = "Amnout";
+            this.Amnout.Name = "Amnout";
+            this.Amnout.Visible = true;
+            this.Amnout.VisibleIndex = 2;
+            // 
+            // Price
+            // 
+            this.Price.Caption = "Giá";
+            this.Price.DisplayFormat.FormatString = "{0:0,0 VND}";
+            this.Price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.Price.FieldName = "Price";
+            this.Price.Name = "Price";
+            this.Price.Visible = true;
+            this.Price.VisibleIndex = 3;
+            // 
+            // Total
+            // 
+            this.Total.Caption = "Tổng tiền";
+            this.Total.DisplayFormat.FormatString = "{0:0,0 VND}";
+            this.Total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.Total.FieldName = "Total";
+            this.Total.Name = "Total";
+            this.Total.Visible = true;
+            this.Total.VisibleIndex = 4;
             // 
             // gcBill
             // 
             this.gcBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode1.LevelTemplate = this.gvlvBillInfo;
-            gridLevelNode1.RelationName = "Chi tiết hóa đơn";
+            gridLevelNode2.LevelTemplate = this.gvlvBillInfo;
+            gridLevelNode2.RelationName = "Chi tiết hóa đơn";
             this.gcBill.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gcBill.Location = new System.Drawing.Point(0, 90);
             this.gcBill.MainView = this.gvBill;
             this.gcBill.Name = "gcBill";
@@ -256,7 +311,7 @@
             this.Controls.Add(this.deToDate);
             this.Controls.Add(this.deFromDate);
             this.Controls.Add(this.gcBill);
-            this.Name = "fBill";
+
             this.Text = "Danh sách hóa đơn";
             this.Load += new System.EventHandler(this.fBill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvlvBillInfo)).EndInit();
@@ -288,5 +343,10 @@
         private DevExpress.XtraEditors.TextEdit txtNumPageBill;
         private CustomComponent.ButtonBoTron btnExportEx;
         private DevExpress.XtraGrid.Views.Grid.GridView gvlvBillInfo;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn Name;
+        private DevExpress.XtraGrid.Columns.GridColumn Amnout;
+        private DevExpress.XtraGrid.Columns.GridColumn Price;
+        private DevExpress.XtraGrid.Columns.GridColumn Total;
     }
 }

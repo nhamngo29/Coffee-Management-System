@@ -381,6 +381,11 @@
             // 
             this.nbGia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nbGia.Location = new System.Drawing.Point(549, 48);
+            this.nbGia.Maximum = new decimal(new int[] {
+            410065408,
+            2,
+            0,
+            0});
             this.nbGia.Minimum = new decimal(new int[] {
             1,
             0,

@@ -62,5 +62,16 @@ namespace BUS
                 throw;
             }
         }
+        public double TotalAmountByMothAndYear(int Year, int Month)
+        {
+            try
+            {
+                return ImportDAO.Instance.TotalAmountByMothAndYear(Year, Month);
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

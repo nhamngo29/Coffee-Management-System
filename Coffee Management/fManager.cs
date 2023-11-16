@@ -345,5 +345,22 @@ namespace GUI
                 f.Show();
             }
         }
+
+        private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fStatisticsImport));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                fStatisticsImport f = new fStatisticsImport();
+                f.MdiParent = this;
+                f.Show();
+                SplashScreenManager.CloseForm();
+            }
+        }
     }
 }

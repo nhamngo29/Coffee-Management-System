@@ -51,6 +51,8 @@ namespace GUI
                 gvBill.Columns[3].DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
                 //gvBill.Columns[3].
                 gvBill.Columns[4].Caption = "Giảm giá";
+                gvBill.Columns[5].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gvBill.Columns[5].DisplayFormat.FormatString = "{0:0,0 VND}";
                 gvBill.Columns[5].Caption = "Tổng tiền";
                 gvBill.Columns[6].Caption = "Nhân viên";
                 RepositoryItemLookUpEdit myLookup = new RepositoryItemLookUpEdit();
