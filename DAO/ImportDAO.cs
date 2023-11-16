@@ -50,12 +50,12 @@ namespace DAO
         }
         public bool Insert(Import import)
         {
-            string query = string.Format("SP_InsertImportProduct @Date , @IdStaff , @IdSupplier , @Note");
+            string query = string.Format("SP_InsertImportProduct @IdStaff , @IdSupplier , @Note , @NameImportPorduct");
             int result;
             try
             {
                 result = DataProvider.Instance.ExecuteNonQuery(query,
-                    new object[] { import.ImportDate, import.IdStaff, import.IdSupplier, import.Note});
+                    new object[] {import.IdStaff, import.IdSupplier, import.Note,import.NameImportPorduct});
             }
             catch (Exception ex)
             {

@@ -67,6 +67,7 @@
     <Compile Include="BillInfoBUS.cs" />
     <Compile Include="BookingBUS.cs" />
     <Compile Include="CategoryBUS.cs" />
+    <Compile Include="DetailImportBUS.cs" />
     <Compile Include="DiscountBUS.cs" />
     <Compile Include="FoodBUS.cs" />
     <Compile Include="ImportBUS.cs" />

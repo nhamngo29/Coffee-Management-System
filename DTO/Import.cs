@@ -15,22 +15,25 @@ namespace DTO
         public int IdStaff { get; set; }
         public string IdSupplier { get; set; }
         public string Note {  get; set; }
+        public string NameImportPorduct { get; set; }
 
-        public Import(int iD, DateTime importDate, int idStaff, string supplier, string note)
+        public Import(int iD, DateTime importDate, int idStaff, string supplier, string note,string nameImportPorduct)
         {
             ID = iD;
             ImportDate = importDate;
             IdStaff = idStaff;
             IdSupplier = supplier;
             Note = note;
+            NameImportPorduct=nameImportPorduct;
         }
 
-        public Import(DateTime importDate, int idStaff, string idSupplier, string note)
+        public Import(DateTime importDate, int idStaff, string idSupplier, string note, string nameImportPorduct)
         {
             ImportDate = importDate;
             IdStaff = idStaff;
             IdSupplier = idSupplier;
             Note = note;
+            NameImportPorduct= nameImportPorduct;
         }
 
         public Import()
@@ -44,6 +47,7 @@ namespace DTO
             IdStaff = (int)row["IdStaff"];
             IdSupplier = (string)row["IdSupplier"];
             Note = (string)row["Note"];
+            NameImportPorduct = (string)row["NameImportPorduct"];
         }
     }
 }

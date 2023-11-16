@@ -17,7 +17,7 @@ namespace GUI
     public partial class fManager : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         static int countBooking = 0;
-        private Account loginAccount;
+        public Account loginAccount;
         public Account LoginAccount
         {
             get { return loginAccount; }
@@ -330,20 +330,6 @@ namespace GUI
             }
         }
 
-        private void barButtonItem20_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Form frm = this.CheckFormExist(typeof(fImport));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                fImport f = new fImport();
-                f.MdiParent = this;
-                f.Show();
-            }
-        }
 
         private void btnNhapKho_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -354,7 +340,7 @@ namespace GUI
             }
             else
             {
-                fImport f = new fImport();
+                fImport f = new fImport(loginAccount);
                 f.MdiParent = this;
                 f.Show();
             }

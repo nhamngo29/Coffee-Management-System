@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace GUI
@@ -18,7 +19,7 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             _fLogin = new fLogin();
-            Application.Run(new fImport());
+            Application.Run(_fLogin);
         }
     }
 }

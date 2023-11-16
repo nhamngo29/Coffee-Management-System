@@ -46,8 +46,6 @@ namespace DTO
         }
         public DetailImport(DataRow row)
         {
-            IdImport = (int)row["IdImport"];
-            ID = (int)row["ID"];
             Quantity = (int)row["Quantity"];
             Price = (int)row["Price"];
             NameProduct = (string)row["NameProduct"];
