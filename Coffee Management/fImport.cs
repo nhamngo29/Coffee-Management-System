@@ -40,7 +40,13 @@ namespace GUI
             if(addImportProduct.result== 1)
             {
                 MessageBox.Show("Nhạp hàng thành công");
+                LoadData();
             }
+        }
+
+        private void btnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadData();
         }
     }
 }

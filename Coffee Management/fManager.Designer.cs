@@ -478,7 +478,7 @@
             // 
             // barButtonItem19
             // 
-            this.barButtonItem19.Caption = "Phân Quyền";
+            this.barButtonItem19.Caption = "Nhóm quyền";
             this.barButtonItem19.Id = 40;
             this.barButtonItem19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.Image")));
             this.barButtonItem19.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
@@ -511,8 +511,9 @@
             // 
             this.btnNhapKho.Caption = "Nhập kho";
             this.btnNhapKho.Id = 45;
-            this.btnNhapKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.Image")));
-            this.btnNhapKho.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.LargeImage")));
+            this.btnNhapKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapKho.ImageOptions.Image")));
+            this.btnNhapKho.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhapKho.ImageOptions.LargeImage")));
+            this.btnNhapKho.LargeWidth = 75;
             this.btnNhapKho.Name = "btnNhapKho";
             this.btnNhapKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapKho_ItemClick);
             // 
@@ -528,6 +529,8 @@
             // 
             this.barButtonItem24.Caption = "Thông kê theo tháng";
             this.barButtonItem24.Id = 47;
+            this.barButtonItem24.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem24.ImageOptions.SvgImage")));
+            this.barButtonItem24.LargeWidth = 75;
             this.barButtonItem24.Name = "barButtonItem24";
             // 
             // ribbonPage
