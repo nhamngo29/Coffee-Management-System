@@ -59,7 +59,9 @@
     <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.Chart.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Chart.Win.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotChart.Win.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -69,6 +71,7 @@
     <Reference Include="DevExpress.Sparkline.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Charts.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -147,8 +150,6 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -199,12 +200,6 @@
     <Compile Include="fAddTable.Designer.cs">
       <DependentUpon>fAddTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAddUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fAddUser.Designer.cs">
-      <DependentUpon>fAddUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="fBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,12 +217,6 @@
     </Compile>
     <Compile Include="fConfigure.Designer.cs">
       <DependentUpon>fConfigure.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fDecentralization.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fDecentralization.Designer.cs">
-      <DependentUpon>fDecentralization.cs</DependentUpon>
     </Compile>
     <Compile Include="fDiscount.cs">
       <SubType>Form</SubType>
@@ -264,6 +253,12 @@
     </Compile>
     <Compile Include="fReservation.Designer.cs">
       <DependentUpon>fReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fScreen.Designer.cs">
+      <DependentUpon>fScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="fStaff.cs">
       <SubType>Form</SubType>
@@ -359,9 +354,6 @@
     <EmbeddedResource Include="fAddTable.resx">
       <DependentUpon>fAddTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAddUser.resx">
-      <DependentUpon>fAddUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,9 +362,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fConfigure.resx">
       <DependentUpon>fConfigure.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fDecentralization.resx">
-      <DependentUpon>fDecentralization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fDiscount.resx">
       <DependentUpon>fDiscount.cs</DependentUpon>
@@ -391,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fReservation.resx">
       <DependentUpon>fReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fScreen.resx">
+      <DependentUpon>fScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>

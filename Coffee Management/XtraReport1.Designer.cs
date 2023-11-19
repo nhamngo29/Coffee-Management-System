@@ -53,7 +53,6 @@
             this.NgayLap = new DevExpress.XtraReports.Parameters.Parameter();
             this.MaPhieu = new DevExpress.XtraReports.Parameters.Parameter();
             this.Note = new DevExpress.XtraReports.Parameters.Parameter();
-            this.accountTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountTableAdapter();
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
@@ -327,10 +326,6 @@
             // 
             this.Note.Description = "Parameter1";
             this.Note.Name = "Note";
-            // 
-            // accountTableAdapter
-            // 
-            this.accountTableAdapter.ClearBeforeFill = true;
             // 
             // xrLabel16
             // 
@@ -663,7 +658,6 @@
             this.PageHeader});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
-            this.DataAdapter = this.accountTableAdapter;
             this.DataMember = "Query";
             this.DataSource = this.sqlDataSource1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
@@ -697,7 +691,6 @@
         private DevExpress.XtraReports.Parameters.Parameter NgayLap;
         private DevExpress.XtraReports.Parameters.Parameter MaPhieu;
         private DevExpress.XtraReports.Parameters.Parameter Note;
-        private Data.CoffeeDataSetTableAdapters.AccountTableAdapter accountTableAdapter;
         private DevExpress.XtraReports.UI.XRLabel xrLabel16;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRLabel xrLabel14;

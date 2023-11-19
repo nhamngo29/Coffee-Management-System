@@ -67,6 +67,7 @@
     <Compile Include="BillInfo.cs" />
     <Compile Include="Booking.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Decentralization.cs" />
     <Compile Include="DetailImport.cs" />
     <Compile Include="Discount.cs" />
     <Compile Include="Food.cs" />

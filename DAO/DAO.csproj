@@ -84,6 +84,7 @@
     <Compile Include="BookingDAO.cs" />
     <Compile Include="CategoryDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DecentralizationDAO.cs" />
     <Compile Include="DetailImportDAO.cs" />
     <Compile Include="DiscountDAO.cs" />
     <Compile Include="FoodDAO.cs" />

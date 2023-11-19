@@ -200,8 +200,6 @@
             this.tableAdapterManager1.CategoryFoodTableAdapter = null;
             this.tableAdapterManager1.discountTableAdapter = null;
             this.tableAdapterManager1.FoodTableAdapter = null;
-            this.tableAdapterManager1.NhomNguoiDungTableAdapter = null;
-            this.tableAdapterManager1.PhanQuyenTableAdapter = null;
             this.tableAdapterManager1.ScreenTableAdapter = null;
             this.tableAdapterManager1.staffTableAdapter = null;
             this.tableAdapterManager1.TableCoffeeTableAdapter = null;

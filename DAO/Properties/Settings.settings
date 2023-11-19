@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-0PQ4U60\SQLSERVER;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa</Value>
     </Setting>
     <Setting Name="ConnectionString01" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-Q57T1G3;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-0PQ4U60\SQLSERVER;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa</Value>
     </Setting>
   </Settings>
 </SettingsFile>
