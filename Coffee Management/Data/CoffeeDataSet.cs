@@ -12,6 +12,10 @@
 
 namespace GUI.Data.CoffeeDataSetTableAdapters
 {
+    partial class AccountRoleDKTableAdapter
+    {
+    }
+
     partial class tb_PhanQuynTableAdapter
     {
     }

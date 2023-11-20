@@ -548,6 +548,7 @@
             this.barButtonItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem19.ImageOptions.SvgImage")));
             this.barButtonItem19.Name = "barButtonItem19";
             this.barButtonItem19.Tag = "QL_11";
+            this.barButtonItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem19_ItemClick);
             // 
             // barButtonItem22
             // 
@@ -610,6 +611,7 @@
             this.ribbonPageGroupCateogry.Name = "ribbonPageGroupCateogry";
             this.ribbonPageGroupCateogry.Tag = "PG_DanhMuc";
             this.ribbonPageGroupCateogry.Text = "Danh mục";
+            this.ribbonPageGroupCateogry.Visible = false;
             // 
             // ribbonPageGroupStatictis
             // 
@@ -618,6 +620,7 @@
             this.ribbonPageGroupStatictis.Name = "ribbonPageGroupStatictis";
             this.ribbonPageGroupStatictis.Tag = "PG_ThongKe";
             this.ribbonPageGroupStatictis.Text = "Thống kê";
+            this.ribbonPageGroupStatictis.Visible = false;
             // 
             // ribbonPageGroup3
             // 
@@ -626,6 +629,7 @@
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Tag = "PG_NhanVien";
             this.ribbonPageGroup3.Text = "Nhân viên";
+            this.ribbonPageGroup3.Visible = false;
             // 
             // ribbonPageGroup4
             // 
@@ -634,6 +638,7 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Tag = "PG_PhanQuyen";
             this.ribbonPageGroup4.Text = "Phân quyền";
+            this.ribbonPageGroup4.Visible = false;
             // 
             // ribbonPageWarehouse
             // 
@@ -652,6 +657,7 @@
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Tag = "PG_NhapXuatKho";
             this.ribbonPageGroup5.Text = "Nhập xuất kho";
+            this.ribbonPageGroup5.Visible = false;
             // 
             // ribbonPageGroup6
             // 
@@ -659,6 +665,7 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Tag = "PG_ThongKeKhoHang";
             this.ribbonPageGroup6.Text = "Thống kê";
+            this.ribbonPageGroup6.Visible = false;
             // 
             // xtraTabbedMdiManager1
             // 

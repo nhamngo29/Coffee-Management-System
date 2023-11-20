@@ -265,9 +265,7 @@ namespace GUI
 
             if (AccountBUS.Instance.UpdateInformation(id,name,int.Parse(typeAccount),int.Parse(idStaff),active))
             {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                SplashScreenManager.CloseForm();
-                //Log.WriteLog("update Category: " + curName + " -> " + name);
+              
             }
             else
                 XtraMessageBox.Show("Update account thất bại", "Lỗi");

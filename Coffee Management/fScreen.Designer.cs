@@ -75,7 +75,6 @@
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.Account1TableAdapter = null;
             this.tableAdapterManager.AccountRoleTableAdapter = null;
             this.tableAdapterManager.AccountTableAdapter = null;
             this.tableAdapterManager.AccountTypeTableAdapter = null;

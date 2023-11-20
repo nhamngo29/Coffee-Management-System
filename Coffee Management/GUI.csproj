@@ -176,6 +176,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoffeeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="fDecentralization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDecentralization.Designer.cs">
+      <DependentUpon>fDecentralization.cs</DependentUpon>
+    </Compile>
     <Compile Include="fAddDisscount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     </Compile>
     <EmbeddedResource Include="AddImportProduct.resx">
       <DependentUpon>AddImportProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDecentralization.resx">
+      <DependentUpon>fDecentralization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAddDisscount.resx">
       <DependentUpon>fAddDisscount.cs</DependentUpon>

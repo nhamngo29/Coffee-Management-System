@@ -35,6 +35,7 @@ namespace GUI
             this.LoginAccount = loginAccount;
             lDecentralization = DecentralizationBUS.Instance.GetDecentralizationByUser(loginAccount.UserName);
             LoadManHinh();
+            SplashScreenManager.CloseForm();
         }
         void LoadManHinh()
         {
@@ -89,7 +90,7 @@ namespace GUI
             timer.Tick += Timer_Tick;
             timer.Start();
             barButtonItem6.PerformClick();
-            SplashScreenManager.CloseForm();
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -389,6 +390,23 @@ namespace GUI
             {
                 SplashScreenManager.ShowForm(typeof(WaitForm1));
                 fScreen f = new fScreen();
+                f.MdiParent = this;
+                f.Show();
+                SplashScreenManager.CloseForm();
+            }
+        }
+
+        private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fScreen));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                fDecentralization f = new fDecentralization();
                 f.MdiParent = this;
                 f.Show();
                 SplashScreenManager.CloseForm();
