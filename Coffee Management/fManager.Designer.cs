@@ -86,7 +86,7 @@
             this.ribbonPageGroupStatictis = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageWarehouse = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -167,7 +167,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager,
-            this.ribbonPage1});
+            this.ribbonPageWarehouse});
             this.ribbon.Size = new System.Drawing.Size(1542, 160);
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -364,7 +364,6 @@
             this.barButtonItem9.LargeWidth = 75;
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.Tag = "QL01";
-            this.barButtonItem9.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewFood_ItemClick);
             // 
             // barButtonItem10
@@ -375,7 +374,6 @@
             this.barButtonItem10.LargeWidth = 75;
             this.barButtonItem10.Name = "barButtonItem10";
             this.barButtonItem10.Tag = "QL02";
-            this.barButtonItem10.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barButtonItem11
@@ -386,7 +384,6 @@
             this.barButtonItem11.LargeWidth = 75;
             this.barButtonItem11.Name = "barButtonItem11";
             this.barButtonItem11.Tag = "QL03";
-            this.barButtonItem11.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewCategoryFood_ItemClick);
             // 
             // barButtonItem12
@@ -397,7 +394,6 @@
             this.barButtonItem12.LargeWidth = 75;
             this.barButtonItem12.Name = "barButtonItem12";
             this.barButtonItem12.Tag = "QL04";
-            this.barButtonItem12.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewTable_ItemClick);
             // 
             // barButtonItem13
@@ -409,7 +405,6 @@
             this.barButtonItem13.LargeWidth = 75;
             this.barButtonItem13.Name = "barButtonItem13";
             this.barButtonItem13.Tag = "QL08";
-            this.barButtonItem13.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewAccount_ItemClick);
             // 
             // btnViewDiscount
@@ -421,7 +416,6 @@
             this.btnViewDiscount.LargeWidth = 75;
             this.btnViewDiscount.Name = "btnViewDiscount";
             this.btnViewDiscount.Tag = "QL05";
-            this.btnViewDiscount.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnViewDiscount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewDiscount_ItemClick);
             // 
             // barButtonItem15
@@ -432,7 +426,6 @@
             this.barButtonItem15.LargeWidth = 75;
             this.barButtonItem15.Name = "barButtonItem15";
             this.barButtonItem15.Tag = "QL06";
-            this.barButtonItem15.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewBill_ItemClick);
             // 
             // barButtonItem16
@@ -443,7 +436,6 @@
             this.barButtonItem16.LargeWidth = 75;
             this.barButtonItem16.Name = "barButtonItem16";
             this.barButtonItem16.Tag = "QL07";
-            this.barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStatistic_ItemClick);
             // 
             // barButtonItem14
@@ -487,7 +479,6 @@
             this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
             this.barButtonItem18.Name = "barButtonItem18";
             this.barButtonItem18.Tag = "QL09";
-            this.barButtonItem18.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem18.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
             // 
             // btnMonitor
@@ -498,7 +489,6 @@
             this.btnMonitor.LargeWidth = 75;
             this.btnMonitor.Name = "btnMonitor";
             this.btnMonitor.Tag = "QL10";
-            this.btnMonitor.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnMonitor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonitor_ItemClick);
             // 
             // babtn_AddUser
@@ -530,7 +520,6 @@
             this.btnNhapKho.LargeWidth = 75;
             this.btnNhapKho.Name = "btnNhapKho";
             this.btnNhapKho.Tag = "KH01";
-            this.btnNhapKho.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnNhapKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapKho_ItemClick);
             // 
             // barButtonItem23
@@ -540,8 +529,7 @@
             this.barButtonItem23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.Image")));
             this.barButtonItem23.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.LargeImage")));
             this.barButtonItem23.Name = "barButtonItem23";
-            this.barButtonItem23.Tag = "KH01";
-            this.barButtonItem23.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barButtonItem23.Tag = "KH02";
             // 
             // barButtonItem24
             // 
@@ -550,8 +538,7 @@
             this.barButtonItem24.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem24.ImageOptions.SvgImage")));
             this.barButtonItem24.LargeWidth = 75;
             this.barButtonItem24.Name = "barButtonItem24";
-            this.barButtonItem24.Tag = "KH01";
-            this.barButtonItem24.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barButtonItem24.Tag = "KH03";
             this.barButtonItem24.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem24_ItemClick);
             // 
             // barButtonItem19
@@ -561,7 +548,6 @@
             this.barButtonItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem19.ImageOptions.SvgImage")));
             this.barButtonItem19.Name = "barButtonItem19";
             this.barButtonItem19.Tag = "QL_11";
-            this.barButtonItem19.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barButtonItem22
             // 
@@ -577,13 +563,14 @@
             this.ribbonPage.Name = "ribbonPage";
             this.ribbonPage.Tag = "ChucNang";
             this.ribbonPage.Text = "Chức năng";
+            this.ribbonPage.Visible = false;
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem14);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Tag = "NhomCN01";
+            this.ribbonPageGroup1.Tag = "PG_ChucNang";
             this.ribbonPageGroup1.Text = "Chức năng";
             // 
             // ribbonPageGroupSystem
@@ -591,7 +578,7 @@
             this.ribbonPageGroupSystem.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroupSystem.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroupSystem.Name = "ribbonPageGroupSystem";
-            this.ribbonPageGroupSystem.Tag = "NhomCN02";
+            this.ribbonPageGroupSystem.Tag = "PG_HeThong";
             this.ribbonPageGroupSystem.Text = "Hệ thống";
             // 
             // ribbonPageGroup2
@@ -648,27 +635,29 @@
             this.ribbonPageGroup4.Tag = "PG_PhanQuyen";
             this.ribbonPageGroup4.Text = "Phân quyền";
             // 
-            // ribbonPage1
+            // ribbonPageWarehouse
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageWarehouse.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
             this.ribbonPageGroup6});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Tag = "KhoHang";
-            this.ribbonPage1.Text = "Kho hàng";
-            this.ribbonPage1.Visible = false;
+            this.ribbonPageWarehouse.Name = "ribbonPageWarehouse";
+            this.ribbonPageWarehouse.Tag = "KhoHang";
+            this.ribbonPageWarehouse.Text = "Kho hàng";
+            this.ribbonPageWarehouse.Visible = false;
             // 
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btnNhapKho);
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem23);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Tag = "PG_NhapXuatKho";
             this.ribbonPageGroup5.Text = "Nhập xuất kho";
             // 
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem24);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Tag = "PG_ThongKeKhoHang";
             this.ribbonPageGroup6.Text = "Thống kê";
             // 
             // xtraTabbedMdiManager1
@@ -821,7 +810,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem20;
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
         private DevExpress.XtraBars.BarButtonItem btnNhapKho;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageWarehouse;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;

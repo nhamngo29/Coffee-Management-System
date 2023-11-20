@@ -32,14 +32,14 @@ namespace DAO
             //str_md5=str_md5.Reverse().ToString();
             return str_md5;
         }
-        public bool Insert(string userName, string displayName, int typeID)
+        public bool Insert(string userName, string displayName, int typeID,int IdStaff)
         {
-            string query = string.Format("SP_InsertAccount @UserName , @DisplayName , @TypeID , @Pass");
+            string query = string.Format("SP_InsertAccount @UserName , @DisplayName , @TypeID , @Pass , @IdStaff");
             int result;
             try
             {
                 result = DataProvider.Instance.ExecuteNonQuery(query,
-                    new object[] { userName, displayName, typeID , GetMD5("1")});
+                    new object[] { userName, displayName, typeID , GetMD5("1") , IdStaff });
             }
             catch (Exception ex)
             {

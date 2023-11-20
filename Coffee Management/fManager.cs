@@ -43,57 +43,42 @@ namespace GUI
                 switch (item.IDRole)
                 {
                     case 1:
+                        ribbonPage.Visible = true;
                         ribbonPageManager.Visible = true;
+                        ribbonPageWarehouse.Visible = true;
                         CheckAllChildVisible(this.ribbonPageManager, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPageWarehouse, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
                         break;
                     case 2:
+                        ribbonPage.Visible = true;
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
                         break;
                     case 3:
+                        ribbonPage.Visible = true;
                         ribbonPageManager.Visible = true;
-                        ribbonPage1.Visible= true;
+                        ribbonPageWarehouse.Visible = true;
                         CheckAllChildVisible(this.ribbonPageManager, item.IDScreen, item.Visible);
-                        CheckAllChildVisible(this.ribbonPage1, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPageWarehouse, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
                         break;
                     case 4:
-                        ribbonPage1.Visible = true;
-                        CheckAllChildVisible(this.ribbonPage1, item.IDScreen, item.Visible);
+                        ribbonPage.Visible = true;
+                        ribbonPageWarehouse.Visible = true;
+                        CheckAllChildVisible(this.ribbonPageWarehouse, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
                         break;
                 }
             }
-        }
-
-        private bool CheckAllMenuChildVisible(ToolStripItemCollection mnuItems)
-        {
-            foreach (ToolStripItem menuItem in mnuItems)
-            {
-                if (menuItem is ToolStripMenuItem && menuItem.Enabled)
-                {
-                    return true;
-                }
-                else if (menuItem is ToolStripSeparator)
-                {
-                    continue;
-                }
-            }
-            return false;
-
         }
         private void CheckAllChildVisible(RibbonPage mnuItems, string Screen, bool Visible)
         {
             foreach (RibbonPageGroup group in mnuItems.Groups)
             {
-                foreach (BarItemLink link in group.ItemLinks)
+                if(string.Equals(group.Tag,Screen))
                 {
-                    if (link.Item is BarButtonItem)
-                    {
-                        if (string.Equals(link.Item.Tag.ToString(), Screen))
-                        {
-                            link.Item.Enabled = Visible;
-                            link.Item.Visibility = 0;
-                            return;
-                        }
-                    }
-                }
+                    group.Visible= Visible;
+                }    
             }
         }
         private void fManager_Load(object sender, EventArgs e)

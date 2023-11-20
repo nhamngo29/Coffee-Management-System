@@ -4,6 +4,9 @@
 
     partial class CoffeeDataSet
     {
+        partial class DecentralizationDataTable
+        {
+        }
     }
 }
 
