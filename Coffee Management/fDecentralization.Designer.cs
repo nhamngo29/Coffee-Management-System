@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDecentralization));
             this.coffeeDataSet = new GUI.Data.CoffeeDataSet();
-            this.rOLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rOLETableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.ROLETableAdapter();
+            this.accountRoleDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountRoleDKTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountRoleDKTableAdapter();
             this.tableAdapterManager = new GUI.Data.CoffeeDataSetTableAdapters.TableAdapterManager();
-            this.rOLEBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.accountRoleTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountRoleTableAdapter();
+            this.accountRoleDKBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -46,35 +47,30 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.rOLEBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.rOLEComboBox = new System.Windows.Forms.ComboBox();
-            this.accountRoleDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountRoleDKTableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.AccountRoleDKTableAdapter();
+            this.accountRoleDKBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.fillToolStrip = new System.Windows.Forms.ToolStrip();
+            this.roleIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.roleIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.accountRoleDKGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUserName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDisplayName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.accountDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountStaff = new GUI.Data.CoffeeDataSetTableAdapters.AccountStaff();
-            this.accountStaffGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colUserName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDOB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.accountRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountRoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.accountRoleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.rOLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rOLETableAdapter = new GUI.Data.CoffeeDataSetTableAdapters.ROLETableAdapter();
+            this.rOLEComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingNavigator)).BeginInit();
-            this.rOLEBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountRoleDKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleDKBindingNavigator)).BeginInit();
+            this.accountRoleDKBindingNavigator.SuspendLayout();
+            this.fillToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountRoleDKGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountDKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountStaffBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountStaffGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // coffeeDataSet
@@ -82,18 +78,18 @@
             this.coffeeDataSet.DataSetName = "CoffeeDataSet";
             this.coffeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // rOLEBindingSource
+            // accountRoleDKBindingSource
             // 
-            this.rOLEBindingSource.DataMember = "ROLE";
-            this.rOLEBindingSource.DataSource = this.coffeeDataSet;
+            this.accountRoleDKBindingSource.DataMember = "AccountRoleDK";
+            this.accountRoleDKBindingSource.DataSource = this.coffeeDataSet;
             // 
-            // rOLETableAdapter
+            // accountRoleDKTableAdapter
             // 
-            this.rOLETableAdapter.ClearBeforeFill = true;
+            this.accountRoleDKTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.AccountRoleTableAdapter = null;
+            this.tableAdapterManager.AccountRoleTableAdapter = this.accountRoleTableAdapter;
             this.tableAdapterManager.AccountTableAdapter = null;
             this.tableAdapterManager.AccountTypeTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -107,7 +103,7 @@
             this.tableAdapterManager.discountTableAdapter = null;
             this.tableAdapterManager.FoodTableAdapter = null;
             this.tableAdapterManager.ImportProductTableAdapter = null;
-            this.tableAdapterManager.ROLETableAdapter = this.rOLETableAdapter;
+            this.tableAdapterManager.ROLETableAdapter = null;
             this.tableAdapterManager.ScreenTableAdapter = null;
             this.tableAdapterManager.staffTableAdapter = null;
             this.tableAdapterManager.SupplierTableAdapter = null;
@@ -115,13 +111,17 @@
             this.tableAdapterManager.TypeFoodTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = GUI.Data.CoffeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // rOLEBindingNavigator
+            // accountRoleTableAdapter
             // 
-            this.rOLEBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.rOLEBindingNavigator.BindingSource = this.rOLEBindingSource;
-            this.rOLEBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.rOLEBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.rOLEBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accountRoleTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountRoleDKBindingNavigator
+            // 
+            this.accountRoleDKBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.accountRoleDKBindingNavigator.BindingSource = this.accountRoleDKBindingSource;
+            this.accountRoleDKBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.accountRoleDKBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.accountRoleDKBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -133,17 +133,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.rOLEBindingNavigatorSaveItem});
-            this.rOLEBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.rOLEBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.rOLEBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.rOLEBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.rOLEBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.rOLEBindingNavigator.Name = "rOLEBindingNavigator";
-            this.rOLEBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.rOLEBindingNavigator.Size = new System.Drawing.Size(1046, 25);
-            this.rOLEBindingNavigator.TabIndex = 0;
-            this.rOLEBindingNavigator.Text = "bindingNavigator1";
+            this.accountRoleDKBindingNavigatorSaveItem});
+            this.accountRoleDKBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.accountRoleDKBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.accountRoleDKBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.accountRoleDKBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.accountRoleDKBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.accountRoleDKBindingNavigator.Name = "accountRoleDKBindingNavigator";
+            this.accountRoleDKBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.accountRoleDKBindingNavigator.Size = new System.Drawing.Size(1097, 25);
+            this.accountRoleDKBindingNavigator.TabIndex = 0;
+            this.accountRoleDKBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -231,167 +231,124 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // rOLEBindingNavigatorSaveItem
+            // accountRoleDKBindingNavigatorSaveItem
             // 
-            this.rOLEBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.rOLEBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("rOLEBindingNavigatorSaveItem.Image")));
-            this.rOLEBindingNavigatorSaveItem.Name = "rOLEBindingNavigatorSaveItem";
-            this.rOLEBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.rOLEBindingNavigatorSaveItem.Text = "Save Data";
-            this.rOLEBindingNavigatorSaveItem.Click += new System.EventHandler(this.rOLEBindingNavigatorSaveItem_Click_3);
+            this.accountRoleDKBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.accountRoleDKBindingNavigatorSaveItem.Enabled = false;
+            this.accountRoleDKBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("accountRoleDKBindingNavigatorSaveItem.Image")));
+            this.accountRoleDKBindingNavigatorSaveItem.Name = "accountRoleDKBindingNavigatorSaveItem";
+            this.accountRoleDKBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.accountRoleDKBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // rOLEComboBox
+            // fillToolStrip
             // 
-            this.rOLEComboBox.DataSource = this.rOLEBindingSource;
-            this.rOLEComboBox.DisplayMember = "TypeName";
-            this.rOLEComboBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rOLEComboBox.FormattingEnabled = true;
-            this.rOLEComboBox.Location = new System.Drawing.Point(0, 25);
-            this.rOLEComboBox.Name = "rOLEComboBox";
-            this.rOLEComboBox.Size = new System.Drawing.Size(1046, 21);
-            this.rOLEComboBox.TabIndex = 1;
-            this.rOLEComboBox.ValueMember = "ID";
-            this.rOLEComboBox.SelectedValueChanged += new System.EventHandler(this.rOLEComboBox_SelectedValueChanged_2);
+            this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.roleIDToolStripLabel,
+            this.roleIDToolStripTextBox,
+            this.fillToolStripButton});
+            this.fillToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillToolStrip.Name = "fillToolStrip";
+            this.fillToolStrip.Size = new System.Drawing.Size(1097, 25);
+            this.fillToolStrip.TabIndex = 1;
+            this.fillToolStrip.Text = "fillToolStrip";
             // 
-            // accountRoleDKBindingSource
+            // roleIDToolStripLabel
             // 
-            this.accountRoleDKBindingSource.DataMember = "AccountRoleDK";
-            this.accountRoleDKBindingSource.DataSource = this.coffeeDataSet;
+            this.roleIDToolStripLabel.Name = "roleIDToolStripLabel";
+            this.roleIDToolStripLabel.Size = new System.Drawing.Size(44, 22);
+            this.roleIDToolStripLabel.Text = "RoleID:";
             // 
-            // accountRoleDKTableAdapter
+            // roleIDToolStripTextBox
             // 
-            this.accountRoleDKTableAdapter.ClearBeforeFill = true;
+            this.roleIDToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.roleIDToolStripTextBox.Name = "roleIDToolStripTextBox";
+            this.roleIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillToolStripButton
+            // 
+            this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillToolStripButton.Name = "fillToolStripButton";
+            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
+            this.fillToolStripButton.Text = "Fill";
+            this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
             // 
             // accountRoleDKGridControl
             // 
             this.accountRoleDKGridControl.DataSource = this.accountRoleDKBindingSource;
-            this.accountRoleDKGridControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.accountRoleDKGridControl.Location = new System.Drawing.Point(0, 46);
+            this.accountRoleDKGridControl.Location = new System.Drawing.Point(695, 189);
             this.accountRoleDKGridControl.MainView = this.gridView1;
             this.accountRoleDKGridControl.Name = "accountRoleDKGridControl";
-            this.accountRoleDKGridControl.Size = new System.Drawing.Size(530, 459);
-            this.accountRoleDKGridControl.TabIndex = 3;
+            this.accountRoleDKGridControl.Size = new System.Drawing.Size(355, 287);
+            this.accountRoleDKGridControl.TabIndex = 2;
             this.accountRoleDKGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colTypeName,
-            this.colUserName,
-            this.colDisplayName,
-            this.colName});
             this.gridView1.GridControl = this.accountRoleDKGridControl;
             this.gridView1.Name = "gridView1";
             // 
-            // colTypeName
+            // accountRoleBindingSource
             // 
-            this.colTypeName.FieldName = "TypeName";
-            this.colTypeName.Name = "colTypeName";
-            this.colTypeName.Visible = true;
-            this.colTypeName.VisibleIndex = 0;
+            this.accountRoleBindingSource.DataMember = "AccountRole";
+            this.accountRoleBindingSource.DataSource = this.coffeeDataSet;
             // 
-            // colUserName
+            // accountRoleBindingSource1
             // 
-            this.colUserName.FieldName = "UserName";
-            this.colUserName.Name = "colUserName";
-            this.colUserName.Visible = true;
-            this.colUserName.VisibleIndex = 1;
+            this.accountRoleBindingSource1.DataMember = "AccountRole";
+            this.accountRoleBindingSource1.DataSource = this.coffeeDataSet;
             // 
-            // colDisplayName
+            // accountRoleBindingSource2
             // 
-            this.colDisplayName.FieldName = "DisplayName";
-            this.colDisplayName.Name = "colDisplayName";
-            this.colDisplayName.Visible = true;
-            this.colDisplayName.VisibleIndex = 2;
+            this.accountRoleBindingSource2.DataMember = "AccountRole";
+            this.accountRoleBindingSource2.DataSource = this.coffeeDataSet;
             // 
-            // colName
+            // rOLEBindingSource
             // 
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 3;
+            this.rOLEBindingSource.DataMember = "ROLE";
+            this.rOLEBindingSource.DataSource = this.coffeeDataSet;
             // 
-            // accountDKBindingSource
+            // rOLETableAdapter
             // 
-            this.accountDKBindingSource.DataSource = this.coffeeDataSet;
-            this.accountDKBindingSource.Position = 0;
+            this.rOLETableAdapter.ClearBeforeFill = true;
             // 
-            // accountStaffBindingSource
+            // rOLEComboBox
             // 
-            this.accountStaffBindingSource.DataMember = "AccountStaff";
-            this.accountStaffBindingSource.DataSource = this.coffeeDataSet;
-            // 
-            // accountStaff
-            // 
-            this.accountStaff.ClearBeforeFill = true;
-            // 
-            // accountStaffGridControl
-            // 
-            this.accountStaffGridControl.DataSource = this.accountStaffBindingSource;
-            this.accountStaffGridControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.accountStaffGridControl.Location = new System.Drawing.Point(553, 46);
-            this.accountStaffGridControl.MainView = this.gridView2;
-            this.accountStaffGridControl.Name = "accountStaffGridControl";
-            this.accountStaffGridControl.Size = new System.Drawing.Size(493, 459);
-            this.accountStaffGridControl.TabIndex = 4;
-            this.accountStaffGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colUserName1,
-            this.colName1,
-            this.colDOB});
-            this.gridView2.GridControl = this.accountStaffGridControl;
-            this.gridView2.Name = "gridView2";
-            // 
-            // colUserName1
-            // 
-            this.colUserName1.FieldName = "UserName";
-            this.colUserName1.Name = "colUserName1";
-            this.colUserName1.Visible = true;
-            this.colUserName1.VisibleIndex = 0;
-            // 
-            // colName1
-            // 
-            this.colName1.FieldName = "Name";
-            this.colName1.Name = "colName1";
-            this.colName1.Visible = true;
-            this.colName1.VisibleIndex = 1;
-            // 
-            // colDOB
-            // 
-            this.colDOB.FieldName = "DOB";
-            this.colDOB.Name = "colDOB";
-            this.colDOB.Visible = true;
-            this.colDOB.VisibleIndex = 2;
+            this.rOLEComboBox.DataSource = this.rOLEBindingSource;
+            this.rOLEComboBox.DisplayMember = "TypeName";
+            this.rOLEComboBox.FormattingEnabled = true;
+            this.rOLEComboBox.Location = new System.Drawing.Point(705, 129);
+            this.rOLEComboBox.Name = "rOLEComboBox";
+            this.rOLEComboBox.Size = new System.Drawing.Size(355, 21);
+            this.rOLEComboBox.TabIndex = 3;
+            this.rOLEComboBox.ValueMember = "ID";
+            this.rOLEComboBox.SelectionChangeCommitted += new System.EventHandler(this.rOLEComboBox_SelectionChangeCommitted);
             // 
             // fDecentralization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 505);
-            this.Controls.Add(this.accountStaffGridControl);
-            this.Controls.Add(this.accountRoleDKGridControl);
+            this.ClientSize = new System.Drawing.Size(1097, 525);
             this.Controls.Add(this.rOLEComboBox);
-            this.Controls.Add(this.rOLEBindingNavigator);
+            this.Controls.Add(this.accountRoleDKGridControl);
+            this.Controls.Add(this.fillToolStrip);
+            this.Controls.Add(this.accountRoleDKBindingNavigator);
             this.Name = "fDecentralization";
             this.Text = "Decentralization";
-            this.Load += new System.EventHandler(this.Decentralization_Load);
+            this.Load += new System.EventHandler(this.fDecentralization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingNavigator)).EndInit();
-            this.rOLEBindingNavigator.ResumeLayout(false);
-            this.rOLEBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountRoleDKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleDKBindingNavigator)).EndInit();
+            this.accountRoleDKBindingNavigator.ResumeLayout(false);
+            this.accountRoleDKBindingNavigator.PerformLayout();
+            this.fillToolStrip.ResumeLayout(false);
+            this.fillToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountRoleDKGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountDKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountStaffBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountStaffGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountRoleBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,10 +357,10 @@
         #endregion
 
         private Data.CoffeeDataSet coffeeDataSet;
-        private System.Windows.Forms.BindingSource rOLEBindingSource;
-        private Data.CoffeeDataSetTableAdapters.ROLETableAdapter rOLETableAdapter;
+        private System.Windows.Forms.BindingSource accountRoleDKBindingSource;
+        private Data.CoffeeDataSetTableAdapters.AccountRoleDKTableAdapter accountRoleDKTableAdapter;
         private Data.CoffeeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator rOLEBindingNavigator;
+        private System.Windows.Forms.BindingNavigator accountRoleDKBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -415,23 +372,19 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton rOLEBindingNavigatorSaveItem;
-        private System.Windows.Forms.ComboBox rOLEComboBox;
-        private System.Windows.Forms.BindingSource accountRoleDKBindingSource;
-        private Data.CoffeeDataSetTableAdapters.AccountRoleDKTableAdapter accountRoleDKTableAdapter;
+        private System.Windows.Forms.ToolStripButton accountRoleDKBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStrip fillToolStrip;
+        private System.Windows.Forms.ToolStripLabel roleIDToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox roleIDToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillToolStripButton;
+        private Data.CoffeeDataSetTableAdapters.AccountRoleTableAdapter accountRoleTableAdapter;
         private DevExpress.XtraGrid.GridControl accountRoleDKGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colTypeName;
-        private DevExpress.XtraGrid.Columns.GridColumn colUserName;
-        private DevExpress.XtraGrid.Columns.GridColumn colDisplayName;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
-        private System.Windows.Forms.BindingSource accountDKBindingSource;
-        private System.Windows.Forms.BindingSource accountStaffBindingSource;
-        private Data.CoffeeDataSetTableAdapters.AccountStaff accountStaff;
-        private DevExpress.XtraGrid.GridControl accountStaffGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colUserName1;
-        private DevExpress.XtraGrid.Columns.GridColumn colName1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDOB;
+        private System.Windows.Forms.BindingSource accountRoleBindingSource;
+        private System.Windows.Forms.BindingSource accountRoleBindingSource1;
+        private System.Windows.Forms.BindingSource accountRoleBindingSource2;
+        private System.Windows.Forms.BindingSource rOLEBindingSource;
+        private Data.CoffeeDataSetTableAdapters.ROLETableAdapter rOLETableAdapter;
+        private System.Windows.Forms.ComboBox rOLEComboBox;
     }
 }
