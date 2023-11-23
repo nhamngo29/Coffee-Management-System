@@ -9,7 +9,7 @@ namespace DAO
     public class DataProvider
     {
         private static DataProvider instance;
-        private readonly string Connectionstring=Properties.Settings.Default.ConnectionString01;
+        private readonly string Connectionstring=Properties.Settings.Default.ConnectionString;
         public static DataProvider Instance
         {
             get

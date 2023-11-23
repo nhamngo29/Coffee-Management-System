@@ -5,28 +5,10 @@
     <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-0PQ4U60\SQLSERVER;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SQL5105.site4now.net;Initial Catalog=db_aa0f87_nhamngooo29;User Id=db_aa0f87_nhamngooo29_admin;Password=02092002Aa&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-0PQ4U60\SQLSERVER;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa</Value>
-    </Setting>
-    <Setting Name="Setting" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-0PQ4U60\SQLSERVER;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa</Value>
-    </Setting>
-    <Setting Name="ConnectionString01" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-0PQ4U60\SQLSERVER;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa&lt;/ConnectionString&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-0PQ4U60\SQLSERVER;Initial Catalog=CoffeeManagement;User Id=sa;Password=02092002Aa</Value>
-    </Setting>
-    <Setting Name="CoffeeManagementConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-0PQ4U60\SERVER01;Initial Catalog=CoffeeManagement;Persist Security Info=True;User ID=sa;Password=02092002Aa&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-0PQ4U60\SERVER01;Initial Catalog=CoffeeManagement;Persist Security Info=True;User ID=sa;Password=02092002Aa</Value>
+      <Value Profile="(Default)">Data Source=SQL5105.site4now.net;Initial Catalog=db_aa0f87_nhamngooo29;User Id=db_aa0f87_nhamngooo29_admin;Password=02092002Aa</Value>
     </Setting>
   </Settings>
 </SettingsFile>
