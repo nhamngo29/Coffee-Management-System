@@ -398,7 +398,7 @@ namespace GUI
 
         private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = this.CheckFormExist(typeof(fScreen));
+            Form frm = this.CheckFormExist(typeof(fDecentralization));
             if (frm != null)
             {
                 frm.Activate();

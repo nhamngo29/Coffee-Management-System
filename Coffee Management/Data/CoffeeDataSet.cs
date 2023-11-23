@@ -4,6 +4,10 @@
 
     partial class CoffeeDataSet
     {
+        partial class AccountRoleNotEXISTSDKDataTable
+        {
+        }
+
         partial class DecentralizationDataTable
         {
         }
@@ -12,6 +16,10 @@
 
 namespace GUI.Data.CoffeeDataSetTableAdapters
 {
+    partial class AccountRoleTableAdapter
+    {
+    }
+
     partial class AccountRoleDKTableAdapter
     {
     }
