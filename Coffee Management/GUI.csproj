@@ -260,6 +260,12 @@
     <Compile Include="fReservation.Designer.cs">
       <DependentUpon>fReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="fRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fRole.Designer.cs">
+      <DependentUpon>fRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="fScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -389,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fReservation.resx">
       <DependentUpon>fReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fRole.resx">
+      <DependentUpon>fRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fScreen.resx">
       <DependentUpon>fScreen.cs</DependentUpon>
