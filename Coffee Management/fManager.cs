@@ -412,5 +412,22 @@ namespace GUI
                 SplashScreenManager.CloseForm();
             }
         }
+
+        private void barButtonItem25_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fRole));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                fRole f = new fRole();
+                f.MdiParent = this;
+                f.Show();
+                SplashScreenManager.CloseForm();
+            }
+        }
     }
 }

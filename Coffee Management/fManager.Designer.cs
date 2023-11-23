@@ -99,6 +99,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.NgayGio = new System.Windows.Forms.ToolStripStatusLabel();
             this.NhanVien = new System.Windows.Forms.ToolStripStatusLabel();
+            this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -157,10 +158,11 @@
             this.barButtonItem23,
             this.barButtonItem24,
             this.barButtonItem19,
-            this.barButtonItem22});
+            this.barButtonItem22,
+            this.barButtonItem25});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 50;
+            this.ribbon.MaxItemId = 51;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 440;
             this.ribbon.PageHeaderItemLinks.Add(this.barButtonItem17);
@@ -635,6 +637,7 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnMonitor);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem19);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem25);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Tag = "PG_PhanQuyen";
             this.ribbonPageGroup4.Text = "Phân quyền";
@@ -721,6 +724,15 @@
             this.NhanVien.Name = "NhanVien";
             this.NhanVien.Size = new System.Drawing.Size(76, 17);
             this.NhanVien.Text = "Chào mừng: ";
+            // 
+            // barButtonItem25
+            // 
+            this.barButtonItem25.Caption = "Nhóm quyền";
+            this.barButtonItem25.Id = 50;
+            this.barButtonItem25.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.Image")));
+            this.barButtonItem25.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.LargeImage")));
+            this.barButtonItem25.Name = "barButtonItem25";
+            this.barButtonItem25.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem25_ItemClick);
             // 
             // fManager
             // 
@@ -825,5 +837,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem25;
     }
 }
