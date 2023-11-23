@@ -11,13 +11,16 @@ using DTO;
 using BUS;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
+using System.Collections.Generic;
+using DevExpress.XtraBars.Ribbon;
 
 namespace GUI
 {
     public partial class fManager : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         static int countBooking = 0;
-        private Account loginAccount;
+        public Account loginAccount;
+        List<Decentralization> lDecentralization = new List<Decentralization>();
         public Account LoginAccount
         {
             get { return loginAccount; }
@@ -28,11 +31,57 @@ namespace GUI
         {
             SplashScreenManager.ShowForm(typeof(SplashScreen1));
             InitializeComponent();
+
             this.LoginAccount = loginAccount;
+            lDecentralization = DecentralizationBUS.Instance.GetDecentralizationByUser(loginAccount.UserName);
+            LoadManHinh();
+            SplashScreenManager.CloseForm();
         }
-
-
-
+        void LoadManHinh()
+        {
+            foreach (Decentralization item in lDecentralization)
+            {
+                switch (item.IDRole)
+                {
+                    case 1:
+                        ribbonPage.Visible = true;
+                        ribbonPageManager.Visible = true;
+                        ribbonPageWarehouse.Visible = true;
+                        CheckAllChildVisible(this.ribbonPageManager, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPageWarehouse, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
+                        break;
+                    case 2:
+                        ribbonPage.Visible = true;
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
+                        break;
+                    case 3:
+                        ribbonPage.Visible = true;
+                        ribbonPageManager.Visible = true;
+                        ribbonPageWarehouse.Visible = true;
+                        CheckAllChildVisible(this.ribbonPageManager, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPageWarehouse, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
+                        break;
+                    case 4:
+                        ribbonPage.Visible = true;
+                        ribbonPageWarehouse.Visible = true;
+                        CheckAllChildVisible(this.ribbonPageWarehouse, item.IDScreen, item.Visible);
+                        CheckAllChildVisible(this.ribbonPage, item.IDScreen, item.Visible);
+                        break;
+                }
+            }
+        }
+        private void CheckAllChildVisible(RibbonPage mnuItems, string Screen, bool Visible)
+        {
+            foreach (RibbonPageGroup group in mnuItems.Groups)
+            {
+                if(string.Equals(group.Tag,Screen))
+                {
+                    group.Visible= Visible;
+                }    
+            }
+        }
         private void fManager_Load(object sender, EventArgs e)
         {
             ribbonPageGroupSystem.Text = loginAccount.DisplayName;
@@ -41,17 +90,17 @@ namespace GUI
             timer.Tick += Timer_Tick;
             timer.Start();
             barButtonItem6.PerformClick();
-            SplashScreenManager.CloseForm();
+
         }
 
-        private  void Timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             this.NgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
 
         private void DisplayAccount(int type)//type này là loại account người qunar lý sẽ là 1 còn nhân viên khác 1
         {
-            ribbonPageManager.Visible = type == 1; // nếu đây là số một thì sẽ là true
+           /* ribbonPageManager.Visible = type == 1;*/ // nếu đây là số một thì sẽ là true
         }
 
         private Form CheckFormExist(Type fType)
@@ -220,7 +269,7 @@ namespace GUI
                 f.Show();
                 SplashScreenManager.CloseForm();
             }
-        } 
+        }
         private void btnLog_ItemClick(object sender, ItemClickEventArgs e)
         {
 
@@ -295,6 +344,58 @@ namespace GUI
             }
         }
 
+
+
+
+        private void btnNhapKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fImport));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                fImport f = new fImport(loginAccount);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem24_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fStatisticsImport));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                fStatisticsImport f = new fStatisticsImport();
+                f.MdiParent = this;
+                f.Show();
+                SplashScreenManager.CloseForm();
+            }
+        }
+
+        private void btnMonitor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckFormExist(typeof(fScreen));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                SplashScreenManager.ShowForm(typeof(WaitForm1));
+                fScreen f = new fScreen();
+                f.MdiParent = this;
+                f.Show();
+                SplashScreenManager.CloseForm();
+            }
+        }
+
         private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
         {
             Form frm = this.CheckFormExist(typeof(fDecentralization));
@@ -309,54 +410,6 @@ namespace GUI
                 f.MdiParent = this;
                 f.Show();
                 SplashScreenManager.CloseForm();
-            }
-        }
-
-        private void babtn_AddUser_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Form frm = this.CheckFormExist(typeof(fAddUser));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                fAddUser f = new fAddUser();
-                f.MdiParent = this;
-                f.Show();
-                SplashScreenManager.CloseForm();
-            }
-        }
-
-        private void barButtonItem20_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Form frm = this.CheckFormExist(typeof(fImport));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                fImport f = new fImport();
-                f.MdiParent = this;
-                f.Show();
-            }
-        }
-
-        private void btnNhapKho_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Form frm = this.CheckFormExist(typeof(fImport));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                fImport f = new fImport();
-                f.MdiParent = this;
-                f.Show();
             }
         }
     }

@@ -136,10 +136,15 @@ namespace GUI
                 XtraMessageBox.Show("Hãy chọn loại tài khoản");
                 return;
             }
-
-            if(AccountBUS.Instance.SearchAccountByUserName(userName)!=null)
+            string idStaff = view.GetRowCellValue(rowHandle, view.Columns[4]).ToString();
+            if (idStaff == "")
             {
-                if (AccountBUS.Instance.Insert(userName, displayName, accountType))
+                XtraMessageBox.Show("Hãy chọn nhân viên");
+                return;
+            }
+            if (AccountBUS.Instance.SearchAccountByUserName(userName)!=null)
+            {
+                if (AccountBUS.Instance.Insert(userName, displayName, accountType, int.Parse(idStaff)))
                 {
                     SplashScreenManager.ShowForm(typeof(WaitForm1));
                     LoadAcount();
@@ -260,9 +265,7 @@ namespace GUI
 
             if (AccountBUS.Instance.UpdateInformation(id,name,int.Parse(typeAccount),int.Parse(idStaff),active))
             {
-                SplashScreenManager.ShowForm(typeof(WaitForm1));
-                SplashScreenManager.CloseForm();
-                //Log.WriteLog("update Category: " + curName + " -> " + name);
+              
             }
             else
                 XtraMessageBox.Show("Update account thất bại", "Lỗi");

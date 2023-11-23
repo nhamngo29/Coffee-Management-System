@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -35,6 +36,41 @@ namespace BUS
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        public Import GetImportPorudctMax()
+        {
+            try
+            {
+                return ImportDAO.Instance.GetImportMax();
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+        }
+        public bool InsertImport(Import im)
+        {
+            try
+            {
+                return ImportDAO.Instance.Insert(im);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public double TotalAmountByMothAndYear(int Year, int Month)
+        {
+            try
+            {
+                return ImportDAO.Instance.TotalAmountByMothAndYear(Year, Month);
+            }
+            catch
+            {
+                return 0;
             }
         }
     }

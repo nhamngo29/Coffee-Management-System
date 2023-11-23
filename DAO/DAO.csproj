@@ -84,6 +84,8 @@
     <Compile Include="BookingDAO.cs" />
     <Compile Include="CategoryDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DecentralizationDAO.cs" />
+    <Compile Include="DetailImportDAO.cs" />
     <Compile Include="DiscountDAO.cs" />
     <Compile Include="FoodDAO.cs" />
     <Compile Include="ImportDAO.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="ScreenDAO.cs" />
     <Compile Include="SecurityDAO.cs" />
     <Compile Include="StaffDAO.cs" />
+    <Compile Include="SupplierDAO.cs" />
     <Compile Include="TableDAO.cs" />
     <Compile Include="TempBillDAO.cs" />
     <Compile Include="TypeFoodDAO.cs" />

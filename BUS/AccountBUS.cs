@@ -66,11 +66,11 @@ namespace BUS
             return new Account(table.Rows[0]);
         }
 
-        public bool Insert(string userName, string displayName, int type)
+        public bool Insert(string userName, string displayName, int type,int IdStaff)
         {
             try
             {
-                return AccountDAO.Instance.Insert(userName, displayName, type);
+                return AccountDAO.Instance.Insert(userName, displayName, type, IdStaff);
             }
             catch (Exception ex)
             {

@@ -50,6 +50,8 @@ namespace GUI
                 gvFood.Columns[0].OptionsColumn.AllowEdit = false;
                 gvFood.Columns[1].Caption = "Tên";
                 gvFood.Columns[2].Caption = "Loại";
+                gvFood.Columns[3].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+                gvFood.Columns[3].DisplayFormat.FormatString = "{0:0,0 VND}";
                 gvFood.Columns[3].Caption = "Đơn giá";
                 gvFood.Columns[4].Caption = "Mô tả";
                 gvFood.Columns[5].Caption = "Hình ảnh";

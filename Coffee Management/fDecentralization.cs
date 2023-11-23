@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using GUI.Data;
 using GUI.Data.CoffeeDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
@@ -14,69 +15,117 @@ namespace GUI
 {
     public partial class fDecentralization : DevExpress.XtraEditors.XtraForm
     {
-
         public fDecentralization()
         {
             InitializeComponent();
         }
 
-        private void account1BindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void fillToolStripButton_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.account1BindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.coffeeDataSet);
+            try
+            {
+                this.accountRoleDKTableAdapter.Fill(this.coffeeDataSet.AccountRoleDK, ((int)(System.Convert.ChangeType(rOLEComboBox.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
+
         private void fDecentralization_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'coffeeDataSet.PhanQuyen' table. You can move, or remove it, as needed.
-            this.phanQuyenTableAdapter.Fill(this.coffeeDataSet.PhanQuyen);
-            // TODO: This line of code loads data into the 'coffeeDataSet.Screen' table. You can move, or remove it, as needed.
-            this.screenTableAdapter.Fill(this.coffeeDataSet.Screen);
+            // TODO: This line of code loads data into the 'coffeeDataSet.Account' table. You can move, or remove it, as needed.
+            this.accountTableAdapter.Fill(this.coffeeDataSet.Account);
+            // TODO: This line of code loads data into the 'coffeeDataSet.ROLE' table. You can move, or remove it, as needed.
+            this.rOLETableAdapter.Fill(this.coffeeDataSet.ROLE);
+            // TODO: This line of code loads data into the 'coffeeDataSet.AccountRole' table. You can move, or remove it, as needed.
+            this.accountRoleTableAdapter.Fill(this.coffeeDataSet.AccountRole);
 
-            // TODO: This line of code loads data into the 'coffeeDataSet.PhanQuyen' table. You can move, or remove it, as needed.
-            this.phanQuyenTableAdapter.Fill(this.coffeeDataSet.PhanQuyen);
-            // TODO: This line of code loads data into the 'coffeeDataSet.NhomNguoiDung' table. You can move, or remove it, as needed.
-            this.nhomNguoiDungTableAdapter.Fill(this.coffeeDataSet.NhomNguoiDung);
+        }
+        private void rOLEComboBox_EditValueChanged(object sender, EventArgs e)
+        {
+            int IdRole = int.Parse(rOLEComboBox.EditValue.ToString());
+            FillData(IdRole);
+        }
+
+        private void accountRoleDKBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+
 
 
         }
-        public void LoadDataCondition()
+        private void FillData(int roleId)
         {
-            this.getPhanQuyenTableAdapter.Fill(this.coffeeDataSet.getPhanQuyen, ((int)(System.Convert.ChangeType(nhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString(), typeof(int)))));
-        }
-        
-        private void nhomNguoiDungDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            LoadDataCondition();
-        }
-        private void btn_Save_Click(object sender, EventArgs e)
-        {
-            int _NhomNguoiDung = ((int)(System.Convert.ChangeType(nhomNguoiDungDataGridView.CurrentRow.Cells[0].Value.ToString(), typeof(int))));
-            foreach (DataGridViewRow item in getPhanQuyenDataGridView.Rows)
+            try
             {
-                if(getPhanQuyenTableAdapter.GDB_KTKC(_NhomNguoiDung, item.Cells[0].Value.ToString()) == null)
+                this.accountRoleDKTableAdapter.Fill(this.coffeeDataSet.AccountRoleDK, roleId);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+            try
+            {
+                this.accountRoleNotEXISTSTableAdapter.FillAccountRoleDK(this.coffeeDataSet.AccountRoleNotEXISTSDK, roleId);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            if(gridView2.FocusedRowHandle != DevExpress.XtraGrid.GridControl.InvalidRowHandle)
+            {
+                string UserName = gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "UserName").ToString();
+                int IdRole = int.Parse(rOLEComboBox.EditValue.ToString());
+                if(accountRoleTableAdapter.Insert(IdRole, UserName, "")>0)
+                    MessageBox.Show("Thêm thành công");
+                FillData(IdRole);
+            }    
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản và role");
+            }    
+
+        }
+
+        private void btnDeleteAccountRole_Click(object sender, EventArgs e)
+        {
+            if (gridView1.FocusedRowHandle != DevExpress.XtraGrid.GridControl.InvalidRowHandle)
+            {
+                string UserName = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "UserName").ToString();
+                int IdRole = int.Parse(rOLEComboBox.EditValue.ToString());
+                string TenNhomQuyen= rOLEComboBox.SelectedText.ToString();
+                CoffeeDataSet.AccountRoleRow rowToDelete = coffeeDataSet.AccountRole.FirstOrDefault(t=>t.IDAccount== UserName && t.IDRole==IdRole);
+                if (rowToDelete != null)
                 {
-                    try
+                    if (XtraMessageBox.Show(string.Format("Bạn có chắc chắn xóa user {0} ra khỏi nhóm quyền {1} không ?", UserName, TenNhomQuyen),
+                    "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        phanQuyenTableAdapter.Insert(_NhomNguoiDung,item.Cells[0].Value.ToString(), (bool)(item.Cells[2].Value));
+                        accountRoleTableAdapter.DeleteQuery(IdRole, UserName);
+                        FillData(IdRole);
+                        MessageBox.Show("Xóa thành công");
                     }
-                    catch
-                    {
-                        phanQuyenTableAdapter.Insert(_NhomNguoiDung,item.Cells[0].Value.ToString(), false);
-                    }
+                        
                 }
                 else
                 {
-                    phanQuyenTableAdapter.UpdateQuery((item.Cells[2] == null) ? false:(bool)(item.Cells[2].Value), _NhomNguoiDung, item.Cells[0].Value.ToString());
+                    MessageBox.Show("Dòng không tồn tại trong DataTable");
                 }
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản và role");
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
     }
 }
-
