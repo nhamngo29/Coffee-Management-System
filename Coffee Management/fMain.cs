@@ -254,7 +254,7 @@ namespace GUI
             }
 
             int discount = NumDiscount; //mã giảm giá
-            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]) * 1000;//lấy sos tiền hóa đơn
+            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split('.')[0]) * 1000;//lấy sos tiền hóa đơn
             double finalPrice = totalPrice - (totalPrice / 100) * discount;//tính sosos tiền được giảm
             if (billID != -1)
             {
@@ -297,7 +297,7 @@ namespace GUI
             int discount = NumDiscount; //mã giảm giá
             Table table = lsvBill.Tag as Table;//lấy ra id table
             int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);//kiểm tra bàn đã có bill hay chưa
-            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]) * 1000;//lấy sos tiền hóa đơn
+            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split('.')[0]) * 1000;//lấy sos tiền hóa đơn
             double finalPrice = totalPrice - (totalPrice / 100) * discount;//tính sosos tiền được giảm
             
             BillBUS.Instance.CheckOut(billID, discount, (int)finalPrice, loginAccount.IdStaff);//chuyển giảm giá và tổng tiền để lưu vào csdl nhằm mục sự dung cho sau này
