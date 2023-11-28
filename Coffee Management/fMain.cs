@@ -18,6 +18,7 @@ using MailKit.Security;
 using System.Net.Http;
 using System.Text;
 using DevExpress.Data.Utils;
+using System.Linq;
 
 namespace GUI
 {
@@ -254,7 +255,12 @@ namespace GUI
             }
 
             int discount = NumDiscount; //mã giảm giá
-            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split('.')[0]) * 1000;//lấy sos tiền hóa đơn
+            double totalPrice=0;
+            string input = txtTotalPrice.Text.ToString();
+
+            // Xóa ký tự không phải là số hoặc dấu chấm trong chuỗi
+            string numericString = new string(input.Where(char.IsDigit).ToArray());
+            double.TryParse(numericString, out totalPrice);
             double finalPrice = totalPrice - (totalPrice / 100) * discount;//tính sosos tiền được giảm
             if (billID != -1)
             {
@@ -297,7 +303,12 @@ namespace GUI
             int discount = NumDiscount; //mã giảm giá
             Table table = lsvBill.Tag as Table;//lấy ra id table
             int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);//kiểm tra bàn đã có bill hay chưa
-            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split('.')[0]) * 1000;//lấy sos tiền hóa đơn
+            double totalPrice=0;//lấy sos tiền hóa đơn
+            string input = txtTotalPrice.Text.ToString();
+
+            // Xóa ký tự không phải là số hoặc dấu chấm trong chuỗi
+            string numericString = new string(input.Where(char.IsDigit).ToArray());
+            double.TryParse(numericString, out totalPrice);
             double finalPrice = totalPrice - (totalPrice / 100) * discount;//tính sosos tiền được giảm
             
             BillBUS.Instance.CheckOut(billID, discount, (int)finalPrice, loginAccount.IdStaff);//chuyển giảm giá và tổng tiền để lưu vào csdl nhằm mục sự dung cho sau này
@@ -415,30 +426,38 @@ namespace GUI
             int amount = (int)spAmount.Value;
 
             int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);
-            string FoodName = lsvBill.FocusedItem.Text.ToString();
-            if (string.IsNullOrEmpty(FoodName))
+            if (lsvBill.FocusedItem != null)
+            {
+                string FoodName = lsvBill.FocusedItem.Text.ToString();
+                if (string.IsNullOrEmpty(FoodName))
+                {
+                    XtraMessageBox.Show("Hãy chọn món");
+                    return;
+                }
+                else
+                {
+                    if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn xóa món {0} số lượng {1} ra khỏi bill {2}?",
+                   FoodName, amount, billID), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        try
+                        {
+                            BillInfoBUS.Instance.DeleteFoodBillInfo(billID, FoodName, amount);
+                        }
+                        catch (Exception ex)
+                        {
+                            XtraMessageBox.Show("Eror: " + ex);
+                        }
+                    }
+                }
+                ShowBill(table.ID);
+                LoadTable();
+                LoadLookUpEditTable();
+            }
+            else
             {
                 XtraMessageBox.Show("Hãy chọn món");
                 return;
             }
-            else
-            {
-                if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn xóa món {0} số lượng {1} ra khỏi bill {2}?",
-               FoodName, amount, billID), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                {
-                    try
-                    {
-                        BillInfoBUS.Instance.DeleteFoodBillInfo(billID, FoodName, amount);
-                    }
-                    catch (Exception ex)
-                    {
-                        XtraMessageBox.Show("Eror: " + ex);
-                    }
-                }
-            }
-            ShowBill(table.ID);
-            LoadTable();
-            LoadLookUpEditTable();
         }
 
         private void btnGoiMon_Click(object sender, EventArgs e)
