@@ -17,14 +17,115 @@
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="~/css/booking-page.css" />
     <link rel="shortcut icon" type="image/png" href="/LogoSimple.bmp" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <script>
+        // Configs
+        let liveChatBaseUrl = document.location.protocol + '//' + 'livechat.fpt.ai/v36/src'
+        let LiveChatSocketUrl = 'livechat.fpt.ai:443'
+        let FptAppCode = 'e00260e412adb4cb36d314ad08f48c2e'
+        let FptAppName = 'Live support'
+        // Define custom styles
+        let CustomStyles = {
+            // header
+            headerBackground: 'linear-gradient(86.7deg, #FF0000FF 0.85%, #B73131FF 98.94%)',
+            headerTextColor: '#ffffffff',
+            headerLogoEnable: false,
+            headerLogoLink: 'https://chatbot-tools.fpt.ai/livechat-builder/img/Icon-fpt-ai.png',
+            headerText: 'Live support',
+            // main
+            primaryColor: '#FF0000FF',
+            secondaryColor: '#FC0C0CFF',
+            primaryTextColor: '#000000FF',
+            secondaryTextColor: '#000000DE',
+            buttonColor: '#FF0000FF',
+            buttonTextColor: '#000000FF',
+            bodyBackgroundEnable: false,
+            bodyBackgroundLink: '',
+            avatarBot: 'https://i.ibb.co/8dbZHtt/Logo-Simple.png',
+            sendMessagePlaceholder: 'Enter your message here',
+            // float button
+            floatButtonLogo: 'https://chatbot-tools.fpt.ai/livechat-builder/img/Icon-fpt-ai.png',
+            floatButtonTooltip: 'Can I help you?',
+            floatButtonTooltipEnable: true,
+            // start screen
+            customerLogo: 'https://i.ibb.co/8dbZHtt/Logo-Simple.png',
+            customerWelcomeText: 'Coffee Z xin chào. Vui lòng nhập tên',
+            customerButtonText: 'Bắt đầu',
+            prefixEnable: false,
+            prefixType: 'radio',
+            prefixOptions: ["Anh", "Chị"],
+            prefixPlaceholder: 'Danh xưng',
+            // custom css
+            css: ''
+        }
+        // Get bot code from url if FptAppCode is empty
+        if (!FptAppCode) {
+            let appCodeFromHash = window.location.hash.substr(1)
+            if (appCodeFromHash.length === 32) {
+                FptAppCode = appCodeFromHash
+            }
+        }
+        // Set Configs
+        let FptLiveChatConfigs = {
+            appName: FptAppName,
+            appCode: FptAppCode,
+            themes: '',
+            styles: CustomStyles
+        }
+        // Append Script
+        let FptLiveChatScript = document.createElement('script')
+        FptLiveChatScript.id = 'fpt_ai_livechat_script'
+        FptLiveChatScript.src = liveChatBaseUrl + '/static/fptai-livechat.js'
+        document.body.appendChild(FptLiveChatScript)
+        // Append Stylesheet
+        let FptLiveChatStyles = document.createElement('link')
+        FptLiveChatStyles.id = 'fpt_ai_livechat_script'
+        FptLiveChatStyles.rel = 'stylesheet'
+        FptLiveChatStyles.href = liveChatBaseUrl + '/static/fptai-livechat.css'
+        document.body.appendChild(FptLiveChatStyles)
+        // Init
+        FptLiveChatScript.onload = function () {
+            fpt_ai_render_chatbox(FptLiveChatConfigs, liveChatBaseUrl, LiveChatSocketUrl)
+        }
+    </script>
+
 </head>
-<df-messenger intent="WELCOME"
-              chat-title="Coffee_Z_ChatBot"
-              agent-id="55e7b5b7-ce06-40ea-8fce-099afbf0bc95"
-              language-code="vi"></df-messenger>
+
 <body>
+    <script>
+        let __protocol = document.location.protocol;
+        let __baseUrl = __protocol + '//livechat.fpt.ai/v35/src';
+
+        let prefixNameLiveChat = 'Coffee Z';
+        let objPreDefineLiveChat = {
+            appCode: 'e00260e412adb4cb36d314ad08f48c2e',
+            themes: '',
+            appName: prefixNameLiveChat ? prefixNameLiveChat : 'Live support',
+            thumb: '',
+            icon_bot: ''
+        },
+            appCodeHash = window.location.hash.substr(1);
+        if (appCodeHash.length == 32) {
+            objPreDefineLiveChat.appCode = appCodeHash;
+        }
+
+        let fpt_ai_livechat_script = document.createElement('script');
+        fpt_ai_livechat_script.id = 'fpt_ai_livechat_script';
+        fpt_ai_livechat_script.src = __baseUrl + '/static/fptai-livechat.js';
+        document.body.appendChild(fpt_ai_livechat_script);
+
+        let fpt_ai_livechat_stylesheet = document.createElement('link');
+        fpt_ai_livechat_stylesheet.id = 'fpt_ai_livechat_script';
+        fpt_ai_livechat_stylesheet.rel = 'stylesheet';
+        fpt_ai_livechat_stylesheet.href = __baseUrl + '/static/fptai-livechat.css';
+        document.body.appendChild(fpt_ai_livechat_stylesheet);
+
+        fpt_ai_livechat_script.onload = function () {
+            fpt_ai_render_chatbox(objPreDefineLiveChat, __baseUrl, 'livechat.fpt.ai:443');
+        }
+    </script>
     <div class="wrapper booking-page">
         <header class="header">
             <div class="container">
@@ -34,7 +135,7 @@
                             <i class="far fa-bars"></i>
                         </span>
                         <a href="/" class="logo">
-                           <img src="~/zcoffee.png" alt="logo" />
+                            <img src="~/zcoffee.png" alt="logo" />
                         </a>
                         <h1 class="header-title">ĐẶT BÀN</h1>
                         <div class="header-contact">0999.999.999</div>
@@ -53,189 +154,189 @@
                 </div>
             </div>
         </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
 
-    <footer class="footer">
-        <div class="container footer--top">
-            <div class="row">
-                <div class="footer-col footer-col-1 col">
-                    <div class="footer-col-content footer-info">
-                        <a href="!#" class="footer-logo">
+        <footer class="footer">
+            <div class="container footer--top">
+                <div class="row">
+                    <div class="footer-col footer-col-1 col">
+                        <div class="footer-col-content footer-info">
+                            <a href="!#" class="footer-logo">
                                 <img src="~/zcoffee.png" alt="logo" />
-                        </a>
-                        <p class="footer-info__address">
-                            140 Lê Trọng Tấn
-                        </p>
-                        <p class="footer-info__phone">(+84-4) 3562.6296</p>
-                        <p class="footer-info__email">info@coffeez.vn</p>
-                        <p class="footer-info__time">Mở cửa: 09:30 - 22:00</p>
-                    </div>
-                </div>
-                <div class="footer-col footer-col-2 col">
-                    <div class="footer-col-title">LIÊN KẾT NHANH</div>
-                    <div class="footer-col-content">
-                        <ul class="menu-footer">
-                            <li class="menu-footer__link">
-                                <a href="home-page.html">Trang chủ</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="delivery-page.html">Delivery</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="#">Giới thiệu</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="news-category.html">Tin tức</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="menu-page.html">Thực đơn</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="contact-page.html">Liên hệ</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="booking-page.html">Đặt bàn</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-col footer-col-3 col">
-                    <div class="footer-col-title">HƯỚNG DẪN</div>
-                    <div class="footer-col-content">
-                        <ul class="menu-footer">
-                            <li class="menu-footer__link">
-                                <a href="guide-page.html">Hướng dẫn đặt món online</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="guide-page.html">Hướng dẫn đặt bàn</a>
-                            </li>
-                            <li class="menu-footer__link">
-                                <a href="guide-page.html">Hướng dẫn thanh toán</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-col footer-col-4 col">
-                    <div class="fanpage-facebook">
-                        <div class="fanpage-facebook-avatar">
-                            <img src="./images/facebook.jpg" alt="" />
+                            </a>
+                            <p class="footer-info__address">
+                                140 Lê Trọng Tấn
+                            </p>
+                            <p class="footer-info__phone">(+84-4) 3562.6296</p>
+                            <p class="footer-info__email">info@coffeez.vn</p>
+                            <p class="footer-info__time">Mở cửa: 09:30 - 22:00</p>
                         </div>
-                        <div class="fanpage-facebook-content">
-                            <a href="http://www.facebook.com/" class="fanpage-facebook-name">Coffee Z</a>
-                            <div class="fanpage-facebook-like">
-                                <a href="http://www.facebook.com/"><img src="./images/icon-face2.png" /> Like Page</a><span>50K người đã thích</span>
+                    </div>
+                    <div class="footer-col footer-col-2 col">
+                        <div class="footer-col-title">LIÊN KẾT NHANH</div>
+                        <div class="footer-col-content">
+                            <ul class="menu-footer">
+                                <li class="menu-footer__link">
+                                    <a href="home-page.html">Trang chủ</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="delivery-page.html">Delivery</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="#">Giới thiệu</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="news-category.html">Tin tức</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="menu-page.html">Thực đơn</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="contact-page.html">Liên hệ</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="booking-page.html">Đặt bàn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-col footer-col-3 col">
+                        <div class="footer-col-title">HƯỚNG DẪN</div>
+                        <div class="footer-col-content">
+                            <ul class="menu-footer">
+                                <li class="menu-footer__link">
+                                    <a href="guide-page.html">Hướng dẫn đặt món online</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="guide-page.html">Hướng dẫn đặt bàn</a>
+                                </li>
+                                <li class="menu-footer__link">
+                                    <a href="guide-page.html">Hướng dẫn thanh toán</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-col footer-col-4 col">
+                        <div class="fanpage-facebook">
+                            <div class="fanpage-facebook-avatar">
+                                <img src="./images/facebook.jpg" alt="" />
+                            </div>
+                            <div class="fanpage-facebook-content">
+                                <a href="http://www.facebook.com/" class="fanpage-facebook-name">Coffee Z</a>
+                                <div class="fanpage-facebook-like">
+                                    <a href="http://www.facebook.com/"><img src="./images/icon-face2.png" /> Like Page</a><span>50K người đã thích</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container footer--bottom">
-            <div class="row">
-                <div class="col col-sm-12 col-md-7">
-                    <div class="footer-copyright">COPYRIGHT © 2022 BY VMMS</div>
-                    <ul class="menu-footer">
-                        <li class="menu-footer__link">
-                            <a href="privacy-policy-page.html">Chính sách bảo mật</a>
-                        </li>
-                        <li class="menu-footer__link">
-                            <a href="payment-policy-page.html">Chính sách thanh toán</a>
-                        </li>
-                        <li class="menu-footer__link">
-                            <a href="regulations-page.html">Quy định nhà hàng</a>
-                        </li>
-                        <li class="menu-footer__link">
-                            <a href="complaint-process-page.html">Quy trình khiếu nại</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col col-sm-12 col-md-5">
-                    <a href="home-page.html" target="_blank" class="footer-bct">
-                        <img src="./images/thongbaobocongthuong.png"
-                             alt="Thông báo bộ công thương" />
-                    </a>
-                    <div class="social-network">
-                        <div class="social-network__title">KẾT NỐI VỚI CHÚNG TÔI</div>
-                        <ul class="social-network__list">
-                            <li>
-                                <a href="https://www.facebook.com/"
-                                   rel="nofollow"
-                                   target="_blank">
-                                    <img src="./images/icon-face.svg" alt="facebook" />
-                                </a>
+            <div class="container footer--bottom">
+                <div class="row">
+                    <div class="col col-sm-12 col-md-7">
+                        <div class="footer-copyright">COPYRIGHT © 2022 BY VMMS</div>
+                        <ul class="menu-footer">
+                            <li class="menu-footer__link">
+                                <a href="privacy-policy-page.html">Chính sách bảo mật</a>
                             </li>
-                            <li>
-                                <a href="https://twitter.com/"
-                                   rel="nofollow"
-                                   target="_blank">
-                                    <img src="./images/icon-instagram.svg" alt="instagram" />
-                                </a>
+                            <li class="menu-footer__link">
+                                <a href="payment-policy-page.html">Chính sách thanh toán</a>
                             </li>
-                            <li>
-                                <a href="https://www.youtube.com/"
-                                   rel="nofollow"
-                                   target="_blank">
-                                    <img src="./images/icon-twitter.svg" alt="twitter" />
-                                </a>
+                            <li class="menu-footer__link">
+                                <a href="regulations-page.html">Quy định nhà hàng</a>
                             </li>
-                            <li>
-                                <a href="https://mail.google.com/"
-                                   rel="nofollow"
-                                   target="_blank">
-                                    <img src="./images/icon-gg.svg" alt="Gmail" />
-                                </a>
+                            <li class="menu-footer__link">
+                                <a href="complaint-process-page.html">Quy trình khiếu nại</a>
                             </li>
                         </ul>
                     </div>
+                    <div class="col col-sm-12 col-md-5">
+                        <a href="home-page.html" target="_blank" class="footer-bct">
+                            <img src="./images/thongbaobocongthuong.png"
+                                 alt="Thông báo bộ công thương" />
+                        </a>
+                        <div class="social-network">
+                            <div class="social-network__title">KẾT NỐI VỚI CHÚNG TÔI</div>
+                            <ul class="social-network__list">
+                                <li>
+                                    <a href="https://www.facebook.com/"
+                                       rel="nofollow"
+                                       target="_blank">
+                                        <img src="./images/icon-face.svg" alt="facebook" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/"
+                                       rel="nofollow"
+                                       target="_blank">
+                                        <img src="./images/icon-instagram.svg" alt="instagram" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/"
+                                       rel="nofollow"
+                                       target="_blank">
+                                        <img src="./images/icon-twitter.svg" alt="twitter" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://mail.google.com/"
+                                       rel="nofollow"
+                                       target="_blank">
+                                        <img src="./images/icon-gg.svg" alt="Gmail" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="booking-page.html" class="btn-booking">Đặt bàn</a>
+        </footer>
+        <div class="mobile-sidebar d-lg-none">
+            <div class="mobile-sidebar--top">
+                <a href="home-page.html" class="mobile-sidebar-logo">
+                    <img src="./images/logo-vmms.png" alt="Logo" />
+                </a>
+                <i class="mobile-sidebar-close"></i>
+            </div>
+            <div class="mobile-sidebar--bottom">
+                <ul class="menu">
+                    <li class="menu-item active">
+                        <a href="home-page.html" class="menu-link">Trang chủ</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="menu-page.html" class="menu-link">Sản phẩm</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="news-category.html" class="menu-link">Tin tức</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="promotion.html" class="menu-link">Khuyến mãi</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="guide-page.html" class="menu-link">Hướng dẫn mua hàng</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact-page.html" class="menu-link">Liên Hệ</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="register-page.html" class="menu-link">Đăng ký</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="login-page.html" class="menu-link">Đăng nhập</a>
+                    </li>
+                </ul>
+                <div class="phone-number d-block">
+                    <a href="tel:0962180180">0962.180.180</a>
                 </div>
             </div>
         </div>
-        <a href="booking-page.html" class="btn-booking">Đặt bàn</a>
-    </footer>
-    <div class="mobile-sidebar d-lg-none">
-        <div class="mobile-sidebar--top">
-            <a href="home-page.html" class="mobile-sidebar-logo">
-                <img src="./images/logo-vmms.png" alt="Logo" />
-            </a>
-            <i class="mobile-sidebar-close"></i>
-        </div>
-        <div class="mobile-sidebar--bottom">
-            <ul class="menu">
-                <li class="menu-item active">
-                    <a href="home-page.html" class="menu-link">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="menu-page.html" class="menu-link">Sản phẩm</a>
-                </li>
-                <li class="menu-item">
-                    <a href="news-category.html" class="menu-link">Tin tức</a>
-                </li>
-                <li class="menu-item">
-                    <a href="promotion.html" class="menu-link">Khuyến mãi</a>
-                </li>
-                <li class="menu-item">
-                    <a href="guide-page.html" class="menu-link">Hướng dẫn mua hàng</a>
-                </li>
-                <li class="menu-item">
-                    <a href="contact-page.html" class="menu-link">Liên Hệ</a>
-                </li>
-                <li class="menu-item">
-                    <a href="register-page.html" class="menu-link">Đăng ký</a>
-                </li>
-                <li class="menu-item">
-                    <a href="login-page.html" class="menu-link">Đăng nhập</a>
-                </li>
-            </ul>
-            <div class="phone-number d-block">
-                <a href="tel:0962180180">0962.180.180</a>
-            </div>
-        </div>
-    </div>
-    <div class="menu-bars-close"></div>
+        <div class="menu-bars-close"></div>
 
     </div>
     <script type="text/javascript"
