@@ -63,7 +63,7 @@ namespace CustomComponent
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "CustomMessageBox";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
 
         }
