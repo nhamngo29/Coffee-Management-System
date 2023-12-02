@@ -160,6 +160,12 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddImportProduct.cs">
@@ -253,6 +259,12 @@
     </Compile>
     <Compile Include="FormImageViewer.Designer.cs">
       <DependentUpon>FormImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQRMomo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQRMomo.Designer.cs">
+      <DependentUpon>fQRMomo.cs</DependentUpon>
     </Compile>
     <Compile Include="fReservation.cs">
       <SubType>Form</SubType>
@@ -393,6 +405,9 @@
     <EmbeddedResource Include="FormImageViewer.resx">
       <DependentUpon>FormImageViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fQRMomo.resx">
+      <DependentUpon>fQRMomo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fReservation.resx">
       <DependentUpon>fReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -511,6 +526,7 @@
     <Content Include="Data\SQLQuery.sql" />
     <Content Include="Resources\1489514002___Upload.png" />
     <Content Include="Resources\1489514013___Download.png" />
+    <Content Include="Resources\4486934.jpg" />
     <Content Include="Resources\add-icon.png" />
     <Content Include="Resources\Apps-preferences-system-time-icon.png" />
     <Content Include="Resources\Backup-restore-icon.png" />
@@ -536,12 +552,15 @@
     <Content Include="Resources\Food-Coffee-icon.png" />
     <Content Include="Resources\Household-Table-icon - Copy.png" />
     <Content Include="Resources\Household-Table-icon.png" />
+    <Content Include="Resources\huong-dan-su-dung-lien-ket-vi-momo-voi-ngan-hang-don-gian-nhat.png" />
     <Content Include="Resources\icon-developer-icon - Copy.png" />
     <Content Include="Resources\icon-developer-icon.png" />
+    <None Include="Resources\icons8-qr-code-pastel-70.png" />
     <Content Include="Resources\LogoSimple.bmp" />
     <None Include="Resources\LogoSimple.png" />
     <Content Include="Resources\logout-icon - Copy.png" />
     <Content Include="Resources\logout-icon.png" />
+    <None Include="Resources\logo_momo.png" />
     <Content Include="Resources\Presentation-icon - Copy.png" />
     <Content Include="Resources\Presentation-icon.png" />
     <Content Include="Resources\Reset-icon - Copy.png" />

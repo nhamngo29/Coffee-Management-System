@@ -19,6 +19,8 @@ using System.Net.Http;
 using System.Text;
 using DevExpress.Data.Utils;
 using System.Linq;
+using NPOI.SS.Formula.Functions;
+using CustomComponent;
 
 namespace GUI
 {
@@ -128,7 +130,7 @@ namespace GUI
 
             (sender as SimpleButton).ImageIndex = 1;
             int tableID = ((sender as SimpleButton).Tag as Table).ID;
-            lbNumberTb.Text = (tableID-1).ToString();
+            lbNumberTb.Text = (tableID - 1).ToString();
             lsvBill.Tag = (sender as SimpleButton).Tag;
             ShowBill(tableID);
             currentClickButton = sender as SimpleButton;
@@ -238,11 +240,11 @@ namespace GUI
         private void btnCheck_Click(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;//lấy ra id table
-            if (table == null || table.Status=="Trống" )
+            if (table == null || table.Status == "Trống")
             {
                 XtraMessageBox.Show("Vui lòng chọn bàn có bill");
                 return;
-            }    
+            }
 
             int billID = -1;
             try
@@ -255,7 +257,7 @@ namespace GUI
             }
 
             int discount = NumDiscount; //mã giảm giá
-            double totalPrice=0;
+            double totalPrice = 0;
             string input = txtTotalPrice.Text.ToString();
 
             // Xóa ký tự không phải là số hoặc dấu chấm trong chuỗi
@@ -282,7 +284,7 @@ namespace GUI
                     XtraReport report = new XtraReport();
                     report.DataSource = lstTempBill;
                     report.Parameters["TongTien"].Value = totalPrice;
-                   report.Parameters["TableName"].Value = table.ID;//chuyền paramenter vào report
+                    report.Parameters["TableName"].Value = table.ID;//chuyền paramenter vào report
                     report.Parameters["Discount"].Value = discount;//chuyền paramenter vào report
                     report.Parameters["CreateDate"].Value = DateTime.Now;//chuyền paramenter vào report
                     report.Parameters["TotalPrice"].Value = finalPrice;//chuyền paramenter vào report
@@ -303,19 +305,18 @@ namespace GUI
             int discount = NumDiscount; //mã giảm giá
             Table table = lsvBill.Tag as Table;//lấy ra id table
             int billID = BillBUS.Instance.GetUnCheckBillIDByTableID(table.ID);//kiểm tra bàn đã có bill hay chưa
-            double totalPrice=0;//lấy sos tiền hóa đơn
+            double totalPrice = 0;//lấy sos tiền hóa đơn
             string input = txtTotalPrice.Text.ToString();
 
             // Xóa ký tự không phải là số hoặc dấu chấm trong chuỗi
             string numericString = new string(input.Where(char.IsDigit).ToArray());
             double.TryParse(numericString, out totalPrice);
             double finalPrice = totalPrice - (totalPrice / 100) * discount;//tính sosos tiền được giảm
-            
+
             BillBUS.Instance.CheckOut(billID, discount, (int)finalPrice, loginAccount.IdStaff);//chuyển giảm giá và tổng tiền để lưu vào csdl nhằm mục sự dung cho sau này
             string botToken = "6491672688:AAFsnvJcdDuQH-MikAw91VrnFGlRBkp07xU";
             long chatId = -4054499094;
             string messageText = $"Có hóa đơn mới: {billID} \nSố tiền: {totalPrice}\nGiảm giá: {discount}\nSố tiền trả: {finalPrice}\nNhân viên: {loginAccount.DisplayName}\nNgày giờ: {DateTime.Now.ToString("dd/mm/yyyyy hh:mm:ss")}";
-
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -323,7 +324,18 @@ namespace GUI
                     string apiUrl = $"https://api.telegram.org/bot{botToken}/sendMessage";
                     var content = new StringContent($"{{\"chat_id\": \"{chatId}\", \"text\": \"{messageText}\"}}", Encoding.UTF8, "application/json");
                     HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+                    CustomMessageBox customMessageBox = new CustomMessageBox(string.Format("Phương thức thanh toán"),"Momo", "Tiền mặt");
+                    if (customMessageBox.ShowDialog() == DialogResult.OK)
+                    {
+                        fQRMomo momo = new fQRMomo(finalPrice);
+                        momo.ShowDialog();
+                    }
+                    else
+                    {
+                        // Xử lý khi nút Cancel được nhấn hoặc hộp thoại đóng mà không có hành động nào
+                    }
                 }
+
             }
             catch (Exception ex)
             {
@@ -514,18 +526,18 @@ namespace GUI
         {
             int id1 = (lsvBill.Tag as Table).ID;
             int id2;
-            if (lkedPickTable.EditValue == null )
+            if (lkedPickTable.EditValue == null)
             {
                 XtraMessageBox.Show("Hãy chọn bàn muốn chuyển", "Thông báo");
                 return;
             }
             else
                 id2 = (int)lkedPickTable.EditValue;
-            if(id1 == id2)
+            if (id1 == id2)
             {
-                XtraMessageBox.Show("2 bàn giống nhau vui lòng thử lại!","Thông báo");
+                XtraMessageBox.Show("2 bàn giống nhau vui lòng thử lại!", "Thông báo");
                 return;
-            }    
+            }
 
             if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn chuyển {0} sang {1}?",
                 (lsvBill.Tag as Table).Name, lkedPickTable.Text),
@@ -600,7 +612,7 @@ namespace GUI
             catch (Exception)
             {
 
-                
+
             }
             //string resourcesDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", a.Image + ".jpg");
             //if (File.Exists(resourcesDirectory))

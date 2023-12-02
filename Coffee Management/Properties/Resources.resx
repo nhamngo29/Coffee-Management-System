@@ -154,6 +154,9 @@
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LogoSimple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoSimple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Documents-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Documents-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -180,6 +183,9 @@
   </data>
   <data name="User-Group-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User-Group-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_momo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_momo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check-1-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check-1-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,7 +223,7 @@
   <data name="search-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoSimple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoSimple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-qr-code-pastel-70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-qr-code-pastel-70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

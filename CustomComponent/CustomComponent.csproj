@@ -71,6 +71,9 @@
     <Compile Include="ButtonBoTron.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PasswordTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -82,6 +85,11 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
