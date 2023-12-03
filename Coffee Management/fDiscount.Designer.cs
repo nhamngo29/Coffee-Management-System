@@ -212,7 +212,7 @@ namespace GUI
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fDiscount";
-            this.Text = "fDiscount";
+            this.Text = "Giảm giá";
             this.Load += new System.EventHandler(this.fDiscount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDiscount)).EndInit();

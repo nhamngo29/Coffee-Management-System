@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQRMomo));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.separatorControl4 = new DevExpress.XtraEditors.SeparatorControl();
+            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -41,35 +46,30 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pic_qrcode = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
-            this.separatorControl4 = new DevExpress.XtraEditors.SeparatorControl();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_qrcode)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -91,6 +91,51 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(380, 381);
             this.panel4.TabIndex = 2;
+            // 
+            // separatorControl4
+            // 
+            this.separatorControl4.Location = new System.Drawing.Point(61, 237);
+            this.separatorControl4.Name = "separatorControl4";
+            this.separatorControl4.Size = new System.Drawing.Size(246, 23);
+            this.separatorControl4.TabIndex = 12;
+            // 
+            // separatorControl1
+            // 
+            this.separatorControl1.Location = new System.Drawing.Point(54, 93);
+            this.separatorControl1.Name = "separatorControl1";
+            this.separatorControl1.Size = new System.Drawing.Size(246, 23);
+            this.separatorControl1.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(3, 341);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(377, 42);
+            this.panel5.TabIndex = 20;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(11, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(48, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(260, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Chỉ cần chạm tay thanh toán xong ngay";
             // 
             // pictureEdit4
             // 
@@ -217,6 +262,13 @@
             this.panel3.Size = new System.Drawing.Size(296, 316);
             this.panel3.TabIndex = 0;
             // 
+            // separatorControl3
+            // 
+            this.separatorControl3.Location = new System.Drawing.Point(23, 254);
+            this.separatorControl3.Name = "separatorControl3";
+            this.separatorControl3.Size = new System.Drawing.Size(250, 23);
+            this.separatorControl3.TabIndex = 3;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -257,6 +309,13 @@
             this.panel1.Size = new System.Drawing.Size(725, 72);
             this.panel1.TabIndex = 0;
             // 
+            // separatorControl2
+            // 
+            this.separatorControl2.Location = new System.Drawing.Point(0, 43);
+            this.separatorControl2.Name = "separatorControl2";
+            this.separatorControl2.Size = new System.Drawing.Size(722, 23);
+            this.separatorControl2.TabIndex = 2;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -272,70 +331,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(48, 4);
+            this.label1.Location = new System.Drawing.Point(48, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thanh toán bằng ví MoMo";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(3, 341);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(377, 42);
-            this.panel5.TabIndex = 20;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(48, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(260, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Chỉ cần chạm tay thanh toán xong ngay";
-            // 
-            // separatorControl1
-            // 
-            this.separatorControl1.Location = new System.Drawing.Point(54, 93);
-            this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Size = new System.Drawing.Size(246, 23);
-            this.separatorControl1.TabIndex = 1;
-            // 
-            // separatorControl2
-            // 
-            this.separatorControl2.Location = new System.Drawing.Point(0, 43);
-            this.separatorControl2.Name = "separatorControl2";
-            this.separatorControl2.Size = new System.Drawing.Size(722, 23);
-            this.separatorControl2.TabIndex = 2;
-            // 
-            // separatorControl3
-            // 
-            this.separatorControl3.Location = new System.Drawing.Point(23, 254);
-            this.separatorControl3.Name = "separatorControl3";
-            this.separatorControl3.Size = new System.Drawing.Size(250, 23);
-            this.separatorControl3.TabIndex = 3;
-            // 
-            // separatorControl4
-            // 
-            this.separatorControl4.Location = new System.Drawing.Point(61, 237);
-            this.separatorControl4.Name = "separatorControl4";
-            this.separatorControl4.Size = new System.Drawing.Size(246, 23);
-            this.separatorControl4.TabIndex = 12;
             // 
             // fQRMomo
             // 
@@ -345,12 +345,18 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.IconOptions.Image = global::GUI.Properties.Resources.logo_momo;
             this.Name = "fQRMomo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fQRMomo";
+            this.Text = "Thanh toán MoMo";
             this.Load += new System.EventHandler(this.fQRMomo_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
@@ -358,17 +364,12 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_qrcode)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

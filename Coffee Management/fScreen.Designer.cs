@@ -272,7 +272,7 @@
             this.Controls.Add(this.screenGridControl);
             this.Controls.Add(this.screenBindingNavigator);
             this.Name = "fScreen";
-            this.Text = "fScreen";
+            this.Text = "Màn hình";
             this.Load += new System.EventHandler(this.fScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenBindingSource)).EndInit();

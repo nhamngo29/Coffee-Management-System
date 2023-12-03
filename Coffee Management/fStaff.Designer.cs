@@ -251,7 +251,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fStaff";
-            this.Text = "fStaff";
+            this.Text = "Nhân viên";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchAccount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc)).EndInit();

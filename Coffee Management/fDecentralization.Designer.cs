@@ -579,7 +579,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.accountRoleDKBindingNavigator);
             this.Name = "fDecentralization";
-            this.Text = "Decentralization";
+            this.Text = "Người dùng nhóm người dùng";
             this.Load += new System.EventHandler(this.fDecentralization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountRoleDKBindingSource)).EndInit();

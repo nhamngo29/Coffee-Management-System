@@ -310,7 +310,7 @@
             this.Controls.Add(this.rOLEGridControl);
             this.Controls.Add(this.rOLEBindingNavigator);
             this.Name = "fRole";
-            this.Text = "fRole";
+            this.Text = "Quyền";
             this.Load += new System.EventHandler(this.fRole_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingSource)).EndInit();
