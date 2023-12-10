@@ -204,7 +204,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControl2);
             this.Name = "fImport";
-            this.Text = "Import";
+            this.Text = "Nhập hàng";
             this.Load += new System.EventHandler(this.Import_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcImport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvImport)).EndInit();

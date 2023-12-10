@@ -190,6 +190,7 @@
             // 
             // tableAdapterManager1
             // 
+            this.tableAdapterManager1.AccountRoleTableAdapter = null;
             this.tableAdapterManager1.AccountTableAdapter = null;
             this.tableAdapterManager1.AccountTypeTableAdapter = null;
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
@@ -198,10 +199,15 @@
             this.tableAdapterManager1.BookingDKTableAdapter = this.bookingDKTableAdapter1;
             this.tableAdapterManager1.BookingTableAdapter = null;
             this.tableAdapterManager1.CategoryFoodTableAdapter = null;
+            this.tableAdapterManager1.DecentralizationTableAdapter = null;
+            this.tableAdapterManager1.DetailImportTableAdapter = null;
             this.tableAdapterManager1.discountTableAdapter = null;
             this.tableAdapterManager1.FoodTableAdapter = null;
+            this.tableAdapterManager1.ImportProductTableAdapter = null;
+            this.tableAdapterManager1.ROLETableAdapter = null;
             this.tableAdapterManager1.ScreenTableAdapter = null;
             this.tableAdapterManager1.staffTableAdapter = null;
+            this.tableAdapterManager1.SupplierTableAdapter = null;
             this.tableAdapterManager1.TableCoffeeTableAdapter = null;
             this.tableAdapterManager1.TypeFoodTableAdapter = null;
             this.tableAdapterManager1.UpdateOrder = GUI.Data.CoffeeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -452,7 +458,7 @@
             this.Controls.Add(this.bookingDKBindingNavigator);
             this.Controls.Add(this.panel1);
             this.Name = "fReservation";
-            this.Text = "fReservation";
+            this.Text = "Đặt bàn";
             this.Load += new System.EventHandler(this.fReservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateTimeOffsetEdit2)).EndInit();
             this.panel1.ResumeLayout(false);

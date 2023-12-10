@@ -246,7 +246,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "fGroupFood";
-            this.Text = "GroupFood";
+            this.Text = "Nhóm món ăn";
             this.Load += new System.EventHandler(this.fGroupFood_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

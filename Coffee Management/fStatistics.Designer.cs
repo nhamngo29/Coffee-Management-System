@@ -127,7 +127,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chartControl1);
             this.Name = "fStatistics";
-            this.Text = "fStatistics";
+            this.Text = "Thông kê doanh thu";
             this.Load += new System.EventHandler(this.fStatistics_Load);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();

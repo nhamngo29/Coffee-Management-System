@@ -120,7 +120,7 @@
             this.Controls.Add(this.chartControl1);
             this.Controls.Add(this.panel1);
             this.Name = "fStatisticsImport";
-            this.Text = "fStatisticsImport";
+            this.Text = "Thống kê nhập hàng";
             this.Load += new System.EventHandler(this.fStatisticsImport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
