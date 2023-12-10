@@ -51,12 +51,12 @@
             this.rOLEBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.rOLEGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.accountRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.decentralizationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.decentralizationGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.coffeeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rOLEBindingNavigator)).BeginInit();
@@ -254,25 +254,15 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID,
             this.colTypeName});
             this.gridView1.GridControl = this.rOLEGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // colID
-            // 
-            this.colID.FieldName = "ID";
-            this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
-            // 
-            // colTypeName
-            // 
-            this.colTypeName.FieldName = "TypeName";
-            this.colTypeName.Name = "colTypeName";
-            this.colTypeName.Visible = true;
-            this.colTypeName.VisibleIndex = 1;
             // 
             // accountRoleBindingSource
             // 
@@ -298,8 +288,26 @@
             // 
             // gridView3
             // 
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView3.Appearance.Row.Options.UseFont = true;
             this.gridView3.GridControl = this.decentralizationGridControl;
             this.gridView3.Name = "gridView3";
+            // 
+            // colID
+            // 
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
+            // 
+            // colTypeName
+            // 
+            this.colTypeName.FieldName = "TypeName";
+            this.colTypeName.Name = "colTypeName";
+            this.colTypeName.Visible = true;
+            this.colTypeName.VisibleIndex = 1;
             // 
             // fRole
             // 
@@ -350,12 +358,12 @@
         private Data.CoffeeDataSetTableAdapters.AccountRoleTableAdapter accountRoleTableAdapter;
         private DevExpress.XtraGrid.GridControl rOLEGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colTypeName;
         private System.Windows.Forms.BindingSource accountRoleBindingSource;
         private Data.CoffeeDataSetTableAdapters.DecentralizationTableAdapter decentralizationTableAdapter;
         private System.Windows.Forms.BindingSource decentralizationBindingSource;
         private DevExpress.XtraGrid.GridControl decentralizationGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colTypeName;
     }
 }
