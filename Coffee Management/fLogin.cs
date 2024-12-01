@@ -1,15 +1,13 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using System.Drawing;
+using BUS;
+using DTO;
+using DAO;
 
-namespace Coffee_Management
+namespace GUI
 {
     public partial class fLogin : DevExpress.XtraEditors.XtraForm
     {
@@ -17,6 +15,12 @@ namespace Coffee_Management
         public fLogin()
         {
             InitializeComponent();
+            this.FormClosed += FLogin_FormClosed;
+        }
+
+        private void FLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
         private Bitmap drawImage(string txt, int w, int h)
         {
@@ -49,7 +53,6 @@ namespace Coffee_Management
             // End tạo hiệu ứng
             return bt;
         }
-
         public String randomString()
         {
             Random rnd = new Random();
@@ -67,10 +70,6 @@ namespace Coffee_Management
             // vẽ captcha lên panel 1
             panel.BackgroundImage = drawImage(captchaText, panel.Width, panel.Height);
         }
-        public static string md5(String data)
-        {
-            return BitConverter.ToString(encryptData(data)).Replace("-", "").ToLower();
-        }
         public static byte[] encryptData(String data)
         {
             System.Security.Cryptography.MD5CryptoServiceProvider md5Hasher = new System.Security.Cryptography.MD5CryptoServiceProvider();
@@ -79,10 +78,119 @@ namespace Coffee_Management
             hashedBytes = md5Hasher.ComputeHash(encoder.GetBytes(data));
             return hashedBytes;
         }
-        private void fLogin_Load(object sender, EventArgs e)
+        public static string md5(String data)
+        {
+            return BitConverter.ToString(encryptData(data)).Replace("-", "").ToLower();
+        }
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có thật sự muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                e.Cancel = true;
+        }
+
+
+        private void btnResertCaptch_Click(object sender, EventArgs e)
         {
             Reset();
-            this.StartPosition= FormStartPosition.CenterScreen;
+        }
+
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+            if (!DataProvider.Instance.TestConnection())
+            {
+                XtraMessageBox.Show("Lối cấu hình vui lòng cấu hình lại", "Thông báo");
+                fConfigure fConfigure = new fConfigure();
+                fConfigure.ShowDialog();
+            }
+            this.KeyPreview = true;
+            txtUserName.Focus();
+            Reset();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = string.Empty;
+            txtUserName.Clear();
+            txtUserName.Focus();
+        }
+
+
+        private void fLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có thật sự muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                this.Close();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+            Account account = new Account(txtUserName.Text, txtPassword.Text);
+
+            try
+            {
+                if (AccountDAO.Instance.CheckLogin(account))//kiểm tra đang nhập
+                {
+                    if (txtCaptcha.Text == captchaText)//kiểm tra mã captcha
+                    {
+
+                        Account acc = AccountBUS.Instance.GetAccountByUserName(account.UserName);//lấy account theo username
+                        if (acc.Active == true)
+                        {
+                            if (txtPassword.Text == "1")//mật khẩu nhập vào là một thì sẽ chuyển đến trang profile để đổi mật khẩu
+                            {
+                                fAccountInformation form = new fAccountInformation(acc);
+                                this.Hide();
+                                form.ShowDialog();
+                                this.Show();
+                            }
+                            else
+                            {
+                                txtPassword.Text = string.Empty;
+                                txtUserName.Text = string.Empty;
+                                txtCaptcha.Text = string.Empty;
+                                
+                                Program._fManager = new fManager(acc);
+
+                                this.Hide();
+                                Program._fManager.ShowDialog();
+                                this.Show();
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Tài khoản đã bị khóa vui lòng liên hệ với Admin", "Thông báo");
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Bạn đã nhập sai mã captch");
+                        txtCaptcha.Clear();
+                        txtCaptcha.Focus();
+                        Reset();
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Lỗi: " + ex);
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            txtPassword.Properties.UseSystemPasswordChar = !txtPassword.Properties.UseSystemPasswordChar;
         }
     }
 }
