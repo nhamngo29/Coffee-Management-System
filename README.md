@@ -1,5 +1,5 @@
 # Quản lý quán cà phê WinForm CSharp C#
-<p>Language: C#, .Net Core 6</p>
+<p>Language: C#, Winform, .Net Core 6</p>
 <p>Database: SQLSaver </p>
 <p>Thư viện hộ trợ: DevExpress</p>
 <p>Các ứng dụng hộ trợ: Telegram, Email</p>
